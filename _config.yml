@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: '庄子的个人博客'
+title: '熊孩子'
 subtitle: '一个在学习路上的程序猿，一个在探索路上的攻城狮，一个在求知路上的码农……'
-description: ''
+description: '一个在学习路上的程序猿，一个在探索路上的攻城狮，一个在求知路上的码农……'
 keywords:
 author: Jack
-language: zh
+language: zh-CN
 timezone: ''
 
 # URL
@@ -45,7 +45,7 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace: ''
@@ -98,9 +98,33 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: hexo-theme-bamboo
+
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'tomorrow'    # 这里可以选择不同样式的主题
+  line_number: false    # default false
+  custom_css:
+
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+search:
+  path: search.xml
+  field: post
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
