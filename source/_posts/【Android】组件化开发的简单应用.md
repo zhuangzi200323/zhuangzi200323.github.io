@@ -2,9 +2,11 @@
 title: 【Android】组件化开发的简单应用
 date: 2019-03-02 15:06:15
 swiper: true
-swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c080ff4434354e35af9dab0a3ee1b9f7.jpg!sswm'
+swiperImg: '/medias/13.png'
+img: '/medias/13.png'
 tags: 
 - Android
+top: true
 ---
 
 组件化开发的主要步骤：
