@@ -314,38 +314,14 @@
 
 
 
-<div class="swiper-length" style="display: none;">2</div>
+<div class="swiper-length" style="display: none;">1</div>
 <div id="appSwiper"
-  class=""
+  class="swiper-no-swiping"
   @mouseenter="stopAutoPlay()" 
   @mouseleave="startAutoPlay()"
 >
   <swiper v-cloak ref="mySwiper" :options="swiperOptions" @slideChangeTransitionEnd="slideChangeTransitionEnd">
     
-      
-        
-        
-          
-          <swiper-slide>
-            <div class="item" style="background-image: url('https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1602567241439&amp;di=5f54f3dce1b9e200721325e2ef4019c3&amp;imgtype=0&amp;src=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D1484500186%2C1503043093%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1280%26h%3D853'); background-size: 90000px; 
-            background-position: center center;">
-              <div class="flag">
-                <div class="img-mask" style="height: 100%;background-image: url('https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1602567241439&amp;di=5f54f3dce1b9e200721325e2ef4019c3&amp;imgtype=0&amp;src=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D1484500186%2C1503043093%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1280%26h%3D853'); background-size: cover; 
-                  background-position: center center;"></div>
-                <!-- <img class="homeSwiper img-mask" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1602567241439&amp;di=5f54f3dce1b9e200721325e2ef4019c3&amp;imgtype=0&amp;src=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D1484500186%2C1503043093%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1280%26h%3D853" alt="Hello World2" style="width: 100%;background-size: cover; 
-                background-position: center center;"> -->
-                <div class="flag-text">
-                  <div>
-                    <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">Hello World2</div>
-                    <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
-                  </div>
-                  <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="/2020/10/14/hello-world2/" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
-                </div>
-              </div>
-            </div>
-
-          </swiper-slide>
-        
       
         
         
@@ -371,9 +347,9 @@
           </swiper-slide>
         
       
-    <div class="swiper-pagination" slot="pagination" style=""></div>
-    <div class="swiper-button-prev swiper-button-white" slot="button-prev" style=""></div>
-    <div class="swiper-button-next swiper-button-white" slot="button-next" style=""></div>
+    <div class="swiper-pagination" slot="pagination" style="display: none;"></div>
+    <div class="swiper-button-prev swiper-button-white" slot="button-prev" style="display: none;"></div>
+    <div class="swiper-button-next swiper-button-white" slot="button-next" style="display: none;"></div>
     
   </swiper>
 </div>
@@ -620,8 +596,6 @@
 		
 			
 		
-			
-		
 	</div>
 </div>
 
@@ -631,51 +605,6 @@
 <section class="posts">
   
     <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2020-10-14</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2020/10/14/hello-world2/">Hello World2</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              
-            </div>
-            <div class="post-categories">
-              
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2020/10/14/hello-world2/" style="background: url('/medias/9.png');background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2020/10/14/hello-world2/">
-            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2020/10/14/hello-world2/" style="background: url('/medias/9.png');background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-  
-    <article class="post" data-aos="fade-up" style="">
       <div class="post-main">
         <div class="post-info">
           <div class="post-time">
@@ -707,7 +636,7 @@
         </div>
         <div class="post-more">
           <a href="/2020/10/14/hello-world/">
-            <i class="iconfont iconmore" style="" title="阅读更多"></i>
+            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
           </a>
         </div>
       </div>
