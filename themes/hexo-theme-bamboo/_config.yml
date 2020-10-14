@@ -7,7 +7,7 @@ menu:
   About: /about
   link: /friends
 # github账号
-Github: https://github.com/yuang01/hexo-theme-bamboo
+Github: https://github.com/zhuangzi200323
 
 # 网站logo
 logo: /medias/logo.png
@@ -221,7 +221,7 @@ books:
 
 #版权信息  coryRyght
 copyright:
-  on: true
+  on: false
 
 # 文章置顶
 topArticle:
