@@ -5,7 +5,7 @@ menu:
   Tags: /tags
   Categories: /categories
   About: /about
-  link: /friends
+#  link: /friends
 # github账号
 Github: https://github.com/zhuangzi200323
 
@@ -127,7 +127,7 @@ toc:
 # 音乐
 # 是否在首页显示音乐.
 music:
-  on: true
+  on: false
   autoHide: true    # hide automaticaly
   server: netease   #require	music platform: netease, tencent, kugou, xiami, baidu
   type: playlist    #require song, playlist, album, search, artist
@@ -145,42 +145,57 @@ music:
 # 关于我
 baseInfo:
   on: true
-  age: 99 # 年龄
+  age: 37 # 年龄
   sex: '男' # 性别
-  coordinate: '火星' # 坐标
-  status: '划水中' # 状态
+  coordinate: '杭州' # 坐标
+  status: '火力全开' # 状态
 
 # 关于我 技能
 skills:  # color or #000 技能
   on: true
   data:
-    HTML5:
-      background: 'linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)'
-      percent: 90%
-    JavaScript:
-      background: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)'
-      percent: 85%
-    Node.js:
-      background: 'linear-gradient(to right, #43e97b 0%, #38f9d7 100%)'
-      percent: 50%
-    CSS:
-      background: 'linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%)'
-      percent: 70%
-    Vue:
+    Android:
       background: 'linear-gradient(to top, #0ba360 0%, #3cba92 100%)'
       percent: 90%
-    uni-app:
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-      percent: 75%
-    jquery: 
-      background: 'linear-gradient( 135deg, #97ABFF 10%, #123597 100%)'
-      percent: 70%
-    H5: 
-      background: 'linear-gradient(to top, #00c6fb 0%, #005bea 100%)'
-      percent: 75%
+    Java:
+      background: 'linear-gradient(to right, #43e97b 0%, #38f9d7 100%)'
+      percent: 85%
     APP:  
       background: 'linear-gradient( 135deg, #69FF97 10%, #00E4FF 100%)'
       percent: 75%
+    HTML5:
+      background: 'linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)'
+      percent: 80%
+    JavaScript:
+      background: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)'
+      percent: 75%
+    jquery: 
+      background: 'linear-gradient( 135deg, #97ABFF 10%, #123597 100%)'
+      percent: 50%
+    Node.js:
+      background: 'linear-gradient(to right, #43e97b 0%, #38f9d7 100%)'
+      percent: 30%
+    CSS:
+      background: 'linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%)'
+      percent: 70%
+    C/C++:
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+      percent: 75%
+    Flutter:
+      background: 'linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%)'
+      percent: 50%
+    WPF:
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+      percent: 65%
+    Python: 
+      background: 'linear-gradient( 135deg, #97ABFF 10%, #123597 100%)'
+      percent: 40%
+    ROS: 
+      background: 'linear-gradient(to top, #00c6fb 0%, #005bea 100%)'
+      percent: 30%
+    Spring:  
+      background: 'linear-gradient( 135deg, #69FF97 10%, #00E4FF 100%)'
+      percent: 55%
 
 # 关于我 社交账号
 socialAccounts: 
@@ -189,11 +204,15 @@ socialAccounts:
     QQ:
       icon: fa fa-qq
       name: 20075633
-      url: 'http://www.baidu.com'
-    微信:
+      url: ''
+    QQ邮箱:
       icon: fa fa-weixin
-      name: 1730241541
-      url: 'http://www.baidu.com'
+      name: 20075633@qq.com
+      url: 'mailto:20075633@qq.com'
+    163邮箱:
+      icon: fa fa-weixin
+      name: zhuangzi200323@163.com
+      url: 'mailto:zhuangzi200323@163.com'
 
 # 关于我 游戏
 games:
