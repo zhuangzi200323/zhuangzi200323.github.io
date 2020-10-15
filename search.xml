@@ -29,6 +29,33 @@
     
     
     <entry>
+      <title>turtlebot3 gazebo仿真-基于ros melodic</title>
+      <link href="2020/05/22/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/"/>
+      <url>2020/05/22/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/</url>
+      
+        <content type="html"><![CDATA[<h2 id="turtlebot3-gazebo仿真-基于ros-melodic"><a href="#turtlebot3-gazebo仿真-基于ros-melodic" class="headerlink" title="turtlebot3 gazebo仿真-基于ros melodic"></a>turtlebot3 gazebo仿真-基于ros melodic</h2><h3 id="turtlebot3-gazebo仿真"><a href="#turtlebot3-gazebo仿真" class="headerlink" title="turtlebot3 gazebo仿真"></a>turtlebot3 gazebo仿真</h3><p><strong>依赖基础</strong></p><ul><li><p>ros<br>gazebo等，安装见<a href="https://blog.csdn.net/weixin_41469272/article/details/105289174">https://blog.csdn.net/weixin_41469272/article/details/105289174</a></p></li><li><p>turtlebot3系列包</p><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> ros-melodic-turtlebot3\*</code></pre></li><li><p>slam(这里使用gmapping)</p><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> ros-melodic-gmapping</code></pre></li><li><p>navigation</p><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> ros-melodic-navigation</code></pre></li></ul><h2 id="一、turtlrbot3-给定目标点，未知地图，自主定位建图及局部规划"><a href="#一、turtlrbot3-给定目标点，未知地图，自主定位建图及局部规划" class="headerlink" title="一、turtlrbot3 给定目标点，未知地图，自主定位建图及局部规划"></a>一、turtlrbot3 给定目标点，未知地图，自主定位建图及局部规划</h2><h3 id="1-启动ros-master"><a href="#1-启动ros-master" class="headerlink" title="1. 启动ros master"></a>1. 启动ros master</h3><pre class=" language-bash"><code class="language-bash">roscore</code></pre><p>注意：打开新终端，运行turtlebot3相关包时，终端都需指定bot类型：即打开终端需执行：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">export</span> TURTLEBOT3_MODEL<span class="token operator">=</span>burger</code></pre><h3 id="2-启动turtlebot3-gazebo仿真环境"><a href="#2-启动turtlebot3-gazebo仿真环境" class="headerlink" title="2. 启动turtlebot3 gazebo仿真环境"></a>2. 启动turtlebot3 gazebo仿真环境</h3><pre class=" language-bash"><code class="language-bash">roslaunch turtlebot3_gazebo turtlebot3_house.launch</code></pre><p>gazebo中显示turtlebot3及仿真环境</p><p><img src="media/fa6831b58446e2ec53931cc6155c10cb.png" alt="在这里插入图片描述"></p><h3 id="3-启动rviz显示雷达数据"><a href="#3-启动rviz显示雷达数据" class="headerlink" title="3. 启动rviz显示雷达数据"></a>3. 启动rviz显示雷达数据</h3><p>以下方式二选一，嫌麻烦选1，想了解rviz使用选2</p><p>1）直接打开写好的rviz配置文件：</p><p>roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch</p><p>2）自己配置rviz</p><p>*1. 终端输入rviz打开rviz界面</p><p>*2. 将global option 下的fixed<br>frame改成odom，因为当前map坐标没有被创建，在执行slam的时候map坐标才会被创建</p><p>*3. 点击下方add，添加laserscan ，将topic 设定为scan</p><p>此时会在界面中显示雷达点云，默认点云比较小，可以将size值改大一些，如0.05，点云数据会变大清晰。</p><p>*4.<br>点击add，添加tf，则显示出多个坐标系，点击frame，去掉除base_link与odom其余的坐标系</p><h3 id="4-打开turtlebot3的键盘控制"><a href="#4-打开turtlebot3的键盘控制" class="headerlink" title="4. 打开turtlebot3的键盘控制"></a>4. 打开turtlebot3的键盘控制</h3><p>roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch</p><p>按waxd等按键，观察rviz中base_link的移动是否一致。</p><h3 id="5-运行gmapping"><a href="#5-运行gmapping" class="headerlink" title="5. 运行gmapping"></a>5. 运行gmapping</h3><p>rosrun gmapping slam_gmapping</p><h3 id="6-rviz下add-map，topic选择-map，rviz显示slam创建地图"><a href="#6-rviz下add-map，topic选择-map，rviz显示slam创建地图" class="headerlink" title="6. rviz下add map，topic选择/map，rviz显示slam创建地图"></a>6. rviz下add map，topic选择/map，rviz显示slam创建地图</h3><p><img src="media/d4522f7f0e6d7572a54229186d4ef6f5.png" alt="在这里插入图片描述"></p><h3 id="7-在打开的按键控制终端下，按waxd等按键，观察slam的创建地图的变换"><a href="#7-在打开的按键控制终端下，按waxd等按键，观察slam的创建地图的变换" class="headerlink" title="7.  在打开的按键控制终端下，按waxd等按键，观察slam的创建地图的变换"></a>7.  在打开的按键控制终端下，按waxd等按键，观察slam的创建地图的变换</h3><h3 id="8-关闭turtlebot3的键盘控制"><a href="#8-关闭turtlebot3的键盘控制" class="headerlink" title="8.  关闭turtlebot3的键盘控制"></a>8.  关闭turtlebot3的键盘控制</h3><h3 id="9-打开move-base"><a href="#9-打开move-base" class="headerlink" title="9.  打开move_base"></a>9.  打开move_base</h3><pre class=" language-bash"><code class="language-bash">roslaunch turtlebot3_navigation move_base.launch</code></pre><h3 id="10-rviz中add-path，topic选择-global-path"><a href="#10-rviz中add-path，topic选择-global-path" class="headerlink" title="10.  rviz中add path，topic选择 global path"></a>10.  rviz中add path，topic选择 global path</h3><h3 id="11-点击2d-nav-goal，在rviz显示的地图上，用鼠标点击选择一个目标点，机器人自行规划路径运行至目标点"><a href="#11-点击2d-nav-goal，在rviz显示的地图上，用鼠标点击选择一个目标点，机器人自行规划路径运行至目标点" class="headerlink" title="11.  点击2d nav_goal，在rviz显示的地图上，用鼠标点击选择一个目标点，机器人自行规划路径运行至目标点"></a>11.  点击2d nav_goal，在rviz显示的地图上，用鼠标点击选择一个目标点，机器人自行规划路径运行至目标点</h3><h3 id="12-最后可以把新配置的rviz保存，这样下次不用再挨个add-topic"><a href="#12-最后可以把新配置的rviz保存，这样下次不用再挨个add-topic" class="headerlink" title="12.  最后可以把新配置的rviz保存，这样下次不用再挨个add topic"></a>12.  最后可以把新配置的rviz保存，这样下次不用再挨个add topic</h3><p><img src="media/671979538d2804e0cdcfec2a7ee74555.png" alt="在这里插入图片描述"></p><h2 id="二、-创建地图并保存，根据已知地图导航，全局规划"><a href="#二、-创建地图并保存，根据已知地图导航，全局规划" class="headerlink" title="二、 创建地图并保存，根据已知地图导航，全局规划"></a>二、 创建地图并保存，根据已知地图导航，全局规划</h2><p><strong>slam建图并保存</strong></p><p>首先打开ros master：</p><pre class=" language-bash"><code class="language-bash">roscore</code></pre><p>注意：打开新终端，运行turtlebot3相关包时，终端都需指定bot类型：即打开终端需执行：</p><p>export TURTLEBOT3_MODEL=burger</p><h3 id="1-启动turtlebot3-gazebo仿真环境"><a href="#1-启动turtlebot3-gazebo仿真环境" class="headerlink" title="1.  启动turtlebot3 gazebo仿真环境"></a>1.  启动turtlebot3 gazebo仿真环境</h3><pre class=" language-bash"><code class="language-bash">roslaunch turtlebot3_gazebo turtlebot3_house.launch</code></pre><h3 id="2-打开新终端，启动slam"><a href="#2-打开新终端，启动slam" class="headerlink" title="2.  打开新终端，启动slam"></a>2.  打开新终端，启动slam</h3><pre class=" language-bash"><code class="language-bash">roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:<span class="token operator">=</span>gmapping</code></pre><h3 id="3-新终端，启动键盘控制程序"><a href="#3-新终端，启动键盘控制程序" class="headerlink" title="3.  新终端，启动键盘控制程序"></a>3.  新终端，启动键盘控制程序</h3><pre class=" language-bash"><code class="language-bash">roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch</code></pre><h3 id="4-利用按键aw等移动机器人，使地图完整，保存地图到主-目录下"><a href="#4-利用按键aw等移动机器人，使地图完整，保存地图到主-目录下" class="headerlink" title="4.  利用按键aw等移动机器人，使地图完整，保存地图到主~目录下"></a>4.  利用按键aw等移动机器人，使地图完整，保存地图到主~目录下</h3><pre class=" language-bash"><code class="language-bash">rosrun map_server map_saver -f \~/map</code></pre><h3 id="5-关闭turtlebot3-teleop，在turtlebot3-teleop运行终端下，ctrl-c就行"><a href="#5-关闭turtlebot3-teleop，在turtlebot3-teleop运行终端下，ctrl-c就行" class="headerlink" title="5.  关闭turtlebot3_teleop，在turtlebot3_teleop运行终端下，ctrl+c就行"></a>5.  关闭turtlebot3_teleop，在turtlebot3_teleop运行终端下，ctrl+c就行</h3><h3 id="6-运行turtlebot3-navigation"><a href="#6-运行turtlebot3-navigation" class="headerlink" title="6.  运行turtlebot3_navigation"></a>6.  运行turtlebot3_navigation</h3><pre class=" language-bash"><code class="language-bash">roslaunch turtlebot3_navigation turtlebot3_navigation.launchmap_file:<span class="token operator">=</span>\<span class="token variable">$HOME</span>/map.yaml</code></pre><p><strong>参考连接</strong></p><p><a href="https://www.ncnynl.com/archives/201707/1787.html">https://www.ncnynl.com/archives/201707/1787.html</a></p><p><strong>转自</strong><br><a href="https://blog.csdn.net/weixin_41469272/article/details/106139306">https://blog.csdn.net/weixin_41469272/article/details/106139306</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ROS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> turtlebot3 </tag>
+            
+            <tag> gazebo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ROS遇到的问题</title>
       <link href="2020/03/02/ros-yu-dao-de-wen-ti/"/>
       <url>2020/03/02/ros-yu-dao-de-wen-ti/</url>
@@ -42,6 +69,150 @@
           
       </categories>
       
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Tomcat部署Web应用时出现One or more listeners failed to start异常</title>
+      <link href="2019/06/02/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/"/>
+      <url>2019/06/02/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Tomcat部署Web应用时出现One-or-more-listeners-failed-to-start异常"><a href="#Tomcat部署Web应用时出现One-or-more-listeners-failed-to-start异常" class="headerlink" title="Tomcat部署Web应用时出现One or more listeners failed to start异常"></a>Tomcat部署Web应用时出现One or more listeners failed to start异常</h2><p>Tomcat启动成功，然后在部署应用的时候产生了如下的异常：</p><pre class=" language-bash"><code class="language-bash">08-Jul-2017 21:45:26.064 严重 <span class="token punctuation">[</span>RMI TCP Connection<span class="token punctuation">(</span>3<span class="token punctuation">)</span>-127.0.0.1<span class="token punctuation">]</span>org.apache.catalina.core.StandardContext.startInternal One or <span class="token function">more</span> listenersfailed to start. Full details will be found <span class="token keyword">in</span> the appropriate container log<span class="token function">file</span>08-Jul-2017 21:45:26.066 严重 <span class="token punctuation">[</span>RMI TCP Connection<span class="token punctuation">(</span>3<span class="token punctuation">)</span>-127.0.0.1<span class="token punctuation">]</span>org.apache.catalina.core.StandardContext.startInternal Context <span class="token punctuation">[</span><span class="token punctuation">]</span> startup faileddue to previous errors</code></pre><p>从错误中看到是因为有listener启动失败，查看了日志发现报了这个错误：</p><pre class=" language-bash"><code class="language-bash">org.apache.catalina.core.StandardContext.listenerStart Error configuringapplication listener of class<span class="token punctuation">[</span>org.springframework.web.context.ContextLoaderListener<span class="token punctuation">]</span>java.lang.ClassNotFoundException:org.springframework.web.context.ContextLoaderListeneratorg.apache.catalina.loader.WebappClassLoaderBase.loadClass<span class="token punctuation">(</span>WebappClassLoaderBase.java:1285<span class="token punctuation">)</span>atorg.apache.catalina.loader.WebappClassLoaderBase.loadClass<span class="token punctuation">(</span>WebappClassLoaderBase.java:1119<span class="token punctuation">)</span>…</code></pre><p>提示org.springframework.web.context.ContextLoaderListener这个类找不到。jar包已经导入到工程中了，编译器也可以识别出这个类，不应该出现这样的问题啊，很懵逼啊。</p><p><strong>解决方法</strong></p><p>功夫不负有心人啊，前人栽树后人乘凉，经过搜索终于发现了一篇能解决这个问题的文章：原文链接。</p><p>衷心的感谢一下该文章的作者。接下来是操作过程：</p><p>Ctrl+Alt+Shift+S弹出Project Structure窗口，在Output Layout标签中找到Available<br>Elements，鼠标右击下面的元素：</p><p><img src="media/d5bacb8f1559eb0a1180564a4aad1205.jpeg"></p><p>点击Put into Output<br>Root，执行后，在WEB-INF会增加lib目录，里面是项目引用的jar包，点击OK。再次部署应用就能成功运行了。</p><p><img src="media/36bbacce598e79cbdfa49262eafad3f1.jpeg"></p><p>原文：<a href="https://blog.csdn.net/cflys/article/details/74853402">https://blog.csdn.net/cflys/article/details/74853402</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tomcat </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mybatis-generator-maven-plugin出错解决办法</title>
+      <link href="2019/06/02/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/"/>
+      <url>2019/06/02/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/</url>
+      
+        <content type="html"><![CDATA[<h2 id="mybatis-generator-maven-plugin出错解决办法"><a href="#mybatis-generator-maven-plugin出错解决办法" class="headerlink" title="mybatis-generator-maven-plugin出错解决办法"></a>mybatis-generator-maven-plugin出错解决办法</h2><p>错误截图：</p><p><img src="media/45207bc398bed2a9f2d948c65f164bd1.jpeg"></p><p>解决办法</p><p><img src="media/3cffb1f4133ac0947b9dd5f6d39a755b.jpeg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MyBatis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>spring软件环境搭建</title>
+      <link href="2019/06/02/spring-ruan-jian-huan-jing-da-jian/"/>
+      <url>2019/06/02/spring-ruan-jian-huan-jing-da-jian/</url>
+      
+        <content type="html"><![CDATA[<h2 id="spring软件环境搭建"><a href="#spring软件环境搭建" class="headerlink" title="spring软件环境搭建"></a>spring软件环境搭建</h2><p><strong>软件环境：</strong></p><p>IntelliJ IDEA 2018.2.5 (Ultimate Edition)</p><p>JDK 1.8</p><p>Tomcat 8.0.53</p><h3 id="1、-选择File–-gt-New–-gt-Project"><a href="#1、-选择File–-gt-New–-gt-Project" class="headerlink" title="1、 选择File–&gt;New–&gt;Project"></a>1、 选择File–&gt;New–&gt;Project</h3><p><img src="media/ed30aedfd26c819e62e6a3995eb4c3f3.jpeg"></p><h3 id="2、-输入项目名称"><a href="#2、-输入项目名称" class="headerlink" title="2、 输入项目名称"></a>2、 输入项目名称</h3><p><img src="media/93acddbadb79dc89d36b2e8de2cd820f.jpeg"></p><h3 id="3、-点击Finish会弹出下载jar的对话框"><a href="#3、-点击Finish会弹出下载jar的对话框" class="headerlink" title="3、 点击Finish会弹出下载jar的对话框"></a>3、 点击Finish会弹出下载jar的对话框</h3><p><img src="media/6eb9fcffd0f330dfcb9d4c3d9ca55300.jpeg"></p><h3 id="4、-修改web-xml如下"><a href="#4、-修改web-xml如下" class="headerlink" title="4、 修改web.xml如下"></a>4、 修改web.xml如下</h3><p><img src="media/15ecb583f486d585794d968424ed3786.jpeg"></p><h3 id="5、-配置xxx-servlet-xml文件"><a href="#5、-配置xxx-servlet-xml文件" class="headerlink" title="5、 配置xxx-servlet.xml文件"></a>5、 配置xxx-servlet.xml文件</h3><p><img src="media/d6e13338c021f2dd9b13e02e07e97268.jpeg"></p><h3 id="6、-添加helloWorld-jsp文件"><a href="#6、-添加helloWorld-jsp文件" class="headerlink" title="6、 添加helloWorld.jsp文件"></a>6、 添加helloWorld.jsp文件</h3><p><img src="media/9a3399f5a50c90f53b267cf663c0d134.jpeg"></p><h3 id="7、-编译Controller"><a href="#7、-编译Controller" class="headerlink" title="7、 编译Controller"></a>7、 编译Controller</h3><p><img src="media/dafc90522d1e0ba0318b75f6fe272752.jpeg"></p><h3 id="8、-部署项目"><a href="#8、-部署项目" class="headerlink" title="8、 部署项目"></a>8、 部署项目</h3><p><img src="media/478b083d16b9a6e660b3ad06eb79b08b.jpeg"></p><p><img src="media/9b291dde4ad6b9a0b8df51fe0902fa30.jpeg"></p><p><img src="media/838c370bb5d4c4d43191bd2f7ef0aa3b.jpeg"></p><p><img src="media/8bbc5f3b2023b66f3c932889d3f1bb88.jpeg"></p><p><img src="media/b6b8908d9f8a6f069bef7fe054fcfd1d.jpeg"></p><h3 id="9、-运行项目"><a href="#9、-运行项目" class="headerlink" title="9、 运行项目"></a>9、 运行项目</h3><p><img src="media/35e91f220631993a92bad0a1a8552885.jpeg"></p><p>运行时出现如下错误</p><p><img src="media/516a03873a89a02462679ea39d6d2242.jpeg"></p><p>修正相关错误</p><p><img src="media/f1ccd0592806bc73b798e6e254b0fd14.jpeg"></p><p><img src="media/f28690c49ee6f905a48b0f08d273c347.jpeg"></p><p><img src="media/302c2f3d2f24e00e9c0500b669ce07f1.jpeg"></p><h3 id="10、-再次运行项目，出现下方页面，则创建项目完成"><a href="#10、-再次运行项目，出现下方页面，则创建项目完成" class="headerlink" title="10、  再次运行项目，出现下方页面，则创建项目完成"></a>10、  再次运行项目，出现下方页面，则创建项目完成</h3><p><img src="media/fa786fd9a6c9d1b371f08dd3f80c1f21.jpeg"></p><h3 id="11、-为了后续开发避免遇到莫名其妙的问题，请做如下设置：在web-WEB-INF-下增加两个文件夹，分别是classes与lib。"><a href="#11、-为了后续开发避免遇到莫名其妙的问题，请做如下设置：在web-WEB-INF-下增加两个文件夹，分别是classes与lib。" class="headerlink" title="11、  为了后续开发避免遇到莫名其妙的问题，请做如下设置：在web\WEB-INF\下增加两个文件夹，分别是classes与lib。"></a>11、  为了后续开发避免遇到莫名其妙的问题，请做如下设置：在web\WEB-INF\下增加两个文件夹，分别是classes与lib。</h3><p><img src="media/1bbee41e058ce8365205f9a1899515b2.png"></p><h3 id="12、-将项目中的lib下所有jar拷贝到web-WEB-INF-lib下"><a href="#12、-将项目中的lib下所有jar拷贝到web-WEB-INF-lib下" class="headerlink" title="12、 将项目中的lib下所有jar拷贝到web\WEB-INF\lib下"></a>12、 将项目中的lib下所有jar拷贝到web\WEB-INF\lib下</h3><h3 id="13、-将web-WEB-INF-classes设置输出目录，如下图所示："><a href="#13、-将web-WEB-INF-classes设置输出目录，如下图所示：" class="headerlink" title="13、 将web\WEB-INF\classes设置输出目录，如下图所示："></a>13、 将web\WEB-INF\classes设置输出目录，如下图所示：</h3><p><img src="media/04eefa5b73a7900829b517a801e3e2c0.jpeg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IntelliJ IDEA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Tomcat 8安装后配置</title>
+      <link href="2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/"/>
+      <url>2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Tomcat-8安装后配置"><a href="#Tomcat-8安装后配置" class="headerlink" title="Tomcat 8安装后配置"></a>Tomcat 8安装后配置</h2><p>Tomcat 8安装完成，做如下配置后可使用下图红框中的功能</p><p><img src="media/321a5e542c6cb67ff587ace737bb781d.jpeg"></p><h3 id="1-打开conf-tomcat-users-xml文件，加入"><a href="#1-打开conf-tomcat-users-xml文件，加入" class="headerlink" title="1. 打开conf\tomcat-users.xml文件，加入"></a>1. 打开conf\tomcat-users.xml文件，加入</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-gui"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-script"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-jmx"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-status"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-script"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"admin-gui"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"admin-script"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>user username<span class="token operator">=</span><span class="token string">"admin"</span> password<span class="token operator">=</span><span class="token string">"123456"</span>roles<span class="token operator">=</span><span class="token string">"manager-gui,manager-script,manager-status,admin-gui"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>user username<span class="token operator">=</span><span class="token string">"root"</span> password<span class="token operator">=</span><span class="token string">"123456"</span>roles<span class="token operator">=</span><span class="token string">"manager-script,manager-jmx,admin-script"</span>/<span class="token operator">></span></code></pre><p><img src="media/46095471e76dccab7b2b1426d067b9d1.jpeg"></p><h3 id="2-在conf-Catalina-localhost下新增manager-xml文件，内容如下："><a href="#2-在conf-Catalina-localhost下新增manager-xml文件，内容如下：" class="headerlink" title="2. 在conf\Catalina\localhost下新增manager.xml文件，内容如下："></a>2. 在conf\Catalina\localhost下新增manager.xml文件，内容如下：</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>Context privileged<span class="token operator">=</span><span class="token string">"true"</span> antiResourceLocking<span class="token operator">=</span><span class="token string">"false"</span>      docBase<span class="token operator">=</span><span class="token string">"$&amp;#123;catalina.home&amp;#125;/webapps/manager"</span><span class="token operator">></span><span class="token operator">&lt;</span>Valve className<span class="token operator">=</span><span class="token string">"org.apache.catalina.valves.RemoteAddrValve"</span> allow<span class="token operator">=</span><span class="token string">"^.*$"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>/Context<span class="token operator">></span></code></pre><p><img src="media/2a3f8e9509750e52be858927ac956dfe.jpeg"></p><p>安成上述两步后，红框中功能就可以访问了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tomcat </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>提示Unknown system variable &#39;query_cache_size&#39;</title>
+      <link href="2019/06/02/ti-shi-unknown-system-variable-query-cache-size/"/>
+      <url>2019/06/02/ti-shi-unknown-system-variable-query-cache-size/</url>
+      
+        <content type="html"><![CDATA[<h2 id="title-提示Unknown-system-variable-‘query-cache-size’"><a href="#title-提示Unknown-system-variable-‘query-cache-size’" class="headerlink" title="title: 提示Unknown system variable ‘query_cache_size’"></a>title: 提示Unknown system variable ‘query_cache_size’</h2><p>提示这个错误：Unknown system variable ‘query_cache_size’</p><p>原因：使用mysql-connector-java的版本与mysql版本不兼容</p><p>解决办法是升级mysql-connector-java版本或降级mysql版本</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>安装mysql8.0.13教程</title>
+      <link href="2019/06/02/an-zhuang-mysql8.0.13-jiao-cheng/"/>
+      <url>2019/06/02/an-zhuang-mysql8.0.13-jiao-cheng/</url>
+      
+        <content type="html"><![CDATA[<h2 id="安装mysql8-0-13教程"><a href="#安装mysql8-0-13教程" class="headerlink" title="安装mysql8.0.13教程"></a>安装mysql8.0.13教程</h2><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h3><p><a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p><p><img src="media/6a6e692c26ad90557f4e555b6cd18784.jpeg"></p><h3 id="2-解压到指定目录"><a href="#2-解压到指定目录" class="headerlink" title="2. 解压到指定目录"></a>2. 解压到指定目录</h3><p><img src="media/bf9d791d234c3fbd3c285cbf509bc8b6.jpeg"></p><h3 id="3-在D-mysql-8-0-13-winx64目录下添加my-ini文件"><a href="#3-在D-mysql-8-0-13-winx64目录下添加my-ini文件" class="headerlink" title="3. 在D:\mysql-8.0.13-winx64目录下添加my.ini文件"></a>3. 在D:\mysql-8.0.13-winx64目录下添加my.ini文件</h3><p>[mysql]</p><p># 设置mysql客户端默认字符集</p><pre class=" language-bash"><code class="language-bash">default-character-set<span class="token operator">=</span>utf8</code></pre><p>[mysqld]</p><p># 设置3306端口</p><pre class=" language-bash"><code class="language-bash">port <span class="token operator">=</span> 3306</code></pre><p># 设置mysql的安装目录</p><pre class=" language-bash"><code class="language-bash">basedir<span class="token operator">=</span>D:\\\\mysql-8.0.13-winx64</code></pre><p># 设置 mysql数据库的数据的存放目录，MySQL 8+<br>不需要以下配置，系统自己生成即可，否则有可能报错</p><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># datadir=C:\\\\web\\\\sqldata</span></code></pre><p># 允许最大连接数</p><pre class=" language-bash"><code class="language-bash">max_connections<span class="token operator">=</span>20</code></pre><p># 服务端使用的字符集默认为8比特编码的latin1字符集</p><pre class=" language-bash"><code class="language-bash">character-set-server<span class="token operator">=</span>utf8</code></pre><p># 创建新表时将使用的默认存储引擎</p><pre class=" language-bash"><code class="language-bash">default-storage-engine<span class="token operator">=</span>INNODB</code></pre><h3 id="4-添加环境变量"><a href="#4-添加环境变量" class="headerlink" title="4. 添加环境变量"></a>4. 添加环境变量</h3><p><img src="media/e5c325b33c12a8cd40bb2402a0645235.jpeg"></p><h3 id="5-安装mysql"><a href="#5-安装mysql" class="headerlink" title="5. 安装mysql"></a>5. 安装mysql</h3><p><strong>mysqld –initialize –console</strong></p><p><img src="media/4724c156dbb920f958697f996f209bfb.png"></p><p>注意！[注意] [MY-010454] [服务器]为root @<br>localhost生成临时密码：9P0gYk-？0，kT其中root @<br>localhost：后面的9P0gYk-？0，kT就是初始密码（不含首位空格）。在没有更改密码前，需要记住这个密码，后续登录需要用到。复制密码先保存起来!!!</p><h3 id="6-安装mysql服务及启动mysql服务"><a href="#6-安装mysql服务及启动mysql服务" class="headerlink" title="6. 安装mysql服务及启动mysql服务"></a>6. 安装mysql服务及启动mysql服务</h3><p><img src="media/7977ad0c14cec5ad2475f19c1de5fa72.jpeg"></p><h3 id="7-修改密码"><a href="#7-修改密码" class="headerlink" title="7. 修改密码"></a>7. 修改密码</h3><p><img src="media/7b61820855d32ed0a63a68db37a3e016.jpeg"></p><h3 id="8-使用navicat连接时提示如下错误解决办法"><a href="#8-使用navicat连接时提示如下错误解决办法" class="headerlink" title="8. 使用navicat连接时提示如下错误解决办法"></a>8. 使用navicat连接时提示如下错误解决办法</h3><p><img src="media/1e58ecf5c299258833a7936dfb2c073e.jpeg"></p><p><img src="media/409504c90f97dde0081b03c62da6c09e.jpeg"></p><p>转自：<a href="http://www.runoob.com/mysql/mysql-install.html">http://www.runoob.com/mysql/mysql-install.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySql </tag>
+            
+        </tags>
       
     </entry>
     
