@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>史上最著名的10个思想实验 | 熊孩子</title>
+  
+    
+<link rel="stylesheet" href="/js/aos/aos.css">
+
+  
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="熊孩子" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  
+<script src="/js/jquery3.5.1.js"></script>
+
+  
+<script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <header class="header bg-color" 
+  style="position: fixed; 
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <i class="fa fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+  </div>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo" src="/medias/logo.png" alt="logo">
+      <h3 class="drawer-box-head_title">熊孩子</h3>
+      <h5 class="drawer-box-head_desc">一个在学习路上的程序猿，一个在探索路上的攻城狮，一个在求知路上的码农……</h5>
+    </div>
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          <li class="drawer-box-content_item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+        <li class="drawer-box-content_item">
+          <a href="">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <span>Github</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+    </div>
+    <div class="blog-title" id="author-avatar">
+      <div class="avatar">
+        <img src="/medias/logo.png" alt="logo">
+      </div>
+      <a href="/" class="logo">熊孩子</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          <li class="menu-item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-archive" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+      </ul>
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fa fa-search" aria-hidden="true"></i></div>
+  <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+    <div class="message-box">
+      <h2>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <span class="title">搜索</span>
+      </h2>
+      <form class="site-search-form">
+        <input type="text"
+          placeholder="请输入关键字"
+          id="local-search-input" 
+          @click="getSearchFile()"
+          class="st-search-input"
+          v-model="searchInput"
+        />
+      </form>
+      <div class="result-wrapper">
+        <div id="local-search-result" class="local-search-result-cls"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/local_search.js"></script>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile();
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+    </nav>
+  </div>
+  
+  <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</header>
+    <main class="main" style="margin-top: 60px;">
+      
+
+
+<div class="post-detail-header" style="background: url(/medias/5.jpg) no-repeat; background-size: cover; 
+  background-position: center center;">
+  
+    <span class="title">史上最著名的10个思想实验</span>
+  
+</div>
+<div class="row justify-center">
+  <div class="main-content">
+    <article class="post post-detail">
+      
+      
+      <div class="post-meta">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <span class="post-time">2011-12-22</span>
+      </div>
+      
+      <div class="post-tags-categories">
+        
+        
+        <div class="categories">
+          <i class="iconfont iconbookmark1"></i>
+          
+            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="">
+              生活
+            </a>
+          
+        </div>
+        
+      </div>
+      <div class="post-content">
+        <p>思想实验是一种精神上的观念或假想，通常和谜语相似，是哲学家和科学家用以了解什么是大众思想的一种简单方法。他们的运用在如哲学和理论物理（理论物理无需做实验）等抽象领域是最为广泛的。他们像是为思想准备的一份大餐，最终给出复杂的答案。即使思想实验本身也会有无法理解的时候，这并不奇怪。下面是10个著名的思想实验，还有他们所要表达的哲学、科学和伦理意义。</p>
+<h2 id="10．电车难题（The-Trolley-Problem）"><a href="#10．电车难题（The-Trolley-Problem）" class="headerlink" title="10．电车难题（The Trolley Problem）"></a>10．电车难题（The Trolley Problem）</h2><p>“电车难题”是伦理学领域最为知名的思想实验之一，其内容大致是：一个疯子把五个无辜的人绑在电车轨道上。一辆失控的电车朝他们驶来，并且片刻后就要碾压到他们。幸运的是，你可以拉一个拉杆，让电车开到另一条轨道上。但是还有一个问题，那个疯子在那另一条轨道上也绑了一个人。考虑以上状况，你应该拉拉杆吗？</p>
+<p>解读：<br>电车难题最早是由哲学家Philippa Foot提出的，用来批判伦理哲学中的主要理论，特别是功利主义。功利主义提出的观点是，大部分道德决策都是根据“为最多的人提供最大的利益”的原则做出的。从一个功利主义者的观点来看，明显的选择应该是拉拉杆，拯救五个人只杀死一个人。但是功利主义的批判者认为，一旦拉了拉杆，你就成为一个不道德行为的同谋——你要为另一条轨道上单独的一个人的死负部分责任。然而，其他人认为，你身处这种状况下就要求你要有所作为，你的不作为将会是同等的不道德。总之，不存在完全的道德行为，这就是重点所在。许多哲学家都用电车难题作为例子来表示现实生活中的状况经常强迫一个人违背他自己的道德准则，并且还存在着没有完全道德做法的情况。</p>
+<h2 id="9．空地上的奶牛（The-Cow-in-the-field）"><a href="#9．空地上的奶牛（The-Cow-in-the-field）" class="headerlink" title="9．空地上的奶牛（The Cow in the field）"></a>9．空地上的奶牛（The Cow in the field）</h2><p>认知论领域的一个最重要的思想实验就是“空地上的奶牛”。它描述的是，一个农民担心自己的获奖的奶牛走丢了。这时送奶工到了农场，他告诉农民不要担心，因为他看到那头奶牛在附件的一块空地上。虽然农民很相信送奶工，但他还是亲自看了看，他看到了熟悉的黑白相间的形状并感到很满意。过了一会，送奶工到那块空地上再次确认。那头奶牛确实在那，但它躲在树林里，而且空地上还有一大张黑白相间的纸缠在树上，很明显，农民把这张纸错当成自己的奶牛了。问题是出现了，虽然奶牛一直都在空地上，但农民说自己知道奶牛在空地上时是否正确？</p>
+<p>解读：<br>空地上的奶牛最初是被 Edmund Gettier用来批判主流上作为知识的定义的JTB（justified true belief）理论，即当人们相信一件事时，它就成为了知识；这件事在事实上是真的，并且人们有可以验证的理由相信它。在这个实验中，农民相信奶牛在空地上，且被送奶工的证词和他自己对于空地上的黑白相间物的观察所证实。而且经过送奶工后来的证实，这件事也是真实的。尽管如此，农民并没有真正的知道奶牛在那儿，因为他认为奶牛在那儿的推导是建立在错误的前提上的。Gettier利用这个实验和其他一些例子，解释了将知识定义为JTB的理论需要修正。</p>
+<h2 id="8．定时炸弹（The-Ticking-Time-Bomb）"><a href="#8．定时炸弹（The-Ticking-Time-Bomb）" class="headerlink" title="8．定时炸弹（The Ticking Time Bomb）"></a>8．定时炸弹（The Ticking Time Bomb）</h2><p>如果你关注近几年的政治时事，或者看过动作电影，那么你对于“定时炸弹”思想实验肯定很熟悉。它要求你想象一个炸弹或其他大规模杀伤性武器藏在你的城市中，并且爆炸的倒计时马上就到零了。在羁押中有一个知情者，他知道炸弹的埋藏点。你是否会使用酷刑来获取情报？</p>
+<p>解读：<br>与电车难题类似，定时炸弹情景也是强迫一个人从两个不道德行径中选择的伦理问题。它一般被用作对那些说在任何情况下都不能使用酷刑的反驳。它也被用作在极端形势下法律——就像美国的严禁虐囚的法律——可以被放在第二位的例子。归功于像《24小时》的电视节目和各种政治辩论，定时炸弹情景已成为最常引用的思想实验之一。今年早些时候，一份英国报纸提出了更为极端的看法。这份报纸提议说，如果那个恐怖分子对酷刑毫无反应，那么当局者是否愿意拷打他的妻子儿女来获取情报。</p>
+<h2 id="7．爱因斯坦的光线（Einstein’s-Light-Beam）"><a href="#7．爱因斯坦的光线（Einstein’s-Light-Beam）" class="headerlink" title="7．爱因斯坦的光线（Einstein’s Light Beam）"></a>7．爱因斯坦的光线（Einstein’s Light Beam）</h2><p>爱因斯坦著名的狭义相对论是受启于他16岁做的思想实验。在他的自传中，爱因斯坦回忆道他当时幻想在宇宙中追寻一道光线。他推理说，如果他能够以光速在光线旁边运动，那么他应该能够看到光线成为“在空间上不断振荡但停滞不前的电磁场”。对于爱因斯坦，这个思想实验证明了对于这个虚拟的观察者，所有的物理定律应该和一个相对于地球静止的观察者观察到的一样。</p>
+<p>解读：<br>事实上，没人确切知道这意味着什么。科学家一直都在争论一个如此简单的思想实验是如此帮助爱因斯坦完成到狭义相对论这如此巨大的飞跃的。在当时，这个实验中的想法与现在已被抛弃的“以太”理论相违背。但他经过了好多年才证明了自己是正确的。</p>
+<h2 id="6．特修斯之船（The-Ship-of-Theseus）"><a href="#6．特修斯之船（The-Ship-of-Theseus）" class="headerlink" title="6．特修斯之船（The Ship of Theseus）"></a>6．特修斯之船（The Ship of Theseus）</h2><p>最为古老的思想实验之一。最早出自普鲁塔克的记载。它描述的是一艘可以在海上航行几百年的船，归功于不间断的维修和替换部件。只要一块木板腐烂了，它就会被替换掉，以此类推，直到所有的功能部件都不是最开始的那些了。问题是，最终产生的这艘船是否还是原来的那艘特修斯之船，还是一艘完全不同的船？如果不是原来的船，那么在什么时候它不再是原来的船了？哲学家Thomas Hobbes后来对此进来了延伸，如果用特修斯之船上取下来的老部件来重新建造一艘新的船，那么两艘船中哪艘才是真正的特修斯之船？</p>
+<p>解读：<br>对于哲学家，特修斯之船被用来研究身份的本质。特别是讨论一个物体是否仅仅等于其组成部件之和。一个更现代的例子就是一个不断发展的乐队，直到某一阶段乐队成员中没有任何一个原始成员。这个问题可以应用于各个领域。对于企业，在不断并购和更换东家后仍然保持原来的名字。对于人体，人体不间断的进行着新陈代谢和自我修复。这个实验的核心思想在于强迫人们去反思身份仅仅局限在实际物体和现象中这一常识。 </p>
+<h2 id="5．伽利略的重力实验（Galileo’s-Gravity-Experiment）"><a href="#5．伽利略的重力实验（Galileo’s-Gravity-Experiment）" class="headerlink" title="5．伽利略的重力实验（Galileo’s Gravity Experiment）"></a>5．伽利略的重力实验（Galileo’s Gravity Experiment）</h2><p>为了反驳亚里士多德的自由落体速度取决于物体的质量的理论，伽利略构造了一个简单的思想实验。根据亚里士多德的说法，如果一个轻的物体和一个重的物体绑在一起然后从塔上丢下来，那么重的物体下落的速度快，两个物体之间的绳子会被拉直。这时轻的物体对重物会产生一个阻力，使得下落速度变慢。但是，从另一方面来看，两个物体绑在一起以后的质量应该比任意一个单独的物体都大，那么整个系统下落的速度应该最快。这个矛盾证明了亚里士多德的理论是错误的。</p>
+<p>解读：<br>这个思想实验帮助证明了一个很重要的理论：无论物体的质量，不考虑阻力的情况下，所有物体自由落体的速率都是一样的。</p>
+<h2 id="4．猴子和打字机（Monkeys-and-Typewriters）"><a href="#4．猴子和打字机（Monkeys-and-Typewriters）" class="headerlink" title="4．猴子和打字机（Monkeys and Typewriters）"></a>4．猴子和打字机（Monkeys and Typewriters）</h2><p>另一个在流行文化中占了很大分量的思想实验是“无限猴子定理”，也叫做“猴子和打字机”实验。定理的内容是，如果无数多的猴子在无数多的打字机上随机打字，并持续无限久的时间，那么在某个时候，它们必然会打出莎士比亚的全部著作。猴子和打字机的设想在20世纪初被法国数学家Emile Borel推广，但其基本思想（无数多的人员和无数多的时间能产生任何/所有东西）可以追溯至亚里士多德。</p>
+<p>解读：<br>简单来说，“猴子和打字机”定理是用来描述无限的本质的最好方法之一。人的大脑很难想象无限的空间和无限的时间，无限猴子定理可以帮助理解这些概念可以达到的宽度。猴子能碰巧写出《哈姆雷特》这看上去似乎是违反直觉，但实际上在数学上是可以证明的。这个定理本身在现实生活中是不可能重现的，但这并没有阻止某些人的尝试：2003年，一家英国动物园的科学家们“试验”了无限猴子定理，他们把一台电脑和一个键盘放进灵长类园区。可惜的是，猴子们并没有打出什么十四行诗。根据研究者，它们只打出了5页几乎完全是字母“s”的纸。</p>
+<h2 id="3．中文房间（The-Chinese-Room）"><a href="#3．中文房间（The-Chinese-Room）" class="headerlink" title="3．中文房间（The Chinese Room）"></a>3．中文房间（The Chinese Room）</h2><p>“中文房间”最早由美国哲学家John Searle于20世纪80年代初提出。这个实验要求你想象一位只说英语的人身处一个房间之中，这间房间除了门上有一个小窗口以外，全部都是封闭的。他随身带着一本写有中文翻译程序的书。房间里还有足够的稿纸、铅笔和橱柜。写着中文的纸片通过小窗口被送入房间中。根据Searle的理论，房间中的人可以使用他的书来翻译这些文字并用中文回复。虽然他完全不会中文，Searle认为通过这个过程，房间里的人可以让任何房间外的人以为他会说流利的中文。</p>
+<p>解读：<br>Searle 创造了“中文房间”思想实验来反驳电脑和其他人工智能能够真正思考的观点。房间里的人不会说中文；他不能够用中文思考。但因为他拥有某些特定的工具，他甚至可以让以中文为母语的人以为他能流利的说中文。根据Searle，电脑就是这样工作的。它们无法真正的理解接收到的信息，但它们可以运行一个程序，处理信息，然后给出一个智能的印象。</p>
+<h2 id="2．薛定锷的猫（Schrodinger’s-Cat）"><a href="#2．薛定锷的猫（Schrodinger’s-Cat）" class="headerlink" title="2．薛定锷的猫（Schrodinger’s Cat）"></a>2．薛定锷的猫（Schrodinger’s Cat）</h2><p>薛定锷的猫最早由物理学家薛定锷提出，是量子力学领域中的一个悖论。其内容是：一只猫、一些放射性元素和一瓶毒气一起被封闭在一个盒子里一个小时。在一个小时内，放射性元素衰变的几率为50%。如果衰变，那么一个连接在盖革计数器上的锤子就会被触发，并打碎瓶子，释放毒气，杀死猫。因为这件事会否发生的概率相等，薛定锷认为在盒子被打开前，盒子中的猫被认为是既死又活的。</p>
+<p>解读：<br>简而言之，这个实验的核心思想是因为事件发生时不存在观察者，盒子里的猫同时存在在其所有可能的状态中（既死又活）。薛定锷最早提出这个实验是在回复一篇讨论量子态叠加的文章时。薛定锷的猫同时也说明了量子力学的理论是多么令人无法理解。这个思想实验因其复杂性而臭名昭著，同时也启发了各种各样的解释。其中最奇异的就属 “多重世界”假说，这个假说表示有一只死猫和一只活猫，两只猫存在在不同的宇宙之中，并且永远不会有交集。</p>
+<h2 id="1．缸中的大脑（Brain-in-a-Vat）"><a href="#1．缸中的大脑（Brain-in-a-Vat）" class="headerlink" title="1．缸中的大脑（Brain in a Vat）"></a>1．缸中的大脑（Brain in a Vat）</h2><p>没有比所谓的“缸中的大脑”假说更有影响力的思想实验了。这个思想实验涵盖了从认知学到哲学到流行文化等各个领域。这个实验的内容是：想象有一个疯狂科学家把你的大脑从你的体内取出，放在某种生命维持液体中。大脑上插着电极，电极连到一台能产生图像和感官信号的电脑上。因为你获取的所有关于这个世界的信息都是通过你的大脑来处理的，这台电脑就有能力模拟你的日常体验。如果这确实可能的话，你要如何来证明你周围的世界是真实的，而不是由一台电脑产生的某种模拟环境？</p>
+<p>解读：<br>如果你觉得这听起来很像《黑客帝国》，那么你说对了。这部电影以及其他一些科幻作品，都是在这个思想实验的影响下创作出来的。这个实验的核心思想是让人们质疑自身经历的本质，并思考作为一个人的真正意义是什么。这个实验的最初原型可以一直追溯至笛卡尔。在他的《Meditations on the First Philosophy》一书中，笛卡尔提出了能否证明他所有的感官体验都是他自己的，而不是由某个“邪恶的魔鬼”产生的这样的疑问。笛卡尔用他的经典名言 “我思故我在”来回答这个问题。不幸的是，“缸中的大脑”实验更为复杂，因为连接着电极的大脑仍然可以思考。这个实验被广泛的讨论着，有许多对于此实验前提的反驳，但仍没有人能有力的回应其核心问题：你究竟如何才能知道什么是真实？ （来源）</p>
+<p>转自：<a target="_blank" rel="noopener" href="http://www.cnbeta.com/articles/164162.htm">http://www.cnbeta.com/articles/164162.htm</a></p>
+
+      </div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <div class="post-nav">
+
+  <div class="post-nav-prev post-nav-item">
+    <a href="/2016/05/22/shi-yong-git-ming-ling-shi-chu-xian-diffie-hellman-group1-sha1-cuo-wu-chu-li-fang-fa/">
+      上一篇:    使用git命令时，出现diffie-hellman-group1-sha1错误处理方法
+    </a>
+  </div>
+
+
+
+  <div class="post-nav-next post-nav-item">
+    <a href="/2010/08/02/ai-zi-kan-xi-he-ceng-jian-du-shi-sui-ren-shuo-duan-chang/">
+      下一篇:    矮子看戏何曾见，都是随人说短长 
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-if="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-if="visible">
+      <div class="donate-box_close">
+        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
+          <img src="/medias/zfb.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
+          <img src="/medias/wx.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+
+
+<script src="/js/shareJs/social-share.min.js"></script>
+
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+
+    <!-- 评论 -->
+      
+        
+      
+  </div>
+
+  
+    <div class="toc-aside">
+      <div class="toc-main">
+        <div class="toc-aside-title">
+          <i class="fa fa-list-ul" aria-hidden="true"></i><span>目录</span>
+        </div>
+        <div class="toc-content">
+          <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+<div class="toc"></div>
+
+<script>
+  if ($('.toc').length > 0) {
+    var headerEl = 'h2, h3, h4',  //headers 
+      content = '.post-detail',//文章容器
+      idArr = {};  //标题数组以确定是否增加索引id
+      //add #id
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: content,
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: headerEl,
+      scrollSmooth: true,
+      scrollSmoothOffset: -80,
+      headingsOffset: 130,
+      positionFixedSelector: '.toc-main',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  }
+
+</script>
+
+<style>
+.is-position-fixed {
+  position:fixed !important;
+  top: 64px;
+}
+
+</style>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+    </main>
+    <div class="footer bg-color">
+  <div class="footer-main">
+    <div class="link">
+      <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:20075633@qq.com">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      </a>
+      <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=20075633">
+        <i class="fa fa-qq" aria-hidden="true"></i>
+      </a>
+      <a href="/atom.xml" target="_blank">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">zhuangzi200323</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> 
+    </div>
+    
+      
+  <!-- 不蒜子统计 -->
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-book" aria-hidden="true"></i>本站总阅读量：<span id="busuanzi_value_page_pv"></span> 次
+  </span>
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv" style='display:none'>
+        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+  </span>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+  </div>
+</div>
+
+
+    
+      <div class="goTop bg-color">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</div>
+
+<script src="/js/goTop.js"></script>
+
+    
+
+    
+
+    <!-- 图片放大 -->
+    
+      
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<script src="/js/wrapImage.js"></script>
+
+    
+
+    <!-- 爱心点击 -->
+    
+      
+<script src="/js/clicklove.js"></script>
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+      
+<script src="/js/aos/aos.js"></script>
+
+      <script>
+        // https://github.com/michalsnik/aos
+        const themeOffset = parseInt('120') || 120;
+        const themeDelay = parseInt('0')|| 0;
+        const themeDuration = parseInt('400') || 400;
+        const themeEasing = 'ease' || 'ease';
+        const themeOnce = JSON.parse('true' || true);
+        const themeMirror = JSON.parse('false' || false);
+        const themeAnchorPlacement = 'top-bottom' || 'top-bottom';
+        AOS.init({
+          // Global settings:
+          disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+          startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+          initClassName: 'aos-init', // class applied after initialization
+          animatedClassName: 'aos-animate', // class applied on animation
+          useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+          disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+          debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+          throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+          // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+          offset: themeOffset, // offset (in px) from the original trigger point
+          delay: themeDelay, // values from 0 to 3000, with step 50ms
+          duration: themeDuration, // values from 0 to 3000, with step 50ms
+          easing: themeEasing, // default easing for AOS animations
+          once: themeOnce, // whether animation should happen only once - while scrolling down
+          mirror: themeMirror, // whether elements should animate out while scrolling past them
+          anchorPlacement: themeAnchorPlacement, // defines which position of the element regarding to window should trigger the animation
+
+        });
+      </script>
+    
+
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+<script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+<div id="appCopy">
+</div>
+<script>
+  var vm = new Vue({
+    el: '#appCopy',
+    data: {
+    },
+    computed: {
+    },
+    mounted() {
+      const that = this;
+      //  监听 ctrl + c事件  
+      $(document).unbind('keypress').bind('keypress', function (e) {
+        if (e.ctrlKey && e.keyCode == 67) {
+          doSomething();
+          // 返回false, 防止重复触发copy事件  
+          return false;
+        }
+      })
+
+      // 鼠标右键的复制事件  
+      $(document).unbind('copy').bind('copy', function (e) {
+        doSomething();
+        // console.log('右键复制 监听成功');
+      });
+
+      function doSomething() {
+        that.$notify({
+          title: '成功',
+          content: '复制成功了哦',
+          type: 'success'
+        })
+        // console.log('ctrl + c 监听成功');  
+      }
+    },
+    methods: {
+    },
+    created() { }
+  })
+</script>
+    
+
+    <!-- 输入框打字特效 -->
+    
+      
+<script src="/js/activate-power-mode.js"></script>
+
+      <script>
+          POWERMODE.colorful = true;  // 打开随机颜色特效
+          POWERMODE.shake = false;    // 关闭输入框抖动
+          document.body.addEventListener('input', POWERMODE);//监听打字事件
+      </script>
+    
+
+    <!-- markdown代码一键复制功能 -->
+    
+<script src="/js/clipboard/clipboard.min.js"></script>
+
+    <script>
+      !function (e, t, a) {
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function(){
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+          copyHtml += '<i class="fa fa-globe"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre code").before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+              target: function(trigger) {
+                  return trigger.nextElementSibling;
+              }
+          });
+        }
+        initCopyCode();
+      }(window, document);
+    </script>
+  
+  </body>
+</html>

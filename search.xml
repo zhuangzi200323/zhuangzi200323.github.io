@@ -4,12 +4,43 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="2020/10/15/hello-world/"/>
-      <url>2020/10/15/hello-world/</url>
+      <title>无法加载文件 CUsers10186AppDataRoamingnpmhexo.ps1，因为在此系统上禁止运行脚本</title>
+      <link href="2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/"/>
+      <url>2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<p><strong>无法加载文件 C:\Users\10186\AppData\Roaming\npm\hexo.ps1，因为在此系统上禁止运行脚本<br>C:\Users\10186\AppData\Roaming\npm\hexo.ps1，因为在此系统上禁止运行脚本</strong></p><p>无论是npm run dev 还是 运行 hexo<br>s，在运行终端命令是会报错，发现提示错误信息”无法加载文件<br>C:\Users\10186\AppData\Roaming\npm\hexo.ps1，因为在此系统上禁止运行脚本。</p><p><img src="7f73d2e1b905a222464dda7678b62ce8.png" alt="7678b62ce8.png"></p><p>解决方法：</p><ol><li>按下win+s输入powershell。然后右键以管理员身份运行。</li></ol><p><img src="d265dd3790349ba151b44efe45628f9a.png" alt="721092327687.png"></p><ol><li><p>然后输入set-ExecutionPolicy RemoteSigned命令，</p></li><li><p>输入y，执行回车。</p></li></ol><p><img src="c726ada43233206372ec6151907be4c9.png" alt="721092529710.png"></p><ol><li>再次运行。</li></ol><p><img src="dea86e4a09f12a8ecc89b4734d108b7d.png" alt="721092554341.png"></p><ol><li>成功！</li></ol><p>转自<a href="https://blog.csdn.net/Dan_Xiao_Hui/article/details/107480800">https://blog.csdn.net/Dan_Xiao_Hui/article/details/107480800</a></p>]]></content>
       
+      
+      <categories>
+          
+          <category> 问题记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ROS遇到的问题</title>
+      <link href="2020/03/02/ros-yu-dao-de-wen-ti/"/>
+      <url>2020/03/02/ros-yu-dao-de-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-sudo-rosdep-init与rosdep-update出错"><a href="#1-sudo-rosdep-init与rosdep-update出错" class="headerlink" title="1. sudo rosdep init与rosdep update出错"></a>1. sudo rosdep init与rosdep update出错</h2><p>因为raw.Githubusercontent.com无法访问，去下方链接可以查询raw.Githubusercontent.com的ip，将ip加入到hosts中再试即可</p><p>ip查询网站 <a href="https://site.ip138.com/raw.Githubusercontent.com/">https://site.ip138.com/raw.Githubusercontent.com/</a></p><p>输入 raw.githubusercontent.com 查询IP地址</p><p><img src="media/80ff70bf829de99dfecaa3785dba3820.png" alt="clipboard.png"></p><p>添加 该ip 到hosts文件 sudo vi /etc/hosts</p><p><img src="media/214deb83259203c1702aec0ac1120dff.png" alt="clipboard.png"></p><p><a href="https://blog.csdn.net/benpaodelulu_guajian/article/details/105901921">https://blog.csdn.net/benpaodelulu_guajian/article/details/105901921</a></p><h2 id="2-提示time-out的解决办法"><a href="#2-提示time-out的解决办法" class="headerlink" title="2. 提示time out的解决办法"></a>2. 提示time out的解决办法</h2><p>reading in sources list data from /etc/ros/rosdep/sources.list.d</p><p>Hit <a href="http://github.com/ros/rosdistro/raw/master/rosdep/osx-homebrew.yaml">http://github.com/ros/rosdistro/raw/master/rosdep/osx-homebrew.yaml</a></p><p>ERROR: unable to process source<br>[<a href="http://github.com/ros/rosdistro/raw/master/rosdep/base.yaml]">http://github.com/ros/rosdistro/raw/master/rosdep/base.yaml]</a>:</p><p>&lt;urlopen error _ssl.c:489: The handshake operation timed out&gt;<br>(<a href="http://github.com/ros/rosdistro/raw/master/rosdep/base.yaml">http://github.com/ros/rosdistro/raw/master/rosdep/base.yaml</a>)</p><p>ERROR: error loading sources list:</p><p>The read operation timed out</p><p><strong>解决方法：</strong></p><p>更改<br>/usr/lib/python2.7/dist-packages/rosdep2/下的三个文件sources_list.py、gbpdistro_support.py、rep3.py</p><p>中的DOWNLOAD_TIMEOUT = 15.0值，改大一点就可以了。</p><p><a href="https://www.cnblogs.com/zxzmnh/p/11758103.html">https://www.cnblogs.com/zxzmnh/p/11758103.html</a></p><h2 id="3-rqt-plot运行报错"><a href="#3-rqt-plot运行报错" class="headerlink" title="3. rqt_plot运行报错"></a>3. rqt_plot运行报错</h2><p>运行rqt_plot的时候，会出现以下报错，且rqt_plot的窗口不会显示网格，无法拖拽。</p><p><img src="media/77b6a4dfddecf7eba653d2d305f75a18.png" alt="clipboard.png"></p><p><img src="media/a88892e3bc1207116b0f4c8968819a79.png" alt="clipboard.png"></p><p><strong>解决方案</strong></p><p>在各种论坛、博客上找了好多解决办法，无奈都没有成功，最后误打误撞出了一个办法，终于算是能运行rqt_plot了…</p><p>在命令行输入：</p><pre class=" language-bash"><code class="language-bash">rqt</code></pre><p>在加载出来的rqt窗口中，选择【Plugins】—【Visualization】—【Plot】，如你所见，rqt_plot运行成功！</p><p><a href="https://blog.csdn.net/weixin_36965307/article/details/104948601">https://blog.csdn.net/weixin_36965307/article/details/104948601</a></p><h2 id="4-rospkg、rosdistro-not-found-error"><a href="#4-rospkg、rosdistro-not-found-error" class="headerlink" title="4. rospkg、rosdistro not found error"></a>4. rospkg、rosdistro not found error</h2><p><img src="media/a1ae11549e97846ad4f8c398eb5de10a.png" alt="clipboard.png"></p><p><img src="media/0746d79fdf9baa3aaec5e429e3453e88.png" alt="clipboard.png"></p><p>出现这个错误时，</p><pre class=" language-bash"><code class="language-bash">pkg_resources.DistributionNotFound: The <span class="token string">'rosdistro\>=0.7.5'</span> distribution was notfound and is required by rosdeppkg_resources.DistributionNotFound: The <span class="token string">'rospkg\>=1.1.10'</span> distribution was notfound and is required by rosdep</code></pre><p>安装如下两个包即可</p><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> python-rospkg python-rosdistro</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> ROS </category>
+          
+      </categories>
       
       
     </entry>
@@ -34,6 +65,119 @@
         <tags>
             
             <tag> Android </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用git命令时，出现diffie-hellman-group1-sha1错误处理方法</title>
+      <link href="2016/05/22/shi-yong-git-ming-ling-shi-chu-xian-diffie-hellman-group1-sha1-cuo-wu-chu-li-fang-fa/"/>
+      <url>2016/05/22/shi-yong-git-ming-ling-shi-chu-xian-diffie-hellman-group1-sha1-cuo-wu-chu-li-fang-fa/</url>
+      
+        <content type="html"><![CDATA[<p>使用git命令时，出现下方错误时</p><pre class=" language-bash"><code class="language-bash">Unable to negotiate with 192.168.4.28 port 19428: no matching key exchange method found. Their offer: diffie-hellman-group1-sha1fatal: Could not <span class="token function">read</span> from remote repository.Please <span class="token function">make</span> sure you have the correct access rightsand the repository exists.</code></pre><p>解决办法：<br>修改ssh config文件</p><pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> gedit /etc/ssh/ssh_config </code></pre><p>在host下加入 </p><pre class=" language-bash"><code class="language-bash">KexAlgorithms<span class="token operator">=</span>+diffie-hellman-group1-sha1</code></pre><p>转自：<a href="http://blog.csdn.net/shadow066/article/details/51222577">http://blog.csdn.net/shadow066/article/details/51222577</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git相关 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>史上最著名的10个思想实验</title>
+      <link href="2011/12/22/shi-shang-zui-zhu-ming-de-10-ge-si-xiang-shi-yan/"/>
+      <url>2011/12/22/shi-shang-zui-zhu-ming-de-10-ge-si-xiang-shi-yan/</url>
+      
+        <content type="html"><![CDATA[<p>思想实验是一种精神上的观念或假想，通常和谜语相似，是哲学家和科学家用以了解什么是大众思想的一种简单方法。他们的运用在如哲学和理论物理（理论物理无需做实验）等抽象领域是最为广泛的。他们像是为思想准备的一份大餐，最终给出复杂的答案。即使思想实验本身也会有无法理解的时候，这并不奇怪。下面是10个著名的思想实验，还有他们所要表达的哲学、科学和伦理意义。</p><h2 id="10．电车难题（The-Trolley-Problem）"><a href="#10．电车难题（The-Trolley-Problem）" class="headerlink" title="10．电车难题（The Trolley Problem）"></a>10．电车难题（The Trolley Problem）</h2><p>“电车难题”是伦理学领域最为知名的思想实验之一，其内容大致是：一个疯子把五个无辜的人绑在电车轨道上。一辆失控的电车朝他们驶来，并且片刻后就要碾压到他们。幸运的是，你可以拉一个拉杆，让电车开到另一条轨道上。但是还有一个问题，那个疯子在那另一条轨道上也绑了一个人。考虑以上状况，你应该拉拉杆吗？</p><p>解读：<br>电车难题最早是由哲学家Philippa Foot提出的，用来批判伦理哲学中的主要理论，特别是功利主义。功利主义提出的观点是，大部分道德决策都是根据“为最多的人提供最大的利益”的原则做出的。从一个功利主义者的观点来看，明显的选择应该是拉拉杆，拯救五个人只杀死一个人。但是功利主义的批判者认为，一旦拉了拉杆，你就成为一个不道德行为的同谋——你要为另一条轨道上单独的一个人的死负部分责任。然而，其他人认为，你身处这种状况下就要求你要有所作为，你的不作为将会是同等的不道德。总之，不存在完全的道德行为，这就是重点所在。许多哲学家都用电车难题作为例子来表示现实生活中的状况经常强迫一个人违背他自己的道德准则，并且还存在着没有完全道德做法的情况。</p><h2 id="9．空地上的奶牛（The-Cow-in-the-field）"><a href="#9．空地上的奶牛（The-Cow-in-the-field）" class="headerlink" title="9．空地上的奶牛（The Cow in the field）"></a>9．空地上的奶牛（The Cow in the field）</h2><p>认知论领域的一个最重要的思想实验就是“空地上的奶牛”。它描述的是，一个农民担心自己的获奖的奶牛走丢了。这时送奶工到了农场，他告诉农民不要担心，因为他看到那头奶牛在附件的一块空地上。虽然农民很相信送奶工，但他还是亲自看了看，他看到了熟悉的黑白相间的形状并感到很满意。过了一会，送奶工到那块空地上再次确认。那头奶牛确实在那，但它躲在树林里，而且空地上还有一大张黑白相间的纸缠在树上，很明显，农民把这张纸错当成自己的奶牛了。问题是出现了，虽然奶牛一直都在空地上，但农民说自己知道奶牛在空地上时是否正确？</p><p>解读：<br>空地上的奶牛最初是被 Edmund Gettier用来批判主流上作为知识的定义的JTB（justified true belief）理论，即当人们相信一件事时，它就成为了知识；这件事在事实上是真的，并且人们有可以验证的理由相信它。在这个实验中，农民相信奶牛在空地上，且被送奶工的证词和他自己对于空地上的黑白相间物的观察所证实。而且经过送奶工后来的证实，这件事也是真实的。尽管如此，农民并没有真正的知道奶牛在那儿，因为他认为奶牛在那儿的推导是建立在错误的前提上的。Gettier利用这个实验和其他一些例子，解释了将知识定义为JTB的理论需要修正。</p><h2 id="8．定时炸弹（The-Ticking-Time-Bomb）"><a href="#8．定时炸弹（The-Ticking-Time-Bomb）" class="headerlink" title="8．定时炸弹（The Ticking Time Bomb）"></a>8．定时炸弹（The Ticking Time Bomb）</h2><p>如果你关注近几年的政治时事，或者看过动作电影，那么你对于“定时炸弹”思想实验肯定很熟悉。它要求你想象一个炸弹或其他大规模杀伤性武器藏在你的城市中，并且爆炸的倒计时马上就到零了。在羁押中有一个知情者，他知道炸弹的埋藏点。你是否会使用酷刑来获取情报？</p><p>解读：<br>与电车难题类似，定时炸弹情景也是强迫一个人从两个不道德行径中选择的伦理问题。它一般被用作对那些说在任何情况下都不能使用酷刑的反驳。它也被用作在极端形势下法律——就像美国的严禁虐囚的法律——可以被放在第二位的例子。归功于像《24小时》的电视节目和各种政治辩论，定时炸弹情景已成为最常引用的思想实验之一。今年早些时候，一份英国报纸提出了更为极端的看法。这份报纸提议说，如果那个恐怖分子对酷刑毫无反应，那么当局者是否愿意拷打他的妻子儿女来获取情报。</p><h2 id="7．爱因斯坦的光线（Einstein’s-Light-Beam）"><a href="#7．爱因斯坦的光线（Einstein’s-Light-Beam）" class="headerlink" title="7．爱因斯坦的光线（Einstein’s Light Beam）"></a>7．爱因斯坦的光线（Einstein’s Light Beam）</h2><p>爱因斯坦著名的狭义相对论是受启于他16岁做的思想实验。在他的自传中，爱因斯坦回忆道他当时幻想在宇宙中追寻一道光线。他推理说，如果他能够以光速在光线旁边运动，那么他应该能够看到光线成为“在空间上不断振荡但停滞不前的电磁场”。对于爱因斯坦，这个思想实验证明了对于这个虚拟的观察者，所有的物理定律应该和一个相对于地球静止的观察者观察到的一样。</p><p>解读：<br>事实上，没人确切知道这意味着什么。科学家一直都在争论一个如此简单的思想实验是如此帮助爱因斯坦完成到狭义相对论这如此巨大的飞跃的。在当时，这个实验中的想法与现在已被抛弃的“以太”理论相违背。但他经过了好多年才证明了自己是正确的。</p><h2 id="6．特修斯之船（The-Ship-of-Theseus）"><a href="#6．特修斯之船（The-Ship-of-Theseus）" class="headerlink" title="6．特修斯之船（The Ship of Theseus）"></a>6．特修斯之船（The Ship of Theseus）</h2><p>最为古老的思想实验之一。最早出自普鲁塔克的记载。它描述的是一艘可以在海上航行几百年的船，归功于不间断的维修和替换部件。只要一块木板腐烂了，它就会被替换掉，以此类推，直到所有的功能部件都不是最开始的那些了。问题是，最终产生的这艘船是否还是原来的那艘特修斯之船，还是一艘完全不同的船？如果不是原来的船，那么在什么时候它不再是原来的船了？哲学家Thomas Hobbes后来对此进来了延伸，如果用特修斯之船上取下来的老部件来重新建造一艘新的船，那么两艘船中哪艘才是真正的特修斯之船？</p><p>解读：<br>对于哲学家，特修斯之船被用来研究身份的本质。特别是讨论一个物体是否仅仅等于其组成部件之和。一个更现代的例子就是一个不断发展的乐队，直到某一阶段乐队成员中没有任何一个原始成员。这个问题可以应用于各个领域。对于企业，在不断并购和更换东家后仍然保持原来的名字。对于人体，人体不间断的进行着新陈代谢和自我修复。这个实验的核心思想在于强迫人们去反思身份仅仅局限在实际物体和现象中这一常识。 </p><h2 id="5．伽利略的重力实验（Galileo’s-Gravity-Experiment）"><a href="#5．伽利略的重力实验（Galileo’s-Gravity-Experiment）" class="headerlink" title="5．伽利略的重力实验（Galileo’s Gravity Experiment）"></a>5．伽利略的重力实验（Galileo’s Gravity Experiment）</h2><p>为了反驳亚里士多德的自由落体速度取决于物体的质量的理论，伽利略构造了一个简单的思想实验。根据亚里士多德的说法，如果一个轻的物体和一个重的物体绑在一起然后从塔上丢下来，那么重的物体下落的速度快，两个物体之间的绳子会被拉直。这时轻的物体对重物会产生一个阻力，使得下落速度变慢。但是，从另一方面来看，两个物体绑在一起以后的质量应该比任意一个单独的物体都大，那么整个系统下落的速度应该最快。这个矛盾证明了亚里士多德的理论是错误的。</p><p>解读：<br>这个思想实验帮助证明了一个很重要的理论：无论物体的质量，不考虑阻力的情况下，所有物体自由落体的速率都是一样的。</p><h2 id="4．猴子和打字机（Monkeys-and-Typewriters）"><a href="#4．猴子和打字机（Monkeys-and-Typewriters）" class="headerlink" title="4．猴子和打字机（Monkeys and Typewriters）"></a>4．猴子和打字机（Monkeys and Typewriters）</h2><p>另一个在流行文化中占了很大分量的思想实验是“无限猴子定理”，也叫做“猴子和打字机”实验。定理的内容是，如果无数多的猴子在无数多的打字机上随机打字，并持续无限久的时间，那么在某个时候，它们必然会打出莎士比亚的全部著作。猴子和打字机的设想在20世纪初被法国数学家Emile Borel推广，但其基本思想（无数多的人员和无数多的时间能产生任何/所有东西）可以追溯至亚里士多德。</p><p>解读：<br>简单来说，“猴子和打字机”定理是用来描述无限的本质的最好方法之一。人的大脑很难想象无限的空间和无限的时间，无限猴子定理可以帮助理解这些概念可以达到的宽度。猴子能碰巧写出《哈姆雷特》这看上去似乎是违反直觉，但实际上在数学上是可以证明的。这个定理本身在现实生活中是不可能重现的，但这并没有阻止某些人的尝试：2003年，一家英国动物园的科学家们“试验”了无限猴子定理，他们把一台电脑和一个键盘放进灵长类园区。可惜的是，猴子们并没有打出什么十四行诗。根据研究者，它们只打出了5页几乎完全是字母“s”的纸。</p><h2 id="3．中文房间（The-Chinese-Room）"><a href="#3．中文房间（The-Chinese-Room）" class="headerlink" title="3．中文房间（The Chinese Room）"></a>3．中文房间（The Chinese Room）</h2><p>“中文房间”最早由美国哲学家John Searle于20世纪80年代初提出。这个实验要求你想象一位只说英语的人身处一个房间之中，这间房间除了门上有一个小窗口以外，全部都是封闭的。他随身带着一本写有中文翻译程序的书。房间里还有足够的稿纸、铅笔和橱柜。写着中文的纸片通过小窗口被送入房间中。根据Searle的理论，房间中的人可以使用他的书来翻译这些文字并用中文回复。虽然他完全不会中文，Searle认为通过这个过程，房间里的人可以让任何房间外的人以为他会说流利的中文。</p><p>解读：<br>Searle 创造了“中文房间”思想实验来反驳电脑和其他人工智能能够真正思考的观点。房间里的人不会说中文；他不能够用中文思考。但因为他拥有某些特定的工具，他甚至可以让以中文为母语的人以为他能流利的说中文。根据Searle，电脑就是这样工作的。它们无法真正的理解接收到的信息，但它们可以运行一个程序，处理信息，然后给出一个智能的印象。</p><h2 id="2．薛定锷的猫（Schrodinger’s-Cat）"><a href="#2．薛定锷的猫（Schrodinger’s-Cat）" class="headerlink" title="2．薛定锷的猫（Schrodinger’s Cat）"></a>2．薛定锷的猫（Schrodinger’s Cat）</h2><p>薛定锷的猫最早由物理学家薛定锷提出，是量子力学领域中的一个悖论。其内容是：一只猫、一些放射性元素和一瓶毒气一起被封闭在一个盒子里一个小时。在一个小时内，放射性元素衰变的几率为50%。如果衰变，那么一个连接在盖革计数器上的锤子就会被触发，并打碎瓶子，释放毒气，杀死猫。因为这件事会否发生的概率相等，薛定锷认为在盒子被打开前，盒子中的猫被认为是既死又活的。</p><p>解读：<br>简而言之，这个实验的核心思想是因为事件发生时不存在观察者，盒子里的猫同时存在在其所有可能的状态中（既死又活）。薛定锷最早提出这个实验是在回复一篇讨论量子态叠加的文章时。薛定锷的猫同时也说明了量子力学的理论是多么令人无法理解。这个思想实验因其复杂性而臭名昭著，同时也启发了各种各样的解释。其中最奇异的就属 “多重世界”假说，这个假说表示有一只死猫和一只活猫，两只猫存在在不同的宇宙之中，并且永远不会有交集。</p><h2 id="1．缸中的大脑（Brain-in-a-Vat）"><a href="#1．缸中的大脑（Brain-in-a-Vat）" class="headerlink" title="1．缸中的大脑（Brain in a Vat）"></a>1．缸中的大脑（Brain in a Vat）</h2><p>没有比所谓的“缸中的大脑”假说更有影响力的思想实验了。这个思想实验涵盖了从认知学到哲学到流行文化等各个领域。这个实验的内容是：想象有一个疯狂科学家把你的大脑从你的体内取出，放在某种生命维持液体中。大脑上插着电极，电极连到一台能产生图像和感官信号的电脑上。因为你获取的所有关于这个世界的信息都是通过你的大脑来处理的，这台电脑就有能力模拟你的日常体验。如果这确实可能的话，你要如何来证明你周围的世界是真实的，而不是由一台电脑产生的某种模拟环境？</p><p>解读：<br>如果你觉得这听起来很像《黑客帝国》，那么你说对了。这部电影以及其他一些科幻作品，都是在这个思想实验的影响下创作出来的。这个实验的核心思想是让人们质疑自身经历的本质，并思考作为一个人的真正意义是什么。这个实验的最初原型可以一直追溯至笛卡尔。在他的《Meditations on the First Philosophy》一书中，笛卡尔提出了能否证明他所有的感官体验都是他自己的，而不是由某个“邪恶的魔鬼”产生的这样的疑问。笛卡尔用他的经典名言 “我思故我在”来回答这个问题。不幸的是，“缸中的大脑”实验更为复杂，因为连接着电极的大脑仍然可以思考。这个实验被广泛的讨论着，有许多对于此实验前提的反驳，但仍没有人能有力的回应其核心问题：你究竟如何才能知道什么是真实？ （来源）</p><p>转自：<a href="http://www.cnbeta.com/articles/164162.htm">http://www.cnbeta.com/articles/164162.htm</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>矮子看戏何曾见，都是随人说短长</title>
+      <link href="2010/08/02/ai-zi-kan-xi-he-ceng-jian-du-shi-sui-ren-shuo-duan-chang/"/>
+      <url>2010/08/02/ai-zi-kan-xi-he-ceng-jian-du-shi-sui-ren-shuo-duan-chang/</url>
+      
+        <content type="html"><![CDATA[<p>出自清代赵翼的《论诗·其三》</p><pre class=" language-bash"><code class="language-bash">只眼须凭自主张，纷纷艺苑漫雌黄。矮人看戏何曾见，都是随人说短长。</code></pre><p><strong>赏析</strong></p><p>　　这是一首作者表白自己的艺术主张的诗。指出文艺批评应提倡有独到的见解，不可鹦鹉学舌，人云亦云。<br>　　前二句点出在纷纷的艺苑里各种说法鱼龙混杂，良莠不齐，对错互见，深浅不一，对同一问题的看法有时也五花八门。这时需要的是独具慧眼，有自己的视角和观点。当然这是相当不容易的，需要自己有深厚的学养和阅历，成为“高人”。<br>　　后二句作一形象的比喻，用矮人看戏作比，矮人看戏时被前边的人挡住目光，哪里能看到戏台上的场景?戏散大家一起谈起来时，只能是附和人家的说法。这就好比我们自己对“艺苑”的看法，如果自己学力浅薄，不能“独具只眼”，那就只能“随人说短长”了，这种鹦鹉学舌，拾人牙慧的行为作者是坚决反对的。 </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>startActivityForResult使用时注意事项</title>
+      <link href="2010/06/02/startactivityforresult-shi-yong-shi-zhu-yi-shi-xiang/"/>
+      <url>2010/06/02/startactivityforresult-shi-yong-shi-zhu-yi-shi-xiang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="startActivityForResult使用时注意事项"><a href="#startActivityForResult使用时注意事项" class="headerlink" title="startActivityForResult使用时注意事项"></a>startActivityForResult使用时注意事项</h2><p>startActivityForResult时，不要加FLAG_ACTIVITY_NEW_TASK flag，否则会立即进入onActivityResult</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android技术相关 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>查看 Ubuntu 的版本号，可以采用以下方法</title>
+      <link href="2010/05/10/cha-kan-ubuntu-de-ban-ben-hao-ke-yi-cai-yong-yi-xia-fang-fa/"/>
+      <url>2010/05/10/cha-kan-ubuntu-de-ban-ben-hao-ke-yi-cai-yong-yi-xia-fang-fa/</url>
+      
+        <content type="html"><![CDATA[<p>方法一：<br>在终端中执行下列指令：</p><pre class=" language-bash"><code class="language-bash">$ <span class="token function">cat</span> /etc/issue</code></pre><p>可以查看当前正在运行的 Ubuntu 的版本号。其输出结果类似下面的内容：</p><pre class=" language-bash"><code class="language-bash">Ubuntu 10.04 LTS \n \l</code></pre><p>方法二：<br>使用 lsb_release 命令也可以查看 Ubuntu<br>的版本号，与方法一相比，内容更为详细。执行指令如下：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> lsb_release -a</code></pre><p>将输出结果：</p><pre class=" language-bash"><code class="language-bash">No LSB modules are available.Distributor ID: UbuntuDescription: Ubuntu 10.04 LTSRelease: 10.04Codename: Lucid</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Ubuntu相关 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
             
         </tags>
       

@@ -6,7 +6,7 @@
   <link href="https://zhuangzi200323.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhuangzi200323.github.io/"/>
-  <updated>2020-10-15T05:52:00.945Z</updated>
+  <updated>2020-10-15T05:52:19.108Z</updated>
   <id>https://zhuangzi200323.github.io/</id>
   
   <author>
@@ -17,22 +17,49 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://zhuangzi200323.github.io/2020/10/15/hello-world/"/>
-    <id>https://zhuangzi200323.github.io/2020/10/15/hello-world/</id>
-    <published>2020-10-15T05:52:00.945Z</published>
-    <updated>2020-10-15T05:52:00.945Z</updated>
+    <title>无法加载文件 CUsers10186AppDataRoamingnpmhexo.ps1，因为在此系统上禁止运行脚本</title>
+    <link href="https://zhuangzi200323.github.io/2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/"/>
+    <id>https://zhuangzi200323.github.io/2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/</id>
+    <published>2020-07-22T15:06:15.000Z</published>
+    <updated>2020-10-15T05:52:19.108Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;strong&gt;无法加载文件</summary>
         
       
     
     
+    
+    <category term="问题记录" scheme="https://zhuangzi200323.github.io/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Hexo" scheme="https://zhuangzi200323.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ROS遇到的问题</title>
+    <link href="https://zhuangzi200323.github.io/2020/03/02/ros-yu-dao-de-wen-ti/"/>
+    <id>https://zhuangzi200323.github.io/2020/03/02/ros-yu-dao-de-wen-ti/</id>
+    <published>2020-03-02T15:06:15.000Z</published>
+    <updated>2020-10-15T05:52:19.084Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-sudo-rosdep-init与rosdep-update出错&quot;&gt;&lt;a href=&quot;#1-sudo-rosdep-init与rosdep-update出错&quot; class=&quot;headerlink&quot; title=&quot;1. sudo rosdep</summary>
+        
+      
+    
+    
+    
+    <category term="ROS" scheme="https://zhuangzi200323.github.io/categories/ROS/"/>
     
     
   </entry>
@@ -42,7 +69,7 @@
     <link href="https://zhuangzi200323.github.io/2019/03/02/android-zu-jian-hua-kai-fa-de-jian-dan-ying-yong/"/>
     <id>https://zhuangzi200323.github.io/2019/03/02/android-zu-jian-hua-kai-fa-de-jian-dan-ying-yong/</id>
     <published>2019-03-02T15:06:15.000Z</published>
-    <updated>2020-10-15T05:52:00.741Z</updated>
+    <updated>2020-10-15T05:52:19.108Z</updated>
     
     
       
@@ -59,6 +86,130 @@
     
     
     <category term="Android" scheme="https://zhuangzi200323.github.io/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用git命令时，出现diffie-hellman-group1-sha1错误处理方法</title>
+    <link href="https://zhuangzi200323.github.io/2016/05/22/shi-yong-git-ming-ling-shi-chu-xian-diffie-hellman-group1-sha1-cuo-wu-chu-li-fang-fa/"/>
+    <id>https://zhuangzi200323.github.io/2016/05/22/shi-yong-git-ming-ling-shi-chu-xian-diffie-hellman-group1-sha1-cuo-wu-chu-li-fang-fa/</id>
+    <published>2016-05-22T15:06:15.000Z</published>
+    <updated>2020-10-15T05:52:19.108Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;使用git命令时，出现下方错误时&lt;/p&gt;
+&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;Unable to negotiate with 192.168.4.28 port 19428: no</summary>
+        
+      
+    
+    
+    
+    <category term="Git相关" scheme="https://zhuangzi200323.github.io/categories/Git%E7%9B%B8%E5%85%B3/"/>
+    
+    
+    <category term="Git" scheme="https://zhuangzi200323.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>史上最著名的10个思想实验</title>
+    <link href="https://zhuangzi200323.github.io/2011/12/22/shi-shang-zui-zhu-ming-de-10-ge-si-xiang-shi-yan/"/>
+    <id>https://zhuangzi200323.github.io/2011/12/22/shi-shang-zui-zhu-ming-de-10-ge-si-xiang-shi-yan/</id>
+    <published>2011-12-22T15:06:15.000Z</published>
+    <updated>2020-10-15T05:52:19.108Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;思想实验是一种精神上的观念或假想，通常和谜语相似，是哲学家和科学家用以了解什么是大众思想的一种简单方法。他们的运用在如哲学和理论物理（理论物理无需做实验）等抽象领域是最为广泛的。他们像是为思想准备的一份大餐，最终给出复杂的答案。即使思想实验本身也会有无法理解的时候，这并不奇</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://zhuangzi200323.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>矮子看戏何曾见，都是随人说短长</title>
+    <link href="https://zhuangzi200323.github.io/2010/08/02/ai-zi-kan-xi-he-ceng-jian-du-shi-sui-ren-shuo-duan-chang/"/>
+    <id>https://zhuangzi200323.github.io/2010/08/02/ai-zi-kan-xi-he-ceng-jian-du-shi-sui-ren-shuo-duan-chang/</id>
+    <published>2010-08-02T15:06:15.000Z</published>
+    <updated>2020-10-15T05:52:19.108Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;出自清代赵翼的《论诗·其三》&lt;/p&gt;
+&lt;pre class=&quot; language-bash&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://zhuangzi200323.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>startActivityForResult使用时注意事项</title>
+    <link href="https://zhuangzi200323.github.io/2010/06/02/startactivityforresult-shi-yong-shi-zhu-yi-shi-xiang/"/>
+    <id>https://zhuangzi200323.github.io/2010/06/02/startactivityforresult-shi-yong-shi-zhu-yi-shi-xiang/</id>
+    <published>2010-06-02T15:06:15.000Z</published>
+    <updated>2020-10-15T05:52:19.088Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;startActivityForResult使用时注意事项&quot;&gt;&lt;a href=&quot;#startActivityForResult使用时注意事项&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Android技术相关" scheme="https://zhuangzi200323.github.io/categories/Android%E6%8A%80%E6%9C%AF%E7%9B%B8%E5%85%B3/"/>
+    
+    
+    <category term="Android" scheme="https://zhuangzi200323.github.io/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>查看 Ubuntu 的版本号，可以采用以下方法</title>
+    <link href="https://zhuangzi200323.github.io/2010/05/10/cha-kan-ubuntu-de-ban-ben-hao-ke-yi-cai-yong-yi-xia-fang-fa/"/>
+    <id>https://zhuangzi200323.github.io/2010/05/10/cha-kan-ubuntu-de-ban-ben-hao-ke-yi-cai-yong-yi-xia-fang-fa/</id>
+    <published>2010-05-10T15:06:15.000Z</published>
+    <updated>2020-10-15T05:52:19.108Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;方法一：&lt;br&gt;在终端中执行下列指令：&lt;/p&gt;
+&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="Ubuntu相关" scheme="https://zhuangzi200323.github.io/categories/Ubuntu%E7%9B%B8%E5%85%B3/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://zhuangzi200323.github.io/tags/Ubuntu/"/>
     
   </entry>
   
