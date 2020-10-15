@@ -4,6 +4,8 @@ date: 2019-03-02 15:06:15
 swiper: true
 swiperImg: '/medias/13.png'
 img: '/medias/13.png'
+categories:
+- Android技术相关
 tags: 
 - Android
 top: true
