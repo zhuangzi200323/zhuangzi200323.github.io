@@ -215,9 +215,9 @@ public class BaseApplication extends Application {
 
 在主 Module:App 中增加 App, 继承自 BaseApplication, 然后在 AndroidManifefst.xml 中引用。
 ```CPP
-`public class App extends BaseApplication {}`
-
-
+public class App extends BaseApplication {}
+```
+```bash
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wangyz.modules">
