@@ -6,7 +6,7 @@
   <link href="https://zhuangzi200323.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhuangzi200323.github.io/"/>
-  <updated>2020-10-16T10:08:51.336Z</updated>
+  <updated>2020-10-16T10:11:32.301Z</updated>
   <id>https://zhuangzi200323.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://zhuangzi200323.github.io/2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/"/>
     <id>https://zhuangzi200323.github.io/2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/</id>
     <published>2020-07-22T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.336Z</updated>
+    <updated>2020-10-16T10:11:32.301Z</updated>
     
     
       
@@ -46,7 +46,7 @@
     <link href="https://zhuangzi200323.github.io/2020/05/22/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/"/>
     <id>https://zhuangzi200323.github.io/2020/05/22/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/</id>
     <published>2020-05-22T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.316Z</updated>
+    <updated>2020-10-16T10:11:32.281Z</updated>
     
     
       
@@ -73,7 +73,7 @@
     <link href="https://zhuangzi200323.github.io/2020/03/02/ros-yu-dao-de-wen-ti/ros-yu-dao-de-wen-ti/"/>
     <id>https://zhuangzi200323.github.io/2020/03/02/ros-yu-dao-de-wen-ti/ros-yu-dao-de-wen-ti/</id>
     <published>2020-03-02T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.296Z</updated>
+    <updated>2020-10-16T10:11:32.261Z</updated>
     
     
       
@@ -92,59 +92,11 @@
   </entry>
   
   <entry>
-    <title>spring软件环境搭建</title>
-    <link href="https://zhuangzi200323.github.io/2019/06/02/spring-ruan-jian-huan-jing-da-jian/spring-ruan-jian-huan-jing-da-jian/"/>
-    <id>https://zhuangzi200323.github.io/2019/06/02/spring-ruan-jian-huan-jing-da-jian/spring-ruan-jian-huan-jing-da-jian/</id>
-    <published>2019-06-02T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.304Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;spring软件环境搭建&quot;&gt;&lt;a href=&quot;#spring软件环境搭建&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="spring" scheme="https://zhuangzi200323.github.io/categories/spring/"/>
-    
-    
-    <category term="IntelliJ IDEA" scheme="https://zhuangzi200323.github.io/tags/IntelliJ-IDEA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>提示Unknown system variable &#39;query_cache_size&#39;</title>
-    <link href="https://zhuangzi200323.github.io/2019/06/02/ti-shi-unknown-system-variable-query-cache-size/"/>
-    <id>https://zhuangzi200323.github.io/2019/06/02/ti-shi-unknown-system-variable-query-cache-size/</id>
-    <published>2019-06-02T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.336Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;title-提示Unknown-system-variable-‘query-cache-size’&quot;&gt;&lt;a href=&quot;#title-提示Unknown-system-variable-‘query-cache-size’&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="spring" scheme="https://zhuangzi200323.github.io/categories/spring/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>安装mysql8.0.13教程</title>
     <link href="https://zhuangzi200323.github.io/2019/06/02/an-zhuang-mysql8.0.13-jiao-cheng/an-zhuang-mysql8.0.13-jiao-cheng/"/>
     <id>https://zhuangzi200323.github.io/2019/06/02/an-zhuang-mysql8.0.13-jiao-cheng/an-zhuang-mysql8.0.13-jiao-cheng/</id>
     <published>2019-06-02T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.336Z</updated>
+    <updated>2020-10-16T10:11:32.301Z</updated>
     
     
       
@@ -165,18 +117,18 @@
   </entry>
   
   <entry>
-    <title>Tomcat 8安装后配置</title>
-    <link href="https://zhuangzi200323.github.io/2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/tomcat-8-an-zhuang-hou-pei-zhi/"/>
-    <id>https://zhuangzi200323.github.io/2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/tomcat-8-an-zhuang-hou-pei-zhi/</id>
+    <title>提示Unknown system variable &#39;query_cache_size&#39;</title>
+    <link href="https://zhuangzi200323.github.io/2019/06/02/ti-shi-unknown-system-variable-query-cache-size/"/>
+    <id>https://zhuangzi200323.github.io/2019/06/02/ti-shi-unknown-system-variable-query-cache-size/</id>
     <published>2019-06-02T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.300Z</updated>
+    <updated>2020-10-16T10:11:32.301Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;Tomcat-8安装后配置&quot;&gt;&lt;a href=&quot;#Tomcat-8安装后配置&quot; class=&quot;headerlink&quot; title=&quot;Tomcat 8安装后配置&quot;&gt;&lt;/a&gt;Tomcat 8安装后配置&lt;/h2&gt;&lt;p&gt;Tomcat</summary>
+    <summary type="html">&lt;h2 id=&quot;title-提示Unknown-system-variable-‘query-cache-size’&quot;&gt;&lt;a href=&quot;#title-提示Unknown-system-variable-‘query-cache-size’&quot;</summary>
         
       
     
@@ -185,7 +137,30 @@
     <category term="spring" scheme="https://zhuangzi200323.github.io/categories/spring/"/>
     
     
-    <category term="Tomcat" scheme="https://zhuangzi200323.github.io/tags/Tomcat/"/>
+  </entry>
+  
+  <entry>
+    <title>spring软件环境搭建</title>
+    <link href="https://zhuangzi200323.github.io/2019/06/02/spring-ruan-jian-huan-jing-da-jian/spring-ruan-jian-huan-jing-da-jian/"/>
+    <id>https://zhuangzi200323.github.io/2019/06/02/spring-ruan-jian-huan-jing-da-jian/spring-ruan-jian-huan-jing-da-jian/</id>
+    <published>2019-06-02T15:06:15.000Z</published>
+    <updated>2020-10-16T10:11:32.269Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;spring软件环境搭建&quot;&gt;&lt;a href=&quot;#spring软件环境搭建&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="spring" scheme="https://zhuangzi200323.github.io/categories/spring/"/>
+    
+    
+    <category term="IntelliJ IDEA" scheme="https://zhuangzi200323.github.io/tags/IntelliJ-IDEA/"/>
     
   </entry>
   
@@ -194,7 +169,7 @@
     <link href="https://zhuangzi200323.github.io/2019/06/02/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/"/>
     <id>https://zhuangzi200323.github.io/2019/06/02/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/</id>
     <published>2019-06-02T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.300Z</updated>
+    <updated>2020-10-16T10:11:32.265Z</updated>
     
     
       
@@ -219,7 +194,7 @@
     <link href="https://zhuangzi200323.github.io/2019/06/02/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/"/>
     <id>https://zhuangzi200323.github.io/2019/06/02/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/</id>
     <published>2019-06-02T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.300Z</updated>
+    <updated>2020-10-16T10:11:32.265Z</updated>
     
     
       
@@ -240,11 +215,36 @@
   </entry>
   
   <entry>
+    <title>Tomcat 8安装后配置</title>
+    <link href="https://zhuangzi200323.github.io/2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/tomcat-8-an-zhuang-hou-pei-zhi/"/>
+    <id>https://zhuangzi200323.github.io/2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/tomcat-8-an-zhuang-hou-pei-zhi/</id>
+    <published>2019-06-02T15:06:15.000Z</published>
+    <updated>2020-10-16T10:11:32.265Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Tomcat-8安装后配置&quot;&gt;&lt;a href=&quot;#Tomcat-8安装后配置&quot; class=&quot;headerlink&quot; title=&quot;Tomcat 8安装后配置&quot;&gt;&lt;/a&gt;Tomcat 8安装后配置&lt;/h2&gt;&lt;p&gt;Tomcat</summary>
+        
+      
+    
+    
+    
+    <category term="spring" scheme="https://zhuangzi200323.github.io/categories/spring/"/>
+    
+    
+    <category term="Tomcat" scheme="https://zhuangzi200323.github.io/tags/Tomcat/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【Android】组件化开发的简单应用</title>
     <link href="https://zhuangzi200323.github.io/2019/03/02/android-zu-jian-hua-kai-fa-de-jian-dan-ying-yong/"/>
     <id>https://zhuangzi200323.github.io/2019/03/02/android-zu-jian-hua-kai-fa-de-jian-dan-ying-yong/</id>
     <published>2019-03-02T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.332Z</updated>
+    <updated>2020-10-16T10:11:32.297Z</updated>
     
     
       
@@ -269,7 +269,7 @@
     <link href="https://zhuangzi200323.github.io/2016/09/27/shu-mei-pai-diy-bi-ji-zhi-qian-you-jie-shao-guo-yong-vnc-lian-jie-dao-shu-mei-pai-de-fang-fa/shu-mei-pai-diy-bi-ji-zhi-qian-you-jie-shao-guo-yong-vnc-lian-jie-dao-shu-mei-pai-de-fang-fa/"/>
     <id>https://zhuangzi200323.github.io/2016/09/27/shu-mei-pai-diy-bi-ji-zhi-qian-you-jie-shao-guo-yong-vnc-lian-jie-dao-shu-mei-pai-de-fang-fa/shu-mei-pai-diy-bi-ji-zhi-qian-you-jie-shao-guo-yong-vnc-lian-jie-dao-shu-mei-pai-de-fang-fa/</id>
     <published>2016-09-27T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.336Z</updated>
+    <updated>2020-10-16T10:11:32.301Z</updated>
     
     
       
@@ -293,7 +293,7 @@
     <link href="https://zhuangzi200323.github.io/2016/09/27/shu-mei-pai-3-zhong-wen-xian-shi-luan-ma-de-wen-ti/"/>
     <id>https://zhuangzi200323.github.io/2016/09/27/shu-mei-pai-3-zhong-wen-xian-shi-luan-ma-de-wen-ti/</id>
     <published>2016-09-27T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.336Z</updated>
+    <updated>2020-10-16T10:11:32.301Z</updated>
     
     
       
@@ -317,7 +317,7 @@
     <link href="https://zhuangzi200323.github.io/2016/05/31/xiu-zheng-zhuo-mian-tu-biao-bian-cheng-liao-kong-bai-de-fang-fa/"/>
     <id>https://zhuangzi200323.github.io/2016/05/31/xiu-zheng-zhuo-mian-tu-biao-bian-cheng-liao-kong-bai-de-fang-fa/</id>
     <published>2016-05-31T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.332Z</updated>
+    <updated>2020-10-16T10:11:32.297Z</updated>
     
     
       
@@ -341,7 +341,7 @@
     <link href="https://zhuangzi200323.github.io/2016/05/22/shi-yong-git-ming-ling-shi-chu-xian-diffie-hellman-group1-sha1-cuo-wu-chu-li-fang-fa/"/>
     <id>https://zhuangzi200323.github.io/2016/05/22/shi-yong-git-ming-ling-shi-chu-xian-diffie-hellman-group1-sha1-cuo-wu-chu-li-fang-fa/</id>
     <published>2016-05-22T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.332Z</updated>
+    <updated>2020-10-16T10:11:32.297Z</updated>
     
     
       
@@ -367,7 +367,7 @@
     <link href="https://zhuangzi200323.github.io/2015/10/12/jie-jue-ubuntu-16.04-unity-yu-ren-wu-lan-xiao-shi-de-wen-ti/"/>
     <id>https://zhuangzi200323.github.io/2015/10/12/jie-jue-ubuntu-16.04-unity-yu-ren-wu-lan-xiao-shi-de-wen-ti/</id>
     <published>2015-10-12T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.336Z</updated>
+    <updated>2020-10-16T10:11:32.301Z</updated>
     
     
       
@@ -390,7 +390,7 @@
     <link href="https://zhuangzi200323.github.io/2015/10/12/eclipse-zhong-ndk-pei-zhi/"/>
     <id>https://zhuangzi200323.github.io/2015/10/12/eclipse-zhong-ndk-pei-zhi/</id>
     <published>2015-10-12T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.296Z</updated>
+    <updated>2020-10-16T10:11:32.261Z</updated>
     
     
       
@@ -415,7 +415,7 @@
     <link href="https://zhuangzi200323.github.io/2011/12/22/shi-shang-zui-zhu-ming-de-10-ge-si-xiang-shi-yan/"/>
     <id>https://zhuangzi200323.github.io/2011/12/22/shi-shang-zui-zhu-ming-de-10-ge-si-xiang-shi-yan/</id>
     <published>2011-12-22T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.332Z</updated>
+    <updated>2020-10-16T10:11:32.297Z</updated>
     
     
       
@@ -438,7 +438,7 @@
     <link href="https://zhuangzi200323.github.io/2010/08/02/ai-zi-kan-xi-he-ceng-jian-du-shi-sui-ren-shuo-duan-chang/"/>
     <id>https://zhuangzi200323.github.io/2010/08/02/ai-zi-kan-xi-he-ceng-jian-du-shi-sui-ren-shuo-duan-chang/</id>
     <published>2010-08-02T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.336Z</updated>
+    <updated>2020-10-16T10:11:32.301Z</updated>
     
     
       
@@ -462,7 +462,7 @@
     <link href="https://zhuangzi200323.github.io/2010/06/02/startactivityforresult-shi-yong-shi-zhu-yi-shi-xiang/"/>
     <id>https://zhuangzi200323.github.io/2010/06/02/startactivityforresult-shi-yong-shi-zhu-yi-shi-xiang/</id>
     <published>2010-06-02T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.304Z</updated>
+    <updated>2020-10-16T10:11:32.269Z</updated>
     
     
       
@@ -487,7 +487,7 @@
     <link href="https://zhuangzi200323.github.io/2010/05/10/cha-kan-ubuntu-de-ban-ben-hao-ke-yi-cai-yong-yi-xia-fang-fa/"/>
     <id>https://zhuangzi200323.github.io/2010/05/10/cha-kan-ubuntu-de-ban-ben-hao-ke-yi-cai-yong-yi-xia-fang-fa/</id>
     <published>2010-05-10T15:06:15.000Z</published>
-    <updated>2020-10-16T10:08:51.336Z</updated>
+    <updated>2020-10-16T10:11:32.301Z</updated>
     
     
       
