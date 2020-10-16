@@ -240,7 +240,7 @@ books:
 
 #版权信息  coryRyght
 copyright:
-  on: false
+  on: true
 
 # 文章置顶
 topArticle:
