@@ -1,7 +1,7 @@
 ---
 title: startActivityForResult使用时注意事项
 date: 2010-06-02 15:06:15
-img: '/medias/3.png'
+img: '/medias/3.jpg'
 categories:
 - Android技术相关
 tags: 

@@ -30,7 +30,7 @@ swiper:
   textDuration: '0.2s' # 文字动画持续时间（单位秒）
   textDelay: '0.1s' # 文字动画延迟时间（单位秒）
   # 当没有文章设置swiper: true时候，轮播图会显示以下default默认内容，可自行切换对应内容
-  defaultImg: '/medias/14.png' # 图片，没有则随机选取
+  defaultImg: '/medias/14.jpg' # 图片，没有则随机选取
   defaultTile: '今天的您，微笑了吗？' # 标题
   defaultDesc: '一个在学习路上的程序猿，一个在探索路上的攻城狮，一个在求知路上的码农……' #描 述
   defaultMoreLink: 'https://github.com/yuang01/hexo-theme-bamboo' # 阅读更多链接 
@@ -291,39 +291,39 @@ gitalk:
   clientSecret:  #`Github Application clientSecret`
 
 # 归档页面图片 or 'http://xxx'
-archiveImg: '/medias/archiveImg.png'
+archiveImg: '/medias/archiveImg.jpg'
 # 标签页面图片
-tagImg: '/medias/tag.png'
+tagImg: '/medias/tag.jpg'
 # 标签详情页面图片
-tagDetailImg: '/medias/tagDetail.png'
+tagDetailImg: '/medias/tagDetail.jpg'
 # 分类页面图片
-categoriesImg: '/medias/categories.png'
+categoriesImg: '/medias/categories.jpg'
 #分类详情页面图片
-categoryDetailImg: '/medias/categoryDetail.png'
+categoryDetailImg: '/medias/categoryDetail.jpg'
 # 关于我页面图片
-aboutImg: '/medias/about.png'
+aboutImg: '/medias/about.jpg'
 # 友情链接页面图片
-friendsImg: '/medias/friends.png'
+friendsImg: '/medias/friends.jpg'
 
 # 文章图片
 imgs:
-- '/medias/1.png'
-- '/medias/2.png'
-- '/medias/3.png'
-- '/medias/4.png'
+- '/medias/1.jpg'
+- '/medias/2.jpg'
+- '/medias/3.jpg'
+- '/medias/4.jpg'
 - '/medias/5.jpg'
 - '/medias/6.jpg'
 - '/medias/7.jpg'
-- '/medias/8.png'
-- '/medias/9.png'
+- '/medias/8.jpg'
+- '/medias/9.jpg'
 - '/medias/10.jpg'
-- '/medias/11.png'
-- '/medias/12.png'
-- '/medias/13.png'
-- '/medias/14.png'
-- '/medias/15.png'
-- '/medias/16.png'
-- '/medias/17.png'
+- '/medias/11.jpg'
+- '/medias/12.jpg'
+- '/medias/13.jpg'
+- '/medias/14.jpg'
+- '/medias/15.jpg'
+- '/medias/16.jpg'
+- '/medias/17.jpg'
 
 CDN:
   valine: https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js

@@ -1,7 +1,7 @@
 ---
 title: 使用git命令时，出现diffie-hellman-group1-sha1错误处理方法
 date: 2016-05-22 15:06:15
-img: '/medias/4.png'
+img: '/medias/4.jpg'
 categories:
 - Git相关
 tags: 

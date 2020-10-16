@@ -2,8 +2,8 @@
 title: 【Android】组件化开发的简单应用
 date: 2019-03-02 15:06:15
 swiper: true
-swiperImg: '/medias/13.png'
-img: '/medias/13.png'
+swiperImg: '/medias/13.jpg'
+img: '/medias/13.jpg'
 categories:
 - Android技术相关
 tags: 

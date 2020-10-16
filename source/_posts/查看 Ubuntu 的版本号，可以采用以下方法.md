@@ -1,9 +1,9 @@
 ---
 title: 查看 Ubuntu 的版本号，可以采用以下方法
 date: 2010-05-10 15:06:15
-img: '/medias/2.png'
+img: '/medias/2.jpg'
 categories:
-- Ubuntu相关
+- Ubuntu
 tags: 
 - Ubuntu
 ---

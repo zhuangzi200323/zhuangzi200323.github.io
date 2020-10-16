@@ -1,7 +1,7 @@
 ---
 title: 提示Unknown system variable 'query_cache_size'
 date: 2019-06-02 15:06:15
-img: '/medias/11.png'
+img: '/medias/11.jpg'
 categories:
 - spring
 ---
