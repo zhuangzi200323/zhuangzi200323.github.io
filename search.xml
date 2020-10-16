@@ -5,8 +5,8 @@
     
     <entry>
       <title>无法加载文件 CUsers10186AppDataRoamingnpmhexo.ps1，因为在此系统上禁止运行脚本</title>
-      <link href="2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/"/>
-      <url>2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/</url>
+      <link href="2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/"/>
+      <url>2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/</url>
       
         <content type="html"><![CDATA[<p><strong>无法加载文件 C:\Users\10186\AppData\Roaming\npm\hexo.ps1，因为在此系统上禁止运行脚本<br>C:\Users\10186\AppData\Roaming\npm\hexo.ps1，因为在此系统上禁止运行脚本</strong></p><p>无论是npm run dev 还是 运行 hexo<br>s，在运行终端命令是会报错，发现提示错误信息”无法加载文件<br>C:\Users\10186\AppData\Roaming\npm\hexo.ps1，因为在此系统上禁止运行脚本。</p><p><img src="7f73d2e1b905a222464dda7678b62ce8.png" alt="7678b62ce8.png"></p><p>解决方法：</p><ol><li>按下win+s输入powershell。然后右键以管理员身份运行。</li></ol><p><img src="d265dd3790349ba151b44efe45628f9a.png" alt="721092327687.png"></p><ol><li><p>然后输入set-ExecutionPolicy RemoteSigned命令，</p></li><li><p>输入y，执行回车。</p></li></ol><p><img src="c726ada43233206372ec6151907be4c9.png" alt="721092529710.png"></p><ol><li>再次运行。</li></ol><p><img src="dea86e4a09f12a8ecc89b4734d108b7d.png" alt="721092554341.png"></p><ol><li>成功！</li></ol><p>转自<a href="https://blog.csdn.net/Dan_Xiao_Hui/article/details/107480800">https://blog.csdn.net/Dan_Xiao_Hui/article/details/107480800</a></p>]]></content>
       
@@ -30,8 +30,8 @@
     
     <entry>
       <title>turtlebot3 gazebo仿真-基于ros melodic</title>
-      <link href="2020/05/22/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/"/>
-      <url>2020/05/22/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/</url>
+      <link href="2020/05/22/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/"/>
+      <url>2020/05/22/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/</url>
       
         <content type="html"><![CDATA[<h2 id="turtlebot3-gazebo仿真-基于ros-melodic"><a href="#turtlebot3-gazebo仿真-基于ros-melodic" class="headerlink" title="turtlebot3 gazebo仿真-基于ros melodic"></a>turtlebot3 gazebo仿真-基于ros melodic</h2><h3 id="turtlebot3-gazebo仿真"><a href="#turtlebot3-gazebo仿真" class="headerlink" title="turtlebot3 gazebo仿真"></a>turtlebot3 gazebo仿真</h3><p><strong>依赖基础</strong></p><ul><li><p>ros<br>gazebo等，安装见<a href="https://blog.csdn.net/weixin_41469272/article/details/105289174">https://blog.csdn.net/weixin_41469272/article/details/105289174</a></p></li><li><p>turtlebot3系列包</p><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> ros-melodic-turtlebot3\*</code></pre></li><li><p>slam(这里使用gmapping)</p><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> ros-melodic-gmapping</code></pre></li><li><p>navigation</p><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> ros-melodic-navigation</code></pre></li></ul><h2 id="一、turtlrbot3-给定目标点，未知地图，自主定位建图及局部规划"><a href="#一、turtlrbot3-给定目标点，未知地图，自主定位建图及局部规划" class="headerlink" title="一、turtlrbot3 给定目标点，未知地图，自主定位建图及局部规划"></a>一、turtlrbot3 给定目标点，未知地图，自主定位建图及局部规划</h2><h3 id="1-启动ros-master"><a href="#1-启动ros-master" class="headerlink" title="1. 启动ros master"></a>1. 启动ros master</h3><pre class=" language-bash"><code class="language-bash">roscore</code></pre><p>注意：打开新终端，运行turtlebot3相关包时，终端都需指定bot类型：即打开终端需执行：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">export</span> TURTLEBOT3_MODEL<span class="token operator">=</span>burger</code></pre><h3 id="2-启动turtlebot3-gazebo仿真环境"><a href="#2-启动turtlebot3-gazebo仿真环境" class="headerlink" title="2. 启动turtlebot3 gazebo仿真环境"></a>2. 启动turtlebot3 gazebo仿真环境</h3><pre class=" language-bash"><code class="language-bash">roslaunch turtlebot3_gazebo turtlebot3_house.launch</code></pre><p>gazebo中显示turtlebot3及仿真环境</p><p><img src="media/fa6831b58446e2ec53931cc6155c10cb.png" alt="在这里插入图片描述"></p><h3 id="3-启动rviz显示雷达数据"><a href="#3-启动rviz显示雷达数据" class="headerlink" title="3. 启动rviz显示雷达数据"></a>3. 启动rviz显示雷达数据</h3><p>以下方式二选一，嫌麻烦选1，想了解rviz使用选2</p><p>1）直接打开写好的rviz配置文件：</p><p>roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch</p><p>2）自己配置rviz</p><p>*1. 终端输入rviz打开rviz界面</p><p>*2. 将global option 下的fixed<br>frame改成odom，因为当前map坐标没有被创建，在执行slam的时候map坐标才会被创建</p><p>*3. 点击下方add，添加laserscan ，将topic 设定为scan</p><p>此时会在界面中显示雷达点云，默认点云比较小，可以将size值改大一些，如0.05，点云数据会变大清晰。</p><p>*4.<br>点击add，添加tf，则显示出多个坐标系，点击frame，去掉除base_link与odom其余的坐标系</p><h3 id="4-打开turtlebot3的键盘控制"><a href="#4-打开turtlebot3的键盘控制" class="headerlink" title="4. 打开turtlebot3的键盘控制"></a>4. 打开turtlebot3的键盘控制</h3><p>roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch</p><p>按waxd等按键，观察rviz中base_link的移动是否一致。</p><h3 id="5-运行gmapping"><a href="#5-运行gmapping" class="headerlink" title="5. 运行gmapping"></a>5. 运行gmapping</h3><p>rosrun gmapping slam_gmapping</p><h3 id="6-rviz下add-map，topic选择-map，rviz显示slam创建地图"><a href="#6-rviz下add-map，topic选择-map，rviz显示slam创建地图" class="headerlink" title="6. rviz下add map，topic选择/map，rviz显示slam创建地图"></a>6. rviz下add map，topic选择/map，rviz显示slam创建地图</h3><p><img src="media/d4522f7f0e6d7572a54229186d4ef6f5.png" alt="在这里插入图片描述"></p><h3 id="7-在打开的按键控制终端下，按waxd等按键，观察slam的创建地图的变换"><a href="#7-在打开的按键控制终端下，按waxd等按键，观察slam的创建地图的变换" class="headerlink" title="7.  在打开的按键控制终端下，按waxd等按键，观察slam的创建地图的变换"></a>7.  在打开的按键控制终端下，按waxd等按键，观察slam的创建地图的变换</h3><h3 id="8-关闭turtlebot3的键盘控制"><a href="#8-关闭turtlebot3的键盘控制" class="headerlink" title="8.  关闭turtlebot3的键盘控制"></a>8.  关闭turtlebot3的键盘控制</h3><h3 id="9-打开move-base"><a href="#9-打开move-base" class="headerlink" title="9.  打开move_base"></a>9.  打开move_base</h3><pre class=" language-bash"><code class="language-bash">roslaunch turtlebot3_navigation move_base.launch</code></pre><h3 id="10-rviz中add-path，topic选择-global-path"><a href="#10-rviz中add-path，topic选择-global-path" class="headerlink" title="10.  rviz中add path，topic选择 global path"></a>10.  rviz中add path，topic选择 global path</h3><h3 id="11-点击2d-nav-goal，在rviz显示的地图上，用鼠标点击选择一个目标点，机器人自行规划路径运行至目标点"><a href="#11-点击2d-nav-goal，在rviz显示的地图上，用鼠标点击选择一个目标点，机器人自行规划路径运行至目标点" class="headerlink" title="11.  点击2d nav_goal，在rviz显示的地图上，用鼠标点击选择一个目标点，机器人自行规划路径运行至目标点"></a>11.  点击2d nav_goal，在rviz显示的地图上，用鼠标点击选择一个目标点，机器人自行规划路径运行至目标点</h3><h3 id="12-最后可以把新配置的rviz保存，这样下次不用再挨个add-topic"><a href="#12-最后可以把新配置的rviz保存，这样下次不用再挨个add-topic" class="headerlink" title="12.  最后可以把新配置的rviz保存，这样下次不用再挨个add topic"></a>12.  最后可以把新配置的rviz保存，这样下次不用再挨个add topic</h3><p><img src="media/671979538d2804e0cdcfec2a7ee74555.png" alt="在这里插入图片描述"></p><h2 id="二、-创建地图并保存，根据已知地图导航，全局规划"><a href="#二、-创建地图并保存，根据已知地图导航，全局规划" class="headerlink" title="二、 创建地图并保存，根据已知地图导航，全局规划"></a>二、 创建地图并保存，根据已知地图导航，全局规划</h2><p><strong>slam建图并保存</strong></p><p>首先打开ros master：</p><pre class=" language-bash"><code class="language-bash">roscore</code></pre><p>注意：打开新终端，运行turtlebot3相关包时，终端都需指定bot类型：即打开终端需执行：</p><p>export TURTLEBOT3_MODEL=burger</p><h3 id="1-启动turtlebot3-gazebo仿真环境"><a href="#1-启动turtlebot3-gazebo仿真环境" class="headerlink" title="1.  启动turtlebot3 gazebo仿真环境"></a>1.  启动turtlebot3 gazebo仿真环境</h3><pre class=" language-bash"><code class="language-bash">roslaunch turtlebot3_gazebo turtlebot3_house.launch</code></pre><h3 id="2-打开新终端，启动slam"><a href="#2-打开新终端，启动slam" class="headerlink" title="2.  打开新终端，启动slam"></a>2.  打开新终端，启动slam</h3><pre class=" language-bash"><code class="language-bash">roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:<span class="token operator">=</span>gmapping</code></pre><h3 id="3-新终端，启动键盘控制程序"><a href="#3-新终端，启动键盘控制程序" class="headerlink" title="3.  新终端，启动键盘控制程序"></a>3.  新终端，启动键盘控制程序</h3><pre class=" language-bash"><code class="language-bash">roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch</code></pre><h3 id="4-利用按键aw等移动机器人，使地图完整，保存地图到主-目录下"><a href="#4-利用按键aw等移动机器人，使地图完整，保存地图到主-目录下" class="headerlink" title="4.  利用按键aw等移动机器人，使地图完整，保存地图到主~目录下"></a>4.  利用按键aw等移动机器人，使地图完整，保存地图到主~目录下</h3><pre class=" language-bash"><code class="language-bash">rosrun map_server map_saver -f \~/map</code></pre><h3 id="5-关闭turtlebot3-teleop，在turtlebot3-teleop运行终端下，ctrl-c就行"><a href="#5-关闭turtlebot3-teleop，在turtlebot3-teleop运行终端下，ctrl-c就行" class="headerlink" title="5.  关闭turtlebot3_teleop，在turtlebot3_teleop运行终端下，ctrl+c就行"></a>5.  关闭turtlebot3_teleop，在turtlebot3_teleop运行终端下，ctrl+c就行</h3><h3 id="6-运行turtlebot3-navigation"><a href="#6-运行turtlebot3-navigation" class="headerlink" title="6.  运行turtlebot3_navigation"></a>6.  运行turtlebot3_navigation</h3><pre class=" language-bash"><code class="language-bash">roslaunch turtlebot3_navigation turtlebot3_navigation.launchmap_file:<span class="token operator">=</span>\<span class="token variable">$HOME</span>/map.yaml</code></pre><p><strong>参考连接</strong></p><p><a href="https://www.ncnynl.com/archives/201707/1787.html">https://www.ncnynl.com/archives/201707/1787.html</a></p><p><strong>转自</strong><br><a href="https://blog.csdn.net/weixin_41469272/article/details/106139306">https://blog.csdn.net/weixin_41469272/article/details/106139306</a></p>]]></content>
       
@@ -57,8 +57,8 @@
     
     <entry>
       <title>ROS遇到的问题</title>
-      <link href="2020/03/02/ros-yu-dao-de-wen-ti/"/>
-      <url>2020/03/02/ros-yu-dao-de-wen-ti/</url>
+      <link href="2020/03/02/ros-yu-dao-de-wen-ti/ros-yu-dao-de-wen-ti/"/>
+      <url>2020/03/02/ros-yu-dao-de-wen-ti/ros-yu-dao-de-wen-ti/</url>
       
         <content type="html"><![CDATA[<h2 id="1-sudo-rosdep-init与rosdep-update出错"><a href="#1-sudo-rosdep-init与rosdep-update出错" class="headerlink" title="1. sudo rosdep init与rosdep update出错"></a>1. sudo rosdep init与rosdep update出错</h2><p>因为raw.Githubusercontent.com无法访问，去下方链接可以查询raw.Githubusercontent.com的ip，将ip加入到hosts中再试即可</p><p>ip查询网站 <a href="https://site.ip138.com/raw.Githubusercontent.com/">https://site.ip138.com/raw.Githubusercontent.com/</a></p><p>输入 raw.githubusercontent.com 查询IP地址</p><p><img src="media/80ff70bf829de99dfecaa3785dba3820.png" alt="clipboard.png"></p><p>添加 该ip 到hosts文件 sudo vi /etc/hosts</p><p><img src="media/214deb83259203c1702aec0ac1120dff.png" alt="clipboard.png"></p><p><a href="https://blog.csdn.net/benpaodelulu_guajian/article/details/105901921">https://blog.csdn.net/benpaodelulu_guajian/article/details/105901921</a></p><h2 id="2-提示time-out的解决办法"><a href="#2-提示time-out的解决办法" class="headerlink" title="2. 提示time out的解决办法"></a>2. 提示time out的解决办法</h2><p>reading in sources list data from /etc/ros/rosdep/sources.list.d</p><p>Hit <a href="http://github.com/ros/rosdistro/raw/master/rosdep/osx-homebrew.yaml">http://github.com/ros/rosdistro/raw/master/rosdep/osx-homebrew.yaml</a></p><p>ERROR: unable to process source<br>[<a href="http://github.com/ros/rosdistro/raw/master/rosdep/base.yaml]">http://github.com/ros/rosdistro/raw/master/rosdep/base.yaml]</a>:</p><p>&lt;urlopen error _ssl.c:489: The handshake operation timed out&gt;<br>(<a href="http://github.com/ros/rosdistro/raw/master/rosdep/base.yaml">http://github.com/ros/rosdistro/raw/master/rosdep/base.yaml</a>)</p><p>ERROR: error loading sources list:</p><p>The read operation timed out</p><p><strong>解决方法：</strong></p><p>更改<br>/usr/lib/python2.7/dist-packages/rosdep2/下的三个文件sources_list.py、gbpdistro_support.py、rep3.py</p><p>中的DOWNLOAD_TIMEOUT = 15.0值，改大一点就可以了。</p><p><a href="https://www.cnblogs.com/zxzmnh/p/11758103.html">https://www.cnblogs.com/zxzmnh/p/11758103.html</a></p><h2 id="3-rqt-plot运行报错"><a href="#3-rqt-plot运行报错" class="headerlink" title="3. rqt_plot运行报错"></a>3. rqt_plot运行报错</h2><p>运行rqt_plot的时候，会出现以下报错，且rqt_plot的窗口不会显示网格，无法拖拽。</p><p><img src="media/77b6a4dfddecf7eba653d2d305f75a18.png" alt="clipboard.png"></p><p><img src="media/a88892e3bc1207116b0f4c8968819a79.png" alt="clipboard.png"></p><p><strong>解决方案</strong></p><p>在各种论坛、博客上找了好多解决办法，无奈都没有成功，最后误打误撞出了一个办法，终于算是能运行rqt_plot了…</p><p>在命令行输入：</p><pre class=" language-bash"><code class="language-bash">rqt</code></pre><p>在加载出来的rqt窗口中，选择【Plugins】—【Visualization】—【Plot】，如你所见，rqt_plot运行成功！</p><p><a href="https://blog.csdn.net/weixin_36965307/article/details/104948601">https://blog.csdn.net/weixin_36965307/article/details/104948601</a></p><h2 id="4-rospkg、rosdistro-not-found-error"><a href="#4-rospkg、rosdistro-not-found-error" class="headerlink" title="4. rospkg、rosdistro not found error"></a>4. rospkg、rosdistro not found error</h2><p><img src="media/a1ae11549e97846ad4f8c398eb5de10a.png" alt="clipboard.png"></p><p><img src="media/0746d79fdf9baa3aaec5e429e3453e88.png" alt="clipboard.png"></p><p>出现这个错误时，</p><pre class=" language-bash"><code class="language-bash">pkg_resources.DistributionNotFound: The <span class="token string">'rosdistro\>=0.7.5'</span> distribution was notfound and is required by rosdeppkg_resources.DistributionNotFound: The <span class="token string">'rospkg\>=1.1.10'</span> distribution was notfound and is required by rosdep</code></pre><p>安装如下两个包即可</p><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> python-rospkg python-rosdistro</code></pre>]]></content>
       
@@ -75,59 +75,9 @@
     
     
     <entry>
-      <title>Tomcat部署Web应用时出现One or more listeners failed to start异常</title>
-      <link href="2019/06/02/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/"/>
-      <url>2019/06/02/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Tomcat部署Web应用时出现One-or-more-listeners-failed-to-start异常"><a href="#Tomcat部署Web应用时出现One-or-more-listeners-failed-to-start异常" class="headerlink" title="Tomcat部署Web应用时出现One or more listeners failed to start异常"></a>Tomcat部署Web应用时出现One or more listeners failed to start异常</h2><p>Tomcat启动成功，然后在部署应用的时候产生了如下的异常：</p><pre class=" language-bash"><code class="language-bash">08-Jul-2017 21:45:26.064 严重 <span class="token punctuation">[</span>RMI TCP Connection<span class="token punctuation">(</span>3<span class="token punctuation">)</span>-127.0.0.1<span class="token punctuation">]</span>org.apache.catalina.core.StandardContext.startInternal One or <span class="token function">more</span> listenersfailed to start. Full details will be found <span class="token keyword">in</span> the appropriate container log<span class="token function">file</span>08-Jul-2017 21:45:26.066 严重 <span class="token punctuation">[</span>RMI TCP Connection<span class="token punctuation">(</span>3<span class="token punctuation">)</span>-127.0.0.1<span class="token punctuation">]</span>org.apache.catalina.core.StandardContext.startInternal Context <span class="token punctuation">[</span><span class="token punctuation">]</span> startup faileddue to previous errors</code></pre><p>从错误中看到是因为有listener启动失败，查看了日志发现报了这个错误：</p><pre class=" language-bash"><code class="language-bash">org.apache.catalina.core.StandardContext.listenerStart Error configuringapplication listener of class<span class="token punctuation">[</span>org.springframework.web.context.ContextLoaderListener<span class="token punctuation">]</span>java.lang.ClassNotFoundException:org.springframework.web.context.ContextLoaderListeneratorg.apache.catalina.loader.WebappClassLoaderBase.loadClass<span class="token punctuation">(</span>WebappClassLoaderBase.java:1285<span class="token punctuation">)</span>atorg.apache.catalina.loader.WebappClassLoaderBase.loadClass<span class="token punctuation">(</span>WebappClassLoaderBase.java:1119<span class="token punctuation">)</span>…</code></pre><p>提示org.springframework.web.context.ContextLoaderListener这个类找不到。jar包已经导入到工程中了，编译器也可以识别出这个类，不应该出现这样的问题啊，很懵逼啊。</p><p><strong>解决方法</strong></p><p>功夫不负有心人啊，前人栽树后人乘凉，经过搜索终于发现了一篇能解决这个问题的文章：原文链接。</p><p>衷心的感谢一下该文章的作者。接下来是操作过程：</p><p>Ctrl+Alt+Shift+S弹出Project Structure窗口，在Output Layout标签中找到Available<br>Elements，鼠标右击下面的元素：</p><p><img src="media/d5bacb8f1559eb0a1180564a4aad1205.jpeg"></p><p>点击Put into Output<br>Root，执行后，在WEB-INF会增加lib目录，里面是项目引用的jar包，点击OK。再次部署应用就能成功运行了。</p><p><img src="media/36bbacce598e79cbdfa49262eafad3f1.jpeg"></p><p>原文：<a href="https://blog.csdn.net/cflys/article/details/74853402">https://blog.csdn.net/cflys/article/details/74853402</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Tomcat </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>mybatis-generator-maven-plugin出错解决办法</title>
-      <link href="2019/06/02/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/"/>
-      <url>2019/06/02/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/</url>
-      
-        <content type="html"><![CDATA[<h2 id="mybatis-generator-maven-plugin出错解决办法"><a href="#mybatis-generator-maven-plugin出错解决办法" class="headerlink" title="mybatis-generator-maven-plugin出错解决办法"></a>mybatis-generator-maven-plugin出错解决办法</h2><p>错误截图：</p><p><img src="media/45207bc398bed2a9f2d948c65f164bd1.jpeg"></p><p>解决办法</p><p><img src="media/3cffb1f4133ac0947b9dd5f6d39a755b.jpeg"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> MyBatis </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>spring软件环境搭建</title>
-      <link href="2019/06/02/spring-ruan-jian-huan-jing-da-jian/"/>
-      <url>2019/06/02/spring-ruan-jian-huan-jing-da-jian/</url>
+      <link href="2019/06/02/spring-ruan-jian-huan-jing-da-jian/spring-ruan-jian-huan-jing-da-jian/"/>
+      <url>2019/06/02/spring-ruan-jian-huan-jing-da-jian/spring-ruan-jian-huan-jing-da-jian/</url>
       
         <content type="html"><![CDATA[<h2 id="spring软件环境搭建"><a href="#spring软件环境搭建" class="headerlink" title="spring软件环境搭建"></a>spring软件环境搭建</h2><p><strong>软件环境：</strong></p><p>IntelliJ IDEA 2018.2.5 (Ultimate Edition)</p><p>JDK 1.8</p><p>Tomcat 8.0.53</p><h3 id="1、-选择File–-gt-New–-gt-Project"><a href="#1、-选择File–-gt-New–-gt-Project" class="headerlink" title="1、 选择File–&gt;New–&gt;Project"></a>1、 选择File–&gt;New–&gt;Project</h3><p><img src="media/ed30aedfd26c819e62e6a3995eb4c3f3.jpeg"></p><h3 id="2、-输入项目名称"><a href="#2、-输入项目名称" class="headerlink" title="2、 输入项目名称"></a>2、 输入项目名称</h3><p><img src="media/93acddbadb79dc89d36b2e8de2cd820f.jpeg"></p><h3 id="3、-点击Finish会弹出下载jar的对话框"><a href="#3、-点击Finish会弹出下载jar的对话框" class="headerlink" title="3、 点击Finish会弹出下载jar的对话框"></a>3、 点击Finish会弹出下载jar的对话框</h3><p><img src="media/6eb9fcffd0f330dfcb9d4c3d9ca55300.jpeg"></p><h3 id="4、-修改web-xml如下"><a href="#4、-修改web-xml如下" class="headerlink" title="4、 修改web.xml如下"></a>4、 修改web.xml如下</h3><p><img src="media/15ecb583f486d585794d968424ed3786.jpeg"></p><h3 id="5、-配置xxx-servlet-xml文件"><a href="#5、-配置xxx-servlet-xml文件" class="headerlink" title="5、 配置xxx-servlet.xml文件"></a>5、 配置xxx-servlet.xml文件</h3><p><img src="media/d6e13338c021f2dd9b13e02e07e97268.jpeg"></p><h3 id="6、-添加helloWorld-jsp文件"><a href="#6、-添加helloWorld-jsp文件" class="headerlink" title="6、 添加helloWorld.jsp文件"></a>6、 添加helloWorld.jsp文件</h3><p><img src="media/9a3399f5a50c90f53b267cf663c0d134.jpeg"></p><h3 id="7、-编译Controller"><a href="#7、-编译Controller" class="headerlink" title="7、 编译Controller"></a>7、 编译Controller</h3><p><img src="media/dafc90522d1e0ba0318b75f6fe272752.jpeg"></p><h3 id="8、-部署项目"><a href="#8、-部署项目" class="headerlink" title="8、 部署项目"></a>8、 部署项目</h3><p><img src="media/478b083d16b9a6e660b3ad06eb79b08b.jpeg"></p><p><img src="media/9b291dde4ad6b9a0b8df51fe0902fa30.jpeg"></p><p><img src="media/838c370bb5d4c4d43191bd2f7ef0aa3b.jpeg"></p><p><img src="media/8bbc5f3b2023b66f3c932889d3f1bb88.jpeg"></p><p><img src="media/b6b8908d9f8a6f069bef7fe054fcfd1d.jpeg"></p><h3 id="9、-运行项目"><a href="#9、-运行项目" class="headerlink" title="9、 运行项目"></a>9、 运行项目</h3><p><img src="media/35e91f220631993a92bad0a1a8552885.jpeg"></p><p>运行时出现如下错误</p><p><img src="media/516a03873a89a02462679ea39d6d2242.jpeg"></p><p>修正相关错误</p><p><img src="media/f1ccd0592806bc73b798e6e254b0fd14.jpeg"></p><p><img src="media/f28690c49ee6f905a48b0f08d273c347.jpeg"></p><p><img src="media/302c2f3d2f24e00e9c0500b669ce07f1.jpeg"></p><h3 id="10、-再次运行项目，出现下方页面，则创建项目完成"><a href="#10、-再次运行项目，出现下方页面，则创建项目完成" class="headerlink" title="10、  再次运行项目，出现下方页面，则创建项目完成"></a>10、  再次运行项目，出现下方页面，则创建项目完成</h3><p><img src="media/fa786fd9a6c9d1b371f08dd3f80c1f21.jpeg"></p><h3 id="11、-为了后续开发避免遇到莫名其妙的问题，请做如下设置：在web-WEB-INF-下增加两个文件夹，分别是classes与lib。"><a href="#11、-为了后续开发避免遇到莫名其妙的问题，请做如下设置：在web-WEB-INF-下增加两个文件夹，分别是classes与lib。" class="headerlink" title="11、  为了后续开发避免遇到莫名其妙的问题，请做如下设置：在web\WEB-INF\下增加两个文件夹，分别是classes与lib。"></a>11、  为了后续开发避免遇到莫名其妙的问题，请做如下设置：在web\WEB-INF\下增加两个文件夹，分别是classes与lib。</h3><p><img src="media/1bbee41e058ce8365205f9a1899515b2.png"></p><h3 id="12、-将项目中的lib下所有jar拷贝到web-WEB-INF-lib下"><a href="#12、-将项目中的lib下所有jar拷贝到web-WEB-INF-lib下" class="headerlink" title="12、 将项目中的lib下所有jar拷贝到web\WEB-INF\lib下"></a>12、 将项目中的lib下所有jar拷贝到web\WEB-INF\lib下</h3><h3 id="13、-将web-WEB-INF-classes设置输出目录，如下图所示："><a href="#13、-将web-WEB-INF-classes设置输出目录，如下图所示：" class="headerlink" title="13、 将web\WEB-INF\classes设置输出目录，如下图所示："></a>13、 将web\WEB-INF\classes设置输出目录，如下图所示：</h3><p><img src="media/04eefa5b73a7900829b517a801e3e2c0.jpeg"></p>]]></content>
       
@@ -142,31 +92,6 @@
         <tags>
             
             <tag> IntelliJ IDEA </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Tomcat 8安装后配置</title>
-      <link href="2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/"/>
-      <url>2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Tomcat-8安装后配置"><a href="#Tomcat-8安装后配置" class="headerlink" title="Tomcat 8安装后配置"></a>Tomcat 8安装后配置</h2><p>Tomcat 8安装完成，做如下配置后可使用下图红框中的功能</p><p><img src="media/321a5e542c6cb67ff587ace737bb781d.jpeg"></p><h3 id="1-打开conf-tomcat-users-xml文件，加入"><a href="#1-打开conf-tomcat-users-xml文件，加入" class="headerlink" title="1. 打开conf\tomcat-users.xml文件，加入"></a>1. 打开conf\tomcat-users.xml文件，加入</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-gui"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-script"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-jmx"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-status"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-script"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"admin-gui"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"admin-script"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>user username<span class="token operator">=</span><span class="token string">"admin"</span> password<span class="token operator">=</span><span class="token string">"123456"</span>roles<span class="token operator">=</span><span class="token string">"manager-gui,manager-script,manager-status,admin-gui"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>user username<span class="token operator">=</span><span class="token string">"root"</span> password<span class="token operator">=</span><span class="token string">"123456"</span>roles<span class="token operator">=</span><span class="token string">"manager-script,manager-jmx,admin-script"</span>/<span class="token operator">></span></code></pre><p><img src="media/46095471e76dccab7b2b1426d067b9d1.jpeg"></p><h3 id="2-在conf-Catalina-localhost下新增manager-xml文件，内容如下："><a href="#2-在conf-Catalina-localhost下新增manager-xml文件，内容如下：" class="headerlink" title="2. 在conf\Catalina\localhost下新增manager.xml文件，内容如下："></a>2. 在conf\Catalina\localhost下新增manager.xml文件，内容如下：</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>Context privileged<span class="token operator">=</span><span class="token string">"true"</span> antiResourceLocking<span class="token operator">=</span><span class="token string">"false"</span>      docBase<span class="token operator">=</span><span class="token string">"$&amp;#123;catalina.home&amp;#125;/webapps/manager"</span><span class="token operator">></span><span class="token operator">&lt;</span>Valve className<span class="token operator">=</span><span class="token string">"org.apache.catalina.valves.RemoteAddrValve"</span> allow<span class="token operator">=</span><span class="token string">"^.*$"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>/Context<span class="token operator">></span></code></pre><p><img src="media/2a3f8e9509750e52be858927ac956dfe.jpeg"></p><p>安成上述两步后，红框中功能就可以访问了</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Tomcat </tag>
             
         </tags>
       
@@ -195,8 +120,8 @@
     
     <entry>
       <title>安装mysql8.0.13教程</title>
-      <link href="2019/06/02/an-zhuang-mysql8.0.13-jiao-cheng/"/>
-      <url>2019/06/02/an-zhuang-mysql8.0.13-jiao-cheng/</url>
+      <link href="2019/06/02/an-zhuang-mysql8.0.13-jiao-cheng/an-zhuang-mysql8.0.13-jiao-cheng/"/>
+      <url>2019/06/02/an-zhuang-mysql8.0.13-jiao-cheng/an-zhuang-mysql8.0.13-jiao-cheng/</url>
       
         <content type="html"><![CDATA[<h2 id="安装mysql8-0-13教程"><a href="#安装mysql8-0-13教程" class="headerlink" title="安装mysql8.0.13教程"></a>安装mysql8.0.13教程</h2><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h3><p><a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p><p><img src="media/6a6e692c26ad90557f4e555b6cd18784.jpeg"></p><h3 id="2-解压到指定目录"><a href="#2-解压到指定目录" class="headerlink" title="2. 解压到指定目录"></a>2. 解压到指定目录</h3><p><img src="media/bf9d791d234c3fbd3c285cbf509bc8b6.jpeg"></p><h3 id="3-在D-mysql-8-0-13-winx64目录下添加my-ini文件"><a href="#3-在D-mysql-8-0-13-winx64目录下添加my-ini文件" class="headerlink" title="3. 在D:\mysql-8.0.13-winx64目录下添加my.ini文件"></a>3. 在D:\mysql-8.0.13-winx64目录下添加my.ini文件</h3><p>[mysql]</p><p># 设置mysql客户端默认字符集</p><pre class=" language-bash"><code class="language-bash">default-character-set<span class="token operator">=</span>utf8</code></pre><p>[mysqld]</p><p># 设置3306端口</p><pre class=" language-bash"><code class="language-bash">port <span class="token operator">=</span> 3306</code></pre><p># 设置mysql的安装目录</p><pre class=" language-bash"><code class="language-bash">basedir<span class="token operator">=</span>D:\\\\mysql-8.0.13-winx64</code></pre><p># 设置 mysql数据库的数据的存放目录，MySQL 8+<br>不需要以下配置，系统自己生成即可，否则有可能报错</p><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># datadir=C:\\\\web\\\\sqldata</span></code></pre><p># 允许最大连接数</p><pre class=" language-bash"><code class="language-bash">max_connections<span class="token operator">=</span>20</code></pre><p># 服务端使用的字符集默认为8比特编码的latin1字符集</p><pre class=" language-bash"><code class="language-bash">character-set-server<span class="token operator">=</span>utf8</code></pre><p># 创建新表时将使用的默认存储引擎</p><pre class=" language-bash"><code class="language-bash">default-storage-engine<span class="token operator">=</span>INNODB</code></pre><h3 id="4-添加环境变量"><a href="#4-添加环境变量" class="headerlink" title="4. 添加环境变量"></a>4. 添加环境变量</h3><p><img src="media/e5c325b33c12a8cd40bb2402a0645235.jpeg"></p><h3 id="5-安装mysql"><a href="#5-安装mysql" class="headerlink" title="5. 安装mysql"></a>5. 安装mysql</h3><p><strong>mysqld –initialize –console</strong></p><p><img src="media/4724c156dbb920f958697f996f209bfb.png"></p><p>注意！[注意] [MY-010454] [服务器]为root @<br>localhost生成临时密码：9P0gYk-？0，kT其中root @<br>localhost：后面的9P0gYk-？0，kT就是初始密码（不含首位空格）。在没有更改密码前，需要记住这个密码，后续登录需要用到。复制密码先保存起来!!!</p><h3 id="6-安装mysql服务及启动mysql服务"><a href="#6-安装mysql服务及启动mysql服务" class="headerlink" title="6. 安装mysql服务及启动mysql服务"></a>6. 安装mysql服务及启动mysql服务</h3><p><img src="media/7977ad0c14cec5ad2475f19c1de5fa72.jpeg"></p><h3 id="7-修改密码"><a href="#7-修改密码" class="headerlink" title="7. 修改密码"></a>7. 修改密码</h3><p><img src="media/7b61820855d32ed0a63a68db37a3e016.jpeg"></p><h3 id="8-使用navicat连接时提示如下错误解决办法"><a href="#8-使用navicat连接时提示如下错误解决办法" class="headerlink" title="8. 使用navicat连接时提示如下错误解决办法"></a>8. 使用navicat连接时提示如下错误解决办法</h3><p><img src="media/1e58ecf5c299258833a7936dfb2c073e.jpeg"></p><p><img src="media/409504c90f97dde0081b03c62da6c09e.jpeg"></p><p>转自：<a href="http://www.runoob.com/mysql/mysql-install.html">http://www.runoob.com/mysql/mysql-install.html</a></p>]]></content>
       
@@ -211,6 +136,81 @@
         <tags>
             
             <tag> MySql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Tomcat 8安装后配置</title>
+      <link href="2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/tomcat-8-an-zhuang-hou-pei-zhi/"/>
+      <url>2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/tomcat-8-an-zhuang-hou-pei-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Tomcat-8安装后配置"><a href="#Tomcat-8安装后配置" class="headerlink" title="Tomcat 8安装后配置"></a>Tomcat 8安装后配置</h2><p>Tomcat 8安装完成，做如下配置后可使用下图红框中的功能</p><p><img src="media/321a5e542c6cb67ff587ace737bb781d.jpeg"></p><h3 id="1-打开conf-tomcat-users-xml文件，加入"><a href="#1-打开conf-tomcat-users-xml文件，加入" class="headerlink" title="1. 打开conf\tomcat-users.xml文件，加入"></a>1. 打开conf\tomcat-users.xml文件，加入</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-gui"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-script"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-jmx"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-status"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"manager-script"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"admin-gui"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"admin-script"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>user username<span class="token operator">=</span><span class="token string">"admin"</span> password<span class="token operator">=</span><span class="token string">"123456"</span>roles<span class="token operator">=</span><span class="token string">"manager-gui,manager-script,manager-status,admin-gui"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>user username<span class="token operator">=</span><span class="token string">"root"</span> password<span class="token operator">=</span><span class="token string">"123456"</span>roles<span class="token operator">=</span><span class="token string">"manager-script,manager-jmx,admin-script"</span>/<span class="token operator">></span></code></pre><p><img src="media/46095471e76dccab7b2b1426d067b9d1.jpeg"></p><h3 id="2-在conf-Catalina-localhost下新增manager-xml文件，内容如下："><a href="#2-在conf-Catalina-localhost下新增manager-xml文件，内容如下：" class="headerlink" title="2. 在conf\Catalina\localhost下新增manager.xml文件，内容如下："></a>2. 在conf\Catalina\localhost下新增manager.xml文件，内容如下：</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>Context privileged<span class="token operator">=</span><span class="token string">"true"</span> antiResourceLocking<span class="token operator">=</span><span class="token string">"false"</span>      docBase<span class="token operator">=</span><span class="token string">"$&amp;#123;catalina.home&amp;#125;/webapps/manager"</span><span class="token operator">></span><span class="token operator">&lt;</span>Valve className<span class="token operator">=</span><span class="token string">"org.apache.catalina.valves.RemoteAddrValve"</span> allow<span class="token operator">=</span><span class="token string">"^.*$"</span>/<span class="token operator">></span><span class="token operator">&lt;</span>/Context<span class="token operator">></span></code></pre><p><img src="media/2a3f8e9509750e52be858927ac956dfe.jpeg"></p><p>安成上述两步后，红框中功能就可以访问了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tomcat </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mybatis-generator-maven-plugin出错解决办法</title>
+      <link href="2019/06/02/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/"/>
+      <url>2019/06/02/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/</url>
+      
+        <content type="html"><![CDATA[<h2 id="mybatis-generator-maven-plugin出错解决办法"><a href="#mybatis-generator-maven-plugin出错解决办法" class="headerlink" title="mybatis-generator-maven-plugin出错解决办法"></a>mybatis-generator-maven-plugin出错解决办法</h2><p>错误截图：</p><p><img src="media/45207bc398bed2a9f2d948c65f164bd1.jpeg"></p><p>解决办法</p><p><img src="media/3cffb1f4133ac0947b9dd5f6d39a755b.jpeg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MyBatis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Tomcat部署Web应用时出现One or more listeners failed to start异常</title>
+      <link href="2019/06/02/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/"/>
+      <url>2019/06/02/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Tomcat部署Web应用时出现One-or-more-listeners-failed-to-start异常"><a href="#Tomcat部署Web应用时出现One-or-more-listeners-failed-to-start异常" class="headerlink" title="Tomcat部署Web应用时出现One or more listeners failed to start异常"></a>Tomcat部署Web应用时出现One or more listeners failed to start异常</h2><p>Tomcat启动成功，然后在部署应用的时候产生了如下的异常：</p><pre class=" language-bash"><code class="language-bash">08-Jul-2017 21:45:26.064 严重 <span class="token punctuation">[</span>RMI TCP Connection<span class="token punctuation">(</span>3<span class="token punctuation">)</span>-127.0.0.1<span class="token punctuation">]</span>org.apache.catalina.core.StandardContext.startInternal One or <span class="token function">more</span> listenersfailed to start. Full details will be found <span class="token keyword">in</span> the appropriate container log<span class="token function">file</span>08-Jul-2017 21:45:26.066 严重 <span class="token punctuation">[</span>RMI TCP Connection<span class="token punctuation">(</span>3<span class="token punctuation">)</span>-127.0.0.1<span class="token punctuation">]</span>org.apache.catalina.core.StandardContext.startInternal Context <span class="token punctuation">[</span><span class="token punctuation">]</span> startup faileddue to previous errors</code></pre><p>从错误中看到是因为有listener启动失败，查看了日志发现报了这个错误：</p><pre class=" language-bash"><code class="language-bash">org.apache.catalina.core.StandardContext.listenerStart Error configuringapplication listener of class<span class="token punctuation">[</span>org.springframework.web.context.ContextLoaderListener<span class="token punctuation">]</span>java.lang.ClassNotFoundException:org.springframework.web.context.ContextLoaderListeneratorg.apache.catalina.loader.WebappClassLoaderBase.loadClass<span class="token punctuation">(</span>WebappClassLoaderBase.java:1285<span class="token punctuation">)</span>atorg.apache.catalina.loader.WebappClassLoaderBase.loadClass<span class="token punctuation">(</span>WebappClassLoaderBase.java:1119<span class="token punctuation">)</span>…</code></pre><p>提示org.springframework.web.context.ContextLoaderListener这个类找不到。jar包已经导入到工程中了，编译器也可以识别出这个类，不应该出现这样的问题啊，很懵逼啊。</p><p><strong>解决方法</strong></p><p>功夫不负有心人啊，前人栽树后人乘凉，经过搜索终于发现了一篇能解决这个问题的文章：原文链接。</p><p>衷心的感谢一下该文章的作者。接下来是操作过程：</p><p>Ctrl+Alt+Shift+S弹出Project Structure窗口，在Output Layout标签中找到Available<br>Elements，鼠标右击下面的元素：</p><p><img src="media/d5bacb8f1559eb0a1180564a4aad1205.jpeg"></p><p>点击Put into Output<br>Root，执行后，在WEB-INF会增加lib目录，里面是项目引用的jar包，点击OK。再次部署应用就能成功运行了。</p><p><img src="media/36bbacce598e79cbdfa49262eafad3f1.jpeg"></p><p>原文：<a href="https://blog.csdn.net/cflys/article/details/74853402">https://blog.csdn.net/cflys/article/details/74853402</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tomcat </tag>
             
         </tags>
       
@@ -244,6 +244,63 @@
     
     
     <entry>
+      <title>树莓派 DIY 笔记之前有介绍过用 VNC 连接到树莓派的方法</title>
+      <link href="2016/09/27/shu-mei-pai-diy-bi-ji-zhi-qian-you-jie-shao-guo-yong-vnc-lian-jie-dao-shu-mei-pai-de-fang-fa/shu-mei-pai-diy-bi-ji-zhi-qian-you-jie-shao-guo-yong-vnc-lian-jie-dao-shu-mei-pai-de-fang-fa/"/>
+      <url>2016/09/27/shu-mei-pai-diy-bi-ji-zhi-qian-you-jie-shao-guo-yong-vnc-lian-jie-dao-shu-mei-pai-de-fang-fa/shu-mei-pai-diy-bi-ji-zhi-qian-you-jie-shao-guo-yong-vnc-lian-jie-dao-shu-mei-pai-de-fang-fa/</url>
+      
+        <content type="html"><![CDATA[<p>树莓派 DIY 笔记之前有介绍过用 VNC 连接到树莓派的方法。在 Windows<br>下，当然还是自带的远程桌面更便捷。如果不想用<br>VNC，利用远程桌面（mstsc.exe）连接树莓派，如何实现？</p><p>只需要在 raspbian 下面安装一个服务 xdrp 即可。输入如下命令安装：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> xrdp</code></pre><p>然后就 Ok 了。</p><p><img src="media/be7f645be1ec59795f000fee7546ecdb.jpeg"></p><p><img src="media/5939f68942d87fde89539d73af8ba56a.jpeg"></p><p>转自：<a href="https://shumeipai.nxez.com/2013/10/06/windows-remote-desktop-connection-raspberry-pi.html">https://shumeipai.nxez.com/2013/10/06/windows-remote-desktop-connection-raspberry-pi.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 树莓派 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>树莓派3 中文显示乱码的问题</title>
+      <link href="2016/09/27/shu-mei-pai-3-zhong-wen-xian-shi-luan-ma-de-wen-ti/"/>
+      <url>2016/09/27/shu-mei-pai-3-zhong-wen-xian-shi-luan-ma-de-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<p>在teminal中,首先更新软件源</p><pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">apt-get</span> update$ <span class="token function">sudo</span> <span class="token function">apt-get</span> upgrade</code></pre><p>接着配置中文环境：</p><p>1 sudo apt-get install ttf-wqy-zenhei</p><p>2 sudo apt-get install scim-pinyin安装一个中文输入法</p><p>3 sudo raspi-config –&gt; 选择Internationalisation Options –&gt; change_locale –&gt; zh_CN.UTF-8,配置完成</p><p>4 sudo reboot 重启后,生效.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 树莓派 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>修正桌面图标变成了空白的方法</title>
+      <link href="2016/05/31/xiu-zheng-zhuo-mian-tu-biao-bian-cheng-liao-kong-bai-de-fang-fa/"/>
+      <url>2016/05/31/xiu-zheng-zhuo-mian-tu-biao-bian-cheng-liao-kong-bai-de-fang-fa/</url>
+      
+        <content type="html"><![CDATA[<p>将</p><pre class=" language-bash"><code class="language-bash">taskkill /f /im explorer.exeattrib -h -i %userprofile%\AppData\Local\IconCache.dbdel %userprofile%\AppData\Local\IconCache.db /astart explorer</code></pre><p>写到记事本，扩展名改为bat，点击运行即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用git命令时，出现diffie-hellman-group1-sha1错误处理方法</title>
       <link href="2016/05/22/shi-yong-git-ming-ling-shi-chu-xian-diffie-hellman-group1-sha1-cuo-wu-chu-li-fang-fa/"/>
       <url>2016/05/22/shi-yong-git-ming-ling-shi-chu-xian-diffie-hellman-group1-sha1-cuo-wu-chu-li-fang-fa/</url>
@@ -261,6 +318,50 @@
         <tags>
             
             <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>解决Ubuntu 16.04 Unity与任务栏消失的问题</title>
+      <link href="2015/10/12/jie-jue-ubuntu-16.04-unity-yu-ren-wu-lan-xiao-shi-de-wen-ti/"/>
+      <url>2015/10/12/jie-jue-ubuntu-16.04-unity-yu-ren-wu-lan-xiao-shi-de-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<h2 id="解决Ubuntu-16-04-Unity与任务栏消失的问题"><a href="#解决Ubuntu-16-04-Unity与任务栏消失的问题" class="headerlink" title="解决Ubuntu 16.04 Unity与任务栏消失的问题"></a>解决Ubuntu 16.04 Unity与任务栏消失的问题</h2><p>方法如下：</p><pre class=" language-bash"><code class="language-bash">sudoapt-get update​sudo <span class="token function">apt-get</span> <span class="token function">install</span> remove ubuntu-desktop​sudo <span class="token function">apt-get</span> <span class="token function">install</span> unity​sudo <span class="token function">shutdown</span> -r now</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Ubuntu </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Eclipse中ndk配置</title>
+      <link href="2015/10/12/eclipse-zhong-ndk-pei-zhi/"/>
+      <url>2015/10/12/eclipse-zhong-ndk-pei-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Eclipse中ndk配置"><a href="#Eclipse中ndk配置" class="headerlink" title="Eclipse中ndk配置"></a>Eclipse中ndk配置</h2><p>下面是使用NDK-r7在windows下配置自动编译的builders的过程。</p><h3 id="1-先下载安装android-ndk-r10e"><a href="#1-先下载安装android-ndk-r10e" class="headerlink" title="1. 先下载安装android-ndk-r10e"></a>1. 先下载安装android-ndk-r10e</h3><h3 id="2-打开Eclipse，导入android-ndk-r10e-samples-hello-jni"><a href="#2-打开Eclipse，导入android-ndk-r10e-samples-hello-jni" class="headerlink" title="2. 打开Eclipse，导入android-ndk-r10e\samples\hello-jni"></a>2. 打开Eclipse，导入android-ndk-r10e\samples\hello-jni</h3><h3 id="3-新建并配置一个Builder："><a href="#3-新建并配置一个Builder：" class="headerlink" title="3. 新建并配置一个Builder："></a>3. 新建并配置一个Builder：</h3><h4 id="a-Project-gt-Properties-gt-Builders-gt-New，新建一个Builder。"><a href="#a-Project-gt-Properties-gt-Builders-gt-New，新建一个Builder。" class="headerlink" title="(a) Project-&gt;Properties-&gt;Builders-&gt;New，新建一个Builder。"></a>(a) Project-&gt;Properties-&gt;Builders-&gt;New，新建一个Builder。</h4><h4 id="b-在弹出的【Choose-configuration-type】对话框，选择【Program】，点击【OK】"><a href="#b-在弹出的【Choose-configuration-type】对话框，选择【Program】，点击【OK】" class="headerlink" title="(b) 在弹出的【Choose configuration type】对话框，选择【Program】，点击【OK】"></a>(b) 在弹出的【Choose configuration type】对话框，选择【Program】，点击【OK】</h4><h4 id="c-在弹出的【Edit-Configuration】对话框中，配置选项卡【Main】。"><a href="#c-在弹出的【Edit-Configuration】对话框中，配置选项卡【Main】。" class="headerlink" title="(c) 在弹出的【Edit Configuration】对话框中，配置选项卡【Main】。"></a>(c) 在弹出的【Edit Configuration】对话框中，配置选项卡【Main】。</h4><p>在“Name“中输入新builders的名称。</p><p>在“Location”中输入nkd-build.cmd的路径。（E:\android\android-ndk-r10e\ndk-build.cmd）。</p><p>在“Working Diretcoty”中输入${workspace_loc:/HelloJni}（也可以点击“Browse Workspace”来选取HelloJni目录）。</p><h4 id="d-【Edit-Configuration】对话框中，配置选项卡【Refresh】。"><a href="#d-【Edit-Configuration】对话框中，配置选项卡【Refresh】。" class="headerlink" title="(d) 【Edit Configuration】对话框中，配置选项卡【Refresh】。"></a>(d) 【Edit Configuration】对话框中，配置选项卡【Refresh】。</h4><p>勾选“Refresh resources upon completion”  </p><p>勾选“The entire workspace”  </p><p>勾选“Recuresively include sub-folders”。  </p><h4 id="e-【Edit-Configuration】对话框中，配置选项卡【Build-options】。"><a href="#e-【Edit-Configuration】对话框中，配置选项卡【Build-options】。" class="headerlink" title="(e) 【Edit Configuration】对话框中，配置选项卡【Build options】。"></a>(e) 【Edit Configuration】对话框中，配置选项卡【Build options】。</h4><p>勾选“After a “Clean”</p><p>勾选“During manual builds”</p><p>勾选“During auto builds”</p><p>勾选“Specify working set of relevant resources”。</p><p>点击“Specify Resources…” 勾选HelloJni工程的“jni“目录，一路确认下去就完成配置了，到这里Eclipse就能够自动调用NDK编译jin目录下的C/C++代码了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android技术相关 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Eclipse </tag>
             
         </tags>
       
@@ -341,7 +442,7 @@
       
       <categories>
           
-          <category> Ubuntu相关 </category>
+          <category> Ubuntu </category>
           
       </categories>
       
@@ -351,6 +452,253 @@
             <tag> Ubuntu </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>东北经典四字成语</title>
+      <link href="2007/05/28/dong-bei-jing-dian-si-zi-cheng-yu/"/>
+      <url>2007/05/28/dong-bei-jing-dian-si-zi-cheng-yu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="东北经典四字成语"><a href="#东北经典四字成语" class="headerlink" title="东北经典四字成语"></a>东北经典四字成语</h2><h3 id="无机六瘦"><a href="#无机六瘦" class="headerlink" title="无机六瘦"></a>无机六瘦</h3><p>例句：这一天到晚在家呆的我无机六瘦的，闹停死了。</p><h3 id="暴土杨灰"><a href="#暴土杨灰" class="headerlink" title="暴土杨灰"></a>暴土杨灰</h3><p>例句：前两天大风刮的我家前面暴土扬灰的，都出不了门儿了。</p><h3 id="杨了二正"><a href="#杨了二正" class="headerlink" title="杨了二正"></a>杨了二正</h3><p>例句：你也别成天杨了二正的摇哪儿烂走了，赶紧找点正经事干干吧。</p><h3 id="埋了咕汰-一声-埋了八汰"><a href="#埋了咕汰-一声-埋了八汰" class="headerlink" title="埋了咕汰(一声)=埋了八汰"></a>埋了咕汰(一声)=埋了八汰</h3><p>例句：你这几个月没洗澡了，埋了八汰的。</p><h3 id="得得-四声-搜搜-（得得瑟瑟）"><a href="#得得-四声-搜搜-（得得瑟瑟）" class="headerlink" title="得得(四声)搜搜 （得得瑟瑟）"></a>得得(四声)搜搜 （得得瑟瑟）</h3><p>例句：就你好，那天还得得搜搜的跑到精神病院去做演讲去了</p><h3 id="吭吃瘪肚"><a href="#吭吃瘪肚" class="headerlink" title="吭吃瘪肚"></a>吭吃瘪肚</h3><p>例句：你可别在那儿吭吃瘪肚地浪费大家时间了，没准备好的话赶紧下来吧。</p><h3 id="搂瓦块儿"><a href="#搂瓦块儿" class="headerlink" title="搂瓦块儿"></a>搂瓦块儿</h3><p>例句：那家伙脸长的，~搂瓦块儿的 ，棵碜死了。</p><h3 id="突鲁反仗"><a href="#突鲁反仗" class="headerlink" title="突鲁反仗"></a>突鲁反仗</h3><p>例句：他做事突鲁反仗的，把这事交给他还真让人不放心。</p><h3 id="傻了八叽"><a href="#傻了八叽" class="headerlink" title="傻了八叽"></a>傻了八叽</h3><p>例句：干啥玩意呢   傻了八叽的，虎啊！</p><h3 id="二虎八叽"><a href="#二虎八叽" class="headerlink" title="二虎八叽"></a>二虎八叽</h3><p>例句：同上</p><h3 id="斯斯哈哈"><a href="#斯斯哈哈" class="headerlink" title="斯斯哈哈"></a>斯斯哈哈</h3><p>例句：这外面老冷了，冻得我斯斯哈哈的。</p><h3 id="老天扒地"><a href="#老天扒地" class="headerlink" title="老天扒地"></a>老天扒地</h3><p>例句：我现在都老天扒地了，还结啥婚啊，一个银过吧。</p><h3 id="老么卡眼儿"><a href="#老么卡眼儿" class="headerlink" title="老么卡眼儿"></a>老么卡眼儿</h3><p>例句：同上。</p><h3 id="皮儿片儿"><a href="#皮儿片儿" class="headerlink" title="皮儿片儿"></a>皮儿片儿</h3><p>例句：老王家那小子把家里造的皮儿片儿的</p><h3 id="魂儿画儿"><a href="#魂儿画儿" class="headerlink" title="魂儿画儿"></a>魂儿画儿</h3><p>例句：你这脸上抹啥了，造的魂儿画儿的</p><h3 id="破马张飞"><a href="#破马张飞" class="headerlink" title="破马张飞"></a>破马张飞</h3><p>例句：你这是嘎哈啊，破马张飞的，能不能消停点儿</p><h3 id="武武玄玄"><a href="#武武玄玄" class="headerlink" title="武武玄玄"></a>武武玄玄</h3><p>例句：同上</p><h3 id="舞马开枪："><a href="#舞马开枪：" class="headerlink" title="舞马开枪："></a>舞马开枪：</h3><p>例句：同上</p><h3 id="吊儿郎当"><a href="#吊儿郎当" class="headerlink" title="吊儿郎当"></a>吊儿郎当</h3><p>例句：老李家那小子成天啥也不干，一天吊儿郎当的　</p><h3 id="五迷三道"><a href="#五迷三道" class="headerlink" title="五迷三道"></a>五迷三道</h3><p>例句：那几天喝得我五迷三道的，钱包丢了都不知道。</p><h3 id="毛愣三光"><a href="#毛愣三光" class="headerlink" title="毛愣三光"></a>毛愣三光</h3><p>例句：你能不能稳当点儿啊，别成天毛愣三光的让人不放心。</p><h3 id="疙不溜脆"><a href="#疙不溜脆" class="headerlink" title="疙不溜脆"></a>疙不溜脆</h3><p>例句：那天他疙不溜脆的就把几个小流氓给收拾了。</p><h3 id="七吃咯嚓"><a href="#七吃咯嚓" class="headerlink" title="七吃咯嚓"></a>七吃咯嚓</h3><p>例句：同上</p><h3 id="急了拐弯"><a href="#急了拐弯" class="headerlink" title="急了拐弯"></a>急了拐弯</h3><p>例句：那道也成难走了，急了拐弯的</p><h3 id="习里马哈"><a href="#习里马哈" class="headerlink" title="习里马哈"></a>习里马哈</h3><p>例句：同毛愣三光</p><h3 id="得儿-一声-喝的"><a href="#得儿-一声-喝的" class="headerlink" title="得儿(一声)喝的"></a>得儿(一声)喝的</h3><p>例句：你别成天得儿喝的行不，正经点儿吧。</p><h3 id="得-四声-了八瑟-一声-得-四声-了八搜"><a href="#得-四声-了八瑟-一声-得-四声-了八搜" class="headerlink" title="得(四声)了八瑟(一声)=得(四声)了八搜"></a>得(四声)了八瑟(一声)=得(四声)了八搜</h3><p>例句：同得得搜搜</p><h3 id="犄角旮旯"><a href="#犄角旮旯" class="headerlink" title="犄角旮旯"></a>犄角旮旯</h3><p>例句：那天考试出的题尽是些犄角旮旯的东西，肯定砸了</p><h3 id="鸡吃歪-掰-脸"><a href="#鸡吃歪-掰-脸" class="headerlink" title="鸡吃歪(掰)脸"></a>鸡吃歪(掰)脸</h3><p>例句：你这人咋回事的，一说话就鸡吃掰脸地</p><h3 id="甩-水-裆尿裤"><a href="#甩-水-裆尿裤" class="headerlink" title="甩(水)裆尿裤"></a>甩(水)裆尿裤</h3><p>例句：你看看你儿子，整天甩裆尿裤地，你媳妇也不好好整整</p><h3 id="费劲扒拉"><a href="#费劲扒拉" class="headerlink" title="费劲扒拉"></a>费劲扒拉</h3><p>例句：这回考试也忒难了 费劲扒拉的还不知道能过不~</p><h3 id="披哩扑笼"><a href="#披哩扑笼" class="headerlink" title="披哩扑笼"></a>披哩扑笼</h3><p>当有人经过的时候,河边那些小青蛙全都披哩扑笼地跳进了水里.</p><h3 id="虚头八脑"><a href="#虚头八脑" class="headerlink" title="虚头八脑"></a>虚头八脑</h3><p>你别跟我虚头八脑的了,要借钱就直说.</p><h3 id="递溜蒜卦"><a href="#递溜蒜卦" class="headerlink" title="递溜蒜卦"></a>递溜蒜卦</h3><p>意思是说不整洁整齐,乱七八糟的意思!<br>例:你看你收拾的行李,递溜蒜卦的,怎么拿啊!?</p><h3 id="鼻涕拉瞎"><a href="#鼻涕拉瞎" class="headerlink" title="鼻涕拉瞎"></a>鼻涕拉瞎</h3><p>例:你还记得你小时侯鼻涕拉瞎的样子,成天跟在我后面要糖吃.</p><h3 id="舞舞喳喳"><a href="#舞舞喳喳" class="headerlink" title="舞舞喳喳"></a>舞舞喳喳</h3><p>过度炫耀,的瑟,招人烦的意思</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>让硬盘摆脱五大怪异骚扰</title>
+      <link href="2007/05/25/rang-ying-pan-bai-tuo-wu-da-guai-yi-sao-rao/"/>
+      <url>2007/05/25/rang-ying-pan-bai-tuo-wu-da-guai-yi-sao-rao/</url>
+      
+        <content type="html"><![CDATA[<h2 id="让硬盘摆脱五大怪异骚扰"><a href="#让硬盘摆脱五大怪异骚扰" class="headerlink" title="让硬盘摆脱五大怪异骚扰"></a>让硬盘摆脱五大怪异骚扰</h2><p>读取硬盘中的信息或写入数据到硬盘中，几乎是我们每天要做的“必修课”。可是在频繁访问硬盘的过程中，我们时不时地会发现一些怪异的“骚扰”袭向硬盘，在这些怪异“骚扰”面前，不少朋友常常表现得<br>一筹莫展，很显然这样会严重影响硬盘的高效工作效率。为此，本文下面就将一些非常容易碰到的怪异“骚扰”现象总结出来，并为每一“骚扰”把脉问药，以达到提高硬盘工作效率的目的!</p><h3 id="1、硬盘空间奇怪变小"><a href="#1、硬盘空间奇怪变小" class="headerlink" title="1、硬盘空间奇怪变小"></a>1、硬盘空间奇怪变小</h3><p>　　最近朋友在他的计算机中重新安装了一遍Windows XP操作系统，安装完毕后他查看了硬盘C分区中的剩余空间，发现大约有65%的余量，可是过了一段时间后他再次查看硬盘C分区中的剩余空间时，发现只有50%不到的余量了，而且他确信在这一段时间中并没有往硬盘C分区中保存任何文件，那硬盘空间为什么会突然变小呢?我们能否找回消失的磁盘分区空间呢?</p><p>　　尽管朋友没有往硬盘C分区中保存任何文件，但Windows XP操作系统在长时间运行过程中，会产生容量不小的日志文件或者临时文件，正是这些长期积累下来的垃圾文件在“悄悄”地蚕食着硬盘C分区的空间。这些垃圾文件一般会自动保存在硬盘C分区的“Windows\temp”文件夹中和“Documents and Settings\用户帐号名\Local Settings\Temp”文件夹中，由于它们没有多大实际用途，我们可以定期地进入到这些文件夹窗口中，将它们及时删除掉，以便将它们占用的磁盘空间释放出来。当然，我们要是经常使用IE浏览器进行上网浏览信息时，IE也会把我们以前访问过的网页内容缓存到硬盘C分区中，这部分内容消耗的磁盘分区空间有时也是不小的数目，为此我们可以定期到“Documents and Settings\用户帐号名\Local Settings\Temporary Internet Files”文件夹窗口中将这部分垃圾内容删除掉。倘若我们已经对Windows XP操作系统进行过升级操作，那么我们还会在“Windows”文件夹窗口中看到类似“$NTUninstallK***$”这样的系统备份文件夹，一旦我们将系统还原功能启用起来的话，那么该备份文件夹也会导致硬盘C分区的空间逐步变小。</p><p>　　当然，“autorun.inf”文件一般都属于系统隐藏文件，在默认状态下我们往往无法看到它的“身影”，更不用说将它从硬盘中删除掉了;此时，我们可以在“我的电脑”窗口中，依次单击菜单栏中的“工具”/“文件夹选项”命令，在弹出的文件夹选项设置窗口中，单击“查看”标签，打开如图1所示的标签页面，选中该页面中的“显示所有文件和文件夹”项目，再单击“确定”按钮，这么一来我们再次进入到C盘根目录窗口时就能看到“autorun.inf”文件的“身影”了。</p><h3 id="2、待机时硬盘无法休息"><a href="#2、待机时硬盘无法休息" class="headerlink" title="2、待机时硬盘无法休息"></a>2、待机时硬盘无法休息</h3><p>　　有一计算机处于待机状态时，其硬盘信号灯仍然处于狂闪状态，我们知道硬盘信号灯要是每天都这样狂闪不停的话，硬盘的使用寿命很有可能被大大缩短。那么我们有什么办法让硬盘在系统处于待机状态时，也能得到充分的“休息”呢?其实引起硬盘信号灯在系统待机状态下仍然狂闪的因素有很多，我们可以按照如下步骤进行逐一排查，就能确保硬盘及时得到“休息”了：</p><p>　　首先检查一下本地计算机系统中是否安装了一些专业的磁盘整理程序，要是已经安装的话，可以将它们从本地系统中卸载掉，因为这些专业磁盘整理软件一般都具有在系统待机状态下自动对磁盘碎片进行整理的功能，如此一来在那些专业磁盘整理程序会“强迫”硬盘在待机状态下去执行磁盘碎片整理操作的。当然，我们也可以不卸载这些专业的磁盘整理程序，但必须进入到它的设置界面中，将磁盘碎片自动整理功能暂时屏蔽掉，这样的话硬盘在待机状态下就不会被“强迫”去执行磁盘碎片整理操作了，如此一来也就能得到足够的“休息”时间了。</p><p>　　其次检查一下本地系统是否安装了类似江民、金山以及瑞星这样的国产杀毒软件，这些杀毒软件都喜欢在系统处于待机状态时对硬盘中的文件执行扫描、查杀操作，那样的话硬盘自然就无法得到足够的休息时间了。一旦发现系统中安装了上述杀毒软件时，我们必须进入到对应的程序设置界面，将对应的自动查杀功能暂时关闭掉。比方说，本地系统要是安装了瑞星杀毒软件时，那我们可以在该杀毒程序界面中依次执行“设置”/“详细设置”菜单命令，在其后弹出的设置窗口中单击“定制任务”标签，打开如图2所示的标签页面;在该界面的右侧区域，将“使用定时扫描”、“关机时检测软盘”、“使用开机扫描”以及“使用屏保杀毒”等复选项的选中状态全部取消掉，并单击“确定”按钮，这样杀毒软件日后在系统处于待机状态时，不会自动“强迫”硬盘去不停地工作了。</p><p>　　接下来检查一下本地系统的“Indexing Service”服务有没有被开启，一旦该服务被开起的话，那么该服务会在系统处于空闲状态的时候，对保存在硬盘中的数据文件自动执行索引操作了，那么空闲时的硬盘到时也只能跟着一起“倒霉”了。因此，当我们发现“Indexing Service”服务已经运行了的话，我们可以打开系统的服务列表窗口，双击其中的“Indexing Service”项目，在其后出现的属性设置窗口中单击“停止”按钮，并将启动类型设置为“手动”，再单击“确定”按钮就可以了。</p><p>　　除此而外，我们最好将安装在本地系统中的桌面搜索工具、内存优化工具等全部从系统中卸载掉，因为这些工具也会让硬盘无法“休息”的。</p><h3 id="3、无法删除硬盘文件"><a href="#3、无法删除硬盘文件" class="headerlink" title="3、无法删除硬盘文件"></a>3、无法删除硬盘文件</h3><p>　　有一朋友在尝试删除硬盘中的AVP格式的文件时，发现该类型的文件无法被删除，而且在删除该文件的时候，系统还会弹出“删除文件出错，访问被拒绝请确定磁盘未满或未被写保护”这样的错误提示。不过，当将系统切换到安全模式状态时，朋友发现AVP格式的文件被删除掉，面对这种硬盘访问怪异现象，我们该如何进行解决呢?</p><p>　　其实遇到这种硬盘访问怪异现象时，我们可以再尝试删除其他类型的普通文件，看看系统能否弹出“删除文件出错，访问被拒绝请确定磁盘未满或未被写保护”这样的错误提示，如果没有这样的提示那就说明了当前待删除的AVP文件目前正在运行之中。事实上，AVP文件其实就是杀毒软件卡巴斯基的相关程序文件，在默认状态下，卡巴斯基杀毒程序往往处于监视病毒的运行状态，在这种状态下删除任何与该杀毒程序有关的文件时，系统都会弹出“删除文件出错，访问被拒绝请确定磁盘未满或未被写保护”这样的错误提示。而我们将系统切换到安全模式状态下时，之所以能够将AVP格式的文件正常删除掉，是因为在系统安全模式下，卡巴斯基杀毒程序往往不会随系统自动加载，这么一来没有被掉用的AVP文件就和普通文件一样，任人随意删除了。</p><h3 id="4、硬盘检测无法通过"><a href="#4、硬盘检测无法通过" class="headerlink" title="4、硬盘检测无法通过"></a>4、硬盘检测无法通过</h3><p>　　单位办公室中的某一台共用计算机每次开机启动时，都要自动进行硬盘检测，可是在检测进度位于66%位置处时检测操作就无法进行下去了，此时也不能使用热启动功能来重新启动系统，必须关闭电源进行冷启动。现在只能在系统启动画面提示检测硬盘的那一刻，及时按下键盘上的任意键来忽略硬盘检测操作，之后登录进Windows系统界面后执行任何操作都很正常。那为什么系统在对硬盘进行检测操作时，硬盘检测无法顺利通过呢?会不会是硬盘发生了硬件损伤呢?</p><p>　　从上面的现象描述来看，我们估计单位共用计算机的硬盘有可能发生了硬件损坏，遇到这种现象时我们首先要做的就是赶快将硬盘中的重要数据内容，挪移到其他相对安全的位置处。在做好数据的备份工作后，我们接下来要做的工作就是将系统切换到DOS运行状态，并在DOS命令行中执行“fdisk /mbr”字符串命令，来尝试修复硬盘中发生的软故障;要是这种修复方法尝试无效的话，我们可以到网上下载安装一些专业的硬盘坏道检测工具，来仔细检查本地硬盘中是否存在坏道现象，如果找不到硬盘坏道的话，那硬盘检测无法通过的现象很可能是逻辑故障引起的，此时我们唯一可以使用的办法就是找到对应品牌硬盘的逻辑坏道修复工具来重新修复一下硬盘，相信这么一来硬盘检测无法通过现象就能被解决了。</p><h3 id="5、无法双击进入硬盘"><a href="#5、无法双击进入硬盘" class="headerlink" title="5、无法双击进入硬盘"></a>5、无法双击进入硬盘</h3><p>　　有一台计算机安装的是Windows XP操作系统，该系统中的硬盘总共被分成了C、D、E、F四个分区，以前我们只要用双击分区图标的方法就能进入到对应的硬盘分区空间。可是最近不知道怎么回事，用鼠标双击C分区图标时，始终无法打开C盘分区窗口，只有用鼠标右键单击该分区图标，并执行右键菜单中的“打开”命令才能顺利进入到C盘窗口，而且我们在右键菜单中还看到了“自动播放”这一命令选项。面对这种无法双击进入硬盘空间的怪异“骚扰”，我们该如何进行应对呢?</p><p>　　考虑到用鼠标右键单击C分区图标时，系统右键菜单中出现了“自动播放”这一命令选项，因此我们断定C盘分区下面保存有“autorun.inf”这样的文件，正是该文件的存在才导致了我们无法通过双击鼠标的方法进入到C盘根目录窗口，我们只要先用单击鼠标右键的方法进入到该分区窗口，将其中的“autorun.inf”文件删除掉，并且将与“autorun.inf”文件相关的程序全部删除干净，之后我们就能通过双击鼠标的方法重新进入到C盘根目录窗口了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>戴戒指的含义</title>
+      <link href="2007/05/18/dai-jie-zhi-de-han-yi/"/>
+      <url>2007/05/18/dai-jie-zhi-de-han-yi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="戴戒指的含义"><a href="#戴戒指的含义" class="headerlink" title="戴戒指的含义"></a>戴戒指的含义</h2><p>据说左手的无名指有一根血管直接与心脏联系，所以新人一定要把结婚戒指亲手戴在对方的左手无名指上。<br>爱你到心里！情愿为你的爱而受戒！<br>戒指戴在不同的手指有不同的意义呀</p><p>右手和左手都有不同的意义。<br>右手小指：不谈恋爱。<br>右手无名指：热恋中。<br>右手中指：名花有主。<br>右手食指：单身贵族。<br>左手小指：不婚族。<br>左手无名指：结婚。<br>左手中指：订婚。<br>左手食指：未婚。<br>大拇指都是代表权势的意思，也可以做自信的意思。</p><p>戴戒指是有讲究的。按西方的传统习惯来说，左手显示的是上帝赐给你的运气，因此，戒指通常戴在左手上。</p><p>国际上比较流行的戴法是：食指———想结婚，表示未婚；中指———已经在恋爱中；无名指———表示已经订婚或结婚；小指———表示独身。</p><p>至于右手，在传统上也有一个手指戴戒指时是有意义的，那就是无名指。据说戴在这里，表示具有修女的心性。</p><p>还有一种戒指，当你戴它的时候，无论你戴在哪里都不具备任何意义，这种戒指就是一般的花戒。这种戒指是起一种装饰的作用，可以戴在任何你想戴的手指上。</p><p>戒指戴在拇指上是十分奇怪的，因此不推荐。戒指戴在食指上，感觉是比较有个人主张。最正式的戴法莫过于戴在中指上，如果不想有太正式的感觉，可以在左或右指再加一个简单的指环。无名指上的戒指通常是结婚戒指，无名指长得比较纤细，因此不管什么戒指，戴起来都是标准的秀气。最新鲜的戴法，莫过于把戒指戴在小指头上了。一枚小小的、简单的尾戒，让女性的手莫名其妙地可爱起来，一般代表“我现在只想单身，请不要浪费时间追求我”的意思.</p><p>在同一只手上戴两枚戒指时，色泽要一致，而且一枚戒指复杂时，另一枚一定要简单。此外，最好选择相邻的两只手指，如中指和食指、中指和无名指或无名指和小指，千万不要中间隔着一座“山”。</p><p>比较通用的一种说法是：<br>戴在拇指上表示追（有行动的对对方的追求），戴在食指上表示求（仅限于内心对爱情的渴望），戴中指表示定（正处在恋爱中或已经订婚了），戴在无名指上表示结（已经结婚了），而戴在小指上就表示离（决定单身或离婚了）。在国外，不戴戒指也表示“名花还无主，你可以追我”。</p><p>戒指泄露的心底故事</p><p>戒指不仅仅是装饰品，你喜欢戴哪一类戒指，喜欢戴哪根手指，都会泄露你的心底故事。</p><p>对男士来说—— ．戴纯银戒指表示性情温和，易迁就他人。<br>．戴金戒指者较重视利益，往往会有精明的生意头脑。<br>．戴翡翠玉石者注重品味素质，处事严谨。</p><p>对女士来说——<br>．喜爱粉红钻或粉红色珊瑚者，感情丰富而浪漫。<br>．喜爱红宝石或红碧玺者，热情似火。<br>．喜爱蓝宝石或海蓝宝者．较内向冷淡。<br>．喜爱祖母绿或土耳其石者，情感纤弱。</p><p>手指与戒指——<br>戒指戴在不同的手指上，能体现与性格有关的心理含义。<br>．喜戴在食指者，性格较偏激倔强。<br>．喜戴在右中指者．崇尚中庸的人生观念。<br>．喜戴在左中指者，有责任感，重视家庭。<br>．喜戴在小手指者，有自卑感。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>李嘉诚给年青商人的98条忠告</title>
+      <link href="2007/05/13/li-jia-cheng-gei-nian-qing-shang-ren-de-98-tiao-zhong-gao/"/>
+      <url>2007/05/13/li-jia-cheng-gei-nian-qing-shang-ren-de-98-tiao-zhong-gao/</url>
+      
+        <content type="html"><![CDATA[<h2 id="李嘉诚给年青商人的98条忠告"><a href="#李嘉诚给年青商人的98条忠告" class="headerlink" title="李嘉诚给年青商人的98条忠告"></a>李嘉诚给年青商人的98条忠告</h2><p>1. 我 17 岁就开始做做批发的推销员, 就更加体会到挣钱的不容易、生活的艰辛了。人家做 8 个小时，我就做 16 个小时。</p><p>2. 我们的社会中没有大学文凭、白手起家而终成大业的人不计其数，其中的优秀企业家群体更是引人注目。他们通过自己的活动为社会作贡献，社会也回报他们以崇高荣誉和巨额财富。</p><p>3. 精明的商家可以将商业意识渗透到生活的每一件事中去，甚至是一举手一投足。充满商业细胞的商人，赚钱可以是无处不在、无时不在。</p><p>4. 我凡事必有充分的准备然后才去做。一向以来，做生意处理事情都是如此。例如天文台说天气很好，但我常常问我自己，如 5 分钟后宣布有台风，我会怎样，在香港做生意，亦要保持这种心理准备。</p><p>5. 精明的商人只有嗅觉敏锐才能将商业情报作用发挥到极致，那种感觉迟钝、闭门自锁的公司老板常常会无所作为。</p><p>6. 我从不间断读新科技、新知识的书籍，不至因为不了解新讯息而和时代潮流脱节。</p><p>7. 即使本来有一百的力量足以成事，但我要储足二百的力量去攻，而不是随便去赌一赌。</p><p>8. 扩张中不忘谨慎，谨慎中不忘扩张。…… 我讲求的是在稳健与进取中取得平衡。船要行得快，但面对风浪一定要捱得住。</p><p>9. 好的时候不要看得太好，坏的时候不要看得太坏。最重要的是要有远见，杀鸡取卵的方式是短视的行为。</p><p>10. 不必再有丝毫犹豫，竞争既搏命，更是斗智斗勇。倘若连这点勇气都没有，谈何在商场立脚，超越置地？</p><p>11. 对人诚恳，做事负责，“多结善缘”，自然多得人的帮助。淡泊明志，随遇而安，不作非分之想，心境安泰，必少许多失意之苦。</p><p>12. 在逆境的时候，你要问自己是否有足够的条件。当我自己逆境的时候，我认为我够！因为我勤奋、节俭、有毅力，我肯求知及肯建立一个信誉。</p><p>13. 做生意一定要同打球一样，若第一杆打得不好的话，在打第二杆时，心更要保持镇定及有计划，这并不是表示这个会输。就好比是做生意一样，有高有低，身处逆境时，你先要镇定考虑如何应付。</p><p>14. 我表面谦虚，其实很骄傲，别人天天保持现状，而自己老想着一直爬上去，所以当我做生意时，就警惕自己，若我继续有这个骄傲的心，迟早有一天是会碰壁的。</p><p>15. 当生意更上一层楼的时候，绝不可有贪心，更不能贪得无厌。</p><p>16. 任何一种行业，如有一窝蜂的趋势，过度发展，就会造成摧残。</p><p>17. 随时留意身边有无生意可做，才会抓住时机。着手越快越好。遇到不寻常的事发生时立即想到赚钱，这是生意人应该具备的素质。</p><p>18. 人才缺乏，要建国图强，亦徒成虚愿。反之，资源匮乏的国家，若人才鼎盛，善于开源节流，则自可克服各种困难，而使国势蒸蒸日上。从历史上看，资源贫乏之国不一定衰弱，可为明证。</p><p>19. 假如今日，如果没有那么多人替我办事，我就算有三头六臂，也没有办法应付那么多的事情，所以成就事业最关键的是要有人能够帮助你，乐意跟你工作，这就是我的哲学。</p><p>20. 你们不要老提我，我算什么超人，是大家同心协力的结果。我身边有 300 员虎将，其中 100 人是外国人，200 人是年富力强的香港人。</p><p>21. 长江取名基于长江不择细流的道理，因为你要有这样豁达的胸襟，然后你才可以容纳细流?? 没有小的支流，又怎能成长江？</p><p>22. 在我心目中，不理你是什么样的肤色，不理你是什么样的国籍，只要你对公司有贡献，忠诚、肯做事、有归属感，即有长期的打算，我就会帮他慢慢地经过一个时期而成为核心分子，这是我公司一向的政策。</p><p>23. 一个总司令，是一个集团军的统帅，拿起机关枪总不会胜过机关枪手，走到炮兵队操作大炮也不如炮兵。但作为集团军的总司令不要管这些，只要懂得运用战略便可以，所以整个组织十分重要。</p><p>24. 人才取之不尽，用之不竭。你对人好，人家对你好是自然的，世界上任何人都可以成为你的核心人物。</p><p>25. 知人善任，大多数人都会有部分的长处，部分的短处，各尽所能，各得所需，以量才而用为原则。</p><p>26. 可以毫不夸张地说，一个大企业就像一个大家庭，每一个员工都是家庭的一分子。就凭他们对整个家庭的巨大贡献，他们也实在应该取其所得，只有反过来说，是员工养活了整个公司，公司应该多谢他们都对。</p><p>27. 不为五斗米折腰的人，在哪里都有。你千万别伤害别人的尊严，尊严是非常脆弱的，经不起任何的伤害。</p><p>28. 在我的企业内，人员的流失及跳槽率很低，并且从没出现过工潮。最主要的是员工有归属感，万众一心。</p><p>29. 有钱大家赚，利润大家分享，这样才有人愿意合作。假如拿 10% 的股份是公正的，拿 11% 也可以，但是如果只拿 9% 的股份，就会财源滚滚来。</p><p>30. 我老是在说一句话，亲人并不一定就是亲信。一个人你要跟他相处，日子久了，你觉得他的思路跟你一样是正面的，那你就应该可以信任他；你交给他的每一项重要工作，他都会做，这个人就可以做你的亲信。</p><p>31. 人要去求生意就比较难，生意跑来找你，你就容易做，那如何才能让生意来找你？那就要靠朋友。如何结交朋友？那就要善待他人，充分考虑到对方的利益。</p><p>32. 有金钱之外的思想，保留一点自己值得自傲的地方，人生活得更加有意义。</p><p>33. 以往我是百分之九十九是教孩子做的道理，现在有时会与他们谈生意…… 但约三分之一谈生意，三分之二教他们做人的道理。因为世情才是大学问。</p><p>34. 坏人固然要防备，但坏人毕竟是少数，人不能因噎废食，不能为了防备极少数坏人连朋友也拒之门外。更重要的是，为了防备坏人的猜疑，算计别人，必然会使自己成为孤家寡人,，既没有了朋友，也失去了事业上的合作者，最终只能落个失败的下场。</p><p>35. 那些私下忠告我们，指出我们错误的人，才是真正的朋友。</p><p>36. 商业合作必须有三大前提：一是双方必须有可以合作的利益，二是必须有可以合作的意愿，三是双方必须有共享共荣的打算。此三者缺一不可。</p><p>37. 不义而富且贵，于我如浮动。是我的钱，一块钱掉在地上我都会去捡。不是我的，一千万块钱送到我家门口我都不会要。我赚的钱每一毛钱都可以公开，就是说，不是不明白赚来的钱。</p><p>38. 我觉得，顾及对方的利益是最重要的，不能把目光仅仅局限在自己的利上，两者是相辅相成的，自己舍得让利，让对方得利，最终还是会给自己带来较大的利益。占小便宜的不会有朋友，这是我小的时候我母亲就告诉给我的道理，经商也是这样。</p><p>39. 一个人一旦失信于人一次，别人下次再也不愿意和他交往或发生贸易往来了。别人宁愿去找信用可靠的人，也不愿意再找他，因为他的不守信用可能会生出许多麻烦来。</p><p>40. 如果取得别人的信任，你就必须做出承诺，一经承诺之后，便要负责到底，即使中途有困难，也要坚守诺言。</p><p>41. 我生平最高兴的，就是我答应帮助人家去做的事，自己不仅是完成了，而且比他们要求的做得更好，当完成这些信诺时，那种兴奋的感觉是难以形容的……</p><p>42. 世情才是学问。世界上每一个人都精明，要令大家信服并喜欢不容易?</p><p>43. 注重自己的名声，努力工作、与人为善、遵守诺言，这样对你们的事业非常有帮助。</p><p>44. 讲信用，够朋友。这么多年来，差不多到今天为止，任何一个国家的人，任何一个省份的中国人，跟我做伙伴的，合作之后都成为好朋友，从来没有一件事闹过不开心，这一点是我引以为荣的事。</p><p>45. 我个人对生活一无所求，吃住都十分简单，上天给我的恩赐，我并没多要财产的奢求。如果此生能做多点对人类、民族、国家长治久安有益的事，我是乐此不疲的。</p><p>46. 保持低调，才能避免树大招风，才能避免成为别人进攻的靶子。如果你不过分显示自己，就不会招惹别人的敌意，别人也就无法捕捉你的虚实。</p><p>47. 如果单以金钱来算，我在香港第六、七名还排不上，我这样说是有事实根据的。但我认为，富有的人要看他是怎么做。照我现在的做法我为自己内心感到富足，这是肯定的。</p><p>48. 做人最要紧的，是让人由衷地喜欢你，敬佩你本人，而不是你的财力，也不是表面上让人听你的。</p><p>49. 绝不同意为了成功而不择手段，刻薄成家，理无久享。</p><p>50. 一个有使命感的企业家，应该努力坚持走一条正途，这样我相信大家一定可以得到不同程度的成就。</p><p>51. 要成为一位成功的领导者，不单要努力，更要听取别人的意见，要有忍耐力，提出自己意见前，更要考虑别人的意见，最重要的是创出新颖的意念…… 作为一个领袖，第一最重要的是 “责已以严，待人以宽”；第二。要令他人肯为自己办事，并有归属感。机构大必须依靠组织，在二三十人的企业，领袖走在最前端便最成功。当规模扩大至几百人，领袖还是要去参与工作，但不一定是走在前面的第一人。要大便要靠组织，否则，便迟早会撞板，这样的例子很多，百多年的银行也一朝崩溃。</p><p>52. 未攻之前一定先要守，每一个政策的实施之前都必须做到这一点。当我着手进攻的时候，我要确信，有超过百分之一百的能力。换句话说，即使本来有一百的力量足以成事，但我要储足二百的力量才去攻，而不是随便去赌一赌。</p><p>53. 与其到头来收拾残局，甚至做成蚀本生意，倒不如当时理智克制一些。</p><p>54. 眼睛仅盯在自己小口袋的小商人，眼光放在世界大市场的是大商人。同样是商人，眼光不同，境界不同，结果也不同。</p><p>55. 身处在瞬息万变的社会中，应该求创新，加强能力，居安思危，无论你发展得多好，时刻都要做好准备。</p><p>56. 中华民族勤劳勇敢，坚忍不拔，虽然历史上有过受辱挨打的过去，但是现在走正确的道路必然会有着光明的未来。无论哪个民族和人民，都是爱自己国家……</p><p>57. 力争上游，虽然辛苦，但也充满了机会。我们做任何事，都应该有一番雄心壮志，立下远大和目标，用热忱激发自己干事业的动力。</p><p>58. 人，第一要有志，第二要有识，第三要有恒，有志则断不甘为下流。</p><p>59. 知识不仅是指课本的内容，还包括社会经验、文明文化、时代精神等整体要素，才有竞争力，知识是新时代的资本，五六十年代人靠勤劳可以成事；今天的香港要抢知识，要以知识取胜。</p><p>60. 人们赞誉我是超人，其实我并非天生就是优秀的经营者。到现在我只敢说经营得还可以，我是经历了很多挫折和磨难之后，才领会一些经营的要诀的。</p><p>61. 今天在竞争激烈的世界中，你付出多一点，便可赢得多一点。好像奥运会一样，如果跑短赛，虽然是跑第一的那个赢了，但比第二、第三的只胜出少许，只要快一点，便是赢。</p><p>62. 当你作出决定后，便要一心一意地朝着目标走，常常记着名誉是你的最大资产，今天便要建立起来。</p><p>63. 在事业上谋求成功，没有什么绝对的公式，但如果能依赖某些原则的话，能将成功的希望提高许多。</p><p>64. 苦难的生活，是我人生的最好锻炼，尤其是做推销员，使我学会了不少的东西，明白了不少事理。所以这些，是我天 10 亿 100 亿也买不到的。</p><p>65. 我认为勤奋是个人成功的要素，所谓 “一分耕耘，一分收获”，一个人所获得的报酬和成果，与他所付出的努力是有极大的关系。运气只是一个小因素，个人的努力才是创造事业的最基本条件。</p><p>66. 创业的过程，实际上就是恒心和毅力坚持不懈的发展过程，其中并没有什么秘密，但要真正做到中国古老的格言所说的勤和俭也不太容易。而且，从创业之初开始，还要不断学习，把握时机。</p><p>67. 在看苏东坡的故事后，就知道什么叫无故受伤害。苏东坡没有野心，但就是给人陷害，他弟弟说得对：“我哥哥错在出名，错在出高调。” 这个真是很无奈的过失。</p><p>68. 年轻时我表面谦虚，其实我内心很骄傲。为什么骄傲呢？因为同事们去玩的时候，我去求学问；他们每天保持原状，而自己的学问日渐提高。</p><p>69. 我这棵小树是从沙石风雨中长出来的，你们可以去山上试试，由沙石长出来的小树，要拔去是多么的费力啊！但从石缝里长出来的小树，则更富有生命力。</p><p>70. 科技世界深如海，正如曾国藩所说的，必须 “有智、有识”，当你懂得一门技艺，并引以为荣，便愈知道深如海，而我根本未到深如海的境界，我只知道别人走快我们几十年，我们现在才起步追，有很多东西要学习。</p><p>71. 无论何种行业，你越拼搏，失败的可能性越大，但是你有知识，没有资金的话，小小的付出就能够有回报，并且很可能达到成功。</p><p>72. 从前经商，只要有些计谋，敏捷迅速，就可以成功；可现在的企业家，还必须要有相当丰富的知识资产，对于国内外的地理、风俗、人情、市场调查、会计统计等都非常熟悉不可。</p><p>73. 一个人凭己的经验得出的结论当然是最好，但是时间就浪费得多了，如果能将书本知识和实际工作结合起来，那才是最好的。</p><p>74. 下一个世纪的企业家将和我完全不同，因新世纪企业家的成功取决于科技和知识，而不是钱。</p><p>75. 作为父母，让孩子在十五六岁就远离家乡，远离亲人，只身到外面去求学深造，当然是有些于心不忍，但是为了他们的将来，就是再不忍心也要忍心。</p><p>76. 如果在竞争中，你输了，那么你输在时间；反之，你赢了，也赢在时间。</p><p>77. 世界上并非每一件事情，都是金钱可以解决的，但是确实有很多事情需要金钱才能解决。</p><p>78. 我的钱来自社会，也应该用于社会，我已不再需要更多的钱，我赚钱不是只为了自己。为了公司，为了股东，也为了替社会多做些公益事业，把多余的钱分给那些残疾及贫困的人。</p><p>79. 万一真的失败了，也不必怨恨，慢慢图谋东山再起的机会，只要一息尚存，仍有作最后决战的本钱。</p><p>80. 一个人除了赚钱满足自己的成就感之外，就是为了让自己生活得更好一点，如果只顾赚钱，并赔上自己的健康，那是很值得的。</p><p>81. 做事投入是十分重要的。你对你的事业有兴趣，你的工作一定会做得好。</p><p>82. 尽量挤出时间使自己得到良好的休息。只有得到良好的休息，才会有充沛、旺盛的精力去面对突如其来发生的各种事情。</p><p>83. 衣服和鞋子是什么牌子，我都不怎么讲究。一套西装穿十年八年是很平常的事。我的皮鞋十双有五双是旧的。皮鞋坏了，扔掉太可惜，补好了照样可以穿。我手上戴的手表，也是普通的，已经用了好多年。</p><p>84. 我觉得一家幸福是最紧要，生意起跌是小事。生意今日起，明日跌，一家人开心最紧要。</p><p>85. 商业的存在除了创造繁荣和就业，最大作用是服务人类的需要。企业是为股东谋取利润的，但应该坚持固定文化，这里经营的其中一项成就，是企业长远发展最好的途径。</p><p>86. 为了适应时代发展变化的需要，也为了企业自身的生存和发展，企业必须以市场为导向、以创新为手段、以效率为核心，重建企业形象。</p><p>87. 我们长江要生存，就得要竞争；要竞争，就必须有好的质量。只有保证质量，才能保证信誉，才能保证长江的发展壮大。</p><p>88. 我对自己有一个约束，并非所有赚钱的生意都做。有些生意，给多少钱让我赚，我都不赚…… 有些生意，已经知道是对人有害，就算社会容许做，我都不做。</p><p>89. 领导全心协力投入热诚，是企业最大的鼓动力。与员工互动沟通，对同事尊重，才可建立团队精神。人才难求，对具备创意、胆识及谨慎态度的同事，应给予良好的报酬和显示明确的前途。</p><p>90. 对一个职工，如果他平时马马虎虎，我会十分生气，一定会批评，但他有时做错事，你应该给他机会去改正。</p><p>91. 大部分的人都有部分长处部分短处，好像大象食量以斗计，蚂蚁一小勺便足够。各尽所能，各得所需，以量才而用为原则；又像一部机器，假如主要的机件需要用五百匹马力去发动，虽然半匹马力与五匹马力相比是小得多，但也能发挥其一部分作用。</p><p>92. 中国古人讲：“万变不离其宗。”这个 “宗” 就是指“合乎实际情况，合乎道理”。变是一定要变的，这个世界本来就是丰富多彩的，千变万化的。<br>93. 要给员工好的待遇及前途，让他们有受重视的感觉。当然，还要有良好的监督和制衡制度，不然山高皇帝远，一个好人也会变坏。</p><p>94. 虽然老板受到的压力较大，但是做老板所赚的钱，已经多过员工很多，所以我事事总不忘提醒自己，要多为员工考虑，让他们得到应得的利益。</p><p>95. 我认为要像西方那样，有制度且比较进取，用两种方式来做，而不是全盘西化或是全盘儒家。儒家有它的好处，也有它的短处，儒家在进取方面是很不够的。</p><p>96. 一间小的家庭式公司要一手一脚去做，得当公司发展大子，便要让员工有归属感，令他们感到安心，这是十分重要的。管理之道，简单来说是知人善任，但在原则上一定要令他们有归属感，要他们喜欢你.</p><p>97. 只有博大的胸襟，自己才不会那么骄傲，不会认为自己样样出众，承认其他人的长处，得到他人的帮助，这便是古人所说的 “有容乃大” 的道理。</p><p>98. 凡事都留个余地，因为人是人，人不是神，不免有错处，可以原谅人的地方，就原谅人。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>爱</title>
+      <link href="2007/05/09/ai/"/>
+      <url>2007/05/09/ai/</url>
+      
+        <content type="html"><![CDATA[<h2 id="爱"><a href="#爱" class="headerlink" title="爱"></a>爱</h2><p>爱是生命的体验，它像一块纯洁的水晶，沾不得半点欺骗的灰尘。真诚、真实是爱的基础，永恒是爱的考验，专一是我对爱的要求.选对一个朋友，可以快乐一生；选对一个伴侣，可以幸福一生;选对一个事业，可以成就一生</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>喜欢与爱的区别</title>
+      <link href="2007/05/09/xi-huan-yu-ai-de-qu-bie/"/>
+      <url>2007/05/09/xi-huan-yu-ai-de-qu-bie/</url>
+      
+        <content type="html"><![CDATA[<h2 id="喜欢与爱的区别"><a href="#喜欢与爱的区别" class="headerlink" title="喜欢与爱的区别"></a>喜欢与爱的区别</h2><p>喜欢是在深夜看书时突然想起他，想象他现在做什么，心里漾起一轻轻飘飘的温暖，却从不主动给他打电话。几分钟后注意力又重新被书中情节吸引。<br>爱是在寂寞的夜里，思念如潮水般涌来，手里捧着书却怎么也看不进去，心里惦记着她此时是否还在加班，吃没吃晚饭，是不是如自己想着她一般想着自己。  </p><p>喜欢是和他讨论问题争的面红耳赤，各不相让，在她面前像个刺猬一样重不认输，但在心里却早已暗暗佩服她的见地她的才华。  </p><p>爱是希望她和自己步调一致，和自己心灵相痛，他无心说的一句玩笑话也能让自己顷刻情绪低落甚至眼泪汪汪。在她面前，自己是从不设防的。  </p><p>喜欢是出门给她发个短信，告诉她这边天气很好，然后把手机关掉，独自在异地疯一个星期，晒成一个黑人突然出现在他面前吓他一跳。  </p><p>爱是无论走到那里都希望有他的陪伴。可以站在海边给他打手机，让他听听海浪的声音；因为在异乡的街上看到一个酷似他的背影而愣在原地久久不动。  </p><p>喜欢是他出差前简简单单的到一声“一路平安”，看着她离去的背影，心中有点不舍，却什么也不说，只是默默等他归来的消息。  </p><p>爱是她临出差前千叮咛万嘱咐，往他的背包里塞满衣服和食物，在车站要等到火车开走才肯离开，并且在她走后的日子里天天心神不定，一遍遍的祈祷她能够平安归来。  </p><p>喜欢是在受伤的时候，不想让他看到自己脆弱的一面，在她面前把眼泪悄悄抹掉，转过头依然是一副快乐坚强的模样。</p><p>爱是在受委屈的时候，爬在她的胸前痛哭，没有伪装没有顾虑，把所有的烦恼统统告诉他，并渴望从她的怀抱中得到安慰。</p><p>喜欢是和他周末逛街逛累了一起吃肯德基；是在寒冷的冬天和她抢一杯热咖啡；是和他并肩走在大街上，中间隔着半米的距离；是陪她一起在电脑前打游戏两个人笑得像个孩子。</p><p>爱是周末利用半天时间亲手作出几道好菜满足的看他吃；是在寒冷冬天不断为他的咖啡杯续上热水；是和他走在街上任由他紧紧挽着自己的手；是在她旁边幸福的看着她在电脑前工作时专心的样子。</p><p>喜欢是在楼道碰到她，愉快的和她打声招呼，在简单寒暄几句，擦肩而过时看见窗外明媚的阳光，心情无端的好了起来。</p><p>爱是在楼道了看见了他，脸上装出一副豪不在乎的表情，但在擦肩而过时细心感受身边颤动的空气，于是忍不住回头望一眼！</p><p>喜欢是看到他和另一个女孩牵手走过，心里有一点疼，但很快会冲着朝阳重新扬起笑脸。</p><p>爱是场输不起的游戏，付出全部之后，留下的可能仅仅是刻在心底的一道伤痕！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>在你心中有这样的一个人吗？</title>
+      <link href="2007/05/09/zai-ni-xin-zhong-you-zhe-yang-de-yi-ge-ren-ma/"/>
+      <url>2007/05/09/zai-ni-xin-zhong-you-zhe-yang-de-yi-ge-ren-ma/</url>
+      
+        <content type="html"><![CDATA[<h2 id="在你心中有这样的一个人吗？"><a href="#在你心中有这样的一个人吗？" class="headerlink" title="在你心中有这样的一个人吗？"></a>在你心中有这样的一个人吗？</h2><p>在你心中有这样的一个人吗？</p><p>你们可能相爱过，你们也可能喜欢着彼此，</p><p>但是，为了什么原因你们没能在一起，</p><p>也许他为了朋友之间的义气，不能追你。</p><p>也许为了顾及家人的意见 ，你们没有在一起。</p><p>也许为了出国深造，他没有要你等他。</p><p>也许你们相遇太早，还不懂得珍惜对方。</p><p>也许你们相遇太晚，你们身边已经有了另一个人。</p><p>也许你回头太迟，对方已不再等待。</p><p>也许你们彼此在捉摸对方的心，而迟迟无法跨出界线。</p><p>不过即使你们没在一起，你们还是保持了朋友的关系。但是你们心底最清楚对这个人，你比朋友还多了一份关心。即使不能跟他名正言顺的牵着手逛街，你们还是可以做无所不谈的朋友。他有喜欢的人，你口头上会帮他追，心里却不是很清楚你是不是真的希望他追到。</p><p>他遇到困难时，你会尽你所能的帮他，不会计较谁又欠了谁。男女朋友吃醋了，你会安抚他们说你和他只是朋友，但你心中会有那么一丝的不确定。每个人这辈子，心中都有过这幺一个特别的朋友，很矛盾的行为。一开始你不甘心只做朋友的，但久了，突然发现这样最好。 </p><p>你宁愿这样关心他， 总好过你们在一起而有天会分手。</p><p>你宁愿做他的朋友，彼此不会吃醋，才可以真的无所不谈。</p><p>特别是这样，你还是知道，他永远会关心你的。做不成男女朋友，当他那个特别的朋友，有什么不好呢？你心中的这个特别的朋友…? 是谁呢？</p><p>很多的感情，都因为一厢情愿，最后连朋友都当不成了，常常觉得惋惜，可惜一些本来很好的友情，最后却因为对方的一句喜欢你，如果你没有反应，这一段友情似乎也难以维持下去，这也难怪有些人会因此不肯踏出这一步。</p><p>因为这就像是一场赌注，表白了之后不是成了男女朋友，要不就连朋友都当不成了。有些事不是你能预料的，或许对方不在意，你们还可以是朋友，但却已经不如从前的好。也是可惜，也是遗憾！但还有没有可能是另一种情况，你可能永远都不甘心只是朋友. . . . .</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>电脑运行命令全集</title>
+      <link href="2007/05/08/dian-nao-ming-ling-quan-ji/"/>
+      <url>2007/05/08/dian-nao-ming-ling-quan-ji/</url>
+      
+        <content type="html"><![CDATA[<h2 id="电脑运行命令全集"><a href="#电脑运行命令全集" class="headerlink" title="电脑运行命令全集"></a>电脑运行命令全集</h2><p>winver———检查Windows版本<br>wmimgmt.msc—-打开winodws管理体系结构<br>wupdmgr——–winodws更新程序<br>wscprit——–winodws脚本宿主设置<br>write———-写字板winmsd———系统信息<br>wiaacmgr——-扫描仪和照相机向导<br>winchat——–XP自带局域网聊天<br>mem.exe——–显示内存使用情况<br>Msconfig.exe—系统配置实用程序<br>mplayer2——-简易widnows media player<br>mspaint——–画图板<br>mstsc———-远程桌面连接<br>mplayer2——-媒体播放机<br>magnify——–放大镜实用程序<br>mmc————打开控制台<br>mobsync——–同步命令<br>dxdiag———检查DirectX信息<br>drwtsn32—— 系统医生<br>devmgmt.msc— 设备管理器<br>dfrg.msc——-磁盘碎片整理程序<br>diskmgmt.msc—磁盘管理实用程序<br>dcomcnfg——-打开系统组件服务<br>ddeshare——-打开DDE共享设置<br>dvdplay——–DVD播放器<br>net stop messenger—–停止信使服务<br>net start messenger—-开始信使服务<br>notepad——–打开记事本<br>nslookup——-网络管理的工具向导<br>ntbackup——-系统备份和还原<br>narrator——-屏幕”讲述人”<br>ntmsmgr.msc—-移动存储管理器<br>ntmsoprq.msc—移动存储管理员操作请求<br>netstat -an—-(TC)命令检查接口<br>syncapp——–创建一个公文包<br>sysedit——–系统配置编辑器<br>sigverif——-文件签名验证程序<br>sndrec32——-录音机<br>shrpubw——–创建共享文件夹<br>secpol.msc—–本地安全策略<br>syskey———系统加密，一旦加密就不能解开，保护winodws xp系统的双重密码<br>services.msc—本地服务设置<br>Sndvol32——-音量控制程序<br>sfc.exe——–系统文件检查器<br>sfc /scannow—winodws文件保护<br>tsshutdn——-60秒倒计时关机命令<br>tourstart——xp简介（安装完成后出现的漫游xp程序）<br>taskmgr——–任务管理器<br>eventvwr——-事件查看器<br>eudcedit——-造字程序<br>explorer——-打开资源管理器<br>packager——-对象包装程序<br>perfmon.msc—-计算机性能监测程序<br>progman——–程序管理器<br>regedit.exe—-注册表<br>rsop.msc——-组策略结果集<br>regedt32——-注册表编辑器<br>rononce -p —-15秒关机<br>regsvr32 /u *.dll—-停止dll文件运行<br>regsvr32 /u zipfldr.dll——取消ZIP支持<br>cmd.exe——–CMD命令提示符<br>chkdsk.exe—–Chkdsk磁盘检查<br>certmgr.msc—-证书管理实用程序<br>calc———–启动计算器<br>charmap——–启动字符映射表<br>cliconfg——-SQL SERVER 客户端网络实用程序<br>Clipbrd——–剪贴板查看器<br>conf———–启动netmeeting<br>compmgmt.msc—计算机管理<br>cleanmgr——-垃圾整理<br>ciadv.msc——索引服务程序<br>osk————打开屏幕键盘<br>odbcad32——-ODBC数据源管理器<br>oobe/msoobe /a—-检查XP是否激活<br>lusrmgr.msc—-本机用户和组<br>logoff———注销命令<br>iexpress——-木马捆绑工具，系统自带<br>Nslookup——-IP地址侦测器<br>fsmgmt.msc—–共享文件夹管理器<br>utilman——–辅助工具管理器<br>gpedit.msc—–组策略</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>男人感悟99条</title>
+      <link href="2007/05/08/nan-ren-gan-wu-99-tiao/"/>
+      <url>2007/05/08/nan-ren-gan-wu-99-tiao/</url>
+      
+        <content type="html"><![CDATA[<p>1：能不抽烟最好不抽，它或许可以帮助你吸引一些女生，但不抽绝不会招来厌烦，表现男子气概的途径有很多，没必要拿健康做赌注。</p><p>2：给自己定目标，一年，两年，五年，也许你出生不如别人好，通过努力，往往可以改变70%的命运。破罐子破摔只能和懦弱做朋友。</p><p>3：找女朋友外表是第一关，但要了解她的品行之后再做打算也不迟。</p><p>4：不要在乎小钱，工作的人都后悔从前对自己的GF不够好。记住你们的重要日子，你们的谈话，女生要敏感得多，这样做，至少可以证明你对她的重视。</p><p>5：爱她，但别怕她，你们是恋人，也是朋友，她要的不是宠物，这样的感情，走不长远。</p><p>6：她要是病了，带她去医院，她害怕时，找个人少的地方抱着她，给她勇气，帮她排队，挂号，放下你那点可悲的面子，周围人只会向她投来羡慕的眼光，不会对你说三道四。</p><p>7：别把两个人的生活绞在一起，空间才是爱情的长寿药。不要经常吃醋，谁都有异性朋友，该吃的时候才吃，并且让她知道。</p><p>8：善待她的朋友，即使她讨厌的人，你也没资格说坏话，你要做的，就是静静的听她倾诉。适当给她安慰。有时候，她们更需要依靠，即使你们都还是学生。</p><p>9：不要问她过去，时机到了，她会毫无保留的告诉你。她要是想见从前那位，让她去，原因是你不让她去，她也会去。为何不表现得大度点，但要让她知道你相当的郁闷。</p><p>10：珍惜身边人，不要见异思迁，大家都需要安定。即使对方比你GF漂亮10倍，还主动靠近你，给你暗号，请严肃的告诉她，你有女朋友！</p><p>11：她开始管你的生活，你的钱 ，对你唠叨，频繁发消息询问你的位置。别担心，她只是把自己交给了你，害怕失去你。</p><p>12：带她去你从前常去的地方，她内心会无比快乐，你失意时，她会在第一时间找到你。</p><p>13：发生口角后，别关机，也别在街上和其他异性闲逛，那只能使矛盾激化。</p><p>14：过生日，送她草莓蛋糕，不要太大，但要足够精致，把你对她的腻称放在蛋糕上。再买一个大的，让她和朋友一起过。</p><p>15：牵手时，即使你的手有多汗，也别放开。</p><p>16：把她介绍给你最好的朋友，包括异性朋友。</p><p>17：别总是让她打电话来，她也需要被重视的感觉。</p><p>18：衣着尽量和她的品位搭调，即使你要提升品质，请带上她一起。</p><p>19：别偷看她的隐私，不要去猜测，在一起是缘分，离开也是缘分。</p><p>20：如果失恋，不要轻信江湖上传言的借酒消愁，吐的滋味不好受，即使喝了，也别急着喝茶，茶不但不能解酒，反而还会伤肾。</p><p>21：不要整天想着如何重修旧好，除了爱情，前面还有许多问题需要你去解决。这是个现实的社会，感情不能当饭吃，贫穷夫妻百事哀。不要相信电影，那只是个供许多陌生人喧嚣情感的场所。</p><p>22：分手之后，可以伤心难过，但过渡期不能太长，因为这期间是绝佳的学习和工作时间。</p><p>23：如果你实在奈不住寂寞，至少等上大半年，否则你不仅否定了她，也否定了你自己。</p><p>24：当她不再爱你的时候，无论你有多想她也别打电话告诉她，因为有些人会记住第一个，而有些人只会记住上一个。</p><p>25：好朋友里面，一定要培养出一个知己，不要以为你有多么八面玲珑，到处是朋友，最后真心对你的，只有一个，相信我。</p><p>26：她的离开如若是一个重大打击，找间手艺不错的发型设计理个发，这样可以让你涣然一新。</p><p>27：不要去打扰她的生活，她只会觉得从前看错人，你也会鄙视自己。</p><p>28：你们在街上相遇，请向她微笑，把微笑留给伤你最深的人。</p><p>29：告诉周围人，你和她已经分手，避免他们给你打报告，哪天又看见谁谁谁了。</p><p>30：不要相信星座命理，那是哄小朋友的，命运在自己手中。难道你想等出栋房子或是车子？</p><p>31：你的朋友最好以你自己为中心发散，允许少数支点连接，千万不要把朋友圈变成密不透风的多边型，你要为自己留底牌。</p><p>32：不喜欢的人少接触，但别在背后说坏话，说是非之人，必定是是非之人，谨记，祸从口出。</p><p>33：朋友圈里的你，平时都很忍让，请注意适当拿出你的主见。反之，不要太计较。</p><p>34：给老师或者领导留下好印象，他们不会在你沉沦时再踩你几脚，相反可能会拉你一把。在社交中，原则是跌停股，世俗是潜力股。</p><p>35：少玩游戏，这不是韩国，你打不出房子车子还有女人。进了大学，就进了社会，这是场马拉松。北京现在一个砖头抛上去，砸下来7，8个研究生受伤，现在的你是否该有点打算。</p><p>36：拿出极限，尽力而为。你要想的是成功，而不是失败。所以面对困难首先就是拿出信心。除了你心爱女人的鼓励，这应该是最有用的东西。</p><p>37：定时整理书桌书柜，良好的精神面貌可以让你事半功倍。</p><p>38：学好英语，那些说学英语没用的暂时可以不去管，他们要么年纪大了，要么就是自己早过了CET6准备托福了，在这里哗众取宠。你可以不拿证，但一定要学好。</p><p>39：不是足够热爱你的专业，并且学出来前途不够光明，趁早转业。现在更多人更看重”钱途”</p><p>40：知道自己要干什么，寝室的卧谈会的确可以帮你磨嘴皮子，夜深人静，问问自己，将来的打算，并朝着那个方向去实现。</p><p>41：偶尔翻翻时尚类的杂志，女朋友和女性朋友都可以从中受益。</p><p>42：尽量少看A片，正常的男人即使是单身，也不会成天迷恋肉欲。而每次你SY后都会有大量锌元素流失，此元素与你大脑活动有密切联系。</p><p>43：坚持做运动，俯卧撑可以锻炼你的胸肌和腹肌，请记住游泳圈是成功人事才有资格拥有的奢侈品。</p><p>44：每天早上一杯水，预防胆结实。睡前一小时不要喝水，否则会过早出现眼袋。</p><p>45：宁愿要深色袜子也少买白色的，这样会让人觉得你不够成熟，学生朋友自便。</p><p>46：新同事或新朋友请你吃饭，不要觉得理所当然，请礼尚往来，否则你的名声会越来越臭。无论是大学还是公司，很多故事都是听来的。</p><p>47：有男友的女人不要碰，即便你想one night stand 也要做好心理准备。后果同上，严重时会出现体肤之痛。</p><p>48：朋友的女人不要碰，无论是现在的还是曾经的，后果同上。要知道，男人经营自己就像经营一个公司，要树立品牌文化。想问为什么的朋友请先做个你是受害者的假设，再跟我发短消息讨论。</p><p>49：博爱的女人不要碰，往往这种女人连自己要什么都不知道，我想没人愿意和若干成年男性分享自己的爱。天作孽，犹可活，自作孽，不可活。</p><p>50：没主见，不上进，懒惰的女人不要碰。就算你有钱，你有的是钱，最终你也会厌烦其中。何况不见得她们个个都是花瓶，何况你还有审美疲劳。</p><p>51：不以物喜，不以己悲，我知道这很难，但要成功，这是必修课。</p><p>52：空闲时间不要全拿去泡BAR，读点文学作品，学习一些经营流程，管理规范，国际时事，法律常识。这能保证你在任何聚会都有谈资。</p><p>53：每年回母校看看那些为你付出过的老师，走上社会你才了解她们才是无私的，比起那点学费，她们简直太伟大了。学会感恩。</p><p>54：回家帮父母做点简单家务，陪他们买菜，做饭，逛街，冬天送他们一人一件羽绒服，他们并不奢望什么，但他们需要得到你的承认，中国的父母是最苦的，孩子是最幸福的。（离婚除外)</p><p>55：大家都年轻，没什么钱，不用太在意谁谁又穿AD ，NIKE ，或者其他。而GF对于PRADA，蓝寇，CD，LV，的热恋，你也不必放在心上，女人天生和美挂上了勾，她们只是宁愿相信你能够为她们买一样昂贵的礼物，以满足她们的虚荣心，然后在同伴面前炫耀一番。实则她们也是热爱<br>生活的，而当你有能力完成时，也会觉得把她包装得漂漂亮亮的很是欣慰。</p><p>56：告诉她，你喜欢的内衣。或者在UNDERWEAR店要打佯时陪她去买。</p><p>57：欺负她时，请带上套子，如不习惯，请自行解决，直到无法忍受为止，或者泼自己一身冷水。流产很痛苦，我只是听说。</p><p>58：有正义感，但请更理智，你父母不希望养育二十多年的儿子化为泡影。但当她遇到流氓时，请你勇敢的挡在她前面。大声说话可以让你的勇气迅速提升。（这是我答辩时认识到的）</p><p>59：最好不要在她面前玩天真，多数MM都不喜欢，除非她要求。</p><p>60：接吻前先嚼块口香糖，接吻时请闭上眼睛，睁开时，告诉你有多爱她。</p><p>61：尊重每一个人，包括为你擦鞋的，卖报的，环卫工人…等等。</p><p>62：接到陌生电话请先说，”你好，找哪位”</p><p>63：想发脾气时，尽量忍，忍不住就去厕所蹲半个小时，或是找个海拔较高的地方站半个小时。</p><p>64：如果GF要跟你吵，尽量克制，不能避免时，跟她吵，吵架是最好的交流方式。你们互相可以得到心里渴望已久的答案。但别带脏字，别把对方的亲戚带出来，最后尽量妥协，有些事，只能暂时妥协。不要把问题留过夜。</p><p>65：出差回来给她一个惊喜，并带上礼物。（想在这条上跟我开玩笑的朋友，请私下跟我开）</p><p>66：在她兜里放些零钱，在她不常用的兜里放张一百。</p><p>67：尊老爱幼，帮助别人后，你会感到无比轻松快乐。</p><p>68：去市场买东西，杀价先杀四分之三，现在杀一半行不通了。</p><p>69：如果可以，给你的对手留条生路，钱是赚不完的。这个世界上，没有天生的敌人。</p><p>70：饮水思源，永远做一个有思想的人，即使你不会有大成就，钱也会足够花。</p><p>71：为她学一首歌，如果可能，结婚时当着大家的面唱给她听。</p><p>72：要做一件事，成功之前，没必要告诉其他人，成功之后，和他们分享快乐。</p><p>73：每年去寺庙为家人点几盏油灯，告诉自己的良心，你不在的时候，同样是爱他们的。</p><p>74：学会察言观色，不要意气用事，否则会有许多不必要的麻烦。</p><p>75：享受孤独，地球不会因为只有你一个人而停止转动，也许她会很晚才出现，在此之前，你要学会正确利用时间，并且让自己发光发亮。</p><p>76：从前的她，深夜给你打电话，如果你还爱她，接电话。如果你不爱她，关机。（没听见不在讨论范围之内）</p><p>77：夜里的约会最好不要选择偏僻的地方，有些突发事件，会让你痛不欲生。如果你还爱她的话。</p><p>78：公司的东西不要带回家，即使有小便宜，也别参与，在你成为领导前，也别指责，这是你管不到的。</p><p>79：开发你的另外一个情感宣泄功能，倾听。</p><p>80：朋友之间不要合作做生意，或者办公司。麻烦会接踵而来。你要减轻负担，减小风险，可以，找陌生人。</p><p>81：今日事，今日毕，不要日复一日，年复一年。不然到你60岁，你还告诉孙子，爷爷明年一定要毕业！</p><p>82：感谢曾经爱过你的人，她祝福你的短信，一定要回。</p><p>83：朋友之间发生争执，不要次次都是忍让，每个人都有坚持自己的权利，让他们知道你的想法，你所坚持的。没关系，不出两天，你们又是好朋友。</p><p>84：说该说的，不说不该说的。对朋友，也应当有所保留。对她，不要把她和从前那个相提并论，谁都受不了。</p><p>85：头发，指甲，胡子，打理好。社会是个排斥性的接受体，这个星球所需要的艺术家极其有限，请不要冒这个险，就算你留长头发比较好看，也要尽量给人干净的感觉。</p><p>86：牌局可有可无，那不是年轻人该干的，除非工作需要，否则不要培养这种兴趣。当你看见GF坐在赌博机面前聚精会神的呐喊着某张牌时，你是什么感觉？</p><p>87：每学期给自己写总结，上课认真学习，所谓的好好学习，天天向上，学好了，就是最管用的绝招。机会常常伪装成麻烦，从你身边路过，也只会留给做好准备的人。上班的朋友同理。</p><p>88：不要整天把国家大事摆在嘴上，去改变你能改变的，接受你无法改变的。</p><p>89：选一个生日陪你母亲过，那也是她的受难日。不要年年都和同样一群人过。到头来，全心为你的，只有她。</p><p>90：有了手机，尽量少上网，就算你仅仅是看新闻，读文章，大把时间也会不经意从你身边流失。</p><p>91：不要以为你是个男人，就不需要保养。至少饮食方面不能太随便，多吃番茄，海产品，韭菜，香蕉，都是对男性健康有益处的食物。你要是看不到价值，我可以告诉你。至少你能把看病节约下来的钱给她多买几盒DIOR。</p><p>92：善待小动物，你以后也有子子孙孙，同样是生命，培养一下自己的爱心吧。这并不表示你懦弱。</p><p>93：如果考公务员，要有十足的心理准备。早点开始托关系吧，还不见得一定就有收效。</p><p>94：力求上进的人，不要总想着靠谁谁，人都是自私的，自己才是最靠得住的人。</p><p>95：如果你们相处几年下来，她开始冷落你，对你不闻不问，请别怪她，让她离开。给不了她幸福，给她自由。</p><p>96：如果你想和她说分手，请在考试之后，人都是脆弱的。</p><p>97：她给你买礼物，你可以高兴，但不要太高兴。人生就是场经营，有人经营感情，有人经营利益，有人经营幸福，而有人经营阴谋。</p><p>98：面对失败，不要太计较，天将降大任于斯人也，必先苦其心志，劳其筋骨，饿起体肤….但要学会自责，找到原因，且改掉坏习惯。二十岁没钱，那很正常，三十岁没钱，那是宿命。</p><p>99：学会微笑，以后在很多场合都用得上它。如何让微笑好看，首先你得拥有健康的牙齿。如何保证牙齿健康，一，早晚，饭后刷牙；二，每年去探望一次牙科医生；三，少管闲事。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>批评学生的方法</title>
+      <link href="2007/04/27/pi-ping-xue-sheng-de-fang-fa/"/>
+      <url>2007/04/27/pi-ping-xue-sheng-de-fang-fa/</url>
+      
+        <content type="html"><![CDATA[<h2 id="批评学生的方法"><a href="#批评学生的方法" class="headerlink" title="批评学生的方法"></a>批评学生的方法</h2><p>批评是班主任对学生进行思想品德教育常用的一种方法，其根本目的是要引起学生思想的变化，使学生真正提高认识，从而少犯错误。那么，班主任该如何掌握对学生的批评艺术呢？我在这总结出了以下几点看法：</p><p>㈠ 多肯定，少否定</p><p>班主任对学生的教育应多用肯定、启发、开导的语言和语气，最好不用或少用”不准”、”不行”、”不能”。否定式语言不利于保持学生的积极性，不利于培养学生的主动精神和独立分析问题、解决问题的能力。</p><p>㈡ 用赞扬代替批评</p><p>“数生十过，不如赞生一长”，学生多喜欢听表扬话，不愿听批评话，甚至一听批评就心理逆反。因此，我们在批评其不足之前，应真诚地赞扬他的进步，或者巧妙地用赞扬其进步代替批评其不足。</p><p>㈢ 巧妙地指出“美中不足”</p><p>一些班主任在批评学生时也先用了赞扬的原则，但他们在赞扬之后却来了一个明显的转折——“但是”，有的学生一听“但是”两字就反感，认为老师前边讲的表扬是言不由衷，是批评的前奏。其结果，不但批评不会收效，使前边的表扬也被学生理解为虚情假意了。</p><p>如果不用“但是”这一转折词，效果就可能不同。例如教育一位只顾学习、自私自利的学生，老师对他说：“你的学习成绩很不错，如果你能多团结同学，多关心班集体，相信你会更受同学欢迎。”这样的间接提醒，比“但是”后面直接批评的效果更好，学生也乐于接受。</p><p>㈣ 循循善诱，耐心教育　</p><p>我班有这样一个学生，大错不犯，小错不断，屡次旷课或迟到，不是大白天在上课时没精神，就是在看课外书，不交作业的现象更是很常见，我和其他科老师先后找他谈话二十多次，一次不好，再来一次，耐心教育，指出前途，久而久之，他感动了，说：“老师这样苦口婆心的教育我，不厌其烦的帮助我，再不改正，也实在对不起老师了。”从此，他对待学习的态度有了很大的改变，学习成绩也有了很大的提高。</p><p>总之，班主任在批评教育学生时，一定要掌握恰当的批评艺术，让学生乐于接受、易于接受，从而改正缺点，积极上进。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>当心你的加密文件</title>
+      <link href="2007/04/27/dang-xin-ni-de-jia-mi-wen-jian/"/>
+      <url>2007/04/27/dang-xin-ni-de-jia-mi-wen-jian/</url>
+      
+        <content type="html"><![CDATA[<h2 id="当心你的加密文件"><a href="#当心你的加密文件" class="headerlink" title="当心你的加密文件"></a>当心你的加密文件</h2><p>　　从Windows 2000开始，在NTFS文件系统的分区中Windows可以帮助你加密文件。方法是，在想加密的文件或文件夹上点右键，选择“属性”，在属性的“常规”选项卡上点击“高级”按钮，会弹出一个窗口，选中窗口中的“加密内容以便保护数据”即可实现在NTFS卷上对文件的加密。</p><p>　　<strong>小提示</strong></p><p>　　这被称作为EFS(Encrypting File System，加密文件系统)。这种加密的好处是，加密的过程是完全透明的，也就是说，如果你加密了这些文件，你对这些文件的访问将完全允许(并不需要你输入密码，因为验证过程在你登录Windows的时候就进行了)，而其它人则不能访问或移动这些数据。</p><p>　　不过如果你的Windows突然崩溃，在无计可施的情况下只能重装系统，但原来被加密过的数据会出现无法打开的问题。这时只有在域环境下，才可以得到域管理员的帮助，解密这些文件。这是因为当你使用EFS加密后，系统会根据你的SID(Security Identifier，安全标示符)自动生成一个密钥，要解密这些文件就要使用这个密钥。对于系统而言，并不是根据用户名来区别不同的用户，而是根据SID，这个SID是唯一的。SID和用户名的关系跟人的姓名和身份证号码的关系是一样的。虽然有同名同姓的人，但他们的身份证号码绝对不会相同；虽然有相同的用户名(指网络上的，因为本地用户不能有相同的用户名)，但他们的SID绝对不同。这也就解释了为什么重装系统后即使使用之前的用户名和密码登陆也不能打开以前的加密文件。</p><p>　　所以在重装系统之前最好能把加密的数据全部解密。然而，为了应付突发的系统崩溃，就需要备份好自己密钥，这样系统崩溃后只要重装系统，并导入密钥，就可以继续使用之前的加密文件了。</p><p>　　备份密钥的方法是：单击“开始”→“运行”，输入：certmgr.msc，回车后打开“证书管理器”，在 “当前用户”→“个人”→“证书”目录下，右击颁发给你的证书，在“所有任务”中点击“导出”，并选择Export The Private Key(导出私钥)，其它选项按照默认设置。输入该用户的密码和保存路径就可以了。</p><p>　　在重装系统后，照旧运行certmgr.msc，并在“所有任务”中选择导入，选择好备份的证书，然后按照向导，就可以完成对密钥的导入。或直接在导出的pfx文件上点右键，选择“安装PFX”。这时，你的加密数据已经可以访问了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 系统知识 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>十一种常见流氓软件完全卸载方法</title>
+      <link href="2007/04/26/shi-yi-chong-chang-jian-liu-mang-ruan-jian-wan-quan-xie-zai-fang-fa/"/>
+      <url>2007/04/26/shi-yi-chong-chang-jian-liu-mang-ruan-jian-wan-quan-xie-zai-fang-fa/</url>
+      
+        <content type="html"><![CDATA[<h2 id="十一种常见流氓软件完全卸载方法"><a href="#十一种常见流氓软件完全卸载方法" class="headerlink" title="十一种常见流氓软件完全卸载方法"></a>十一种常见流氓软件完全卸载方法</h2><p>这些东西你迟早会用的上，这些流氓软件随时都有可能来折磨你的神经。</p><p><strong>一：MMSAssist彩信通</strong></p><p>彩信通共有4个文件一个服务，分别是：</p><p>1.C:\windows\system32下的Albus.DAT；</p><p>2.C:\windows\system32下alsmt.exe;</p><p>3.C:\WINDOWS\SYSTEM32\DRIVERS下的Albus.SYS;</p><p>4.C:\programfiles\mmsassist文件夹</p><p>5.创建jmediaservice服务</p><p>卸载方法：</p><p>单单手动删除上面的文件和服务是徒劳的，删除后文件会马上复活，必须借助工具，彻底卸载方法：</p><p>1，在“控制面板”－－“管理工具”－－“服务”，在里面将“JMediaService”这个服务停止并且设置为禁用。</p><p>2，用超级兔子7.72以上版本，打开程序组里找到“超级兔子清理王”，之后找到“专业卸载”，就可以看到你的系统里的“彩信通”，就按下一步进行卸载，之后会提示你重启你的计算机，重启后，再重新卸载一次，就可以了。</p><p>3.没有装超级兔子的也可用unlocker进行卸载，方法：先用unlocker，对mmsassist文件夹进行删除，第一次无法删除的，再删一次，刷新后就没有了，同样再删除system32下面剩下的3处文件，再到安全模式，用恶意软件清理助手清理注册表项。</p><p><strong>二：3721上网助手</strong></p><p>所属公司－－－－北京三七二一科技有限公司</p><p>厂商网址－－－<a href="http://www.3721.com/">www.3721.com</a></p><p>存在问题－－－</p><p>1、 强制安装</p><p>2、 浏览器劫持（添加用户不需要的按钮、ie地址菜单项中添加非法内容）</p><p>3、 干扰其他软件运行</p><p>4、无法彻底卸载</p><p>卸载方法：</p><p>1.运行regedit,找到HKEY_LOCAL_MACHINE\ SOFTWARE\Microsoft\<br>Windows\CurrentVersion\Run项，</p><p>点右键将Run项的权限设为—禁止所有人访问！即Administrator也禁止访问！</p><p>2.重新启动:你会发现，进程中的Rundll.exe没有了！ ；）</p><p>3.首先删除HKEY_LOCAL_MACHINE\SOFTWARE\ Microsoft\Windows\CurrentVersion\<br>Run下的和3721有关的项/键。</p><p>4.运行reggedit,搜索“{B83FC273-3522-4CC6-92EC-75CC86678DA4}”(不带引号),找到的一律删除！</p><p>5.删除windows\system32\drivers\cnsminkp.sys文件—现在可以删除了！</p><p>最好随便找个txt文件，该为cnsminkp.sys，放在哪里，将其禁用！</p><p>删除C:\Program Files\3721目录,最好将其保留，但是将其禁用，里面的文件一律删除！</p><p>6.搜索cnsminkp.sys和cnsmin.sys，删除！—-偷梁换柱禁用更佳！</p><p><strong>三：淘宝网</strong></p><p>所属公司：阿里巴巴</p><p>厂商网址－－－<a href="http://www.taobao.com/">www.taobao.com</a></p><p>存在问题－－－强行弹出过多广告</p><p>卸载方法－－－</p><p>卸载方法有四，最简单的如在MyIE或者Maxthon里面的“弹出窗口过滤”和“网页内容过滤”里面同时添加“unionsky、allyes、taobao”等过滤条目！更直接的方法是使用用世界之窗浏览器，不用任何设置，默认即可屏蔽！对于没有过滤功能的IE，如果系统是XP/2003，请在“开始，运行”中输入：%SystemRoot\system32<br>\notepad.exe C:\WINDOWS\ system32\drivers\etc\hosts<br>如果系统是98/me，请在“开始，运行”中输入：%SystemRoot%\system32\notepad.exe<br>C:\WINDOWS\hosts<br>或点击这里下载自动运行命令，解压后选择合适的bat文件双击运行，然后，将下列语句添加到最后一行.</p><p><strong>四：ebay 易趣</strong></p><p>所属公司－－－－ebay inc.</p><p>厂商网址－－－<a href="http://www.ebay.com.cn/">www.ebay.com.cn</a></p><p>存在问题－－－</p><p>1、强制安装</p><p>2、浏览器劫持（自动在ie中添加按钮和菜单）</p><p>3、无法卸载</p><p>卸载方法：</p><p>对易趣广告的屏蔽可以参考上面对淘宝网广告的方法。但删除易趣插件就比较繁琐了。首先，易趣插件没有提供卸载工具。第二，易趣插件不能通过如windows优化大师这样的软件下载，因为系统文件已经被替换到了不能识别的版本而失败。</p><p>在2005年7月21日更新的暴风影音5.07正式版中，包括了针对流氓软件的三个清除小程序：分别是易趣清除程序UebayFOR暴风和酷狗.rar，可以清除易趣广告和几个广告链接。其次还有暴风去广告安装外挂程序以及暴风去广告安装外挂可选组件版程序。运行这些程序附件，不但能够自动去掉一搜和下载加速器的选项，还能安装后自动清除易趣广告。而且这一版的软件目前已经可以手动不安装易趣了。</p><p><strong>五：dudu下载加速器</strong></p><p>所属公司－－－－千橡公司</p><p>厂商网址－－－－ddd.dudu.com</p><p>存在问题－－－</p><p>1、 强制安装</p><p>2、 诱导用户安装广告程序</p><p>3、无法彻底删除</p><p>卸载方法：</p><p>方法一：手动卸载（有一定风险，先做好注册表等备份）</p><p>1.首先到添加与删除程序里卸载“dudu”。</p><p>2.运行注册表编辑器（开始、运行、regedit、编辑、查找）查找与“dudu、ddd6c、dddsetup、dddupdate、DuDuAcc”等相关相删除。</p><p>3.开始、搜索、搜索电脑中的“dudu、ddd6c、dddupdate、dddsetup、DuDuAcc”等相关项删除。</p><p>4.开始、设置、控制面板、性能和维护、任务计划里面把 DUDU的任务删掉</p><p>5.手动查找系统中与“dudu、ddd6c、dddupdate、dddsetup、DuDuAcc”等相关相删除。</p><p>6.重启电脑</p><p>方法二：自动卸载（风险低，建议使用）</p><p>在计算机的“program files”目录，会有一个叫“desktop<br>media”目录，运行其中的uninstall.exe程序，即可。</p><p><strong>六：中文上网</strong></p><p>所属公司－－－－中国互联网络信息中心</p><p>厂商网址－－－<a href="http://www.cnnic.net.cn/">www.cnnic.net.cn</a></p><p>存在问题－－－</p><p>1、强制安装</p><p>2、无法彻底卸载</p><p>卸载方法－－</p><p>进入“控制面板”的“添加/删除程序”选项，找到“中文上网官方版软件”，卸载。根据提示，选择要卸载的“中文域名IE客户端软件”和“中文域名邮件客户端软件”，输入“确认码”，进入下一步确认是否保留某些功能，确认保留或不保留后继续卸载，卸载完成会显示“中文上网官方版软件卸载成功!”的提示。</p><p>此时别高兴，因为这样和没有卸载差不多，否则每次删除后，一打开某个网页，就又自动安装上了，因此接下来还需要以下步骤：1、删除C:\Program<br>Files\下 的CNNIC整个目录。2、“开始菜单”&gt;&gt;“运行”&gt;&gt;输入“regedit”<br>确定回车，查找路径：HKEY_CURRENT_USER\ Software\ CNNIC和HKEY_LOCAL_MACHINE\<br>SOFTWARE\CNNIC，将其全部删除才算了结。</p><p><strong>七：青娱乐聊天软件（qyule）</strong></p><p>所属公司－－－－青娱乐 锋力科技 青鸟科联</p><p>厂商网址－－－<a href="http://www.qyule.com/">www.qyule.com</a></p><p>存在问题－－－强制安装</p><p>卸载方法－－－</p><p>青娱乐的关键可能是收费和部分名过其实的内容，有些网友指出，在花费开通后得到的内容可能会和名称不符，而青娱乐也会和其它软件捆绑而不请自来。清除青娱乐的方法并不复杂，但对已经交费的会员可能会涉及到申请停止服务的问题。退订前最好看清规则再操作，尤其是短信退订需要避免字母O还是数字0这样的误会。至于卸载，你可以使用首先在Windows任务管理器中关掉该进程，之后在本机中查找文件名为qyule.exe<br>的青娱乐原程序,找到以后直接删除就可以了。</p><p><strong>八：很棒小秘书</strong></p><p>所属公司－－－－很棒信息服务有限公司</p><p>厂商网址－－－<a href="http://www.henbang.net/">www.henbang.net</a></p><p>存在问题－－－</p><p>1、 强制安装</p><p>2、无法彻底卸载</p><p>卸载方法－－－</p><p>1.按照软件中的说明删除软件（点击C:\Widnows\System32\目录下的uninstall.exe）；2.删除掉注册表中相关的自启动内容；3.然后进入C:\Widnows\System32\目录，删除winup.exe、hap.dll、winhtp.dll和hda.ini文件（如果有henbangtemp这个文件夹的话，也删掉）；4.检查一次，把和与之相关的文件夹也删掉；5.打开IE浏览器，依次点击：“工具，加载管理项”，然后将涉及到winhtp.dll的加载项禁用。</p><p>如果你是xp<br>sp2版，可以按照以下方法关闭它：1.首先打开ie，然后选择“internet选项”；2.选择“程序”页，点击“管理加载项”；3.选中“UrlMonitor<br>Class”，选择禁用此项；4.首先在添加/删除程序中找到HAP，卸载之。然后使用反毒软件或者木马专杀软件全面扫描C盘，这些软件会多多少少发现一些这个广告程序所用到的文件。和这个软件相关的文件有：</p><p>C:\WINDOWS\system32\winup.exe</p><p>C:\WINDOWS\system32\winhtp.dll</p><p>C:\WINDOWS\SoftwareDistribution \Download\XXXX\update\ spcustom.dll</p><p>C:\windows\system32\uninstall.exe</p><p>C:\windows\system32\ henbagkiller.exe</p><p>C:\Program Files\henbang文件夹</p><p>hap.dll</p><p>一般反毒软件病不能完全查杀这个程序，于是就需要我们在硬盘，文件内容和注册表中手动删除这些文件，并且记住删除工作在安全模式下进行，这样才能查杀干净。</p><p><strong>九：百度搜霸、百度超级搜霸</strong></p><p>所属公司－－－－百度</p><p>厂商网址－－－<a href="http://www.baidu.com/">www.baidu.com</a></p><p>存在问题－－－强制安装</p><p>卸载方法－－－－</p><p>删除百度搜霸的方法是，在IE浏览器的菜单中，依次进入“工具，Internet选项，常规，Internet临时文件，设置，查看对象”，然后找到对应的插件名称，用鼠标选中后删除即可。</p><p><strong>十：一搜工具条</strong></p><p>所属公司－－－－雅虎</p><p>厂商网址－－－－toolbar.yisou.com</p><p>存在问题－－－强制安装</p><p>卸载方法－－－－</p><p>一搜工具条删除比较简单。单击一搜徽标打开下拉菜单。选择“帮助，卸载选项”。如果无法访问工具条上的一搜徽标，也可以使用<br>Windows 控制面板中的添加/删除程序卸载工具条：单击<br>Windows“开始”按钮，然后选择设置。打开控制面板文件夹，然后双击添加/删除程序条目。浏览程序列表，选取“一搜工具条”。<br>单击添加/删除按钮。</p><p><strong>十一：网络猪、划词搜索</strong></p><p>所属公司－－－－中搜在线</p><p>厂商网址－－－－pig.zhongsou.com</p><p>存在问题－－－</p><p>1、强制安装</p><p>2、无法彻底卸载</p><p>卸载方法：</p><p>删除网络猪目前有两种方法，1.在系统进程中结束movesearch.exe，然后在C:\Program<br>Files中进入wsearch文件夹，然后执行其中的卸载程序。最后返回上层文件夹，把wsearch文件夹删除。2.手动清除，就是直接在中止movesearch程序后，直接删除Program<br>Files下的wsearch文件夹及其下文件，然后在注册表中清除与movesearch有关的信息。(打开注册表，搜索“movesearch”(可按F3)统统删除即可)</p><p>删除划词搜索比较麻烦，因为即便先卸载划词搜索再删除wsearch文件夹也不能彻底将其清除，目前比较管用的方法是使用新版的超级兔子专业卸载功能。</p><p>以上内容转载<a href="http://pfw.sky.net.cn/article/4493_3.html">http://pfw.sky.net.cn/article/4493_3.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>奇想</title>
+      <link href="2007/04/23/qi-xiang/"/>
+      <url>2007/04/23/qi-xiang/</url>
+      
+        <content type="html"><![CDATA[<p>午饭后，同学叫我一起去溜达，在南湖广场里小走了一会儿，不觉中就走到了同志街，到了同志街离恒客隆就不远了，于是我提意去恒客隆看一看，逛一逛，可谁知道，到了恒客隆，都没有进去，就和同学继续往前走，一直走，没有停……竟然走到了重庆路，天呐！还是第一次走这么远呐！走了二个多小时，况且就我一个人穿皮鞋，他们都穿的旅游鞋，真累坏我了……</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
       
     </entry>
     

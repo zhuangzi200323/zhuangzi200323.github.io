@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>十一种常见流氓软件完全卸载方法 | 熊孩子</title>
+  
+    
+<link rel="stylesheet" href="/js/aos/aos.css">
+
+  
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="熊孩子" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  
+<script src="/js/jquery3.5.1.js"></script>
+
+  
+<script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <header class="header bg-color" 
+  style="position: fixed; 
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <i class="fa fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+  </div>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo" src="/medias/logo.png" alt="logo">
+      <h3 class="drawer-box-head_title">熊孩子</h3>
+      <h5 class="drawer-box-head_desc">一个在学习路上的程序猿，一个在探索路上的攻城狮，一个在求知路上的码农……</h5>
+    </div>
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          <li class="drawer-box-content_item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+        <li class="drawer-box-content_item">
+          <a href="">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <span>Github</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+    </div>
+    <div class="blog-title" id="author-avatar">
+      <div class="avatar">
+        <img src="/medias/logo.png" alt="logo">
+      </div>
+      <a href="/" class="logo">熊孩子</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          <li class="menu-item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-archive" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+      </ul>
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fa fa-search" aria-hidden="true"></i></div>
+  <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+    <div class="message-box">
+      <h2>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <span class="title">搜索</span>
+      </h2>
+      <form class="site-search-form">
+        <input type="text"
+          placeholder="请输入关键字"
+          id="local-search-input" 
+          @click="getSearchFile()"
+          class="st-search-input"
+          v-model="searchInput"
+        />
+      </form>
+      <div class="result-wrapper">
+        <div id="local-search-result" class="local-search-result-cls"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/local_search.js"></script>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile();
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+    </nav>
+  </div>
+  
+  <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</header>
+    <main class="main" style="margin-top: 60px;">
+      
+
+
+<div class="post-detail-header" style="background: url(/medias/6.jpg) no-repeat; background-size: cover; 
+  background-position: center center;">
+  
+    <span class="title">十一种常见流氓软件完全卸载方法</span>
+  
+</div>
+<div class="row justify-center">
+  <div class="main-content">
+    <article class="post post-detail">
+      
+      
+      <div class="post-meta">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <span class="post-time">2007-04-26</span>
+      </div>
+      
+      <div class="post-tags-categories">
+        
+        
+        <div class="categories">
+          <i class="iconfont iconbookmark1"></i>
+          
+            <a href="/categories/%E8%BD%AF%E4%BB%B6/" class="">
+              软件
+            </a>
+          
+        </div>
+        
+      </div>
+      <div class="post-content">
+        <h2 id="十一种常见流氓软件完全卸载方法"><a href="#十一种常见流氓软件完全卸载方法" class="headerlink" title="十一种常见流氓软件完全卸载方法"></a>十一种常见流氓软件完全卸载方法</h2><p>这些东西你迟早会用的上，这些流氓软件随时都有可能来折磨你的神经。</p>
+<p><strong>一：MMSAssist彩信通</strong></p>
+<p>彩信通共有4个文件一个服务，分别是：</p>
+<p>1.C:\windows\system32下的Albus.DAT；</p>
+<p>2.C:\windows\system32下alsmt.exe;</p>
+<p>3.C:\WINDOWS\SYSTEM32\DRIVERS下的Albus.SYS;</p>
+<p>4.C:\programfiles\mmsassist文件夹</p>
+<p>5.创建jmediaservice服务</p>
+<p>卸载方法：</p>
+<p>单单手动删除上面的文件和服务是徒劳的，删除后文件会马上复活，必须借助工具，彻底卸载方法：</p>
+<p>1，在“控制面板”－－“管理工具”－－“服务”，在里面将“JMediaService”这个服务停止并且设置为禁用。</p>
+<p>2，用超级兔子7.72以上版本，打开程序组里找到“超级兔子清理王”，之后找到“专业卸载”，就可以看到你的系统里的“彩信通”，就按下一步进行卸载，之后会提示你重启你的计算机，重启后，再重新卸载一次，就可以了。</p>
+<p>3.没有装超级兔子的也可用unlocker进行卸载，方法：先用unlocker，对mmsassist文件夹进行删除，第一次无法删除的，再删一次，刷新后就没有了，同样再删除system32下面剩下的3处文件，再到安全模式，用恶意软件清理助手清理注册表项。</p>
+<p><strong>二：3721上网助手</strong></p>
+<p>所属公司－－－－北京三七二一科技有限公司</p>
+<p>厂商网址－－－<a target="_blank" rel="noopener" href="http://www.3721.com/">www.3721.com</a></p>
+<p>存在问题－－－</p>
+<p>1、 强制安装</p>
+<p>2、 浏览器劫持（添加用户不需要的按钮、ie地址菜单项中添加非法内容）</p>
+<p>3、 干扰其他软件运行</p>
+<p>4、无法彻底卸载</p>
+<p>卸载方法：</p>
+<p>1.运行regedit,找到HKEY_LOCAL_MACHINE\ SOFTWARE\Microsoft\<br>Windows\CurrentVersion\Run项，</p>
+<p>点右键将Run项的权限设为—禁止所有人访问！即Administrator也禁止访问！</p>
+<p>2.重新启动:你会发现，进程中的Rundll.exe没有了！ ；）</p>
+<p>3.首先删除HKEY_LOCAL_MACHINE\SOFTWARE\ Microsoft\Windows\CurrentVersion\<br>Run下的和3721有关的项/键。</p>
+<p>4.运行reggedit,搜索“{B83FC273-3522-4CC6-92EC-75CC86678DA4}”(不带引号),找到的一律删除！</p>
+<p>5.删除windows\system32\drivers\cnsminkp.sys文件—现在可以删除了！</p>
+<p>最好随便找个txt文件，该为cnsminkp.sys，放在哪里，将其禁用！</p>
+<p>删除C:\Program Files\3721目录,最好将其保留，但是将其禁用，里面的文件一律删除！</p>
+<p>6.搜索cnsminkp.sys和cnsmin.sys，删除！—-偷梁换柱禁用更佳！</p>
+<p><strong>三：淘宝网</strong></p>
+<p>所属公司：阿里巴巴</p>
+<p>厂商网址－－－<a target="_blank" rel="noopener" href="http://www.taobao.com/">www.taobao.com</a></p>
+<p>存在问题－－－强行弹出过多广告</p>
+<p>卸载方法－－－</p>
+<p>卸载方法有四，最简单的如在MyIE或者Maxthon里面的“弹出窗口过滤”和“网页内容过滤”里面同时添加“unionsky、allyes、taobao”等过滤条目！更直接的方法是使用用世界之窗浏览器，不用任何设置，默认即可屏蔽！对于没有过滤功能的IE，如果系统是XP/2003，请在“开始，运行”中输入：%SystemRoot\system32<br>\notepad.exe C:\WINDOWS\ system32\drivers\etc\hosts<br>如果系统是98/me，请在“开始，运行”中输入：%SystemRoot%\system32\notepad.exe<br>C:\WINDOWS\hosts<br>或点击这里下载自动运行命令，解压后选择合适的bat文件双击运行，然后，将下列语句添加到最后一行.</p>
+<p><strong>四：ebay 易趣</strong></p>
+<p>所属公司－－－－ebay inc.</p>
+<p>厂商网址－－－<a target="_blank" rel="noopener" href="http://www.ebay.com.cn/">www.ebay.com.cn</a></p>
+<p>存在问题－－－</p>
+<p>1、强制安装</p>
+<p>2、浏览器劫持（自动在ie中添加按钮和菜单）</p>
+<p>3、无法卸载</p>
+<p>卸载方法：</p>
+<p>对易趣广告的屏蔽可以参考上面对淘宝网广告的方法。但删除易趣插件就比较繁琐了。首先，易趣插件没有提供卸载工具。第二，易趣插件不能通过如windows优化大师这样的软件下载，因为系统文件已经被替换到了不能识别的版本而失败。</p>
+<p>在2005年7月21日更新的暴风影音5.07正式版中，包括了针对流氓软件的三个清除小程序：分别是易趣清除程序UebayFOR暴风和酷狗.rar，可以清除易趣广告和几个广告链接。其次还有暴风去广告安装外挂程序以及暴风去广告安装外挂可选组件版程序。运行这些程序附件，不但能够自动去掉一搜和下载加速器的选项，还能安装后自动清除易趣广告。而且这一版的软件目前已经可以手动不安装易趣了。</p>
+<p><strong>五：dudu下载加速器</strong></p>
+<p>所属公司－－－－千橡公司</p>
+<p>厂商网址－－－－ddd.dudu.com</p>
+<p>存在问题－－－</p>
+<p>1、 强制安装</p>
+<p>2、 诱导用户安装广告程序</p>
+<p>3、无法彻底删除</p>
+<p>卸载方法：</p>
+<p>方法一：手动卸载（有一定风险，先做好注册表等备份）</p>
+<p>1.首先到添加与删除程序里卸载“dudu”。</p>
+<p>2.运行注册表编辑器（开始、运行、regedit、编辑、查找）查找与“dudu、ddd6c、dddsetup、dddupdate、DuDuAcc”等相关相删除。</p>
+<p>3.开始、搜索、搜索电脑中的“dudu、ddd6c、dddupdate、dddsetup、DuDuAcc”等相关项删除。</p>
+<p>4.开始、设置、控制面板、性能和维护、任务计划里面把 DUDU的任务删掉</p>
+<p>5.手动查找系统中与“dudu、ddd6c、dddupdate、dddsetup、DuDuAcc”等相关相删除。</p>
+<p>6.重启电脑</p>
+<p>方法二：自动卸载（风险低，建议使用）</p>
+<p>在计算机的“program files”目录，会有一个叫“desktop<br>media”目录，运行其中的uninstall.exe程序，即可。</p>
+<p><strong>六：中文上网</strong></p>
+<p>所属公司－－－－中国互联网络信息中心</p>
+<p>厂商网址－－－<a target="_blank" rel="noopener" href="http://www.cnnic.net.cn/">www.cnnic.net.cn</a></p>
+<p>存在问题－－－</p>
+<p>1、强制安装</p>
+<p>2、无法彻底卸载</p>
+<p>卸载方法－－</p>
+<p>进入“控制面板”的“添加/删除程序”选项，找到“中文上网官方版软件”，卸载。根据提示，选择要卸载的“中文域名IE客户端软件”和“中文域名邮件客户端软件”，输入“确认码”，进入下一步确认是否保留某些功能，确认保留或不保留后继续卸载，卸载完成会显示“中文上网官方版软件卸载成功!”的提示。</p>
+<p>此时别高兴，因为这样和没有卸载差不多，否则每次删除后，一打开某个网页，就又自动安装上了，因此接下来还需要以下步骤：1、删除C:\Program<br>Files\下 的CNNIC整个目录。2、“开始菜单”&gt;&gt;“运行”&gt;&gt;输入“regedit”<br>确定回车，查找路径：HKEY_CURRENT_USER\ Software\ CNNIC和HKEY_LOCAL_MACHINE\<br>SOFTWARE\CNNIC，将其全部删除才算了结。</p>
+<p><strong>七：青娱乐聊天软件（qyule）</strong></p>
+<p>所属公司－－－－青娱乐 锋力科技 青鸟科联</p>
+<p>厂商网址－－－<a target="_blank" rel="noopener" href="http://www.qyule.com/">www.qyule.com</a></p>
+<p>存在问题－－－强制安装</p>
+<p>卸载方法－－－</p>
+<p>青娱乐的关键可能是收费和部分名过其实的内容，有些网友指出，在花费开通后得到的内容可能会和名称不符，而青娱乐也会和其它软件捆绑而不请自来。清除青娱乐的方法并不复杂，但对已经交费的会员可能会涉及到申请停止服务的问题。退订前最好看清规则再操作，尤其是短信退订需要避免字母O还是数字0这样的误会。至于卸载，你可以使用首先在Windows任务管理器中关掉该进程，之后在本机中查找文件名为qyule.exe<br>的青娱乐原程序,找到以后直接删除就可以了。</p>
+<p><strong>八：很棒小秘书</strong></p>
+<p>所属公司－－－－很棒信息服务有限公司</p>
+<p>厂商网址－－－<a target="_blank" rel="noopener" href="http://www.henbang.net/">www.henbang.net</a></p>
+<p>存在问题－－－</p>
+<p>1、 强制安装</p>
+<p>2、无法彻底卸载</p>
+<p>卸载方法－－－</p>
+<p>1.按照软件中的说明删除软件（点击C:\Widnows\System32\目录下的uninstall.exe）；2.删除掉注册表中相关的自启动内容；3.然后进入C:\Widnows\System32\目录，删除winup.exe、hap.dll、winhtp.dll和hda.ini文件（如果有henbangtemp这个文件夹的话，也删掉）；4.检查一次，把和与之相关的文件夹也删掉；5.打开IE浏览器，依次点击：“工具，加载管理项”，然后将涉及到winhtp.dll的加载项禁用。</p>
+<p>如果你是xp<br>sp2版，可以按照以下方法关闭它：1.首先打开ie，然后选择“internet选项”；2.选择“程序”页，点击“管理加载项”；3.选中“UrlMonitor<br>Class”，选择禁用此项；4.首先在添加/删除程序中找到HAP，卸载之。然后使用反毒软件或者木马专杀软件全面扫描C盘，这些软件会多多少少发现一些这个广告程序所用到的文件。和这个软件相关的文件有：</p>
+<p>C:\WINDOWS\system32\winup.exe</p>
+<p>C:\WINDOWS\system32\winhtp.dll</p>
+<p>C:\WINDOWS\SoftwareDistribution \Download\XXXX\update\ spcustom.dll</p>
+<p>C:\windows\system32\uninstall.exe</p>
+<p>C:\windows\system32\ henbagkiller.exe</p>
+<p>C:\Program Files\henbang文件夹</p>
+<p>hap.dll</p>
+<p>一般反毒软件病不能完全查杀这个程序，于是就需要我们在硬盘，文件内容和注册表中手动删除这些文件，并且记住删除工作在安全模式下进行，这样才能查杀干净。</p>
+<p><strong>九：百度搜霸、百度超级搜霸</strong></p>
+<p>所属公司－－－－百度</p>
+<p>厂商网址－－－<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></p>
+<p>存在问题－－－强制安装</p>
+<p>卸载方法－－－－</p>
+<p>删除百度搜霸的方法是，在IE浏览器的菜单中，依次进入“工具，Internet选项，常规，Internet临时文件，设置，查看对象”，然后找到对应的插件名称，用鼠标选中后删除即可。</p>
+<p><strong>十：一搜工具条</strong></p>
+<p>所属公司－－－－雅虎</p>
+<p>厂商网址－－－－toolbar.yisou.com</p>
+<p>存在问题－－－强制安装</p>
+<p>卸载方法－－－－</p>
+<p>一搜工具条删除比较简单。单击一搜徽标打开下拉菜单。选择“帮助，卸载选项”。如果无法访问工具条上的一搜徽标，也可以使用<br>Windows 控制面板中的添加/删除程序卸载工具条：单击<br>Windows“开始”按钮，然后选择设置。打开控制面板文件夹，然后双击添加/删除程序条目。浏览程序列表，选取“一搜工具条”。<br>单击添加/删除按钮。</p>
+<p><strong>十一：网络猪、划词搜索</strong></p>
+<p>所属公司－－－－中搜在线</p>
+<p>厂商网址－－－－pig.zhongsou.com</p>
+<p>存在问题－－－</p>
+<p>1、强制安装</p>
+<p>2、无法彻底卸载</p>
+<p>卸载方法：</p>
+<p>删除网络猪目前有两种方法，1.在系统进程中结束movesearch.exe，然后在C:\Program<br>Files中进入wsearch文件夹，然后执行其中的卸载程序。最后返回上层文件夹，把wsearch文件夹删除。2.手动清除，就是直接在中止movesearch程序后，直接删除Program<br>Files下的wsearch文件夹及其下文件，然后在注册表中清除与movesearch有关的信息。(打开注册表，搜索“movesearch”(可按F3)统统删除即可)</p>
+<p>删除划词搜索比较麻烦，因为即便先卸载划词搜索再删除wsearch文件夹也不能彻底将其清除，目前比较管用的方法是使用新版的超级兔子专业卸载功能。</p>
+<p>以上内容转载<a target="_blank" rel="noopener" href="http://pfw.sky.net.cn/article/4493_3.html">http://pfw.sky.net.cn/article/4493_3.html</a></p>
+
+      </div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <div class="post-nav">
+
+  <div class="post-nav-prev post-nav-item">
+    <a href="/2007/04/27/dang-xin-ni-de-jia-mi-wen-jian/">
+      上一篇:    当心你的加密文件
+    </a>
+  </div>
+
+
+
+  <div class="post-nav-next post-nav-item">
+    <a href="/2007/04/23/qi-xiang/">
+      下一篇:    奇想 
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-if="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-if="visible">
+      <div class="donate-box_close">
+        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
+          <img src="/medias/zfb.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
+          <img src="/medias/wx.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+
+
+<script src="/js/shareJs/social-share.min.js"></script>
+
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+
+    <!-- 评论 -->
+      
+        
+      
+  </div>
+
+  
+    <div class="toc-aside">
+      <div class="toc-main">
+        <div class="toc-aside-title">
+          <i class="fa fa-list-ul" aria-hidden="true"></i><span>目录</span>
+        </div>
+        <div class="toc-content">
+          <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+<div class="toc"></div>
+
+<script>
+  if ($('.toc').length > 0) {
+    var headerEl = 'h2, h3, h4',  //headers 
+      content = '.post-detail',//文章容器
+      idArr = {};  //标题数组以确定是否增加索引id
+      //add #id
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: content,
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: headerEl,
+      scrollSmooth: true,
+      scrollSmoothOffset: -80,
+      headingsOffset: 130,
+      positionFixedSelector: '.toc-main',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  }
+
+</script>
+
+<style>
+.is-position-fixed {
+  position:fixed !important;
+  top: 64px;
+}
+
+</style>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+    </main>
+    <div class="footer bg-color">
+  <div class="footer-main">
+    <div class="link">
+      <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:20075633@qq.com">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      </a>
+      <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=20075633">
+        <i class="fa fa-qq" aria-hidden="true"></i>
+      </a>
+      <a href="/atom.xml" target="_blank">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">zhuangzi200323</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> 
+    </div>
+    
+      
+  <!-- 不蒜子统计 -->
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-book" aria-hidden="true"></i>本站总阅读量：<span id="busuanzi_value_page_pv"></span> 次
+  </span>
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv" style='display:none'>
+        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+  </span>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+  </div>
+</div>
+
+
+    
+      <div class="goTop bg-color">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</div>
+
+<script src="/js/goTop.js"></script>
+
+    
+
+    
+
+    <!-- 图片放大 -->
+    
+      
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<script src="/js/wrapImage.js"></script>
+
+    
+
+    <!-- 爱心点击 -->
+    
+      
+<script src="/js/clicklove.js"></script>
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+      
+<script src="/js/aos/aos.js"></script>
+
+      <script>
+        // https://github.com/michalsnik/aos
+        const themeOffset = parseInt('120') || 120;
+        const themeDelay = parseInt('0')|| 0;
+        const themeDuration = parseInt('400') || 400;
+        const themeEasing = 'ease' || 'ease';
+        const themeOnce = JSON.parse('true' || true);
+        const themeMirror = JSON.parse('false' || false);
+        const themeAnchorPlacement = 'top-bottom' || 'top-bottom';
+        AOS.init({
+          // Global settings:
+          disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+          startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+          initClassName: 'aos-init', // class applied after initialization
+          animatedClassName: 'aos-animate', // class applied on animation
+          useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+          disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+          debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+          throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+          // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+          offset: themeOffset, // offset (in px) from the original trigger point
+          delay: themeDelay, // values from 0 to 3000, with step 50ms
+          duration: themeDuration, // values from 0 to 3000, with step 50ms
+          easing: themeEasing, // default easing for AOS animations
+          once: themeOnce, // whether animation should happen only once - while scrolling down
+          mirror: themeMirror, // whether elements should animate out while scrolling past them
+          anchorPlacement: themeAnchorPlacement, // defines which position of the element regarding to window should trigger the animation
+
+        });
+      </script>
+    
+
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+<script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+<div id="appCopy">
+</div>
+<script>
+  var vm = new Vue({
+    el: '#appCopy',
+    data: {
+    },
+    computed: {
+    },
+    mounted() {
+      const that = this;
+      //  监听 ctrl + c事件  
+      $(document).unbind('keypress').bind('keypress', function (e) {
+        if (e.ctrlKey && e.keyCode == 67) {
+          doSomething();
+          // 返回false, 防止重复触发copy事件  
+          return false;
+        }
+      })
+
+      // 鼠标右键的复制事件  
+      $(document).unbind('copy').bind('copy', function (e) {
+        doSomething();
+        // console.log('右键复制 监听成功');
+      });
+
+      function doSomething() {
+        that.$notify({
+          title: '成功',
+          content: '复制成功了哦',
+          type: 'success'
+        })
+        // console.log('ctrl + c 监听成功');  
+      }
+    },
+    methods: {
+    },
+    created() { }
+  })
+</script>
+    
+
+    <!-- 输入框打字特效 -->
+    
+      
+<script src="/js/activate-power-mode.js"></script>
+
+      <script>
+          POWERMODE.colorful = true;  // 打开随机颜色特效
+          POWERMODE.shake = false;    // 关闭输入框抖动
+          document.body.addEventListener('input', POWERMODE);//监听打字事件
+      </script>
+    
+
+    <!-- markdown代码一键复制功能 -->
+    
+<script src="/js/clipboard/clipboard.min.js"></script>
+
+    <script>
+      !function (e, t, a) {
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function(){
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+          copyHtml += '<i class="fa fa-globe"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre code").before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+              target: function(trigger) {
+                  return trigger.nextElementSibling;
+              }
+          });
+        }
+        initCopyCode();
+      }(window, document);
+    </script>
+  
+  </body>
+</html>

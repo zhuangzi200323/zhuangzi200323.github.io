@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>让硬盘摆脱五大怪异骚扰 | 熊孩子</title>
+  
+    
+<link rel="stylesheet" href="/js/aos/aos.css">
+
+  
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="熊孩子" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  
+<script src="/js/jquery3.5.1.js"></script>
+
+  
+<script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <header class="header bg-color" 
+  style="position: fixed; 
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <i class="fa fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+  </div>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo" src="/medias/logo.png" alt="logo">
+      <h3 class="drawer-box-head_title">熊孩子</h3>
+      <h5 class="drawer-box-head_desc">一个在学习路上的程序猿，一个在探索路上的攻城狮，一个在求知路上的码农……</h5>
+    </div>
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          <li class="drawer-box-content_item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+        <li class="drawer-box-content_item">
+          <a href="">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <span>Github</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+    </div>
+    <div class="blog-title" id="author-avatar">
+      <div class="avatar">
+        <img src="/medias/logo.png" alt="logo">
+      </div>
+      <a href="/" class="logo">熊孩子</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          <li class="menu-item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-archive" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+      </ul>
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fa fa-search" aria-hidden="true"></i></div>
+  <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+    <div class="message-box">
+      <h2>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <span class="title">搜索</span>
+      </h2>
+      <form class="site-search-form">
+        <input type="text"
+          placeholder="请输入关键字"
+          id="local-search-input" 
+          @click="getSearchFile()"
+          class="st-search-input"
+          v-model="searchInput"
+        />
+      </form>
+      <div class="result-wrapper">
+        <div id="local-search-result" class="local-search-result-cls"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/local_search.js"></script>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile();
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+    </nav>
+  </div>
+  
+  <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</header>
+    <main class="main" style="margin-top: 60px;">
+      
+
+
+<div class="post-detail-header" style="background: url(/medias/4.jpg) no-repeat; background-size: cover; 
+  background-position: center center;">
+  
+    <span class="title">让硬盘摆脱五大怪异骚扰</span>
+  
+</div>
+<div class="row justify-center">
+  <div class="main-content">
+    <article class="post post-detail">
+      
+      
+      <div class="post-meta">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <span class="post-time">2007-05-25</span>
+      </div>
+      
+      <div class="post-tags-categories">
+        
+        
+        <div class="categories">
+          <i class="iconfont iconbookmark1"></i>
+          
+            <a href="/categories/Windows/" class="">
+              Windows
+            </a>
+          
+        </div>
+        
+      </div>
+      <div class="post-content">
+        <h2 id="让硬盘摆脱五大怪异骚扰"><a href="#让硬盘摆脱五大怪异骚扰" class="headerlink" title="让硬盘摆脱五大怪异骚扰"></a>让硬盘摆脱五大怪异骚扰</h2><p>读取硬盘中的信息或写入数据到硬盘中，几乎是我们每天要做的“必修课”。可是在频繁访问硬盘的过程中，我们时不时地会发现一些怪异的“骚扰”袭向硬盘，在这些怪异“骚扰”面前，不少朋友常常表现得<br>一筹莫展，很显然这样会严重影响硬盘的高效工作效率。为此，本文下面就将一些非常容易碰到的怪异“骚扰”现象总结出来，并为每一“骚扰”把脉问药，以达到提高硬盘工作效率的目的!</p>
+<h3 id="1、硬盘空间奇怪变小"><a href="#1、硬盘空间奇怪变小" class="headerlink" title="1、硬盘空间奇怪变小"></a>1、硬盘空间奇怪变小</h3><p>　　最近朋友在他的计算机中重新安装了一遍Windows XP操作系统，安装完毕后他查看了硬盘C分区中的剩余空间，发现大约有65%的余量，可是过了一段时间后他再次查看硬盘C分区中的剩余空间时，发现只有50%不到的余量了，而且他确信在这一段时间中并没有往硬盘C分区中保存任何文件，那硬盘空间为什么会突然变小呢?我们能否找回消失的磁盘分区空间呢?</p>
+<p>　　尽管朋友没有往硬盘C分区中保存任何文件，但Windows XP操作系统在长时间运行过程中，会产生容量不小的日志文件或者临时文件，正是这些长期积累下来的垃圾文件在“悄悄”地蚕食着硬盘C分区的空间。这些垃圾文件一般会自动保存在硬盘C分区的“Windows\temp”文件夹中和“Documents and Settings\用户帐号名\Local Settings\Temp”文件夹中，由于它们没有多大实际用途，我们可以定期地进入到这些文件夹窗口中，将它们及时删除掉，以便将它们占用的磁盘空间释放出来。当然，我们要是经常使用IE浏览器进行上网浏览信息时，IE也会把我们以前访问过的网页内容缓存到硬盘C分区中，这部分内容消耗的磁盘分区空间有时也是不小的数目，为此我们可以定期到“Documents and Settings\用户帐号名\Local Settings\Temporary Internet Files”文件夹窗口中将这部分垃圾内容删除掉。倘若我们已经对Windows XP操作系统进行过升级操作，那么我们还会在“Windows”文件夹窗口中看到类似“$NTUninstallK***$”这样的系统备份文件夹，一旦我们将系统还原功能启用起来的话，那么该备份文件夹也会导致硬盘C分区的空间逐步变小。</p>
+<p>　　当然，“autorun.inf”文件一般都属于系统隐藏文件，在默认状态下我们往往无法看到它的“身影”，更不用说将它从硬盘中删除掉了;此时，我们可以在“我的电脑”窗口中，依次单击菜单栏中的“工具”/“文件夹选项”命令，在弹出的文件夹选项设置窗口中，单击“查看”标签，打开如图1所示的标签页面，选中该页面中的“显示所有文件和文件夹”项目，再单击“确定”按钮，这么一来我们再次进入到C盘根目录窗口时就能看到“autorun.inf”文件的“身影”了。</p>
+<h3 id="2、待机时硬盘无法休息"><a href="#2、待机时硬盘无法休息" class="headerlink" title="2、待机时硬盘无法休息"></a>2、待机时硬盘无法休息</h3><p>　　有一计算机处于待机状态时，其硬盘信号灯仍然处于狂闪状态，我们知道硬盘信号灯要是每天都这样狂闪不停的话，硬盘的使用寿命很有可能被大大缩短。那么我们有什么办法让硬盘在系统处于待机状态时，也能得到充分的“休息”呢?其实引起硬盘信号灯在系统待机状态下仍然狂闪的因素有很多，我们可以按照如下步骤进行逐一排查，就能确保硬盘及时得到“休息”了：</p>
+<p>　　首先检查一下本地计算机系统中是否安装了一些专业的磁盘整理程序，要是已经安装的话，可以将它们从本地系统中卸载掉，因为这些专业磁盘整理软件一般都具有在系统待机状态下自动对磁盘碎片进行整理的功能，如此一来在那些专业磁盘整理程序会“强迫”硬盘在待机状态下去执行磁盘碎片整理操作的。当然，我们也可以不卸载这些专业的磁盘整理程序，但必须进入到它的设置界面中，将磁盘碎片自动整理功能暂时屏蔽掉，这样的话硬盘在待机状态下就不会被“强迫”去执行磁盘碎片整理操作了，如此一来也就能得到足够的“休息”时间了。</p>
+<p>　　其次检查一下本地系统是否安装了类似江民、金山以及瑞星这样的国产杀毒软件，这些杀毒软件都喜欢在系统处于待机状态时对硬盘中的文件执行扫描、查杀操作，那样的话硬盘自然就无法得到足够的休息时间了。一旦发现系统中安装了上述杀毒软件时，我们必须进入到对应的程序设置界面，将对应的自动查杀功能暂时关闭掉。比方说，本地系统要是安装了瑞星杀毒软件时，那我们可以在该杀毒程序界面中依次执行“设置”/“详细设置”菜单命令，在其后弹出的设置窗口中单击“定制任务”标签，打开如图2所示的标签页面;在该界面的右侧区域，将“使用定时扫描”、“关机时检测软盘”、“使用开机扫描”以及“使用屏保杀毒”等复选项的选中状态全部取消掉，并单击“确定”按钮，这样杀毒软件日后在系统处于待机状态时，不会自动“强迫”硬盘去不停地工作了。</p>
+<p>　　接下来检查一下本地系统的“Indexing Service”服务有没有被开启，一旦该服务被开起的话，那么该服务会在系统处于空闲状态的时候，对保存在硬盘中的数据文件自动执行索引操作了，那么空闲时的硬盘到时也只能跟着一起“倒霉”了。因此，当我们发现“Indexing Service”服务已经运行了的话，我们可以打开系统的服务列表窗口，双击其中的“Indexing Service”项目，在其后出现的属性设置窗口中单击“停止”按钮，并将启动类型设置为“手动”，再单击“确定”按钮就可以了。</p>
+<p>　　除此而外，我们最好将安装在本地系统中的桌面搜索工具、内存优化工具等全部从系统中卸载掉，因为这些工具也会让硬盘无法“休息”的。</p>
+<h3 id="3、无法删除硬盘文件"><a href="#3、无法删除硬盘文件" class="headerlink" title="3、无法删除硬盘文件"></a>3、无法删除硬盘文件</h3><p>　　有一朋友在尝试删除硬盘中的AVP格式的文件时，发现该类型的文件无法被删除，而且在删除该文件的时候，系统还会弹出“删除文件出错，访问被拒绝请确定磁盘未满或未被写保护”这样的错误提示。不过，当将系统切换到安全模式状态时，朋友发现AVP格式的文件被删除掉，面对这种硬盘访问怪异现象，我们该如何进行解决呢?</p>
+<p>　　其实遇到这种硬盘访问怪异现象时，我们可以再尝试删除其他类型的普通文件，看看系统能否弹出“删除文件出错，访问被拒绝请确定磁盘未满或未被写保护”这样的错误提示，如果没有这样的提示那就说明了当前待删除的AVP文件目前正在运行之中。事实上，AVP文件其实就是杀毒软件卡巴斯基的相关程序文件，在默认状态下，卡巴斯基杀毒程序往往处于监视病毒的运行状态，在这种状态下删除任何与该杀毒程序有关的文件时，系统都会弹出“删除文件出错，访问被拒绝请确定磁盘未满或未被写保护”这样的错误提示。而我们将系统切换到安全模式状态下时，之所以能够将AVP格式的文件正常删除掉，是因为在系统安全模式下，卡巴斯基杀毒程序往往不会随系统自动加载，这么一来没有被掉用的AVP文件就和普通文件一样，任人随意删除了。</p>
+<h3 id="4、硬盘检测无法通过"><a href="#4、硬盘检测无法通过" class="headerlink" title="4、硬盘检测无法通过"></a>4、硬盘检测无法通过</h3><p>　　单位办公室中的某一台共用计算机每次开机启动时，都要自动进行硬盘检测，可是在检测进度位于66%位置处时检测操作就无法进行下去了，此时也不能使用热启动功能来重新启动系统，必须关闭电源进行冷启动。现在只能在系统启动画面提示检测硬盘的那一刻，及时按下键盘上的任意键来忽略硬盘检测操作，之后登录进Windows系统界面后执行任何操作都很正常。那为什么系统在对硬盘进行检测操作时，硬盘检测无法顺利通过呢?会不会是硬盘发生了硬件损伤呢?</p>
+<p>　　从上面的现象描述来看，我们估计单位共用计算机的硬盘有可能发生了硬件损坏，遇到这种现象时我们首先要做的就是赶快将硬盘中的重要数据内容，挪移到其他相对安全的位置处。在做好数据的备份工作后，我们接下来要做的工作就是将系统切换到DOS运行状态，并在DOS命令行中执行“fdisk /mbr”字符串命令，来尝试修复硬盘中发生的软故障;要是这种修复方法尝试无效的话，我们可以到网上下载安装一些专业的硬盘坏道检测工具，来仔细检查本地硬盘中是否存在坏道现象，如果找不到硬盘坏道的话，那硬盘检测无法通过的现象很可能是逻辑故障引起的，此时我们唯一可以使用的办法就是找到对应品牌硬盘的逻辑坏道修复工具来重新修复一下硬盘，相信这么一来硬盘检测无法通过现象就能被解决了。</p>
+<h3 id="5、无法双击进入硬盘"><a href="#5、无法双击进入硬盘" class="headerlink" title="5、无法双击进入硬盘"></a>5、无法双击进入硬盘</h3><p>　　有一台计算机安装的是Windows XP操作系统，该系统中的硬盘总共被分成了C、D、E、F四个分区，以前我们只要用双击分区图标的方法就能进入到对应的硬盘分区空间。可是最近不知道怎么回事，用鼠标双击C分区图标时，始终无法打开C盘分区窗口，只有用鼠标右键单击该分区图标，并执行右键菜单中的“打开”命令才能顺利进入到C盘窗口，而且我们在右键菜单中还看到了“自动播放”这一命令选项。面对这种无法双击进入硬盘空间的怪异“骚扰”，我们该如何进行应对呢?</p>
+<p>　　考虑到用鼠标右键单击C分区图标时，系统右键菜单中出现了“自动播放”这一命令选项，因此我们断定C盘分区下面保存有“autorun.inf”这样的文件，正是该文件的存在才导致了我们无法通过双击鼠标的方法进入到C盘根目录窗口，我们只要先用单击鼠标右键的方法进入到该分区窗口，将其中的“autorun.inf”文件删除掉，并且将与“autorun.inf”文件相关的程序全部删除干净，之后我们就能通过双击鼠标的方法重新进入到C盘根目录窗口了。</p>
+
+      </div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <div class="post-nav">
+
+  <div class="post-nav-prev post-nav-item">
+    <a href="/2007/05/28/dong-bei-jing-dian-si-zi-cheng-yu/">
+      上一篇:    东北经典四字成语
+    </a>
+  </div>
+
+
+
+  <div class="post-nav-next post-nav-item">
+    <a href="/2007/05/18/dai-jie-zhi-de-han-yi/">
+      下一篇:    戴戒指的含义 
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-if="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-if="visible">
+      <div class="donate-box_close">
+        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
+          <img src="/medias/zfb.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
+          <img src="/medias/wx.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+
+
+<script src="/js/shareJs/social-share.min.js"></script>
+
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+
+    <!-- 评论 -->
+      
+        
+      
+  </div>
+
+  
+    <div class="toc-aside">
+      <div class="toc-main">
+        <div class="toc-aside-title">
+          <i class="fa fa-list-ul" aria-hidden="true"></i><span>目录</span>
+        </div>
+        <div class="toc-content">
+          <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+<div class="toc"></div>
+
+<script>
+  if ($('.toc').length > 0) {
+    var headerEl = 'h2, h3, h4',  //headers 
+      content = '.post-detail',//文章容器
+      idArr = {};  //标题数组以确定是否增加索引id
+      //add #id
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: content,
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: headerEl,
+      scrollSmooth: true,
+      scrollSmoothOffset: -80,
+      headingsOffset: 130,
+      positionFixedSelector: '.toc-main',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  }
+
+</script>
+
+<style>
+.is-position-fixed {
+  position:fixed !important;
+  top: 64px;
+}
+
+</style>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+    </main>
+    <div class="footer bg-color">
+  <div class="footer-main">
+    <div class="link">
+      <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:20075633@qq.com">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      </a>
+      <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=20075633">
+        <i class="fa fa-qq" aria-hidden="true"></i>
+      </a>
+      <a href="/atom.xml" target="_blank">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">zhuangzi200323</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> 
+    </div>
+    
+      
+  <!-- 不蒜子统计 -->
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-book" aria-hidden="true"></i>本站总阅读量：<span id="busuanzi_value_page_pv"></span> 次
+  </span>
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv" style='display:none'>
+        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+  </span>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+  </div>
+</div>
+
+
+    
+      <div class="goTop bg-color">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</div>
+
+<script src="/js/goTop.js"></script>
+
+    
+
+    
+
+    <!-- 图片放大 -->
+    
+      
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<script src="/js/wrapImage.js"></script>
+
+    
+
+    <!-- 爱心点击 -->
+    
+      
+<script src="/js/clicklove.js"></script>
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+      
+<script src="/js/aos/aos.js"></script>
+
+      <script>
+        // https://github.com/michalsnik/aos
+        const themeOffset = parseInt('120') || 120;
+        const themeDelay = parseInt('0')|| 0;
+        const themeDuration = parseInt('400') || 400;
+        const themeEasing = 'ease' || 'ease';
+        const themeOnce = JSON.parse('true' || true);
+        const themeMirror = JSON.parse('false' || false);
+        const themeAnchorPlacement = 'top-bottom' || 'top-bottom';
+        AOS.init({
+          // Global settings:
+          disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+          startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+          initClassName: 'aos-init', // class applied after initialization
+          animatedClassName: 'aos-animate', // class applied on animation
+          useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+          disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+          debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+          throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+          // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+          offset: themeOffset, // offset (in px) from the original trigger point
+          delay: themeDelay, // values from 0 to 3000, with step 50ms
+          duration: themeDuration, // values from 0 to 3000, with step 50ms
+          easing: themeEasing, // default easing for AOS animations
+          once: themeOnce, // whether animation should happen only once - while scrolling down
+          mirror: themeMirror, // whether elements should animate out while scrolling past them
+          anchorPlacement: themeAnchorPlacement, // defines which position of the element regarding to window should trigger the animation
+
+        });
+      </script>
+    
+
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+<script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+<div id="appCopy">
+</div>
+<script>
+  var vm = new Vue({
+    el: '#appCopy',
+    data: {
+    },
+    computed: {
+    },
+    mounted() {
+      const that = this;
+      //  监听 ctrl + c事件  
+      $(document).unbind('keypress').bind('keypress', function (e) {
+        if (e.ctrlKey && e.keyCode == 67) {
+          doSomething();
+          // 返回false, 防止重复触发copy事件  
+          return false;
+        }
+      })
+
+      // 鼠标右键的复制事件  
+      $(document).unbind('copy').bind('copy', function (e) {
+        doSomething();
+        // console.log('右键复制 监听成功');
+      });
+
+      function doSomething() {
+        that.$notify({
+          title: '成功',
+          content: '复制成功了哦',
+          type: 'success'
+        })
+        // console.log('ctrl + c 监听成功');  
+      }
+    },
+    methods: {
+    },
+    created() { }
+  })
+</script>
+    
+
+    <!-- 输入框打字特效 -->
+    
+      
+<script src="/js/activate-power-mode.js"></script>
+
+      <script>
+          POWERMODE.colorful = true;  // 打开随机颜色特效
+          POWERMODE.shake = false;    // 关闭输入框抖动
+          document.body.addEventListener('input', POWERMODE);//监听打字事件
+      </script>
+    
+
+    <!-- markdown代码一键复制功能 -->
+    
+<script src="/js/clipboard/clipboard.min.js"></script>
+
+    <script>
+      !function (e, t, a) {
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function(){
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+          copyHtml += '<i class="fa fa-globe"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre code").before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+              target: function(trigger) {
+                  return trigger.nextElementSibling;
+              }
+          });
+        }
+        initCopyCode();
+      }(window, document);
+    </script>
+  
+  </body>
+</html>

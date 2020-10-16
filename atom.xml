@@ -6,7 +6,7 @@
   <link href="https://zhuangzi200323.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhuangzi200323.github.io/"/>
-  <updated>2020-10-15T10:43:08.617Z</updated>
+  <updated>2020-10-16T07:43:42.491Z</updated>
   <id>https://zhuangzi200323.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>无法加载文件 CUsers10186AppDataRoamingnpmhexo.ps1，因为在此系统上禁止运行脚本</title>
-    <link href="https://zhuangzi200323.github.io/2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/"/>
-    <id>https://zhuangzi200323.github.io/2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/</id>
+    <link href="https://zhuangzi200323.github.io/2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/"/>
+    <id>https://zhuangzi200323.github.io/2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/</id>
     <published>2020-07-22T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.617Z</updated>
+    <updated>2020-10-16T07:43:42.491Z</updated>
     
     
       
@@ -43,10 +43,10 @@
   
   <entry>
     <title>turtlebot3 gazebo仿真-基于ros melodic</title>
-    <link href="https://zhuangzi200323.github.io/2020/05/22/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/"/>
-    <id>https://zhuangzi200323.github.io/2020/05/22/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/</id>
+    <link href="https://zhuangzi200323.github.io/2020/05/22/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/"/>
+    <id>https://zhuangzi200323.github.io/2020/05/22/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/</id>
     <published>2020-05-22T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.585Z</updated>
+    <updated>2020-10-16T07:43:42.471Z</updated>
     
     
       
@@ -70,10 +70,10 @@
   
   <entry>
     <title>ROS遇到的问题</title>
-    <link href="https://zhuangzi200323.github.io/2020/03/02/ros-yu-dao-de-wen-ti/"/>
-    <id>https://zhuangzi200323.github.io/2020/03/02/ros-yu-dao-de-wen-ti/</id>
+    <link href="https://zhuangzi200323.github.io/2020/03/02/ros-yu-dao-de-wen-ti/ros-yu-dao-de-wen-ti/"/>
+    <id>https://zhuangzi200323.github.io/2020/03/02/ros-yu-dao-de-wen-ti/ros-yu-dao-de-wen-ti/</id>
     <published>2020-03-02T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.577Z</updated>
+    <updated>2020-10-16T07:43:42.455Z</updated>
     
     
       
@@ -92,61 +92,11 @@
   </entry>
   
   <entry>
-    <title>Tomcat部署Web应用时出现One or more listeners failed to start异常</title>
-    <link href="https://zhuangzi200323.github.io/2019/06/02/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/"/>
-    <id>https://zhuangzi200323.github.io/2019/06/02/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/</id>
-    <published>2019-06-02T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.581Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Tomcat部署Web应用时出现One-or-more-listeners-failed-to-start异常&quot;&gt;&lt;a href=&quot;#Tomcat部署Web应用时出现One-or-more-listeners-failed-to-start异常&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="spring" scheme="https://zhuangzi200323.github.io/categories/spring/"/>
-    
-    
-    <category term="Tomcat" scheme="https://zhuangzi200323.github.io/tags/Tomcat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mybatis-generator-maven-plugin出错解决办法</title>
-    <link href="https://zhuangzi200323.github.io/2019/06/02/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/"/>
-    <id>https://zhuangzi200323.github.io/2019/06/02/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/</id>
-    <published>2019-06-02T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.581Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;mybatis-generator-maven-plugin出错解决办法&quot;&gt;&lt;a href=&quot;#mybatis-generator-maven-plugin出错解决办法&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="spring" scheme="https://zhuangzi200323.github.io/categories/spring/"/>
-    
-    
-    <category term="MyBatis" scheme="https://zhuangzi200323.github.io/tags/MyBatis/"/>
-    
-  </entry>
-  
-  <entry>
     <title>spring软件环境搭建</title>
-    <link href="https://zhuangzi200323.github.io/2019/06/02/spring-ruan-jian-huan-jing-da-jian/"/>
-    <id>https://zhuangzi200323.github.io/2019/06/02/spring-ruan-jian-huan-jing-da-jian/</id>
+    <link href="https://zhuangzi200323.github.io/2019/06/02/spring-ruan-jian-huan-jing-da-jian/spring-ruan-jian-huan-jing-da-jian/"/>
+    <id>https://zhuangzi200323.github.io/2019/06/02/spring-ruan-jian-huan-jing-da-jian/spring-ruan-jian-huan-jing-da-jian/</id>
     <published>2019-06-02T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.581Z</updated>
+    <updated>2020-10-16T07:43:42.459Z</updated>
     
     
       
@@ -167,36 +117,11 @@
   </entry>
   
   <entry>
-    <title>Tomcat 8安装后配置</title>
-    <link href="https://zhuangzi200323.github.io/2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/"/>
-    <id>https://zhuangzi200323.github.io/2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/</id>
-    <published>2019-06-02T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.581Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Tomcat-8安装后配置&quot;&gt;&lt;a href=&quot;#Tomcat-8安装后配置&quot; class=&quot;headerlink&quot; title=&quot;Tomcat 8安装后配置&quot;&gt;&lt;/a&gt;Tomcat 8安装后配置&lt;/h2&gt;&lt;p&gt;Tomcat</summary>
-        
-      
-    
-    
-    
-    <category term="spring" scheme="https://zhuangzi200323.github.io/categories/spring/"/>
-    
-    
-    <category term="Tomcat" scheme="https://zhuangzi200323.github.io/tags/Tomcat/"/>
-    
-  </entry>
-  
-  <entry>
     <title>提示Unknown system variable &#39;query_cache_size&#39;</title>
     <link href="https://zhuangzi200323.github.io/2019/06/02/ti-shi-unknown-system-variable-query-cache-size/"/>
     <id>https://zhuangzi200323.github.io/2019/06/02/ti-shi-unknown-system-variable-query-cache-size/</id>
     <published>2019-06-02T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.617Z</updated>
+    <updated>2020-10-16T07:43:42.491Z</updated>
     
     
       
@@ -216,10 +141,10 @@
   
   <entry>
     <title>安装mysql8.0.13教程</title>
-    <link href="https://zhuangzi200323.github.io/2019/06/02/an-zhuang-mysql8.0.13-jiao-cheng/"/>
-    <id>https://zhuangzi200323.github.io/2019/06/02/an-zhuang-mysql8.0.13-jiao-cheng/</id>
+    <link href="https://zhuangzi200323.github.io/2019/06/02/an-zhuang-mysql8.0.13-jiao-cheng/an-zhuang-mysql8.0.13-jiao-cheng/"/>
+    <id>https://zhuangzi200323.github.io/2019/06/02/an-zhuang-mysql8.0.13-jiao-cheng/an-zhuang-mysql8.0.13-jiao-cheng/</id>
     <published>2019-06-02T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.617Z</updated>
+    <updated>2020-10-16T07:43:42.491Z</updated>
     
     
       
@@ -240,11 +165,86 @@
   </entry>
   
   <entry>
+    <title>Tomcat 8安装后配置</title>
+    <link href="https://zhuangzi200323.github.io/2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/tomcat-8-an-zhuang-hou-pei-zhi/"/>
+    <id>https://zhuangzi200323.github.io/2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/tomcat-8-an-zhuang-hou-pei-zhi/</id>
+    <published>2019-06-02T15:06:15.000Z</published>
+    <updated>2020-10-16T07:43:42.459Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Tomcat-8安装后配置&quot;&gt;&lt;a href=&quot;#Tomcat-8安装后配置&quot; class=&quot;headerlink&quot; title=&quot;Tomcat 8安装后配置&quot;&gt;&lt;/a&gt;Tomcat 8安装后配置&lt;/h2&gt;&lt;p&gt;Tomcat</summary>
+        
+      
+    
+    
+    
+    <category term="spring" scheme="https://zhuangzi200323.github.io/categories/spring/"/>
+    
+    
+    <category term="Tomcat" scheme="https://zhuangzi200323.github.io/tags/Tomcat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mybatis-generator-maven-plugin出错解决办法</title>
+    <link href="https://zhuangzi200323.github.io/2019/06/02/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/"/>
+    <id>https://zhuangzi200323.github.io/2019/06/02/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/</id>
+    <published>2019-06-02T15:06:15.000Z</published>
+    <updated>2020-10-16T07:43:42.459Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;mybatis-generator-maven-plugin出错解决办法&quot;&gt;&lt;a href=&quot;#mybatis-generator-maven-plugin出错解决办法&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="spring" scheme="https://zhuangzi200323.github.io/categories/spring/"/>
+    
+    
+    <category term="MyBatis" scheme="https://zhuangzi200323.github.io/tags/MyBatis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tomcat部署Web应用时出现One or more listeners failed to start异常</title>
+    <link href="https://zhuangzi200323.github.io/2019/06/02/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/"/>
+    <id>https://zhuangzi200323.github.io/2019/06/02/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/</id>
+    <published>2019-06-02T15:06:15.000Z</published>
+    <updated>2020-10-16T07:43:42.459Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Tomcat部署Web应用时出现One-or-more-listeners-failed-to-start异常&quot;&gt;&lt;a href=&quot;#Tomcat部署Web应用时出现One-or-more-listeners-failed-to-start异常&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="spring" scheme="https://zhuangzi200323.github.io/categories/spring/"/>
+    
+    
+    <category term="Tomcat" scheme="https://zhuangzi200323.github.io/tags/Tomcat/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【Android】组件化开发的简单应用</title>
     <link href="https://zhuangzi200323.github.io/2019/03/02/android-zu-jian-hua-kai-fa-de-jian-dan-ying-yong/"/>
     <id>https://zhuangzi200323.github.io/2019/03/02/android-zu-jian-hua-kai-fa-de-jian-dan-ying-yong/</id>
     <published>2019-03-02T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.617Z</updated>
+    <updated>2020-10-16T07:43:42.487Z</updated>
     
     
       
@@ -265,11 +265,83 @@
   </entry>
   
   <entry>
+    <title>树莓派 DIY 笔记之前有介绍过用 VNC 连接到树莓派的方法</title>
+    <link href="https://zhuangzi200323.github.io/2016/09/27/shu-mei-pai-diy-bi-ji-zhi-qian-you-jie-shao-guo-yong-vnc-lian-jie-dao-shu-mei-pai-de-fang-fa/shu-mei-pai-diy-bi-ji-zhi-qian-you-jie-shao-guo-yong-vnc-lian-jie-dao-shu-mei-pai-de-fang-fa/"/>
+    <id>https://zhuangzi200323.github.io/2016/09/27/shu-mei-pai-diy-bi-ji-zhi-qian-you-jie-shao-guo-yong-vnc-lian-jie-dao-shu-mei-pai-de-fang-fa/shu-mei-pai-diy-bi-ji-zhi-qian-you-jie-shao-guo-yong-vnc-lian-jie-dao-shu-mei-pai-de-fang-fa/</id>
+    <published>2016-09-27T15:06:15.000Z</published>
+    <updated>2020-10-16T07:43:42.491Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;树莓派 DIY 笔记之前有介绍过用 VNC 连接到树莓派的方法。在 Windows&lt;br&gt;下，当然还是自带的远程桌面更便捷。如果不想用&lt;br&gt;VNC，利用远程桌面（mstsc.exe）连接树莓派，如何实现？&lt;/p&gt;
+&lt;p&gt;只需要在 raspbian 下面安装一个服务</summary>
+        
+      
+    
+    
+    
+    <category term="树莓派" scheme="https://zhuangzi200323.github.io/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>树莓派3 中文显示乱码的问题</title>
+    <link href="https://zhuangzi200323.github.io/2016/09/27/shu-mei-pai-3-zhong-wen-xian-shi-luan-ma-de-wen-ti/"/>
+    <id>https://zhuangzi200323.github.io/2016/09/27/shu-mei-pai-3-zhong-wen-xian-shi-luan-ma-de-wen-ti/</id>
+    <published>2016-09-27T15:06:15.000Z</published>
+    <updated>2020-10-16T07:43:42.491Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在teminal中,首先更新软件源&lt;/p&gt;
+&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="树莓派" scheme="https://zhuangzi200323.github.io/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>修正桌面图标变成了空白的方法</title>
+    <link href="https://zhuangzi200323.github.io/2016/05/31/xiu-zheng-zhuo-mian-tu-biao-bian-cheng-liao-kong-bai-de-fang-fa/"/>
+    <id>https://zhuangzi200323.github.io/2016/05/31/xiu-zheng-zhuo-mian-tu-biao-bian-cheng-liao-kong-bai-de-fang-fa/</id>
+    <published>2016-05-31T15:06:15.000Z</published>
+    <updated>2020-10-16T07:43:42.487Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;将&lt;/p&gt;
+&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;taskkill /f /im explorer.exeattrib -h -i</summary>
+        
+      
+    
+    
+    
+    <category term="Windows" scheme="https://zhuangzi200323.github.io/categories/Windows/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>使用git命令时，出现diffie-hellman-group1-sha1错误处理方法</title>
     <link href="https://zhuangzi200323.github.io/2016/05/22/shi-yong-git-ming-ling-shi-chu-xian-diffie-hellman-group1-sha1-cuo-wu-chu-li-fang-fa/"/>
     <id>https://zhuangzi200323.github.io/2016/05/22/shi-yong-git-ming-ling-shi-chu-xian-diffie-hellman-group1-sha1-cuo-wu-chu-li-fang-fa/</id>
     <published>2016-05-22T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.617Z</updated>
+    <updated>2020-10-16T07:43:42.487Z</updated>
     
     
       
@@ -291,11 +363,59 @@
   </entry>
   
   <entry>
+    <title>解决Ubuntu 16.04 Unity与任务栏消失的问题</title>
+    <link href="https://zhuangzi200323.github.io/2015/10/12/jie-jue-ubuntu-16.04-unity-yu-ren-wu-lan-xiao-shi-de-wen-ti/"/>
+    <id>https://zhuangzi200323.github.io/2015/10/12/jie-jue-ubuntu-16.04-unity-yu-ren-wu-lan-xiao-shi-de-wen-ti/</id>
+    <published>2015-10-12T15:06:15.000Z</published>
+    <updated>2020-10-16T07:43:42.491Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;解决Ubuntu-16-04-Unity与任务栏消失的问题&quot;&gt;&lt;a href=&quot;#解决Ubuntu-16-04-Unity与任务栏消失的问题&quot; class=&quot;headerlink&quot; title=&quot;解决Ubuntu 16.04</summary>
+        
+      
+    
+    
+    
+    <category term="Ubuntu" scheme="https://zhuangzi200323.github.io/categories/Ubuntu/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Eclipse中ndk配置</title>
+    <link href="https://zhuangzi200323.github.io/2015/10/12/eclipse-zhong-ndk-pei-zhi/"/>
+    <id>https://zhuangzi200323.github.io/2015/10/12/eclipse-zhong-ndk-pei-zhi/</id>
+    <published>2015-10-12T15:06:15.000Z</published>
+    <updated>2020-10-16T07:43:42.455Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Eclipse中ndk配置&quot;&gt;&lt;a href=&quot;#Eclipse中ndk配置&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Android技术相关" scheme="https://zhuangzi200323.github.io/categories/Android%E6%8A%80%E6%9C%AF%E7%9B%B8%E5%85%B3/"/>
+    
+    
+    <category term="Eclipse" scheme="https://zhuangzi200323.github.io/tags/Eclipse/"/>
+    
+  </entry>
+  
+  <entry>
     <title>史上最著名的10个思想实验</title>
     <link href="https://zhuangzi200323.github.io/2011/12/22/shi-shang-zui-zhu-ming-de-10-ge-si-xiang-shi-yan/"/>
     <id>https://zhuangzi200323.github.io/2011/12/22/shi-shang-zui-zhu-ming-de-10-ge-si-xiang-shi-yan/</id>
     <published>2011-12-22T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.617Z</updated>
+    <updated>2020-10-16T07:43:42.487Z</updated>
     
     
       
@@ -318,7 +438,7 @@
     <link href="https://zhuangzi200323.github.io/2010/08/02/ai-zi-kan-xi-he-ceng-jian-du-shi-sui-ren-shuo-duan-chang/"/>
     <id>https://zhuangzi200323.github.io/2010/08/02/ai-zi-kan-xi-he-ceng-jian-du-shi-sui-ren-shuo-duan-chang/</id>
     <published>2010-08-02T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.617Z</updated>
+    <updated>2020-10-16T07:43:42.491Z</updated>
     
     
       
@@ -342,7 +462,7 @@
     <link href="https://zhuangzi200323.github.io/2010/06/02/startactivityforresult-shi-yong-shi-zhu-yi-shi-xiang/"/>
     <id>https://zhuangzi200323.github.io/2010/06/02/startactivityforresult-shi-yong-shi-zhu-yi-shi-xiang/</id>
     <published>2010-06-02T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.585Z</updated>
+    <updated>2020-10-16T07:43:42.459Z</updated>
     
     
       
@@ -367,7 +487,7 @@
     <link href="https://zhuangzi200323.github.io/2010/05/10/cha-kan-ubuntu-de-ban-ben-hao-ke-yi-cai-yong-yi-xia-fang-fa/"/>
     <id>https://zhuangzi200323.github.io/2010/05/10/cha-kan-ubuntu-de-ban-ben-hao-ke-yi-cai-yong-yi-xia-fang-fa/</id>
     <published>2010-05-10T15:06:15.000Z</published>
-    <updated>2020-10-15T10:43:08.617Z</updated>
+    <updated>2020-10-16T07:43:42.491Z</updated>
     
     
       
@@ -381,7 +501,7 @@
     
     
     
-    <category term="Ubuntu相关" scheme="https://zhuangzi200323.github.io/categories/Ubuntu%E7%9B%B8%E5%85%B3/"/>
+    <category term="Ubuntu" scheme="https://zhuangzi200323.github.io/categories/Ubuntu/"/>
     
     
     <category term="Ubuntu" scheme="https://zhuangzi200323.github.io/tags/Ubuntu/"/>

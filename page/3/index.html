@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html>
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>熊孩子</title>
+  
+    
+<link rel="stylesheet" href="/js/aos/aos.css">
+
+  
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="熊孩子" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  
+<script src="/js/jquery3.5.1.js"></script>
+
+  
+<script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <header class="header bg-color" 
+  style="position: fixed; 
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <i class="fa fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+  </div>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo" src="/medias/logo.png" alt="logo">
+      <h3 class="drawer-box-head_title">熊孩子</h3>
+      <h5 class="drawer-box-head_desc">一个在学习路上的程序猿，一个在探索路上的攻城狮，一个在求知路上的码农……</h5>
+    </div>
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          <li class="drawer-box-content_item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+        <li class="drawer-box-content_item">
+          <a href="">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <span>Github</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+    </div>
+    <div class="blog-title" id="author-avatar">
+      <div class="avatar">
+        <img src="/medias/logo.png" alt="logo">
+      </div>
+      <a href="/" class="logo">熊孩子</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          <li class="menu-item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-archive" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+      </ul>
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fa fa-search" aria-hidden="true"></i></div>
+  <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+    <div class="message-box">
+      <h2>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <span class="title">搜索</span>
+      </h2>
+      <form class="site-search-form">
+        <input type="text"
+          placeholder="请输入关键字"
+          id="local-search-input" 
+          @click="getSearchFile()"
+          class="st-search-input"
+          v-model="searchInput"
+        />
+      </form>
+      <div class="result-wrapper">
+        <div id="local-search-result" class="local-search-result-cls"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/local_search.js"></script>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile();
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+    </nav>
+  </div>
+  
+  <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</header>
+    <main class="main" style="margin-top: 60px;">
+      
+<link href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/css/swiper.min.css" rel="stylesheet">
+
+
+
+<div class="swiper-length" style="display: none;">3</div>
+<div id="appSwiper"
+  class=""
+  @mouseenter="stopAutoPlay()" 
+  @mouseleave="startAutoPlay()"
+>
+  <swiper v-cloak ref="mySwiper" :options="swiperOptions" @slideChangeTransitionEnd="slideChangeTransitionEnd">
+    
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+          <swiper-slide>
+            <div class="item" style="background-image: url('/medias/13.jpg'); background-size: 90000px; 
+            background-position: center center;">
+              <div class="flag">
+                <div class="img-mask" style="height: 100%;background-image: url('/medias/13.jpg'); background-size: cover; 
+                  background-position: center center;"></div>
+                <!-- <img class="homeSwiper img-mask" src="/medias/13.jpg" alt="【Android】组件化开发的简单应用" style="width: 100%;background-size: cover; 
+                background-position: center center;"> -->
+                <div class="flag-text">
+                  <div>
+                    <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">【Android】组件化开发的简单应用</div>
+                    <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">组件化开发的主要步骤：一、新建 Modules1、新建 Project, 作为应用的主 Module。
+2、新建 Module:”Common”，类型选择 “Android Library”, 作为所有其它 Module 的基础依赖库。
+3</div>
+                  </div>
+                  <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="/2019/03/02/android-zu-jian-hua-kai-fa-de-jian-dan-ying-yong/" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
+                </div>
+              </div>
+            </div>
+
+          </swiper-slide>
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+          <swiper-slide>
+            <div class="item" style="background-image: url('/medias/5.jpg'); background-size: 90000px; 
+            background-position: center center;">
+              <div class="flag">
+                <div class="img-mask" style="height: 100%;background-image: url('/medias/5.jpg'); background-size: cover; 
+                  background-position: center center;"></div>
+                <!-- <img class="homeSwiper img-mask" src="/medias/5.jpg" alt="史上最著名的10个思想实验" style="width: 100%;background-size: cover; 
+                background-position: center center;"> -->
+                <div class="flag-text">
+                  <div>
+                    <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">史上最著名的10个思想实验</div>
+                    <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">思想实验是一种精神上的观念或假想，通常和谜语相似，是哲学家和科学家用以了解什么是大众思想的一种简单方法。他们的运用在如哲学和理论物理（理论物理无需做实验）等抽象领域是最为广泛的。他们像是为思想准备的一份大餐，最终给出复杂的答案。即使思想实验</div>
+                  </div>
+                  <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="/2011/12/22/shi-shang-zui-zhu-ming-de-10-ge-si-xiang-shi-yan/" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
+                </div>
+              </div>
+            </div>
+
+          </swiper-slide>
+        
+      
+        
+        
+          
+          <swiper-slide>
+            <div class="item" style="background-image: url('/medias/6.jpg'); background-size: 90000px; 
+            background-position: center center;">
+              <div class="flag">
+                <div class="img-mask" style="height: 100%;background-image: url('/medias/6.jpg'); background-size: cover; 
+                  background-position: center center;"></div>
+                <!-- <img class="homeSwiper img-mask" src="/medias/6.jpg" alt="矮子看戏何曾见，都是随人说短长" style="width: 100%;background-size: cover; 
+                background-position: center center;"> -->
+                <div class="flag-text">
+                  <div>
+                    <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">矮子看戏何曾见，都是随人说短长</div>
+                    <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">出自清代赵翼的《论诗·其三》
+只眼须凭自主张，纷纷艺苑漫雌黄。
+矮人看戏何曾见，都是随人说短长。
+赏析
+　　这是一首作者表白自己的艺术主张的诗。指出文艺批评应提倡有独到的见解，不可鹦鹉学舌，人云亦云。　　前二句点出在纷纷的艺苑里各种说法鱼龙</div>
+                  </div>
+                  <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="/2010/08/02/ai-zi-kan-xi-he-ceng-jian-du-shi-sui-ren-shuo-duan-chang/" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
+                </div>
+              </div>
+            </div>
+
+          </swiper-slide>
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+    <div class="swiper-pagination" slot="pagination" style=""></div>
+    <div class="swiper-button-prev swiper-button-white" slot="button-prev" style=""></div>
+    <div class="swiper-button-next swiper-button-white" slot="button-next" style=""></div>
+    
+  </swiper>
+</div>
+
+<script src="/js/swiper.min.js"></script>
+
+
+<script src="/js/vue-awesome-swiper.js"></script>
+
+
+<script src="/js/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+<script>
+  let autoplay = 'true';
+  let delay = '5000';
+  let loop = JSON.parse('true');
+  let effect = 'slide';
+  let swiperLength = parseInt(document.querySelector(".swiper-length").innerText);
+  var vm = new Vue({
+    el: '#appSwiper',
+    data: {
+      swiperOptions: {
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true // 允许点击小圆点跳转
+        },
+        loop: loop ? true : false,
+        effect, // fade
+        autoplay: (autoplay && swiperLength > 1) ? {
+  　　　　delay,
+  　　　　disableOnInteraction: false // 手动切换之后继续自动轮播
+    　　} : false,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        on:{
+          init: function() {
+            swiperAnimateCache(this); //隐藏动画元素 
+            swiperAnimate(this); //初始化完成开始动画
+          }, 
+          slideChangeTransitionEnd: function(){ 
+            swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          } 
+        }
+        // Some Swiper option/callback...
+      }
+    },
+    computed: {
+      swiper() {
+        return this.$refs.mySwiper.$swiper
+      }
+    },
+    mounted() {
+      // console.log('Current Swiper instance object', this.swiper)
+      // this.swiper.slideTo(0, 1000, false)
+    },
+    methods: {
+      stopAutoPlay() {
+        (autoplay && swiperLength > 1) && this.swiper.autoplay.stop();
+      },
+      startAutoPlay() {
+        (autoplay && swiperLength > 1) && this.swiper.autoplay.start();
+      },
+      slideChangeTransitionEnd() {
+        console.log('1');
+      }
+    },
+    created() {}
+  })
+</script>
+
+<style>
+.swiper-container {
+  overflow: hidden;
+}
+.swiper-slide {
+  height: 350px;
+  position: relative;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  padding: 10px 10px;
+  transition: background 0.2s;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.swiper-slide .item {
+  width: 100%;
+  height: 100%;
+}
+.flag {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  color: #ffffff;
+  height: 100%;
+  background: #000;
+}
+.flag img {
+  min-height: 100%;
+}
+.flag-text {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 80%;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.flag-text .title {
+  font-size: 1.8rem;
+}
+.flag-text .excerpt {
+  width: 70%;
+  line-height: 27px;
+  height: 135px;
+  margin-top: 2%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #42b983;
+}
+.img-mask {
+  opacity:0.6; filter: alpha(opacity=60);
+}
+.flag-text .read-more {
+  margin-bottom: 30px;
+  padding: 5px 15px;
+  color: #ffffff;
+  border-radius: 20px;
+}
+@media (min-width: 992px) {
+  .swiper-button-prev {
+    margin-left: 20%;
+    transform: translateX(-180%);
+  }
+  .swiper-button-next {
+    margin-right: 20%;
+    transform: translateX(180%);
+  }
+  .flag-text .title {
+    width: 80%;
+    line-height: 35px;
+    max-height: 70px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}
+@media (max-width: 992px) {
+  .flag {
+    width: 100%;
+  }
+  .flag-text .title {
+    font-size: 1.5rem;
+    margin-top: 50px;
+  }
+  .flag-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  .flag-text .excerpt {
+    width: 100%;
+    line-height: 20px;
+    height: 100px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+  }
+  .flag-text .read-more {
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 992px) and (min-width: 551px) {
+  .flag-text .excerpt {
+    width: 70%;
+  }
+}
+@media (max-width: 551px) {
+  .swiper-slide {
+    height: 250px;
+  }
+  .flag-text .title {
+    line-height: 30px;
+    max-height: 60px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  .flag-text .excerpt {
+    font-size: 1rem;
+    line-height: 20px;
+    height: 80px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+  .flag-text .excerpt { 
+    margin-top: 10px;
+  }
+  .flag-text .read-more {
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    transform: scale(0.5);
+  }
+  .swiper-button-prev {
+    left: 0;
+  }
+  .swiper-button-next {
+    right: 0;
+  }
+}
+</style>
+
+
+
+
+
+
+<section class="posts">
+  
+    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2007-05-28</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2007/05/28/dong-bei-jing-dian-si-zi-cheng-yu/">东北经典四字成语</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              
+            </div>
+            <div class="post-categories">
+              
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+</div>
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              <a href="/2007/05/28/dong-bei-jing-dian-si-zi-cheng-yu/" style="background: url('/medias/5.jpg');background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            东北经典四字成语无机六瘦例句：这一天到晚在家呆的我无机六瘦的，闹停死了。
+暴土杨灰例句：前两天大风刮的我家前面暴土扬灰的，都出不了门儿了。
+杨了二正例句：你也别成天杨了二正的摇哪儿烂走了，赶紧找点正经事干干吧。
+埋了咕汰(一声)=埋了八汰例
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2007/05/28/dong-bei-jing-dian-si-zi-cheng-yu/">
+            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2007/05/28/dong-bei-jing-dian-si-zi-cheng-yu/" style="background: url('/medias/5.jpg');background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2007-05-25</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2007/05/25/rang-ying-pan-bai-tuo-wu-da-guai-yi-sao-rao/">让硬盘摆脱五大怪异骚扰</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              
+            </div>
+            <div class="post-categories">
+              
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Windows/">Windows</a>
+</div>
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              <a href="/2007/05/25/rang-ying-pan-bai-tuo-wu-da-guai-yi-sao-rao/" style="background: url('/medias/4.jpg');background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            让硬盘摆脱五大怪异骚扰读取硬盘中的信息或写入数据到硬盘中，几乎是我们每天要做的“必修课”。可是在频繁访问硬盘的过程中，我们时不时地会发现一些怪异的“骚扰”袭向硬盘，在这些怪异“骚扰”面前，不少朋友常常表现得一筹莫展，很显然这样会严重影响硬盘
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2007/05/25/rang-ying-pan-bai-tuo-wu-da-guai-yi-sao-rao/">
+            <i class="iconfont iconmore" style="" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2007/05/25/rang-ying-pan-bai-tuo-wu-da-guai-yi-sao-rao/" style="background: url('/medias/4.jpg');background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2007-05-18</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2007/05/18/dai-jie-zhi-de-han-yi/">戴戒指的含义</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              
+            </div>
+            <div class="post-categories">
+              
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+</div>
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              <a href="/2007/05/18/dai-jie-zhi-de-han-yi/" style="background: url('/medias/3.jpg');background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            戴戒指的含义据说左手的无名指有一根血管直接与心脏联系，所以新人一定要把结婚戒指亲手戴在对方的左手无名指上。爱你到心里！情愿为你的爱而受戒！戒指戴在不同的手指有不同的意义呀
+右手和左手都有不同的意义。右手小指：不谈恋爱。右手无名指：热恋中。右
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2007/05/18/dai-jie-zhi-de-han-yi/">
+            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2007/05/18/dai-jie-zhi-de-han-yi/" style="background: url('/medias/3.jpg');background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2007-05-13</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2007/05/13/li-jia-cheng-gei-nian-qing-shang-ren-de-98-tiao-zhong-gao/">李嘉诚给年青商人的98条忠告</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              
+            </div>
+            <div class="post-categories">
+              
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+</div>
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              <a href="/2007/05/13/li-jia-cheng-gei-nian-qing-shang-ren-de-98-tiao-zhong-gao/" style="background: url('/medias/2.jpg');background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            李嘉诚给年青商人的98条忠告1. 我 17 岁就开始做做批发的推销员, 就更加体会到挣钱的不容易、生活的艰辛了。人家做 8 个小时，我就做 16 个小时。
+2. 我们的社会中没有大学文凭、白手起家而终成大业的人不计其数，其中的优秀企业家群体
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2007/05/13/li-jia-cheng-gei-nian-qing-shang-ren-de-98-tiao-zhong-gao/">
+            <i class="iconfont iconmore" style="" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2007/05/13/li-jia-cheng-gei-nian-qing-shang-ren-de-98-tiao-zhong-gao/" style="background: url('/medias/2.jpg');background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2007-05-09</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2007/05/09/ai/">爱</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              
+            </div>
+            <div class="post-categories">
+              
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+</div>
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              <a href="/2007/05/09/ai/" style="background: url('/medias/11.jpg');background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            爱爱是生命的体验，它像一块纯洁的水晶，沾不得半点欺骗的灰尘。真诚、真实是爱的基础，永恒是爱的考验，专一是我对爱的要求.选对一个朋友，可以快乐一生；选对一个伴侣，可以幸福一生;选对一个事业，可以成就一生
+
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2007/05/09/ai/">
+            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2007/05/09/ai/" style="background: url('/medias/11.jpg');background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2007-05-09</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2007/05/09/xi-huan-yu-ai-de-qu-bie/">喜欢与爱的区别</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              
+            </div>
+            <div class="post-categories">
+              
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+</div>
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              <a href="/2007/05/09/xi-huan-yu-ai-de-qu-bie/" style="background: url('/medias/13.jpg');background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            喜欢与爱的区别喜欢是在深夜看书时突然想起他，想象他现在做什么，心里漾起一轻轻飘飘的温暖，却从不主动给他打电话。几分钟后注意力又重新被书中情节吸引。爱是在寂寞的夜里，思念如潮水般涌来，手里捧着书却怎么也看不进去，心里惦记着她此时是否还在加班，
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2007/05/09/xi-huan-yu-ai-de-qu-bie/">
+            <i class="iconfont iconmore" style="" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2007/05/09/xi-huan-yu-ai-de-qu-bie/" style="background: url('/medias/13.jpg');background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2007-05-09</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2007/05/09/zai-ni-xin-zhong-you-zhe-yang-de-yi-ge-ren-ma/">在你心中有这样的一个人吗？</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              
+            </div>
+            <div class="post-categories">
+              
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+</div>
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              <a href="/2007/05/09/zai-ni-xin-zhong-you-zhe-yang-de-yi-ge-ren-ma/" style="background: url('/medias/1.jpg');background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            在你心中有这样的一个人吗？在你心中有这样的一个人吗？
+你们可能相爱过，你们也可能喜欢着彼此，
+但是，为了什么原因你们没能在一起，
+也许他为了朋友之间的义气，不能追你。
+也许为了顾及家人的意见 ，你们没有在一起。
+也许为了出国深造，他没有要你
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2007/05/09/zai-ni-xin-zhong-you-zhe-yang-de-yi-ge-ren-ma/">
+            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2007/05/09/zai-ni-xin-zhong-you-zhe-yang-de-yi-ge-ren-ma/" style="background: url('/medias/1.jpg');background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2007-05-08</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2007/05/08/dian-nao-ming-ling-quan-ji/">电脑运行命令全集</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              
+            </div>
+            <div class="post-categories">
+              
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Windows/">Windows</a>
+</div>
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              <a href="/2007/05/08/dian-nao-ming-ling-quan-ji/" style="background: url('/medias/9.jpg');background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            电脑运行命令全集winver———检查Windows版本wmimgmt.msc—-打开winodws管理体系结构wupdmgr——–winodws更新程序wscprit——–winodws脚本宿主设置write———-写字板winmsd——
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2007/05/08/dian-nao-ming-ling-quan-ji/">
+            <i class="iconfont iconmore" style="" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2007/05/08/dian-nao-ming-ling-quan-ji/" style="background: url('/medias/9.jpg');background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2007-05-08</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2007/05/08/nan-ren-gan-wu-99-tiao/">男人感悟99条</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              
+            </div>
+            <div class="post-categories">
+              
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+</div>
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              <a href="/2007/05/08/nan-ren-gan-wu-99-tiao/" style="background: url('/medias/10.jpg');background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            1：能不抽烟最好不抽，它或许可以帮助你吸引一些女生，但不抽绝不会招来厌烦，表现男子气概的途径有很多，没必要拿健康做赌注。
+2：给自己定目标，一年，两年，五年，也许你出生不如别人好，通过努力，往往可以改变70%的命运。破罐子破摔只能和懦弱做朋
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2007/05/08/nan-ren-gan-wu-99-tiao/">
+            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2007/05/08/nan-ren-gan-wu-99-tiao/" style="background: url('/medias/10.jpg');background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2007-04-27</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2007/04/27/pi-ping-xue-sheng-de-fang-fa/">批评学生的方法</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              
+            </div>
+            <div class="post-categories">
+              
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+</div>
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              <a href="/2007/04/27/pi-ping-xue-sheng-de-fang-fa/" style="background: url('/medias/8.jpg');background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            批评学生的方法批评是班主任对学生进行思想品德教育常用的一种方法，其根本目的是要引起学生思想的变化，使学生真正提高认识，从而少犯错误。那么，班主任该如何掌握对学生的批评艺术呢？我在这总结出了以下几点看法：
+㈠ 多肯定，少否定
+班主任对学生的教
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2007/04/27/pi-ping-xue-sheng-de-fang-fa/">
+            <i class="iconfont iconmore" style="" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2007/04/27/pi-ping-xue-sheng-de-fang-fa/" style="background: url('/medias/8.jpg');background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+</section>
+
+  <nav class="page-nav">
+    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
+  </nav>
+
+    </main>
+    <div class="footer bg-color">
+  <div class="footer-main">
+    <div class="link">
+      <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:20075633@qq.com">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      </a>
+      <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=20075633">
+        <i class="fa fa-qq" aria-hidden="true"></i>
+      </a>
+      <a href="/atom.xml" target="_blank">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">zhuangzi200323</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> 
+    </div>
+    
+      
+  <!-- 不蒜子统计 -->
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-book" aria-hidden="true"></i>本站总阅读量：<span id="busuanzi_value_page_pv"></span> 次
+  </span>
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv" style='display:none'>
+        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+  </span>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+  </div>
+</div>
+
+
+    
+      <div class="goTop bg-color">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</div>
+
+<script src="/js/goTop.js"></script>
+
+    
+
+    
+
+    <!-- 图片放大 -->
+    
+      
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<script src="/js/wrapImage.js"></script>
+
+    
+
+    <!-- 爱心点击 -->
+    
+      
+<script src="/js/clicklove.js"></script>
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+      
+<script src="/js/aos/aos.js"></script>
+
+      <script>
+        // https://github.com/michalsnik/aos
+        const themeOffset = parseInt('120') || 120;
+        const themeDelay = parseInt('0')|| 0;
+        const themeDuration = parseInt('400') || 400;
+        const themeEasing = 'ease' || 'ease';
+        const themeOnce = JSON.parse('true' || true);
+        const themeMirror = JSON.parse('false' || false);
+        const themeAnchorPlacement = 'top-bottom' || 'top-bottom';
+        AOS.init({
+          // Global settings:
+          disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+          startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+          initClassName: 'aos-init', // class applied after initialization
+          animatedClassName: 'aos-animate', // class applied on animation
+          useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+          disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+          debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+          throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+          // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+          offset: themeOffset, // offset (in px) from the original trigger point
+          delay: themeDelay, // values from 0 to 3000, with step 50ms
+          duration: themeDuration, // values from 0 to 3000, with step 50ms
+          easing: themeEasing, // default easing for AOS animations
+          once: themeOnce, // whether animation should happen only once - while scrolling down
+          mirror: themeMirror, // whether elements should animate out while scrolling past them
+          anchorPlacement: themeAnchorPlacement, // defines which position of the element regarding to window should trigger the animation
+
+        });
+      </script>
+    
+
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+<script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+<div id="appCopy">
+</div>
+<script>
+  var vm = new Vue({
+    el: '#appCopy',
+    data: {
+    },
+    computed: {
+    },
+    mounted() {
+      const that = this;
+      //  监听 ctrl + c事件  
+      $(document).unbind('keypress').bind('keypress', function (e) {
+        if (e.ctrlKey && e.keyCode == 67) {
+          doSomething();
+          // 返回false, 防止重复触发copy事件  
+          return false;
+        }
+      })
+
+      // 鼠标右键的复制事件  
+      $(document).unbind('copy').bind('copy', function (e) {
+        doSomething();
+        // console.log('右键复制 监听成功');
+      });
+
+      function doSomething() {
+        that.$notify({
+          title: '成功',
+          content: '复制成功了哦',
+          type: 'success'
+        })
+        // console.log('ctrl + c 监听成功');  
+      }
+    },
+    methods: {
+    },
+    created() { }
+  })
+</script>
+    
+
+    <!-- 输入框打字特效 -->
+    
+      
+<script src="/js/activate-power-mode.js"></script>
+
+      <script>
+          POWERMODE.colorful = true;  // 打开随机颜色特效
+          POWERMODE.shake = false;    // 关闭输入框抖动
+          document.body.addEventListener('input', POWERMODE);//监听打字事件
+      </script>
+    
+
+    <!-- markdown代码一键复制功能 -->
+    
+<script src="/js/clipboard/clipboard.min.js"></script>
+
+    <script>
+      !function (e, t, a) {
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function(){
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+          copyHtml += '<i class="fa fa-globe"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre code").before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+              target: function(trigger) {
+                  return trigger.nextElementSibling;
+              }
+          });
+        }
+        initCopyCode();
+      }(window, document);
+    </script>
+  
+  </body>
+</html>
