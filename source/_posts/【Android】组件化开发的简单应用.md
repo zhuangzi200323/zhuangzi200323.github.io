@@ -32,10 +32,8 @@ top: true
 
 **1、在 gradle.properties 文件中增加一个变量**
 
-```
+```CPP
 isDebug = false
-
-
 ```
 
 ![][img-0]
@@ -44,57 +42,49 @@ isDebug = false
 
 **2、修改 app 的 build.gradle 文件**
 
-```
+```CPP
 implementation project(':common')
 if (!isDebug.toBoolean()) {
     implementation project(':home')
     implementation project(':project')
     implementation project(':user')
 }
-
-
 ```
 
 ![][img-1]
 
 **3、修改 home 的 build.gradle 文件**
 
-```
+```CPP
 if (isDebug.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
 }
-
-
 ```
 
 ![][img-2]
 
 **4、修改 project 的 build.gradle 文件**
 
-```
+```CPP
 if (isDebug.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
 }
-
-
 ```
 
 ![][img-3]
 
 **5、修改 user 的 build.gradle 文件**
 
-```
+```CPP
 if (isDebug.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
 }
-
-
 ```
 
 ![][img-4]
@@ -115,7 +105,7 @@ if (isDebug.toBoolean()) {
 
 在 Home 下的 build.gradle 文件中配置 AndroidManifest.xml
 
-```
+```CPP
 sourceSets {
     main {
         if (isDebug.toBoolean()) {
@@ -126,8 +116,6 @@ sourceSets {
         }
     }
 }
-
-
 ```
 
 ![][img-8]
@@ -138,7 +126,7 @@ sourceSets {
 
 1、为便于统一管理版本号，在项目的根目录下的 build.gradle 文件中增加统一的版本号:
 
-```
+```CPP
 ext {
     compileSdkVersion = 28
 
@@ -147,8 +135,6 @@ ext {
     versionCode = 1
     versionName = "1.0"
 }
-
-
 ```
 
 ![][img-9]
@@ -189,22 +175,18 @@ ext {
 
 不需要再次 implementation, 但是还是需要在 dependencies 增加
 
-```
+```CPP
 annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
-
-
 ```
 
 以及在 android-defaultConfig 中增加：
 
-```
+```CPP
 javaCompileOptions {
         annotationProcessorOptions {
             arguments = \[AROUTER\_MODULE\_NAME: project.getName()\]
         }
     }    
-
-
 ```
 
 注意："AROUTER\_MODULE\_NAME" 这个名称，不可以改为其它字符串，否则会编译报错。
@@ -213,7 +195,7 @@ javaCompileOptions {
 
 在 Common 模块下增加 BaseApplication, 对 ARouter 进行初始化。
 
-```
+```CPP
 public class BaseApplication extends Application {
 
     private boolean isDebugARouter = true;
@@ -229,15 +211,13 @@ public class BaseApplication extends Application {
         ARouter.init(this);
     }
 }
-
-
 ```
 
 在主 Module:App 中增加 App, 继承自 BaseApplication, 然后在 AndroidManifefst.xml 中引用。
+```CPP
+`public class App extends BaseApplication {}`
 
-> `public class App extends BaseApplication {}`
 
-```
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wangyz.modules">
@@ -262,8 +242,6 @@ public class BaseApplication extends Application {
 
     </application>
 </manifest>
-
-
 ```
 
 对于需要被调用的 Activity 或者 Fragment 增加注解：
@@ -274,11 +252,9 @@ public class BaseApplication extends Application {
 
 #### 调用方使用 ARouter：
 
-```
+```CPP
 Fragment fragment = (Fragment) ARouter.getInstance().build("/home/fragment").navigation();
 mFragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-
-
 ```
 
 ![][img-18]
@@ -289,7 +265,7 @@ ButterKnife 在单 Module 中使用时，比较简单，当在多 Module 下使�
 
 **1、在项目根目录的 build.gradle 中引入依赖:**
 
-```
+```CPP
 dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
         classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0'
@@ -297,31 +273,25 @@ dependencies {
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
-
-
 ```
 
 ![][img-19]
 
 在 common 中引入依赖:
 
-```
+```CPP
 api 'com.jakewharton:butterknife:9.0.0'
 annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
-
-
 ```
 
 ![][img-20]
 
 在具体使用 ButterKnife 的 Module 中引入依赖:
 
-```
+```CPP
 apply plugin: 'com.jakewharton.butterknife'
 
 annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
-
-
 ```
 
 ![][img-21]
@@ -332,22 +302,18 @@ annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
 
 具体使用：
 
-```
+```CPP
 @BindView(R2.id.click)
 TextView mText;
-
-
 ```
 
 **BindView 的时候，需要使用 R2.id.xx**
 
-```
+```CPP
 @OnClick(R2.id.click)
 public void click() {
     Toast.makeText(getActivity().getApplicationContext(), "click", Toast.LENGTH\_SHORT).show();
 }
-
-
 ```
 
 **对应的点击事件等，如果是单个使用，也是使用 R2.id.xx。如果是多个 id 一起使用，内部通过 id 来判断，则需要使用 if...else if...，不能使用 switch...case，并且 if 判断的 id 需要使用 R.id.xx**
