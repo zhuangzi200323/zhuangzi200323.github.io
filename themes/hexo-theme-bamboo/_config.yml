@@ -196,6 +196,18 @@ skills:  # color or #000 技能
     Spring:  
       background: 'linear-gradient( 135deg, #69FF97 10%, #00E4FF 100%)'
       percent: 55%
+    Docker:  
+      background: 'linear-gradient( 135deg, #69FF97 10%, #00E4FF 100%)'
+      percent: 55%
+    Laravel:
+      background: 'linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)'
+      percent: 50%
+    WordPress:
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+      percent: 45%
+    PHP: 
+      background: 'linear-gradient(to top, #00c6fb 0%, #005bea 100%)'
+      percent: 40%
 
 # 关于我 社交账号
 socialAccounts: 
@@ -213,10 +225,11 @@ socialAccounts:
       icon: fa fa-weixin
       name: zhuangzi200323@163.com
       url: 'mailto:zhuangzi200323@163.com'
+    
 
 # 关于我 游戏
 games:
-  on: true
+  on: false
   data:
     王者荣耀:
       img: 'https://pic2.zhimg.com/80/v2-54730a36304842b86a57a237b8b39945_720w.jpg?source=1940ef5c'
@@ -229,7 +242,7 @@ games:
 
 # 关于我 书籍
 books:
-  on: true
+  on: false
   data:
     明朝那些事儿:
       img: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2736238052,2078148140&fm=26&gp=0.jpg'
@@ -237,6 +250,10 @@ books:
       img: 'https://pic2.zhimg.com/50/v2-6f33f60312de25ddcb795fc81ee91b38_720w.jpg?source=54b3c3a5'
     孙子兵法:
       img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=710999414,899378807&fm=26&gp=0.jpg'
+
+# 关于我 简历
+experience:
+  on: true
 
 #版权信息  coryRyght
 copyright:
