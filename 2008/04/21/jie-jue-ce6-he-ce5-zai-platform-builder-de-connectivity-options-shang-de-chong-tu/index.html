@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>解决 CE6 和 CE5 在 Platform Builder 的 Connectivity Options 上的冲突 | 熊孩子</title>
+  
+    
+<link rel="stylesheet" href="/js/aos/aos.css">
+
+  
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="熊孩子" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  
+<script src="/js/jquery3.5.1.js"></script>
+
+  
+<script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <header class="header bg-color" 
+  style="position: fixed; 
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <i class="fa fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+  </div>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo" src="/medias/logo.png" alt="logo">
+      <h3 class="drawer-box-head_title">熊孩子</h3>
+      <h5 class="drawer-box-head_desc">一个在学习路上的程序猿，一个在探索路上的攻城狮，一个在求知路上的码农……</h5>
+    </div>
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          <li class="drawer-box-content_item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+        <li class="drawer-box-content_item">
+          <a href="">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <span>Github</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+    </div>
+    <div class="blog-title" id="author-avatar">
+      <div class="avatar">
+        <img src="/medias/logo.png" alt="logo">
+      </div>
+      <a href="/" class="logo">熊孩子</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          <li class="menu-item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-archive" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+      </ul>
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fa fa-search" aria-hidden="true"></i></div>
+  <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+    <div class="message-box">
+      <h2>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <span class="title">搜索</span>
+      </h2>
+      <form class="site-search-form">
+        <input type="text"
+          placeholder="请输入关键字"
+          id="local-search-input" 
+          @click="getSearchFile()"
+          class="st-search-input"
+          v-model="searchInput"
+        />
+      </form>
+      <div class="result-wrapper">
+        <div id="local-search-result" class="local-search-result-cls"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/local_search.js"></script>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile();
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+    </nav>
+  </div>
+  
+  <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</header>
+    <main class="main" style="margin-top: 60px;">
+      
+
+
+<div class="post-detail-header" style="background: url(/medias/8.jpg) no-repeat; background-size: cover; 
+  background-position: center center;">
+  
+    <span class="title">解决 CE6 和 CE5 在 Platform Builder 的 Connectivity Options 上的冲突</span>
+  
+</div>
+<div class="row justify-center">
+  <div class="main-content">
+    <article class="post post-detail">
+      
+      
+      <div class="post-meta">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <span class="post-time">2008-04-21</span>
+      </div>
+      
+      <div class="post-tags-categories">
+        
+        
+        <div class="categories">
+          <i class="iconfont iconbookmark1"></i>
+          
+            <a href="/categories/WinCE/" class="">
+              WinCE
+            </a>
+          
+        </div>
+        
+      </div>
+      <div class="post-content">
+        <h2 id="解决-CE6-和-CE5-在-Platform-Builder-的-Connectivity-Options-上的冲突"><a href="#解决-CE6-和-CE5-在-Platform-Builder-的-Connectivity-Options-上的冲突" class="headerlink" title="解决 CE6 和 CE5 在 Platform Builder 的 Connectivity Options 上的冲突"></a>解决 CE6 和 CE5 在 Platform Builder 的 Connectivity Options 上的冲突</h2><p>安装完 CE6 后，会发现 Platform Builder for CE5 的 Connectivity Options 不好用了，即使修改设置后点 Apply 也无法把新设置保存住<br>在完全卸载 CE6 和 VS2005 后，点 PB5 的 Connectivity Options 会弹出这个错误<br><img src="data:image/jpeg;base64,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XMss00bxG2MPlkiVWUGMFZN259oxt67xVF/BLN4ij1VL22jeOeadbhbEG9zJHIm0zsxBVfM+VShACIvOMmQeDPNsFtbq/wAqba6snSCHy40gnC5SFSzFNpjQrkuANygBdoQA0Y/FOlSPDH5lyk00626QS2U0cpZgzKSjIGCkI53kbfkbng4n0/XtO1SdobSZ2fbvQvC8azJkDfGzACReV+ZCR8y8/MM50Xhq7l1u11jUNRhmvIZUJFvamKNo0inRV2l2IbNy5LZwQoGByTB4e8GJ4ckVrI6ZH5US28bxaascskQZS3nSBsyOVT7w2ruJYq3AABp+K/8AkT9b/wCvCf8A9FtXy5rP/Ic1D/r5k/8AQjX1H4r/AORP1v8A68J//RbV8uaz/wAhzUP+vmT/ANCNAHv3wn/5FWb/AK7x/wDpNDXbXSSSWsqREb2UgZrifhP/AMirN/13j/8ASaGu8qKkFODg9noNOzucPL4mitZGtpbW8DxHaQLSU/yXmuYktdDl8anxRJDqTXeEIia0l2q6AAMp25HAxg5HJ9sev0V5FDIcLQblSlJNpp6rZ7r4Tpli5y3S/r5nCjxdbgnFtecjB/0OX/4mpPBd3c3eva9LHZ3EOmStE8bzxmPfNtw5UHnBwv5e9dtRW+AyjDYGcqlG92ravzT6JdiKuInVVpWCiiivTMAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAyPFf/In63/14T/8Aotq+XNZ/5Dmof9fMn/oRr6j8V/8AIn63/wBeE/8A6LavlzWf+Q5qH/XzJ/6EaAPfvhP/AMirN/13j/8ASaGu8rg/hP8A8irN/wBd4/8A0mhrvKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAorCtG1bV9Qu47W+MQhlbcgeFQiec8a4BjdicRu2TgE4Az8xW2mi+Izt36ljpuxNEcfdzj/RuesnpnavTcds83ZDsaVFZqaL4jO3fqWOm7E0Rx93OP8ARuesnpnavTcdscum67bW7XF3q8cEESb5pHuIQsagKWJJtgMAeYcnH3V6bjtOZ9gsa1FZqaL4jO3fqWOm7E0Rx93OP9G56yemdq9Nx2xwabrszui6vGzwuqTrHcQsY2KxsQf9G67XYgHGQEPG/wCU5n2CxrUVmpoviM7d+pY6bsTRHH3c4/0bnrJ6Z2r03HaJoviM7d+pY6bsTRHH3c4/0bnrJ6Z2r03Hacz7BY0qKxruw1+wsJry41E+XBEZZQtxAOFClsFrdV/56YLFR8q5I3Hbd0qea405XncSSrJLEzhQu7ZIyA4HAyFFCdwsXKKKKoQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBkeK/+RP1v/rwn/wDRbV8uaz/yHNQ/6+ZP/QjX1H4r/wCRP1v/AK8J/wD0W1fLms/8hzUP+vmT/wBCNAHv3wn/AORVm/67x/8ApNDXeVwfwn/5FWb/AK7x/wDpNDXeUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAGJ4YvVj1HWImk+7cSfLu6Znn5xu4+u0Zx1bGF6b7fH/frzwPqmlavqI/sy9mjmuZHUxwSMMGVmBBAKnKsT2OQASc/LKutap8u7RNQHTOLaU4+7n+D3b8h0ycYxmlo0+vR9zRwvtb70d99vj/v14R4oeH/AIS7xAsVtpUF39qjOLO2VrgxmS0XDN5bErKLuYsBEWYqUJlQbD3K61qny7tE1AdM4tpTj7uf4PdvyHTJxSkd7i6iuZ/C90Z0kEpcWkuS2Ixk/IN2NgIz3ijPBAK17WPn9z/yF7N+X3o5fwk0U3gfWoL+KMWNtaWut/Z5LQ+U8pMskhMSJbiVCI1CoWeMbVwzBcDWs7HRdS1S60250vwxLaieOATaf4UmInikijfctxHIViOJCA2flwG6EVYtLNLR4mj8N6mNi26BWW5dVWEARgKy4wu5yBj7wVvvHKrJaebO0w0DWLVpW3zCye7t1dyVLOyxhQzct8xGTtXJ5+U9rHz+5/5B7N+X3o9U+3x/36Pt8f8AfrgV1rVPl3aJqA6ZxbSnH3c/we7fkOmTgXWtU+XdomoDpnFtKcfdz/B7t+Q6ZOD2sfP7n/kHs35fejsdY1BF0PUGEu0i2kO7dtx8p5zuXH13L9R1rN8Ov5mio/8AenuD/wCR5K5ufVdWntZIv7G1BGkQruFvN8pIGTwoPGW6EHgcjPy9J4bt57Xw/bR3EbRS7pXKOMEBpHYZHbgihS5paA42jqalFFFaEBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAGR4r/5E/W/+vCf/ANFtXy5rP/Ic1D/r5k/9CNfUfiv/AJE/W/8Arwn/APRbV8uaz/yHNQ/6+ZP/AEI0Ae/fCf8A5FWb/rvH/wCk0Nd5Xz14e+JU3hzTfsdmIyrbHcTWhkIYRohwRMvHyA9O9a3/AAurUf7tr/4L2/8AkigD2+ivEP8AhdWo/wB21/8ABe3/AMkUf8Lq1H+7a/8Agvb/AOSKAPb6K8Q/4XVqP921/wDBe3/yRR/wurUf7tr/AOC9v/kigD2+ivEP+F1aj/dtf/Be3/yRR/wurUf7tr/4L2/+SKAPb6K8Q/4XVqP921/8F7f/ACRR/wALq1H+7a/+C9v/AJIoA9vorxD/AIXVqP8Adtf/AAXt/wDJFH/C6tR/u2v/AIL2/wDkigD2+ivEP+F1aj/dtf8AwXt/8kUf8Lq1H+7a/wDgvb/5IoA9vorxD/hdWo/3bX/wXt/8kUf8Lq1H+7a/+C9v/kigD2+ivEP+F1aj/dtf/Be3/wAkUf8AC6tR/u2v/gvb/wCSKAPb6K8Q/wCF1aj/AHbX/wAF7f8AyRR/wurUf7tr/wCC9v8A5IoA9vorxD/hdWo/3bX/AMF7f/JFH/C6tR/u2v8A4L2/+SKAPb6K8Q/4XVqP921/8F7f/JFH/C6tR/u2v/gvb/5IoA9vorxD/hdWo/3bX/wXt/8AJFH/AAurUf7tr/4L2/8AkigD2+ivEP8AhdWo/wB21/8ABe3/AMkUf8Lq1H+7a/8Agvb/AOSKAPb6K8Q/4XVqP921/wDBe3/yRR/wurUf7tr/AOC9v/kigD2+ivEP+F1aj/dtf/Be3/yRR/wurUf7tr/4L2/+SKAPb6K8Q/4XVqP921/8F7f/ACRR/wALq1H+7a/+C9v/AJIoA9vorxD/AIXVqP8Adtf/AAXt/wDJFH/C6tR/u2v/AIL2/wDkigD2+ivEP+F1aj/dtf8AwXt/8kUf8Lq1H+7a/wDgvb/5IoA9vorxD/hdWo/3bX/wXt/8kUf8Lq1H+7a/+C9v/kigD2+ivEP+F1aj/dtf/Be3/wAkUf8AC6tR/u2v/gvb/wCSKAPb6K8Q/wCF1aj/AHbX/wAF7f8AyRR/wurUf7tr/wCC9v8A5IoA9vorxD/hdWo/3bX/AMF7f/JFH/C6tR/u2v8A4L2/+SKAPb6K8Q/4XVqP921/8F7f/JFH/C6tR/u2v/gvb/5IoA9vorxD/hdWo/3bX/wXt/8AJFH/AAurUf7tr/4L2/8AkigD2+ivEP8AhdWo/wB21/8ABe3/AMkUf8Lq1H+7a/8Agvb/AOSKAPWPFf8AyJ+t/wDXhP8A+i2r5c1n/kOah/18yf8AoRr0LUPi7e6lpt1YzC3WK5heFylgQwVgQcZnPODXnF/Ot1qN1cICElmd1DdQCSeaAP/Z"><br>即使把 CE5 和 PB5 完全卸载，然后再重装，改错误仍然存在。<br>我在网上搜到了该问题的解决方法<br><a target="_blank" rel="noopener" href="http://www.eggheadcafe.com/software/aspnet/29534746/cant-set-the-connectivit.aspx">http://www.eggheadcafe.com/software/aspnet/29534746/cant-set-the-connectivit.aspx</a><br>为了防止这个网页哪天就不见了，我还是把那些内容 COPY 到自己 BLOG 里比较安全，嘿嘿  </p>
+<ol>
+<li><p>Shutdown all instances of PB (version 5.0 and later) and make sure<br>Cepb.exe, CeSvcHost.exe (CeSvcH~1.exe) and DeviceEmulator.exe are gone from<br>the task manager.</p>
+</li>
+<li><p>Back up the C:\Documents and Settings\<user>\local settings\application<br>data\microsoft\corecon folder  // 我就直接 DELETE 掉，不用 BACKUP 了</p>
+</li>
+<li><p>Purge that folder [This will destroy all previously configured device<br>settings. It is important to make a backup as in step 2 if you need to<br>retain the other device settings and revert back].</p>
+</li>
+<li><p>Back up C:\Documents and Settings\all users\application<br>data\microsoft\corecon\1.0\addons folder to something outside of   // 同样，直接 DELETE 掉</p>
+</li>
+<li><p>Purge that addons folder under the corecon\1.0</p>
+</li>
+<li><p>Create a new one by that name under the corecon\1.0 folder</p>
+</li>
+<li><p>Copy C:\Program Files\<PB Install folder>\CoreCon\SDK\XSL\Addons\*.xsl to<br>the new …\coreCon\1.0\Addons folder you created.</p>
+</li>
+<li><p>Also copy C:\Program Files\<PB Install  
+folder>\CEPB\bin\microsoft.platformbuilder500.servicecategory.xsl to the<br>above addons folder.</p>
+</li>
+<li><p>Relaunch PB and try creating and configuring a new device.<br>该方法经本人验证，正确可用。很显然，CE6 修改了 core connectivity 的方法，但是在卸载时却没有清理干净。</p>
+</li>
+</ol>
+<p>原文地址 [<a target="_blank" rel="noopener" href="http://www.cnblogs.com/](https://www.cnblogs.com/walzer/archive/2007/05/15/747327.html)">www.cnblogs.com\](https://www.cnblogs.com/walzer/archive/2007/05/15/747327.html)</a></p>
+
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2008/04/21/jie-jue-ce6-he-ce5-zai-platform-builder-de-connectivity-options-shang-de-chong-tu/" target="_blank" title="解决 CE6 和 CE5 在 Platform Builder 的 Connectivity Options 上的冲突">https://zhuangzi200323.github.io/2008/04/21/jie-jue-ce6-he-ce5-zai-platform-builder-de-connectivity-options-shang-de-chong-tu/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站文章多数来源于网络，如有侵权，请联系删除，谢谢
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <div class="post-nav">
+
+  <div class="post-nav-prev post-nav-item">
+    <a href="/2008/04/24/guan-yu-physical-address-ding-yi/">
+      上一篇:    关于PHYSICAL_ADDRESS定义
+    </a>
+  </div>
+
+
+
+  <div class="post-nav-next post-nav-item">
+    <a href="/2008/04/21/bao-li-yin-cang-wince-ren-wu-lan/">
+      下一篇:    暴力隐藏 WINCE 任务栏 
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-if="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-if="visible">
+      <div class="donate-box_close">
+        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
+          <img src="/medias/zfb.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
+          <img src="/medias/wx.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+
+
+<script src="/js/shareJs/social-share.min.js"></script>
+
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+
+    <!-- 评论 -->
+      
+        
+      
+  </div>
+
+  
+    <div class="toc-aside">
+      <div class="toc-main">
+        <div class="toc-aside-title">
+          <i class="fa fa-list-ul" aria-hidden="true"></i><span>目录</span>
+        </div>
+        <div class="toc-content">
+          <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+<div class="toc"></div>
+
+<script>
+  if ($('.toc').length > 0) {
+    var headerEl = 'h2, h3, h4',  //headers 
+      content = '.post-detail',//文章容器
+      idArr = {};  //标题数组以确定是否增加索引id
+      //add #id
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: content,
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: headerEl,
+      scrollSmooth: true,
+      scrollSmoothOffset: -80,
+      headingsOffset: 130,
+      positionFixedSelector: '.toc-main',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  }
+
+</script>
+
+<style>
+.is-position-fixed {
+  position:fixed !important;
+  top: 64px;
+}
+
+</style>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+    </main>
+    <div class="footer bg-color">
+  <div class="footer-main">
+    <div class="link">
+      <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:20075633@qq.com">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      </a>
+      <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=20075633">
+        <i class="fa fa-qq" aria-hidden="true"></i>
+      </a>
+      <a href="/atom.xml" target="_blank">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">zhuangzi200323</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> 
+    </div>
+    
+      
+  <!-- 不蒜子统计 -->
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-book" aria-hidden="true"></i>本站总阅读量：<span id="busuanzi_value_page_pv"></span> 次
+  </span>
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv" style='display:none'>
+        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+  </span>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+  </div>
+</div>
+
+
+    
+      <div class="goTop bg-color">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</div>
+
+<script src="/js/goTop.js"></script>
+
+    
+
+    
+
+    <!-- 图片放大 -->
+    
+      
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<script src="/js/wrapImage.js"></script>
+
+    
+
+    <!-- 爱心点击 -->
+    
+      
+<script src="/js/clicklove.js"></script>
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+      
+<script src="/js/aos/aos.js"></script>
+
+      <script>
+        // https://github.com/michalsnik/aos
+        const themeOffset = parseInt('120') || 120;
+        const themeDelay = parseInt('0')|| 0;
+        const themeDuration = parseInt('400') || 400;
+        const themeEasing = 'ease' || 'ease';
+        const themeOnce = JSON.parse('true' || true);
+        const themeMirror = JSON.parse('false' || false);
+        const themeAnchorPlacement = 'top-bottom' || 'top-bottom';
+        AOS.init({
+          // Global settings:
+          disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+          startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+          initClassName: 'aos-init', // class applied after initialization
+          animatedClassName: 'aos-animate', // class applied on animation
+          useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+          disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+          debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+          throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+          // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+          offset: themeOffset, // offset (in px) from the original trigger point
+          delay: themeDelay, // values from 0 to 3000, with step 50ms
+          duration: themeDuration, // values from 0 to 3000, with step 50ms
+          easing: themeEasing, // default easing for AOS animations
+          once: themeOnce, // whether animation should happen only once - while scrolling down
+          mirror: themeMirror, // whether elements should animate out while scrolling past them
+          anchorPlacement: themeAnchorPlacement, // defines which position of the element regarding to window should trigger the animation
+
+        });
+      </script>
+    
+
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+<script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+<div id="appCopy">
+</div>
+<script>
+  var vm = new Vue({
+    el: '#appCopy',
+    data: {
+    },
+    computed: {
+    },
+    mounted() {
+      const that = this;
+      //  监听 ctrl + c事件  
+      $(document).unbind('keypress').bind('keypress', function (e) {
+        if (e.ctrlKey && e.keyCode == 67) {
+          doSomething();
+          // 返回false, 防止重复触发copy事件  
+          return false;
+        }
+      })
+
+      // 鼠标右键的复制事件  
+      $(document).unbind('copy').bind('copy', function (e) {
+        doSomething();
+        // console.log('右键复制 监听成功');
+      });
+
+      function doSomething() {
+        that.$notify({
+          title: '成功',
+          content: '复制成功了哦',
+          type: 'success'
+        })
+        // console.log('ctrl + c 监听成功');  
+      }
+    },
+    methods: {
+    },
+    created() { }
+  })
+</script>
+    
+
+    <!-- 输入框打字特效 -->
+    
+      
+<script src="/js/activate-power-mode.js"></script>
+
+      <script>
+          POWERMODE.colorful = true;  // 打开随机颜色特效
+          POWERMODE.shake = false;    // 关闭输入框抖动
+          document.body.addEventListener('input', POWERMODE);//监听打字事件
+      </script>
+    
+
+    <!-- markdown代码一键复制功能 -->
+    
+<script src="/js/clipboard/clipboard.min.js"></script>
+
+    <script>
+      !function (e, t, a) {
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function(){
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+          copyHtml += '<i class="fa fa-globe"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre code").before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+              target: function(trigger) {
+                  return trigger.nextElementSibling;
+              }
+          });
+        }
+        initCopyCode();
+      }(window, document);
+    </script>
+  
+  </body>
+</html>

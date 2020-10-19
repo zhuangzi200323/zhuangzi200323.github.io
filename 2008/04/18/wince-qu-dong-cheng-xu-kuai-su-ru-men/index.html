@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>WINCE驱动程序快速入门 | 熊孩子</title>
+  
+    
+<link rel="stylesheet" href="/js/aos/aos.css">
+
+  
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="熊孩子" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  
+<script src="/js/jquery3.5.1.js"></script>
+
+  
+<script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <header class="header bg-color" 
+  style="position: fixed; 
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <i class="fa fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+  </div>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo" src="/medias/logo.png" alt="logo">
+      <h3 class="drawer-box-head_title">熊孩子</h3>
+      <h5 class="drawer-box-head_desc">一个在学习路上的程序猿，一个在探索路上的攻城狮，一个在求知路上的码农……</h5>
+    </div>
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          <li class="drawer-box-content_item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+        <li class="drawer-box-content_item">
+          <a href="">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <span>Github</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+    </div>
+    <div class="blog-title" id="author-avatar">
+      <div class="avatar">
+        <img src="/medias/logo.png" alt="logo">
+      </div>
+      <a href="/" class="logo">熊孩子</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          <li class="menu-item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-archive" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+      </ul>
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fa fa-search" aria-hidden="true"></i></div>
+  <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+    <div class="message-box">
+      <h2>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <span class="title">搜索</span>
+      </h2>
+      <form class="site-search-form">
+        <input type="text"
+          placeholder="请输入关键字"
+          id="local-search-input" 
+          @click="getSearchFile()"
+          class="st-search-input"
+          v-model="searchInput"
+        />
+      </form>
+      <div class="result-wrapper">
+        <div id="local-search-result" class="local-search-result-cls"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/local_search.js"></script>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile();
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+    </nav>
+  </div>
+  
+  <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</header>
+    <main class="main" style="margin-top: 60px;">
+      
+
+
+<div class="post-detail-header" style="background: url(/medias/5.jpg) no-repeat; background-size: cover; 
+  background-position: center center;">
+  
+    <span class="title">WINCE驱动程序快速入门</span>
+  
+</div>
+<div class="row justify-center">
+  <div class="main-content">
+    <article class="post post-detail">
+      
+      
+      <div class="post-meta">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <span class="post-time">2008-04-18</span>
+      </div>
+      
+      <div class="post-tags-categories">
+        
+        
+        <div class="categories">
+          <i class="iconfont iconbookmark1"></i>
+          
+            <a href="/categories/WinCE/" class="">
+              WinCE
+            </a>
+          
+        </div>
+        
+      </div>
+      <div class="post-content">
+        <h2 id="WINCE驱动程序快速入门"><a href="#WINCE驱动程序快速入门" class="headerlink" title="WINCE驱动程序快速入门"></a>WINCE驱动程序快速入门</h2><p>有人也许和我一样比较心急，想尽快知道如何去写一个具体的驱动程序，这里，假设您对驱动程序已经有比较好的了解，告诉大家一个快速上路的方法。当然，如果您有足够的时间我建议在动手之前还是深入了解一下CE整个系统架构。<br>在CE中，最简单的一个驱动程序莫过于一个内置（Built-in）设备的流接口驱动。对于一个不支持热拔插的设备，最快捷的方法就是为其实现一个内置的流接口的驱动。<br>对于这样一类驱动程序，我们只需要按一种特定的规则实现一个动态库，其中实现对所有的硬件功能的调用，再将这个动态库加入系统中，然后设置相关的注册表项，使得在系统启动时设备管理器能识别并且加载这个设备即可。<br>3．1 实现动态链接库<br>此动态链接库与应用程序层所用的库并不很大差别，源文件可以是C、C++、甚至汇编，，只是它要实现以下函数。<br> DllEntry(HINSTANCE DllInstance, INT Reason, LPVOID Reserved )<br>这个函数是动态链接库的入口，每个动态链接库都需要输出这个函数，它只在动态库被加载和卸载时被调用，也就是设备管理器调用LoadLibrary而引起它被装入内存和调用UnloadLibrary将其从内存释放时被调用， 因而它是每个动态链接库最早被调用的函数，一般用它做一些全局变量的初始化。</p>
+<p>参数：<br>DllInstance：DLL的句柄，与一个EXE文件的句柄功能类似，一般可以通过它在得到DLL中的一些资源，例如对话框，除此之外一般没什么用处。<br>Reason:<br>一般我们只关心两个值：DLL_PROCESS_ATTACH与DLL_PROCESS_DETACH，Reason等于前者是动态库被加载，等于后者是动态库被释放。<br>所以，我们可以在Reason等于前者是初始化一些资源，等于后者时将其释放。<br> DWORD XXX_Init(　LPCTSTR pContext,　LPCVOID lpvBusContext);<br>它是驱动程序的动态库被成功装载以后第一个被调用的函数。其调用时间仅次与DllEntry,而且，当一个库用来生成多于一个的驱动程序实例时仅调用一次DllEntry，而xxx_Init会被调用多次。驱动程序应当在这个函数中初始化硬件，如果初始化成功，就分配一个自已的内存空间(通常用结构体表示)，将自已的状态保存起来，并且将此内存块的地址做为一个DWORD值返回给上层。设备管理器就会用在调用XXX_Open时将此句柄传回，我们就能访问自已的状态。如果初始化失败，则返回0以通知这个驱动程序没有成功加载，先前所分配的系统资源应该全部释放，此程序的生命即告终至。<br>当这个函数成功返回，设备管理器对这个程序就不做进一步处理，除非它设置了更多的特性。至此一个各为XXX的设备就已经加载成功，当用户程序调用CreateFile来打开这个设备时，设备管理器就会调XXX_Open函数。</p>
+<p>参数：<br>pContext：系统传入的注册表键，通过它可以讲到我们在注册表中设置的配置信息。<br>lpvBusContext：一般不用，在这先不做讲解<br>实际上，很多程序中将这个函数写成了DWORD XXX_Init(　DWORD pContext )<br>我们只需要将pContext转化成LPCTSTR即可。</p>
+<p> DWORD XXX_Open(DWORD hDeviceContext,DWORD dwAccess, DWORD dwShareMode);<br>当用户程序调用CreateFile打开这个设备时，设备管理器就会调用此驱动程序的XXX_Open函数。<br>参数：<br>hDeviceContext XXX_Init 返回给上层的值，也就是我们在XXX_Init中分配的用来记录驱动程序信息的那个结构体的指针，我们可以在这个函数中直接将其转化成所定义的结构，从而获取驱动程序的信息。<br>dwAccess 上层所要求的访问方式，可以是读或者写，或者是0，即不读也不写<br>dwShareMode 上层程序所请求的共享模式，可以是共享读、共享写这两个值的逻辑或，或者是0，即独占式访问。<br>系统层对设备文件的存取权限及共享方法已经做了处理，所以在驱动程序中对这两个参数一般可以不用理会。<br>这个函数一般不用做太多处理，可以直接返回hDeviceContext表示成功，对于一个不支持多个用户的硬件，在设备已经打开后，应该总是返回0以至失败，则CreateFile调用不成功。</p>
+<p> DWORD XXX_Close(　 DWORD hDeviceContext　);<br>当用户程序调用CloseHandle关闭这个设备句柄时，这个函数就会被设备管理器调用。<br>参数：<br>hDeviceContext 为XXX_Open返回给上层的那个值。<br>这个函数应该做与XXX_Open相反的事情，具体包括：释放XXX_Open分配的内存，将驱动程序被打开的记数减少等。</p>
+<p> DWORD XXX_Deinit(　DWORD hDeviceContext　);<br>这个函数在设备被卸载时被调用，它应该实现与XXX_Init相反的操作，主要为释放前者占用的所有系统资源。<br>参数：<br>hDeviceContext XXX_Init函数返回给上层的那个句柄<br> void XXX_PowerUp( DWORD hDeviceContext );<br> void XXX_PowerDown(DWORD hDeviceContext );<br>正如其名称中体现的那样，这两个函数在系统PowerUp与PowerDown时被调用，这两个函数中不能使用任何可能引起线程切换的函数，否则会引起系统死机。所以，在这两个函数中，实际上几乎是什么做不了，一般在PowerDown时做一个标志，让驱动程序知道自已曾经被Power Down过。在Power Down/On的过程中硬件可能会掉电，所以，尽管Power On以后，原来的IO操作仍然会从接着执行，但可能会失败。这时，当我们发现一次IO操作失败是因为程序曾经进入过Power Down状态，就重新初始化一次硬件，再做同样的IO操作。<br> BOOL XXX_IOControl(<br>DWORD hDeviceContext,<br>DWORD dwCode,<br>PBYTE pBufIn,<br>DWORD dwLenIn,<br>PBYTE pBufOut,<br>DWORD dwLenOut,<br>PDWORD pdwActualOut<br>);<br>几乎可以说一个驱动程序的所有功能都可以在这个函数中实现。对于一类CE自身已经支持的设备，它们已经被定义了一套IO操作定，我们只需按照各类设备已经定义的内容去实现所有的IO操作。但当我们实现一个自定义的设备时，我们就可以随心所欲定义我们自已的IO操作。<br>参数：<br>hDeviceContext XXX_Open返回给上层的那个句柄，即我们自已定义的，用来存放程序所有信息的一个结构。<br>dwCode IO操作码，如果是CE已经支持的设备类，就用它已经定义好码值，否则就可以自已定义。<br>pBufIn 传入的Buffer,每个IO操作码都会定义自已的Buffer结构<br>dwLenIn pBufIn以字节记的大小<br>pBufOut，dwLenOut分别为传出的Buffer，及其以字节记的大小<br>pdwActualOut 驱动程序实际在pBufOut中填入的数据以字节记的大小</p>
+<p>其中，前两个参数是必须的，其它的任何一个都有可能是NULL或0。<br>所以，当给pdwActualOut赋值时应该先判断它是否为一个有效的地址</p>
+<p>3.2注册表设置<br> 在注册表中添加如下项目。(一般放在Platform.reg)<br>[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\SampleDev]<br>“Prefix”=”XXX”<br>“Dll”=”MyDev.Dll”<br>“Order”=dword:1</p>
+<p> 在BIB文件中添加项目，将所用到的文件加入BIN文件(一般放在Platform.bib)。<br>MyDev.dll $(_FLATRELEASEDIR)\MyDev.dll NK SH<br> 注：<br>SampleDev为任意与其它项目不重名的字符串.<br>每个函数名的前缀XXX可以是任意大写的字符串，只要保证与注册表中Prefix后面的值相同就行。<br>3.3编译程序<br>现在，已经知道了需要实现哪些东西，一定想知道如何去实现它。一个最直接的方法就是在platform/BSP/drivers 下新建一个目录，然后在drivers目录中的dirs文件中加入以你刚新建的目录名。<br>在刚新建的目录下，新建你的C源代码文件，在其中实现上面所述的函数，及其功能。新建名称分别为sources, makefile, mydev.def的文件。其内容如下：<br>makefile: 只需要这样一行<br>!INCLUDE $(_MAKEENVROOT)\makefile.def</p>
+<p>mydriver.def文件定义需要输出的函数，这些函数能够被其它代码用动态加载的方法调用。格式：</p>
+<p>LIBRARY MyDev(这个字符串要和将要生成的动态库的文件名一样)</p>
+<p>EXPORTS<br>XXX_Init<br>XXX_Deinit<br>XXX_Open<br>XXX_Close<br>XXX_PowerOff<br>XXX_Power_Down<br>XXX_IOControl<br>Sources:这个文件很重要，内容也多，最基本的一个文件该有如下内容。</p>
+<p>TARGETNAME= MyDev（指定要生成的动态库的名称）<br>TARGETTYPE=DYNLINK（指定要生成的是一个动态库）<br>（下面两项指定需要与哪些动态库链接，一般要第一项就足够了）<br>TARGETLIBS=$(_COMMONSDKROOT)\lib$(_CPUINDPATH)\coredll.lib<br>SOURCELIBS= $(_COMMONOAKROOT)\lib$(_CPUINDPATH)\ceddk.lib<br>DEFFILE=MyDev.def (指定def文件)</p>
+<p>DLLENTRY=DllEntry（指定动态库的入口函数）</p>
+<p>SOURCES=（请在这写上你所有源文件的名字，它们将会被编译）</p>
+<p>好了，现在万事俱备，只剩编译啦。</p>
+<p>3.4用一个Project文件来编译出驱动程序库文件<br>如果您在用CE5.0，那用一个Project来构造一个驱动程序将是一个不错的选择。即在新建一个Project时设置其类型为DLL，其它设置根据提示即可。并且可以将注册表设置放在Project所在文件夹。<br>3.5基本调试方法<br>一般驱动程序可以用DEBUG版来调试，也可以用输出调试信息的方法。我们一般用这两个函数输出调试信息：RETAILMSG和DEBUGMS，后者只能在DEBUG版中输出，而前者在RELEASE和DEBUG版中都可以输出，而且，可以在系统运行时刻根据Debug Zone选择让DEBUGMSG输出哪些调试信息。<br>驱动程序的调试一般可以分为以下几步：<br>1．看驱动程序的DllEntry是否被调用。如果这个函数被调用，说明驱动程序的文件已经在CE的image中，而且与注册表中设置的文件名相同。<br>2．看Init 函数是否被调用。如果它被调用，刚说明注册表设置正确。如果它没有被调用，一般是因为注册表中的Prefix设置与Init函数前面那三个字符不相同。或者def文件中没有定义Init函数。如果这个函数能够被调用，但驱动程序还是不能正确加载，请详细检查代码。</p>
+
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2008/04/18/wince-qu-dong-cheng-xu-kuai-su-ru-men/" target="_blank" title="WINCE驱动程序快速入门">https://zhuangzi200323.github.io/2008/04/18/wince-qu-dong-cheng-xu-kuai-su-ru-men/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站文章多数来源于网络，如有侵权，请联系删除，谢谢
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <div class="post-nav">
+
+  <div class="post-nav-prev post-nav-item">
+    <a href="/2008/04/18/qu-dong-kai-fa-guo-cheng-zhong-de-nei-cun-fang-wen/">
+      上一篇:    驱动开发过程中的内存访问
+    </a>
+  </div>
+
+
+
+  <div class="post-nav-next post-nav-item">
+    <a href="/2008/04/18/kai-fa-dma-qu-dong/">
+      下一篇:    开发DMA驱动 
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-if="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-if="visible">
+      <div class="donate-box_close">
+        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
+          <img src="/medias/zfb.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
+          <img src="/medias/wx.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+
+
+<script src="/js/shareJs/social-share.min.js"></script>
+
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+
+    <!-- 评论 -->
+      
+        
+      
+  </div>
+
+  
+    <div class="toc-aside">
+      <div class="toc-main">
+        <div class="toc-aside-title">
+          <i class="fa fa-list-ul" aria-hidden="true"></i><span>目录</span>
+        </div>
+        <div class="toc-content">
+          <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+<div class="toc"></div>
+
+<script>
+  if ($('.toc').length > 0) {
+    var headerEl = 'h2, h3, h4',  //headers 
+      content = '.post-detail',//文章容器
+      idArr = {};  //标题数组以确定是否增加索引id
+      //add #id
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: content,
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: headerEl,
+      scrollSmooth: true,
+      scrollSmoothOffset: -80,
+      headingsOffset: 130,
+      positionFixedSelector: '.toc-main',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  }
+
+</script>
+
+<style>
+.is-position-fixed {
+  position:fixed !important;
+  top: 64px;
+}
+
+</style>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+    </main>
+    <div class="footer bg-color">
+  <div class="footer-main">
+    <div class="link">
+      <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:20075633@qq.com">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      </a>
+      <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=20075633">
+        <i class="fa fa-qq" aria-hidden="true"></i>
+      </a>
+      <a href="/atom.xml" target="_blank">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">zhuangzi200323</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> 
+    </div>
+    
+      
+  <!-- 不蒜子统计 -->
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-book" aria-hidden="true"></i>本站总阅读量：<span id="busuanzi_value_page_pv"></span> 次
+  </span>
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv" style='display:none'>
+        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+  </span>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+  </div>
+</div>
+
+
+    
+      <div class="goTop bg-color">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</div>
+
+<script src="/js/goTop.js"></script>
+
+    
+
+    
+
+    <!-- 图片放大 -->
+    
+      
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<script src="/js/wrapImage.js"></script>
+
+    
+
+    <!-- 爱心点击 -->
+    
+      
+<script src="/js/clicklove.js"></script>
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+      
+<script src="/js/aos/aos.js"></script>
+
+      <script>
+        // https://github.com/michalsnik/aos
+        const themeOffset = parseInt('120') || 120;
+        const themeDelay = parseInt('0')|| 0;
+        const themeDuration = parseInt('400') || 400;
+        const themeEasing = 'ease' || 'ease';
+        const themeOnce = JSON.parse('true' || true);
+        const themeMirror = JSON.parse('false' || false);
+        const themeAnchorPlacement = 'top-bottom' || 'top-bottom';
+        AOS.init({
+          // Global settings:
+          disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+          startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+          initClassName: 'aos-init', // class applied after initialization
+          animatedClassName: 'aos-animate', // class applied on animation
+          useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+          disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+          debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+          throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+          // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+          offset: themeOffset, // offset (in px) from the original trigger point
+          delay: themeDelay, // values from 0 to 3000, with step 50ms
+          duration: themeDuration, // values from 0 to 3000, with step 50ms
+          easing: themeEasing, // default easing for AOS animations
+          once: themeOnce, // whether animation should happen only once - while scrolling down
+          mirror: themeMirror, // whether elements should animate out while scrolling past them
+          anchorPlacement: themeAnchorPlacement, // defines which position of the element regarding to window should trigger the animation
+
+        });
+      </script>
+    
+
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+<script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+<div id="appCopy">
+</div>
+<script>
+  var vm = new Vue({
+    el: '#appCopy',
+    data: {
+    },
+    computed: {
+    },
+    mounted() {
+      const that = this;
+      //  监听 ctrl + c事件  
+      $(document).unbind('keypress').bind('keypress', function (e) {
+        if (e.ctrlKey && e.keyCode == 67) {
+          doSomething();
+          // 返回false, 防止重复触发copy事件  
+          return false;
+        }
+      })
+
+      // 鼠标右键的复制事件  
+      $(document).unbind('copy').bind('copy', function (e) {
+        doSomething();
+        // console.log('右键复制 监听成功');
+      });
+
+      function doSomething() {
+        that.$notify({
+          title: '成功',
+          content: '复制成功了哦',
+          type: 'success'
+        })
+        // console.log('ctrl + c 监听成功');  
+      }
+    },
+    methods: {
+    },
+    created() { }
+  })
+</script>
+    
+
+    <!-- 输入框打字特效 -->
+    
+      
+<script src="/js/activate-power-mode.js"></script>
+
+      <script>
+          POWERMODE.colorful = true;  // 打开随机颜色特效
+          POWERMODE.shake = false;    // 关闭输入框抖动
+          document.body.addEventListener('input', POWERMODE);//监听打字事件
+      </script>
+    
+
+    <!-- markdown代码一键复制功能 -->
+    
+<script src="/js/clipboard/clipboard.min.js"></script>
+
+    <script>
+      !function (e, t, a) {
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function(){
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+          copyHtml += '<i class="fa fa-globe"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre code").before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+              target: function(trigger) {
+                  return trigger.nextElementSibling;
+              }
+          });
+        }
+        initCopyCode();
+      }(window, document);
+    </script>
+  
+  </body>
+</html>

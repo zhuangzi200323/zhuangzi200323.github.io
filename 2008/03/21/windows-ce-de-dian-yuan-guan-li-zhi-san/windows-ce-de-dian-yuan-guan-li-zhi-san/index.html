@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html>
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>Windows CE 的电源管理之三 | 熊孩子</title>
+  
+    
+<link rel="stylesheet" href="/js/aos/aos.css">
+
+  
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="熊孩子" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  
+<script src="/js/jquery3.5.1.js"></script>
+
+  
+<script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <header class="header bg-color" 
+  style="position: fixed; 
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <i class="fa fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+  </div>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo" src="/medias/logo.png" alt="logo">
+      <h3 class="drawer-box-head_title">熊孩子</h3>
+      <h5 class="drawer-box-head_desc">一个在学习路上的程序猿，一个在探索路上的攻城狮，一个在求知路上的码农……</h5>
+    </div>
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          <li class="drawer-box-content_item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+        <li class="drawer-box-content_item">
+          <a href="">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <span>Github</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+    </div>
+    <div class="blog-title" id="author-avatar">
+      <div class="avatar">
+        <img src="/medias/logo.png" alt="logo">
+      </div>
+      <a href="/" class="logo">熊孩子</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          <li class="menu-item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-archive" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+      </ul>
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fa fa-search" aria-hidden="true"></i></div>
+  <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+    <div class="message-box">
+      <h2>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <span class="title">搜索</span>
+      </h2>
+      <form class="site-search-form">
+        <input type="text"
+          placeholder="请输入关键字"
+          id="local-search-input" 
+          @click="getSearchFile()"
+          class="st-search-input"
+          v-model="searchInput"
+        />
+      </form>
+      <div class="result-wrapper">
+        <div id="local-search-result" class="local-search-result-cls"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/local_search.js"></script>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile();
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+    </nav>
+  </div>
+  
+  <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</header>
+    <main class="main" style="margin-top: 60px;">
+      
+
+
+<div class="post-detail-header" style="background: url(/medias/8.jpg) no-repeat; background-size: cover; 
+  background-position: center center;">
+  
+    <span class="title">Windows CE 的电源管理之三</span>
+  
+</div>
+<div class="row justify-center">
+  <div class="main-content">
+    <article class="post post-detail">
+      
+      
+      <div class="post-meta">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <span class="post-time">2008-03-21</span>
+      </div>
+      
+      <div class="post-tags-categories">
+        
+        
+        <div class="categories">
+          <i class="iconfont iconbookmark1"></i>
+          
+            <a href="/categories/WinCE/" class="">
+              WinCE
+            </a>
+          
+        </div>
+        
+      </div>
+      <div class="post-content">
+        <h2 id="Windows-CE的电源管理之三"><a href="#Windows-CE的电源管理之三" class="headerlink" title="Windows CE的电源管理之三"></a>Windows CE的电源管理之三</h2><p>本篇将以Windows Mobile为例介绍Windows CE电源管理的实现，大体上，Windows<br>Mobile分为Pocket<br>PC和Smartphone两种版本。这两者之间的主要区别在于触摸屏和电源模型，Smartphone采用的是“Always<br>On”模型。为了说清楚它们的区别，我们就先从系统电源状态说起吧（这里有些系统电源状态是从WM5开始才有的）。</p>
+<p><strong>1. Windows Mobile的系统电源状态</strong></p>
+<ul>
+<li><p>On：用户与系统交互时的状态；</p>
+</li>
+<li><p>BacklightOff：在一段时间内（默认15秒），如果一直没有用户操作（比如按下某个键或者触摸屏幕），就关闭背光，这时其他的设备都没变化。这个timeout值可以通过控制面板进行设置；</p>
+</li>
+<li><p>UserIdle：这个状态只在Smartphone中被使用。经过一段稍长的时间，如果一直没有用户操作，就关闭背光和LCD。这个timeout值可以通过控制面板进行设置；</p>
+</li>
+<li><p>ScreenOff：一般由某些程序指定，才进入这个状态。比如音乐播放器程序，当你听音乐时按下某个键可以将屏幕关闭。PocketPC和Smartphone都使用这个状态，它与UserIdle的不同在于，ScreenOff意味着“用户主动关闭了显示，只有当他按下电源键时才重新显示”，而UserIdle意味着“用户有段时间没操作了，那么我们可以关闭屏幕来省电”，所以在UserIdle时，随便按下Smartphone的哪个键都会启动显示；</p>
+</li>
+<li><p>Suspend：这是PocketPC的睡眠模式，几乎所有设备都被关闭，直到某个硬件设备触发中断才将系统唤醒，这个timeout值可以通过控制面板进行设置（默认为3分钟）；</p>
+</li>
+<li><p>Resuming：这是PocketPC被唤醒后的状态，这时屏幕是关闭的，并启动一个15秒的计时器，在这段时间内决定接下来进入哪个状态，如果计时器超时则重新回到睡眠状态；</p>
+</li>
+<li><p>Unattended：这个状态只在PocketPC中被使用，用户对其不会有所察觉。有些程序，如ActiveSync每5分钟会唤醒系统进行同步，同步完成后再让系统继续睡眠，这段时间不希望打扰用户，即程序在后台执行。</p>
+</li>
+</ul>
+<p>可以通过注册表查看系统电源状态对应的具体设备的电源状态，[HLM\System\CurrentControlSet\Control\Power\State]。</p>
+<p>现在我们知道，Smartphone没有真正的睡眠模式，即使它会在一段时间后关闭背光和屏幕，但它并没有睡着，只是休息一下眼睛罢了，它的大脑和四肢仍在正常工作。PocketPC所采用的模型比Smartphone要复杂的多，你可以按下电源键让系统睡眠，在必要时，也可以唤醒系统做一些工作然后再继续睡眠。如果你在Smartphone上运行一个桌面精灵之类的程序，她为了引起你的注意，长时间的蹦啊跳啊，不管白天还是黑夜，可想而知，你的待机时间将……</p>
+<p>你可能会觉得PocketPC的“Sleep”模型比Smartphone的“Always<br>On”模型要省电，其实恰恰相反。因为在系统睡眠的过程中，它需要通知所有的设备驱动，为了让它们保存一些重要的信息并关闭相应的硬件设备，在系统被唤醒时也需要通知它们恢复先前的工作。这个过程不仅耗时还可能会耗更多的电，因为一些设备在频繁的状态转换过程中会消耗比较多的能量。这也就是为什么当你收到一条短信时，睡眠状态的PocketPC要花3到6秒的时间来处理，而Smartphone只需要几个微秒:)</p>
+<ol start="2">
+<li>Windows Mobile的电源管理策略</li>
+</ol>
+<p>我们可以用系统电源状态机来简单的描述Windows<br>Mobile的电源管理策略，以PocketPC为例，系统电源状态机如下图所示：</p>
+<p><img src="media/332f42f13ae5217dc7b4c7a7e0cdc54b.jpg" alt="7a7e0cdc54b.jpg"></p>
+<p>系统内部的电源管理器负责协调电源状态的转换，电源状态的转换主要由一下几种方式触发：</p>
+<ul>
+<li><p>计时器超时：SuspendTimeout和ResumingSuspendTimeout，分别对应于第一节介绍Suspend和Resuming状态时所提到的计时器。细说起来，它们每个又有两个值，分别对应着电源供电时和电池供电时的超时值，也就是注册表[HLM\System\CurrentControlSet\Control\Power\Timeout]中的ACSuspendTimeout、BattSuspendTimeout、ACResumingSuspendTimeout、BattResumingSuspendTimeout；</p>
+</li>
+<li><p>系统调用：驱动程序或应用程序通过相应的API，请求进入某种电源状态。这类API在前面的文章中已经有所介绍，如SetSystemPowerState、SetPowerRequirement、DevicePowerNotify等；</p>
+</li>
+<li><p>平台相关的系统调用：通过PowerPolicyNotify通知电源管理器发生了某个事件，它的实现比较灵活，驱动程序或应用程序可以通过相应的参数与电源管理器进行交互，比如PPN_POWERCHANGE、PPN_SUSPENDKEYPRESSED、PPN_UNATTENDEDMODE等，参见”pmpolicy.h”；</p>
+</li>
+<li><p>直接访问内核对象：事件（Event）作为Windows<br>CE系统的内核对象，可以通过事件名称在进程间共享，因此我们可以访问电源管理器中的两个事件，它们的名字分别是_T(“PowerManager/ReloadActivityTimeouts”)、_T(“PowerManager/SystemIdleTimerReset”)。如果你的程序需要动态修改那几个计时器的时间长度，可以通过第一个事件通知电源管理器重新读取注册表中计时器的值，而第二个事件与SystemIdleTimerReset功能一样，可以阻止系统进入睡眠状态。</p>
+</li>
+</ul>
+<ol start="3">
+<li>Windows Mobile电源管理相关API的应用</li>
+</ol>
+<p>最后，通过几个应用场景简单介绍一下常用的电源管理相关的API的使用：</p>
+<ul>
+<li><p>如果你在设计的是媒体播放器程序，不希望在播放电影时，系统自动转入Suspend状态，这时可以每隔30秒调用一次SystemIdleTimerReset，它会帮你重置那个计时器；如果你还想同时保持背光，那么可以调用SetPowerRequirement(TEXT(“BKL1:”),<br>D0, POWER_NAME, NULL,<br>0);如果你提供一个按钮允许用户关闭屏幕，那么调用SetSystemPowerState(NULL,<br>POWER_STATE_IDLE, 0);</p>
+</li>
+<li><p>如果你在设计的是天气预报程序，需要每天早上6点在线更新天气信息，这时可以调用CeRunAppAtTime，系统到时会被RTC中断唤醒，还记得前面提到的那个15秒的计时器吗，这时你的程序应该在15秒内请求进入Unattended状态，否则系统将重新回到睡眠状态。在处理更新的过程中，还是应该每隔30秒调用一次SystemIdleTimerReset，在处理完更新后，应该再次调用CeRunAppAtTime，并放弃Unattended状态。请注意，在电源管理器的实现代码中，用了一个引用计数的变量（gdwUnattendedModeRequests）统计所有对Unattended状态的请求，所以PowerPolicyNotify(PPN_UNATTENDEDMODE,<br>TRUE);和PowerPolicyNotify(PPN_UNATTENDEDMODE,<br>FALSE);要成对出现，否则系统将无法回到睡眠状态。</p>
+</li>
+<li><p>如果你要开发一个监控电池状态的程序，首先应该创建一个接收状态通知的线程，在这个线程里调用RequestPowerNotifications，这个函数的第一个参数是一个消息队列的句柄，所以必须先创建一个消息队列（CreateMsgQueue），第二个参数是你希望得到的通知类型，这里要用到的是PBT_POWERSTATUSCHANGE|PBT_POWERINFOCHANGE，然后线程就可以等待通知了（WaitForSingleObject），一旦有通知到来，线程通过ReadMsgQueue读取消息的内容，再做些更新UI的工作。</p>
+</li>
+</ul>
+<p>相关示例代码</p>
+<pre class=" language-CPP"><code class="language-CPP">//***************************************************************************
+// Function Name: PowerNotificationThread
+//
+// Purpose: listens for power change notifications
+//
+DWORD PowerNotificationThread(LPVOID pVoid)
+&#123;
+    // size of a POWER_BROADCAST message
+    DWORD cbPowerMsgSize = sizeof POWER_BROADCAST + (MAX_PATH * sizeof TCHAR);
+
+    // Initialize our MSGQUEUEOPTIONS structure
+    MSGQUEUEOPTIONS mqo;
+    mqo.dwSize = sizeof(MSGQUEUEOPTIONS);
+    mqo.dwFlags = MSGQUEUE_NOPRECOMMIT;
+    mqo.dwMaxMessages = 4;
+    mqo.cbMaxMessage = cbPowerMsgSize;
+    mqo.bReadAccess = TRUE;             
+
+    // Create a message queue to receive power notifications
+    HANDLE hPowerMsgQ = CreateMsgQueue(NULL, &mqo);
+    if (NULL == hPowerMsgQ)
+    &#123;
+        RETAILMSG(1, (L"CreateMsgQueue failed: %x\n", GetLastError()));
+        goto Error;
+    &#125;
+
+    // Request power notifications
+    HANDLE hPowerNotifications = RequestPowerNotifications(hPowerMsgQ, PBT_POWERSTATUSCHANGE | PBT_POWERINFOCHANGE);
+
+    if (NULL == hPowerNotifications)
+    &#123;
+        RETAILMSG(1, (L"RequestPowerNotifications failed: %x\n", GetLastError()));
+        goto Error;
+    &#125;
+
+    HANDLE rgHandles[2] = &#123;0&#125;;
+    rgHandles[0] = hPowerMsgQ;
+    rgHandles[1] = g_hEventShutDown;
+
+    // Wait for a power notification or for the app to exit
+    while(WaitForMultipleObjects(2, rgHandles, FALSE, INFINITE) == WAIT_OBJECT_0)
+    &#123;
+        DWORD cbRead;
+        DWORD dwFlags;
+        POWER_BROADCAST *ppb = (POWER_BROADCAST*) new BYTE[cbPowerMsgSize];
+
+        // loop through in case there is more than 1 msg
+        while(ReadMsgQueue(hPowerMsgQ, ppb, cbPowerMsgSize, &cbRead,
+                           0, &dwFlags))
+        &#123;
+            switch (ppb->Message)
+            &#123;
+                case PBT_POWERINFOCHANGE:
+                &#123;
+                    RETAILMSG(1,(L"Power Notification Message: PBT_POWERINFOCHANGE\n"));
+
+                    // PBT_POWERINFOCHANGE message embeds a
+                    // POWER_BROADCAST_POWER_INFO structure into the
+                    // SystemPowerState field
+                    PPOWER_BROADCAST_POWER_INFO ppbpi =
+                        (PPOWER_BROADCAST_POWER_INFO) ppb->SystemPowerState;
+                    if (ppbpi)
+                    &#123;
+                        RETAILMSG(1,(L"Length: %d", ppb->Length));
+                        RETAILMSG(1,(L"BatteryLifeTime = %d\n",ppbpi->dwBatteryLifeTime));
+                        RETAILMSG(1,(L"BatterFullLifeTime = %d\n",
+                                     ppbpi->dwBatteryFullLifeTime));
+                        RETAILMSG(1,(L"BackupBatteryLifeTime = %d\n",
+                                     ppbpi->dwBackupBatteryLifeTime));
+                        RETAILMSG(1,(L"BackupBatteryFullLifeTime = %d\n",
+                                     ppbpi->dwBackupBatteryFullLifeTime));
+                        RETAILMSG(1,(L"ACLineStatus = %d\n",ppbpi->bACLineStatus));
+                        RETAILMSG(1,(L"BatteryFlag = %d\n",ppbpi->bBatteryFlag));
+                        RETAILMSG(1,(L"BatteryLifePercent = %d\n",
+                                     ppbpi->bBatteryLifePercent));
+                        RETAILMSG(1,(L"BackupBatteryFlag = %d\n",
+                                     ppbpi->bBackupBatteryFlag));
+                        RETAILMSG(1,(L"BackupBatteryLifePercent = %d\n",
+                                     ppbpi->bBackupBatteryLifePercent));
+                    &#125;
+                    break;
+                &#125;
+
+                default:
+                    break;
+            &#125;
+
+            UpdateUI();
+        &#125;
+
+        delete[] ppb;
+    &#125;
+
+Error:
+    if (hPowerNotifications)
+        StopPowerNotifications(hPowerNotifications);
+
+    if (hPowerMsgQ)
+        CloseMsgQueue(hPowerMsgQ);
+
+    return NULL;
+&#125;</code></pre>
+
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2008/03/21/windows-ce-de-dian-yuan-guan-li-zhi-san/windows-ce-de-dian-yuan-guan-li-zhi-san/" target="_blank" title="Windows CE 的电源管理之三">https://zhuangzi200323.github.io/2008/03/21/windows-ce-de-dian-yuan-guan-li-zhi-san/windows-ce-de-dian-yuan-guan-li-zhi-san/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站文章多数来源于网络，如有侵权，请联系删除，谢谢
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <div class="post-nav">
+
+  <div class="post-nav-prev post-nav-item">
+    <a href="/2008/03/26/c-zhong-guan-jian-zi-static/">
+      上一篇:    C中关键字static
+    </a>
+  </div>
+
+
+
+  <div class="post-nav-next post-nav-item">
+    <a href="/2008/03/21/windows-ce-de-dian-yuan-guan-li-zhi-yi/">
+      下一篇:    Windows CE 的电源管理之一 
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-if="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-if="visible">
+      <div class="donate-box_close">
+        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
+          <img src="/medias/zfb.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
+          <img src="/medias/wx.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+
+
+<script src="/js/shareJs/social-share.min.js"></script>
+
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+
+    <!-- 评论 -->
+      
+        
+      
+  </div>
+
+  
+    <div class="toc-aside">
+      <div class="toc-main">
+        <div class="toc-aside-title">
+          <i class="fa fa-list-ul" aria-hidden="true"></i><span>目录</span>
+        </div>
+        <div class="toc-content">
+          <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+<div class="toc"></div>
+
+<script>
+  if ($('.toc').length > 0) {
+    var headerEl = 'h2, h3, h4',  //headers 
+      content = '.post-detail',//文章容器
+      idArr = {};  //标题数组以确定是否增加索引id
+      //add #id
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: content,
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: headerEl,
+      scrollSmooth: true,
+      scrollSmoothOffset: -80,
+      headingsOffset: 130,
+      positionFixedSelector: '.toc-main',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  }
+
+</script>
+
+<style>
+.is-position-fixed {
+  position:fixed !important;
+  top: 64px;
+}
+
+</style>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+    </main>
+    <div class="footer bg-color">
+  <div class="footer-main">
+    <div class="link">
+      <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:20075633@qq.com">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      </a>
+      <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=20075633">
+        <i class="fa fa-qq" aria-hidden="true"></i>
+      </a>
+      <a href="/atom.xml" target="_blank">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">zhuangzi200323</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> 
+    </div>
+    
+      
+  <!-- 不蒜子统计 -->
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-book" aria-hidden="true"></i>本站总阅读量：<span id="busuanzi_value_page_pv"></span> 次
+  </span>
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv" style='display:none'>
+        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+  </span>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+  </div>
+</div>
+
+
+    
+      <div class="goTop bg-color">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</div>
+
+<script src="/js/goTop.js"></script>
+
+    
+
+    
+
+    <!-- 图片放大 -->
+    
+      
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<script src="/js/wrapImage.js"></script>
+
+    
+
+    <!-- 爱心点击 -->
+    
+      
+<script src="/js/clicklove.js"></script>
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+      
+<script src="/js/aos/aos.js"></script>
+
+      <script>
+        // https://github.com/michalsnik/aos
+        const themeOffset = parseInt('120') || 120;
+        const themeDelay = parseInt('0')|| 0;
+        const themeDuration = parseInt('400') || 400;
+        const themeEasing = 'ease' || 'ease';
+        const themeOnce = JSON.parse('true' || true);
+        const themeMirror = JSON.parse('false' || false);
+        const themeAnchorPlacement = 'top-bottom' || 'top-bottom';
+        AOS.init({
+          // Global settings:
+          disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+          startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+          initClassName: 'aos-init', // class applied after initialization
+          animatedClassName: 'aos-animate', // class applied on animation
+          useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+          disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+          debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+          throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+          // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+          offset: themeOffset, // offset (in px) from the original trigger point
+          delay: themeDelay, // values from 0 to 3000, with step 50ms
+          duration: themeDuration, // values from 0 to 3000, with step 50ms
+          easing: themeEasing, // default easing for AOS animations
+          once: themeOnce, // whether animation should happen only once - while scrolling down
+          mirror: themeMirror, // whether elements should animate out while scrolling past them
+          anchorPlacement: themeAnchorPlacement, // defines which position of the element regarding to window should trigger the animation
+
+        });
+      </script>
+    
+
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+<script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+<div id="appCopy">
+</div>
+<script>
+  var vm = new Vue({
+    el: '#appCopy',
+    data: {
+    },
+    computed: {
+    },
+    mounted() {
+      const that = this;
+      //  监听 ctrl + c事件  
+      $(document).unbind('keypress').bind('keypress', function (e) {
+        if (e.ctrlKey && e.keyCode == 67) {
+          doSomething();
+          // 返回false, 防止重复触发copy事件  
+          return false;
+        }
+      })
+
+      // 鼠标右键的复制事件  
+      $(document).unbind('copy').bind('copy', function (e) {
+        doSomething();
+        // console.log('右键复制 监听成功');
+      });
+
+      function doSomething() {
+        that.$notify({
+          title: '成功',
+          content: '复制成功了哦',
+          type: 'success'
+        })
+        // console.log('ctrl + c 监听成功');  
+      }
+    },
+    methods: {
+    },
+    created() { }
+  })
+</script>
+    
+
+    <!-- 输入框打字特效 -->
+    
+      
+<script src="/js/activate-power-mode.js"></script>
+
+      <script>
+          POWERMODE.colorful = true;  // 打开随机颜色特效
+          POWERMODE.shake = false;    // 关闭输入框抖动
+          document.body.addEventListener('input', POWERMODE);//监听打字事件
+      </script>
+    
+
+    <!-- markdown代码一键复制功能 -->
+    
+<script src="/js/clipboard/clipboard.min.js"></script>
+
+    <script>
+      !function (e, t, a) {
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function(){
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+          copyHtml += '<i class="fa fa-globe"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre code").before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+              target: function(trigger) {
+                  return trigger.nextElementSibling;
+              }
+          });
+        }
+        initCopyCode();
+      }(window, document);
+    </script>
+  
+  </body>
+</html>
