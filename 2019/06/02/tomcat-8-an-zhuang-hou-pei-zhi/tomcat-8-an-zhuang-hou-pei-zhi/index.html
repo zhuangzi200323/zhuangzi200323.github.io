@@ -349,18 +349,13 @@
 
 <span class="token operator">&lt;</span>role rolename<span class="token operator">=</span><span class="token string">"admin-script"</span>/<span class="token operator">></span>
 
-<span class="token operator">&lt;</span>user username<span class="token operator">=</span><span class="token string">"admin"</span> password<span class="token operator">=</span><span class="token string">"123456"</span>
-roles<span class="token operator">=</span><span class="token string">"manager-gui,manager-script,manager-status,admin-gui"</span>/<span class="token operator">></span>
+<span class="token operator">&lt;</span>user username<span class="token operator">=</span><span class="token string">"admin"</span> password<span class="token operator">=</span><span class="token string">"123456"</span> roles<span class="token operator">=</span><span class="token string">"manager-gui,manager-script,manager-status,admin-gui"</span>/<span class="token operator">></span>
 
-<span class="token operator">&lt;</span>user username<span class="token operator">=</span><span class="token string">"root"</span> password<span class="token operator">=</span><span class="token string">"123456"</span>
-roles<span class="token operator">=</span><span class="token string">"manager-script,manager-jmx,admin-script"</span>/<span class="token operator">></span></code></pre>
+<span class="token operator">&lt;</span>user username<span class="token operator">=</span><span class="token string">"root"</span> password<span class="token operator">=</span><span class="token string">"123456"</span> roles<span class="token operator">=</span><span class="token string">"manager-script,manager-jmx,admin-script"</span>/<span class="token operator">></span></code></pre>
 <p><img src="media/46095471e76dccab7b2b1426d067b9d1.jpeg"></p>
-<h3 id="2-在conf-Catalina-localhost下新增manager-xml文件，内容如下："><a href="#2-在conf-Catalina-localhost下新增manager-xml文件，内容如下：" class="headerlink" title="2. 在conf\Catalina\localhost下新增manager.xml文件，内容如下："></a>2. 在conf\Catalina\localhost下新增manager.xml文件，内容如下：</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>Context privileged<span class="token operator">=</span><span class="token string">"true"</span> antiResourceLocking<span class="token operator">=</span><span class="token string">"false"</span>
-      docBase<span class="token operator">=</span><span class="token string">"$&amp;#123;catalina.home&amp;#125;/webapps/manager"</span><span class="token operator">></span>
-
-<span class="token operator">&lt;</span>Valve className<span class="token operator">=</span><span class="token string">"org.apache.catalina.valves.RemoteAddrValve"</span> allow<span class="token operator">=</span><span class="token string">"^.*$"</span>/<span class="token operator">></span>
-
-<span class="token operator">&lt;</span>/Context<span class="token operator">></span></code></pre>
+<h3 id="2-在conf-Catalina-localhost下新增manager-xml文件，内容如下："><a href="#2-在conf-Catalina-localhost下新增manager-xml文件，内容如下：" class="headerlink" title="2. 在conf\Catalina\localhost下新增manager.xml文件，内容如下："></a>2. 在conf\Catalina\localhost下新增manager.xml文件，内容如下：</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Context</span> <span class="token attr-name">privileged</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">antiResourceLocking</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span> <span class="token attr-name">docBase</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>$&amp;#123;catalina.home&amp;#125;/webapps/manager<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Valve</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>org.apache.catalina.valves.RemoteAddrValve<span class="token punctuation">"</span></span> <span class="token attr-name">allow</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>^.*$<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Context</span><span class="token punctuation">></span></span></code></pre>
 <p><img src="media/2a3f8e9509750e52be858927ac956dfe.jpeg"></p>
 <p>安成上述两步后，红框中功能就可以访问了</p>
 
@@ -385,16 +380,16 @@ roles<span class="token operator">=</span><span class="token string">"manager-sc
       <div class="post-nav">
 
   <div class="post-nav-prev post-nav-item">
-    <a href="/2019/06/02/ti-shi-unknown-system-variable-query-cache-size/">
-      上一篇:    提示Unknown system variable &#39;query_cache_size&#39;
+    <a href="/2019/06/02/an-zhuang-mysql8.0.13-jiao-cheng/an-zhuang-mysql8.0.13-jiao-cheng/">
+      上一篇:    安装mysql8.0.13教程
     </a>
   </div>
 
 
 
   <div class="post-nav-next post-nav-item">
-    <a href="/2019/06/02/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/mybatis-generator-maven-plugin-chu-cuo-jie-jue-ban-fa/">
-      下一篇:    mybatis-generator-maven-plugin出错解决办法 
+    <a href="/2019/03/02/android-zu-jian-hua-kai-fa-de-jian-dan-ying-yong/">
+      下一篇:    【Android】组件化开发的简单应用 
     </a>
   </div>
 
