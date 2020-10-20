@@ -30,25 +30,20 @@ Tomcat 8安装完成，做如下配置后可使用下图红框中的功能
 
 <role rolename="admin-script"/>
 
-<user username="admin" password="123456"
-roles="manager-gui,manager-script,manager-status,admin-gui"/>
+<user username="admin" password="123456" roles="manager-gui,manager-script,manager-status,admin-gui"/>
 
-<user username="root" password="123456"
-roles="manager-script,manager-jmx,admin-script"/>
+<user username="root" password="123456" roles="manager-script,manager-jmx,admin-script"/>
 ```
 
 ![](media/46095471e76dccab7b2b1426d067b9d1.jpeg)
 
 ### 2. 在conf\\Catalina\\localhost下新增manager.xml文件，内容如下：
 
-```bash
-<Context privileged="true" antiResourceLocking="false"
-      docBase="${catalina.home}/webapps/manager">
-
-<Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="^.*$"/>
-
+```` xml
+<Context privileged="true" antiResourceLocking="false" docBase="${catalina.home}/webapps/manager">
+    <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="^.*$"/>
 </Context>
-```
+````
 
 ![](media/2a3f8e9509750e52be858927ac956dfe.jpeg)
 
