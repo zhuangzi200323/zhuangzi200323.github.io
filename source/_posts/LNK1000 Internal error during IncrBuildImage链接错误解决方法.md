@@ -1,5 +1,5 @@
 ---
-title: LNK1000: Internal error during IncrBuildImage链接错误解决方法
+title: 'LNK1000: Internal error during IncrBuildImage链接错误解决方法'
 date: 2009-09-23 15:06:15
 img: '/medias/16.jpg'
 categories:
