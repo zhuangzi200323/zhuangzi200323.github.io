@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html>
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>SOLID五大设计原则 | 熊孩子</title>
+  
+    
+<link rel="stylesheet" href="/js/aos/aos.css">
+
+  
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="熊孩子" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  
+<script src="/js/jquery3.5.1.js"></script>
+
+  
+<script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <header class="header bg-color" 
+  style="position: fixed; 
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <i class="fa fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+  </div>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo" src="/medias/logo.png" alt="logo">
+      <h3 class="drawer-box-head_title">熊孩子</h3>
+      <h5 class="drawer-box-head_desc">一个在学习路上的程序猿，一个在探索路上的攻城狮，一个在求知路上的码农……</h5>
+    </div>
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          <li class="drawer-box-content_item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+        <li class="drawer-box-content_item">
+          <a href="">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <span>Github</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+    </div>
+    <div class="blog-title" id="author-avatar">
+      <div class="avatar">
+        <img src="/medias/logo.png" alt="logo">
+      </div>
+      <a href="/" class="logo">熊孩子</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          <li class="menu-item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-archive" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+      </ul>
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fa fa-search" aria-hidden="true"></i></div>
+  <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+    <div class="message-box">
+      <h2>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <span class="title">搜索</span>
+      </h2>
+      <form class="site-search-form">
+        <input type="text"
+          placeholder="请输入关键字"
+          id="local-search-input" 
+          @click="getSearchFile()"
+          class="st-search-input"
+          v-model="searchInput"
+        />
+      </form>
+      <div class="result-wrapper">
+        <div id="local-search-result" class="local-search-result-cls"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/local_search.js"></script>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile();
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+    </nav>
+  </div>
+  
+  <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</header>
+    <main class="main" style="margin-top: 60px;">
+      
+
+
+<div class="post-detail-header" style="background: url(/medias/2.jpg) no-repeat; background-size: cover; 
+  background-position: center center;">
+  
+    <span class="title">SOLID五大设计原则</span>
+  
+</div>
+<div class="row justify-center">
+  <div class="main-content">
+    <article class="post post-detail">
+      
+      
+      <div class="post-meta">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <span class="post-time">2020-12-08</span>
+      </div>
+      
+      <div class="post-tags-categories">
+        
+        
+        <div class="categories">
+          <i class="iconfont iconbookmark1"></i>
+          
+            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="">
+              设计模式
+            </a>
+          
+        </div>
+        
+      </div>
+      <div class="post-content">
+        <h2 id="SOLID五大设计原则"><a href="#SOLID五大设计原则" class="headerlink" title="SOLID五大设计原则"></a>SOLID五大设计原则</h2><p>废话少说，先列出这五大原则：<br>S：The Single-Responsibility Principle (SRP)<br>O：The Open/Closed Principle (OCP)<br>L：The Liskov Substitution Principle (LSP)<br>I：The Interface Segregation Principle (ISP)<br>D：The Dependency-Inversion Principle (DIP)</p>
+<h3 id="单一职责原则-The-Single-Responsibility-Principle-SRP"><a href="#单一职责原则-The-Single-Responsibility-Principle-SRP" class="headerlink" title="单一职责原则 The Single-Responsibility Principle (SRP)"></a>单一职责原则 The Single-Responsibility Principle (SRP)</h3><blockquote>
+<p>The Single-Responsibility Principle: A class should have only one reason to change.</p>
+</blockquote>
+<p>单一职责原则，就是说一个类仅有一个引起它变化的原因。虽然这一原则明确是在说类的设计，但是实际中在一个模块或者一个方法上同样适用。</p>
+<p>例如，我们有一个<code>Rectangle</code>类，它有两个方法，其中一个是把矩形画在屏幕上，另一个则是计算它的面积。有两个不同的应用会用到<code>Rectangle</code>类，其中一个是用来做几何计算的，它需要知道矩形的面积，但是不会需要画出它。另一个应用则是绘图，它需要把矩形画出来。那么上面设计的<code>Rectangle</code>类就违反了单一职责的原则（Violates SRP）。</p>
+<p>违反这一原则会有什么问题呢？第一，单纯做计算的应用程序并没有用到任何<code>GUI</code>的东西，但是由于它用到了<code>Rectangle</code>，所以需要引用<code>GUI</code>。既然被引用了，那么<code>GUI</code>就需要跟随计算应用程序被编译和部署。第二，如果绘图应用程序的变化需要引起<code>Rectangle</code>的改变，那么计算应用程序也需要重新编译、测试和部署，否则可能引起不可预测的问题。</p>
+<p>也有人把它解释为只做一件事情，虽然也说得通，但是这并不是作者的本意。这里的职责并不是负责的事情，而是‘A reason for change’。<br>An axis of change is an axis of change only if the changes occur. It is not wise to apply SRP—or any other principle, for that matter—if there is no symptom。也就是说不要过度解读这个原则，一个类也可以做不止一件事情，只要让它改变的原因只有一个就好。</p>
+<p>例如，下面是<code>Modem</code>接口，它是否违反 SRP 就看你怎么用它了。</p>
+<pre class=" language-C"><code class="language-C">public interface Modem
+&#123;
+  public void Dial(string pno);
+  public void Hangup();
+  public void Send(char c);
+  public char Recv();
+&#125;</code></pre>
+<p>如果从所做的事情来看的话，这里<code>Modem</code>做了两件事：1）管理连接，<code>Dial</code>和<code>Hangup</code>方法；2）数据通讯，<code>Send</code>和<code>Recv</code>方法。<br>但是这两个职责应该被分到两个类中吗？那就取决于应用系统需要如何改变了。如果应用系统不会对这两个职责做不同的改变，那也就不需要对它们进行拆分了。</p>
+<h3 id="开放闭合原则-The-Open-Closed-Principle-OCP"><a href="#开放闭合原则-The-Open-Closed-Principle-OCP" class="headerlink" title="开放闭合原则 The Open/Closed Principle (OCP)"></a>开放闭合原则 The Open/Closed Principle (OCP)</h3><blockquote>
+<p>The Open/Closed Principle (OCP): Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.</p>
+</blockquote>
+<p>所有的系统在其生命周期里都会改变。如果我们期望自己的系统能够活过第一个版本，那么开发的时候一定要谨记这句话。需求会变是正常的，好的系统不会拒绝变化，只会需要添加 code 或者修改很少的 code 就能支持这些变化。</p>
+<p>开放闭合原则同样适用于类、模块和方法等，它强调对扩展开放，对修改闭合。看起来说了两点实际上就是一点：为了适应新的需求，尽量不要修改原始代码，而是扩展原有的代码。</p>
+<p>要遵循这一原则，最好的办法就是抽象（abstract），最常用的设计模式方法有策略模式（Strategy）和模板方法（Template Method）。例如，<code>Client</code>类依赖于<code>Server</code>类，但是一旦将来换一个<code>Server</code>，则<code>Client</code>里面涉及到<code>Server</code>的地方全部要改变。这个时候就可以用到<code>Strategy</code>。抽象一个<code>ClientInterface</code>，<code>Client</code>依赖于这个抽象，对于这个抽象的实现则可以是不同的<code>Server</code>对应不同的策略。与<code>Strategy</code>类似，<code>Template Method</code>也是需要一个抽象，然后在这个抽象的基础上派生出一些类来做具体的实现。不同的是模板方法在这个抽象中定义了一个抽象方法和一个模板业务方法，模板业务方法会调用抽象方法。抽象方法的具体实现在继承这个抽象类的具体子类中。</p>
+<p>下面用一个常用于说明多态的<code>Shape</code>来举例说明 OCP。<br>我们目前有两种类型的<code>Shape</code>，分别是<code>Circle</code>和<code>Square</code>，现在需要一个方法来画出所有的图形。下面是一个违反 OCP 的实现。</p>
+<pre class=" language-C"><code class="language-C">//shape.h
+enum ShapeType &#123;circle, square&#125;;
+
+struct Shape
+&#123;
+  ShapeType itsType;
+&#125;;
+//circle.h
+struct Circle
+&#123;
+  ShapeType itsType;
+  double itsRadius;
+  Point itsCenter;
+&#125;;
+
+void DrawCircle(struct Circle*);
+
+//square.h
+struct Square
+&#123;
+  ShapeType itsType;
+  double itsSide;
+  Point itsTopLeft;
+&#125;;
+
+void DrawSquare(struct Square*);
+
+//drawAllShapes.cc
+typedef struct Shape *ShapePointer;
+
+void DrawAllShapes(ShapePointer list[], int n)
+&#123;
+  int i;
+  for (i=0; i<n; i++)
+  &#123;
+    struct Shape* s = list[i];
+    switch (s->itsType)
+    &#123;
+    case square:
+      DrawSquare((struct Square*)s);
+    break;
+
+    case circle:
+      DrawCircle((struct Circle*)s);
+    break;
+    &#125;
+  &#125;
+&#125;</code></pre>
+<p>为什么说它违反了 OCP 呢？因为如果我们要再添加一个新的<code>Shape</code>，则需要修改<code>DrawAllShapes</code>和<code>ShapeType</code>，以及重新编译所有引用<code>ShapeType</code>的地方。如果我们按照上述的抽象思想去写<code>Shape</code>，那么可以做到新增一种<code>Shape</code>时只需要新加一个<code>Shape</code>的派生类即可。</p>
+<pre class=" language-C"><code class="language-C">public interface Shape
+&#123;
+  void Draw();
+&#125;
+
+public class Square : Shape
+&#123;
+  public void Draw()
+  &#123;
+    //draw a square
+  &#125;
+&#125;
+
+public class Circle : Shape
+&#123;
+  public void Draw()
+  &#123;
+    //draw a circle
+  &#125;
+&#125;
+
+  public void DrawAllShapes(IList shapes)
+  &#123;
+    foreach(Shape shape in shapes)
+      shape.Draw();
+  &#125;</code></pre>
+<p>There is no model that is natural to all contexts！当然，也会有一些新的需求对上述系统依旧需要做一些修改，比如说，我们现在要求在输出所有的<code>Shape</code>时按照先<code>Square</code>再<code>Circle</code>的顺序画出来。Robert C. Martin 很喜欢一句话，“Fool me once, shame on you. Fool me twice, shame on me.”。面对一些我们不得不对老的 code 做出一些修改的时候，我们除了痛骂怎么会有这么变态的需求的同时，可以多想想，如果再来一些这么变态的需求，我现在的这种修改方式可以支持吗？</p>
+<p>比如说，对于上面的例子，我们现在要求先画<code>Square</code>再画<code>Circle</code>。你可能觉得这个修改很简单啊，我在<code>DrawAllShapes</code>里面先拿出<code>Square</code>来绘制，再来画<code>Circle</code>就好了。这就大错特错了，又违反了 OCP。这样如果再加入其它的<code>Shape</code>的话，你还是得修改<code>DrawAllShapes</code>。要解决这个问题，还是得抽象。先画 A 再画 B，不就是顺序的问题吗？那我们可以让<code>Shape</code>实现<code>IComparable</code>，这样画图的时候先对这些图形进行排序不就可以了吗?</p>
+<pre class=" language-C"><code class="language-C">public interface Shape : IComparable
+&#123;
+  void Draw();
+&#125;
+public void DrawAllShapes(ArrayList shapes)
+&#123;
+  shapes.Sort();
+  foreach(Shape shape in shapes)
+    shape.Draw();
+&#125;
+
+</code></pre>
+<p>不幸的是，这种方法依然违反了 OCP，因为在每个<code>Shape</code>的派生类中都要实现<code>CompareTo</code>，而<code>CompareTo</code>肯定需要知道所有的其他子类。</p>
+<pre class=" language-C"><code class="language-C">public class Circle : Shape
+&#123;
+  public int CompareTo(object o)
+  &#123;
+    if(o is Square)
+      return -1;
+    else
+      return 0;
+  &#125;
+&#125;
+
+</code></pre>
+<p>那么，我们就要从 Data-Driven Approach 的角度来考虑这个问题了，对于这个例子，我们可以用一个 table-driven 的方法来处理。我们用一个额外的类来实现<code>Shape</code>之间的比较，而只有这里会需要一个<code>Shape</code>所有派生类的列表。这样新增一个派生类就只需要修改这个列表。另外，为了让增加<code>Shape</code>的派生类不需要重新编译旧的代码，我们可以把<code>ShapeComparer</code>类与<code>Shape</code>相关的模块分离。</p>
+<pre class=" language-C"><code class="language-C">public class ShapeComparer : IComparer
+&#123;  
+    private static Hashtable priorities = new Hashtable();  
+    static ShapeComparer()  
+    &#123;    
+        priorities.Add(typeof(Circle), 1);    
+        priorities.Add(typeof(Square), 2);  
+    &#125;  
+    private int PriorityFor(Type type)  
+    &#123;    
+        if(priorities.Contains(type))      
+            return (int)priorities[type];    
+        else      
+            return 0;  
+    &#125;  
+    public int Compare(object o1, object o2)  
+    &#123;    
+        int priority1 = PriorityFor(o1.GetType());    
+        int priority2 = PriorityFor(o2.GetType());    
+        return priority1.CompareTo(priority2);  
+    &#125;
+&#125;
+
+</code></pre>
+<h3 id="里氏替换原则-The-Liskov-Substitution-Principle-LSP"><a href="#里氏替换原则-The-Liskov-Substitution-Principle-LSP" class="headerlink" title="里氏替换原则 The Liskov Substitution Principle (LSP)"></a>里氏替换原则 The Liskov Substitution Principle (LSP)</h3><blockquote>
+<p>The Liskov Substitution Principle: Subtypes must be substitutable for their base types.</p>
+</blockquote>
+<p>里氏替换原则的内容是，子类型必须能够替换它的基类型。OCP 的实现机制是抽象和多态，而它们的关键是继承。LSP 所强调的就是继承的实现规则。<br>首先，看一下违反 LSP 会怎样？如果违反 LSP，类继承就会混乱，如果子类作为一个参数传递给参数为基类的方法，将会出现未知行为；如果违反 LSP，适用于基类的单元测试将不能成功用于测试子类。<br>假如说我们不能保证 LSP，即子类不一定能够替换它的基类，那么我们来看看上一节中关于<code>Shape</code>的例子。如果不保证 LSP，那么<code>DrawAllShapes</code>就得按照下面的方式写，这样就违反了 OCP。所以说，A violation of LSP is a latent violation of OCP。</p>
+<pre class=" language-C"><code class="language-C">public static void DrawAllShapes(Shape s)
+  &#123;
+    if(s.type == ShapeType.square)
+      (s as Square).Draw();
+    else if(s.type == ShapeType.circle)
+      (s as Circle).Draw();
+  &#125;
+
+</code></pre>
+<p>然而，现实中很多违反 LSP 的情况并不像上例这么明显。比如说，我们有一个基类是<code>Rectangle</code>，我们在它的基础上派生出<code>Square</code>。一般说派生类满足 IS-A（Square is a rectangle）就可以，理论上看也确实满足。但是<code>Rectangle</code>类中有<code>height</code>和<code>width</code>，<code>Square</code>类中要求它们必须相等，那么我们可以在<code>Square</code>中对它们的赋值操作进行重写，即任何对<code>height</code>和<code>width</code>的<code>set</code>操作都会设置它们俩为同一个值。但是如果用户有一个下面这样的方法来使用<code>Rectangle</code>，则这里的设计就违反了 LSP。</p>
+<pre class=" language-C"><code class="language-C">void g(Rectangle r)
+&#123;
+  r.Width = 5;
+  r.Height = 4;
+  if(r.Area() != 20)
+    throw new Exception("Bad area!");
+&#125;
+
+</code></pre>
+<h3 id="接口分离原则-The-Interface-Segregation-Principle-ISP"><a href="#接口分离原则-The-Interface-Segregation-Principle-ISP" class="headerlink" title="接口分离原则 The Interface Segregation Principle (ISP)"></a>接口分离原则 The Interface Segregation Principle (ISP)</h3><blockquote>
+<p>The Interface Segregation Principle: Clients should not be forced to depend on methods they do not use.</p>
+</blockquote>
+<p>接口分离原则指出，客户端不应该被迫依赖于它不会用到的方法。<br>我曾经遇到过这样一个应用场景，在类<code>P1</code>，<code>P2</code>和<code>P3</code>中都需要一些 config，这些 config 需要一些其他的操作来获取，而原本这些 config 的获取散落在 P1，P2 和 P3 处理逻辑中间。这导致对获取 config 相关的代码改动时会影响到毫不相关的处理逻辑。所以，我们希望把这些 config decouple 出来，让<code>P1</code>，<code>P2</code>和<code>P3</code>依赖于一个抽象的 config，而具体获取 config 的方法则实现在这个抽象的派生类中。这是下面我们会介绍的另一个原则 DIP，但是我要说的是，我当时就试图写一个<code>IConfigure</code>把<code>P1</code>，<code>P2</code>和<code>P3</code>中用到的接口全部定义了，然后再对应的去写几个<code>Configure</code>类来实现<code>IConfigure</code>的一部分。当时只觉得这样写就可以只写一个接口了，可是它却需要变得非常 “胖”，很显然违背了 ISP。</p>
+<p>下面来看一个如何实现接口分离的例子。<br>假如我们原本有一个<code>Door</code>接口，其中提供了<code>Lock()</code>、<code>Unlock()</code>和<code>IsOpen()</code>方法。现在我们要新写一个<code>TimedDoor</code>类，当门打开的时间超过一定的限制就要报警。那么我们可以写一个<code>TimeClient</code>接口来定义<code>TimeOut</code>的机制，然后为了让<code>TimedDoor</code>继承<code>TimeClient</code>，我们让它的基类<code>Door</code>直接引用<code>TimeClient</code>，如下图 1 所示。它显然违反了 ISP，因为并不是所有的<code>Door</code>都会需要<code>TimeClient</code>。</p>
+<p><img src="data:image/gif;base64,R0lGODlhaAFGAcQAAP///4CAgL+/vwAAAH9/f8DAwD8/P+/v78/Pz29vbw8PD9/f35+fnx8fHy8vL3BwcF9fX4+Pj6+vr09PT6CgoNDQ0PDw8LCwsODg4GBgYFBQUEBAQDAwMJCQkAAAAAAAACH5BAAAAAAALAAAAABoAUYBAAX/ICCOZGmeaKqubOu+cCzPdG3feK7vfO//wKBwSCwaj8ikcimCEJ7QqHRKrVqv2Kx2y61CCsyweDwOkM8/ARjNbrtt5rdcpp7b7/c4fn+q8/+ASnqBfH6Eh4g9g4lzhoyPkDCLkWyOlJeYI5OZYpacn4yboEqeo6Z/oqdGpaqtcqk7BwI7CwSzeKyuumiwOgIDKgy3LQ0Tw3a5u8phvTmyKgYELwPHyGvL2GTNOLUiBAgJBgkHAAwNBgwiEhPR5ADfEAkEAxCzAhAGExIjB+EQCCPWtVt1LZvBJdtkuCP3S8SABsIcTCh3Lh0DBQwkODDgUAEEBvPqLRhgiwE1AAcc/9Sbt6AcRo0cUYpw5yPZwZtAEsJ4csAYgIYASKoDBiCaCIwzFQAU6nAWAwgjjEZwMMKBNKQolb6Tpi9NQZxgheh0ES5lAhFAT/4kahQBNQFwHUQIOkytLAIJFHCVRsIt3LhzD4hD0GBfD5thE98Y22KCtMJoiaoFavSXgcuX06mlCwCBAgcJpkozSsIyZnTeJvSce/ir4tc5GLMQHIEwwLS3KEsbSRMBuc0nJ0wUYRQCVBHCeI/wDSCCgZ5na7qGTZ2G7BYAD7TEHZk43wZ8Pf+uO2vC8V/SJCgg5xcAeBHiO8MHgri6fRXXY3BfKyLvWcIbKXALcPZ8thEEDQCUl/8BCkQHIIPVBFHffRSWkN9hAMEX4QmytPSTOwsI4OFyG0o4XYUonnBhhROmSOGKFLboon0w3ifjjNTVaN+NOL6mY3U89pjYj9QFKSRYRMJm5JE3JfnakkwaBONfVM7yhA8HSPBEhigJAFAt6ZABZZTYwDjAmWieGRRROwigQJrPrcWRZTNcxoMhAeSp55589unnn4AGKuighBZqKKAUIHkDFGdC8VOJNCzwpjEaDTCnpV1yCYOabV7DF5koOInIj5wSF1NmDQyQAAIGWJphpe91Jk4C1ECAqQgjDRAipqw6OMEAHrmDKj3ktOqqL56CmoKoh5DK5poOPWTsAA6keqn/pW9K88ub1KQaZgl00nnAm9XeeqYCDAplrAGa2mDIp8paqGgOpUK7Zku0QpUrAL+mI6kCa6l15obhYhoBPSI4MMBSJ5kUU704vBuvivPiUC+nnM7Dl5qNPpEqXLeuSTCmdLbqBAGtSsMpnfYiOwK8E4vALCHOkoAxURpHu+Zp7LIMgMKseUPArpdy1OpGmGlGFMsQ3yBxzCTMHEjNI9zsDVNqKuwhXLKEPE8D7kgArJxk0xomAiLay/SzEScLtSYV33CxZDhjDczXBNjaANlJPYTXmXMVfGmDeemqtrkkjei0228DIDUgVOtsb8720nqmA7eFDMAC0yrAmuDIcauA/2Er3zrPZou/3LjMcYvR4WxevhA7KYy//Tgqq/9UO9S389G7QU83/jsew2MTvO2tx3w878lPvHzMxdsRvTLPTzz9K7lXH+/1b3DvivbKet+G+KqADyr5vGS/O/TNx2s+meifEf8o70c5fxnqq776/WLwz0n9TPIfEwSICQAeiYCCyJ833CCLdo2qfcoyYE3ShCYD+CwUlMCABWqAQEpIsAesMoDC0CUOMEWigzHAwAMeQIENxgCFkPhgGkJmQjCtYwIIWAA+vnWPEqLFFihjRiYqsMIWvgCGj5DhBGNCtm2hSQHcGkA6xPbElnytaUdAIg2IyEIX4keB7xiDzwq2nv8DpOos8+BIqvaRr3cASxhCNAUXjRgqMMKMFCEDXVFOYhm3NOAvY5tHdMKQgAIY8pCITKQiF8nIRjrykZBcZAc4oIELUGx1SjxMHkl2q1bZw1K/oODdmELISJrylKhMpSMfwIEMTEeLicjknTZZNOLw0VIjoUoJKBfHUVxghZZclh3FSEu+eZJsqbIFrTjCywGC4pcPCOYKYIkIWbapmCw7Jp08g6YEufGOSaCmC6ApzRaIkxDW1EED+RG7dXZGAORw5wFAIgEQpa1/lOBiOY84zP1lEA79FB4EQZXOFw2UTAW9zzmBcLIuOPShEI2oRLnwBf0JFCcLBURCaXTQKG3/tDoZ9UFIC7E+63WUSR/N0UmPlFLYiHMB4UiA4k4ADn5isqTb+8O4EiCAvNDEBASYChxZMNI9tNRHfwhHVAZpAgm0KgIzreNNLYo8PhggaM5JAWEScByiBrSqe9gMUDh0GxdcJxw8Q0cCvoWToyqGmmJlG0BlgDYBHOwvMGWrhOTqBrcO6Q9x3cGKxtqHDKGtBCGaKdp+2ge+tsGvYaHmVUeQVR3AggF6BdezjJKPc3hEhA1wgDsggC5VzcQAng1TEL0TStT1FafhSyoTxSFYFVwpBYTlrAJaYpLANGAuBABbZwRUlOG0Z7VF0ZZjKwHb8+m0QT1dz1o+CakvpuC2/yjI7WiiM1ajOOBbCRjHwkYwATTOVrm4aC78AAFTH25uaO+NqjlPwIDLNOAcqDGBdpPbHe8EBWmoteCzgojcyiwXDZBd6Sk2EaJ71OOemiUBZ/nSXZVFgEoIcAtNEjCRAqP3DgnG6ECx21gJj4bCbJrwy/aBFfcANybj+rA1qMo8EV8XnCPYL2kqDAD1CCO45LiIMCYg2rVceAJ6WUs9Z7xAf9o4u9XtxgjgOFQplyM3+BhHjtlBAJo4VR9DDYcDmUtj9j35bSFukoJ7lOaDFLW2U5XZoeZM5zrb+c5zTtSZoTam3H3izSA+kZ+lBMZBrxlHfTb0JQDNZEXvWXmCdv/0LhjdiEhL2hWUlkOiLx0KPHuazgnQwKdHXagEVIDTqKYBBTaQ6labgoWndrWsL2GBB9R61riGBAVO/YBc+xoRvQbArn9NbD7cGgDHLray5TBsEQR72dBmw7OFHetoWzsMyUb2tK/N7SM0ewTb7ra4hRDub4/73D7ItgjUje5248Dc4Ha3vHMQbhHAe974foGo9ZQBPbEw3wDnYMAHPleCGxwGlj64whfOcBfoueEQj1rEJ846ikc80xa3DwYyzvGOExzjHn9ryBUO8pGD5eEmT7nKlZ3wlXe75C4vU8zzDfOZ76LlNs+5zte7c3TXvOem+DnQx0nqogtqA0ZPup//Nj50ODdu0013XKGjXnA045zq05w61mcgdDFefetSffrXwW6Crndi7GSXeJzTLgOzhwHqTXc7E+A+dLkvge5Atzvt2M51rfPdq2v/u1n9LnhhBr7wWT884g0v9sXPV/GOLzvhIw83yFO+8o2/fNitrvnN8xntfNd7EvDec9EjgfQ7j18IMSPTSKBe5/FrbZoMw4jX5zz2tzqArQA2E3oiNgLfGEFiBYDjI9je5rhn4gEG5pJuZshyZ4pTGrF4etCzPfkSJsm4BnBhWw1OAgJQmDRO5wSvd/6SndBcykwyHAC8SYfch89D3NjVs59f8sRk4s8GoCVSevKYOtNMb2d9/2mHffKnKwfTVamCAP2CK4FESvZ3f2qXfg4AFxKQKvoCLABhEntjEkVmK1AhgHNHgGSHexRUZAAAfWdiGApTRd90Bsc3c/FTC1HQLj3UelPGDhHgDsRXXcZHgmBnej8ogRPIeURYcZl3hEJIEEeIhEaohJN3eUtYBDEYc1NIBFXoclc4BFm4clsoBF2ocl9oIk0odZaneWNIH0C4dWnoFWXYhtLxhlFIeXDYGnJ4hlI4h5FXh3eyhljHh51yh0lIhIDoMk1YiDkQhimHiG0jiE9IiHroeBGgdJSYJ6FWiZRoamUYCKu2ibkDa574NrXGbqFIJsNWb6XIJMF2b6koJP/HRoqtiCPfhoqx6CLTxoq1iCLZBou5SCHwRou9aB/lVm3BWCHsxovF+BqsCIzJmBioiIvNmBj9xm/+hnLRaFDX2COMmI2ex40Vso3eKC/hmCLgOI5OaI4chY7YqI7pyI4g5Y7tCI9IJY8uRY/1aI8ih49/pY+RxY/96I+PBpDLUI7mSJDjaJDhiJDeqJDcyJDZ6JDXCJHRKJHNSJHJaJHFiJEMhwGq1JEeuUiu9JEi6ZFeRIQ8VSUomZIquZIs2ZIu+ZIwGZMyaVd+SHUamV01GXU32Qc5GXeRuHg7qV89WXc/iXhBCS5DmXdFWXhHWRpJWXpLKXhNmWNPmXpR+Xf/U4kWVQl7Vxl6XXl9X1mAYVmCYxmEZcmGZ/mHaWmTa6mTbemTeEiHb0mUcbmH3EAFDNArbWIL7xUFtEdmhxgxogRKmrMoQiF7Z+JNgAmFNyALdkUtcDFmnZEhIYJY8GSZL/gLFSgAlaJLGlJYHOKD+rGVt3dNTFQwDtCC8ZCYLSEYaBIdrvkQv6JcTJQrAHGB5/IpBMAtkEF/b9KHjug02HQm4ZWYBKAwUOF9wSVFbqQXtnKYmgM0uSIPb2IRwPI3hnM65wCcgekLw6lLrbIPYvMcwMIe1OIeajGbfGNLfxMdYkMVCmMYtIJGhZmIpIl8ppljnHQqtyRgJGQsLZMz/xfUKvUFHMBQKnQigo3YnYk4nPz5SQIGHlGwJu4goCGzfAsTnjPBMQMQNpiioKnDoIJ5mvtpSxAaFNJVC3PxVCiRTHzjmhxxMMMho/wSfzUKXBBoiIzZoCRaS3t0orSCLtnSY9GXKtBJQVqxfRvBfKEkQuX5gnYoojegl/BBW1QqZrISHcspF5SVKhPgHOmwepcBVcJHWgPgE2jxKx7hIfWVWQu6o48ogVmpO8EJaXXqPPcpg3OplHXpeHOqiCb3p3lqhXsKlX0KlIVqlYdqlInKlYvKlI1amo8qlZGKn5OKlZWqp5fqlZsKlp0qlp9KlqFqlqOKlqWqlqdKdRc2kw6s2qqu+qqwypIMcGohAAA7"> 图 1. 违反 ISP 的 TimedDoor</p>
+<p>一种解决方案是，在<code>TimedDoor</code>和<code>TimeClient</code>之间提供一个 Adapter，这样<code>TimedDoor</code>用委托的方式去调用<code>TimeClient</code>，而不需要在它的基类<code>Door</code>上去显示引用<code>TimeClient</code>。（如图 2 所示）</p>
+<p><img src="data:image/gif;base64,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"> 图 2. Separation Through Delegation</p>
+<p>另一种解决方案，则是直接让<code>TimedDoor</code>实现多个接口。（如下图 3 所示）</p>
+<p><img src="data:image/gif;base64,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"> 图 3. Separation Through Multiple Inheritance</p>
+<h3 id="依赖倒置原则-The-Dependency-Inversion-Principle-DIP"><a href="#依赖倒置原则-The-Dependency-Inversion-Principle-DIP" class="headerlink" title="依赖倒置原则 The Dependency-Inversion Principle (DIP)"></a>依赖倒置原则 The Dependency-Inversion Principle (DIP)</h3><blockquote>
+<p>The Dependency-Inversion Principle: A). High-level modules should not depend on low-level modules. Both should depend on abstractions. B). Abstractions should not depend upon details. Details should depend upon abstractions.</p>
+</blockquote>
+<p>依赖倒置原则说的是， 高层模块不应该依赖低层模块，两者都应该依赖其抽象；抽象不应该依赖细节，细节应该依赖于抽象。</p>
+<p>为什么要考虑依赖倒置呢？如果我们违反了这一原则，修改低层模块会影响高层模块，甚至迫使高层模块（policy decisions and business models）做出相应的修改。另外，我们在低层模块上的复用已经做得很好了，但是若高层模块依赖于低层模块，那么高层模块是很难复用的。</p>
+<p>我们来看看下面这个例子。如图 4 所示，high-level 的<code>Policy</code>层依赖于 low-level 的<code>Mechanism</code>层，而 low-level 的<code>Mechanism</code>层又依赖于 detailed-level 的<code>Utility</code>层。这样由于依赖的传递性，就导致了<code>Policy</code>层依赖于<code>Utility</code>层。</p>
+<p><img src="data:image/gif;base64,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"> 图 4. Naive layering scheme</p>
+<p>为了去除这种依赖，我们可以在两层之间引入一个抽象接口，如下图 5 所示。这样<code>Policy</code>层不再依赖于<code>Mechanism</code>层，而是依赖于<code>PolicyServiceInterface</code>。<code>Mechanism</code>层会实现<code>PolicyServiceInterface</code>，那这会不会导致<code>Mechanism</code>层需要依赖<code>Policy</code>层呢？其实不然，<code>PolicyServiceInterface</code>虽然在图中放在了<code>Policy</code>层，但是它是一个独立的接口，不涉及任何细节，我们甚至可以把它单独放进一个 package 里面。</p>
+<p><img src="data:image/gif;base64,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"> 图 5. Inverted layers</p>
+<p>下面再来看一个 DIP 的例子。<br>我们有<code>Button</code>类和<code>Lamp</code>类，其中<code>Button</code>感知外部环境，收到<code>Pull</code>消息后决定用户是否按了这个按钮；而<code>Lamp</code>则用于影响外部环境，它会接收<code>Turn On/Off</code>消息，根据消息来决定是开灯还是关灯。<br>下面是一个违反 DIP 的写法，这里直接让<code>Button</code>依赖于<code>Lamp</code>。这样做的坏处就是<code>Lamp</code>如果有改变，这个<code>Button</code>类也得跟着改变，而且这个<code>Button</code>根本没法重用，它只能用来控制<code>Lamp</code>的开关。</p>
+<pre class=" language-C"><code class="language-C">public class Button
+&#123;
+  private Lamp lamp;
+  public void Poll()
+  &#123;
+    if (/*some condition*/)
+      lamp.TurnOn();
+    else lamp.TurnOff();
+  &#125;
+&#125;
+
+</code></pre>
+<p>对于这个例子，我们首先需要找到其中的抽象。这里的抽象就是根据用户的动作来决定状态 on/off。它可以既与<code>Button</code>无关，又与<code>Lamp</code>无关。所以我们可以定义一个<code>ButtonServer</code>（或者考虑到要与 Button 无关，叫做<code>SwitchableDevice</code>）的接口，这个接口可以让<code>Button</code>控制来开关某个东西。然后让<code>Lamp</code>实现这个接口，<code>Button</code>就可以用来控制这个灯了，如果再换成一个东西实现<code>ButtonServer</code>，<code>Button</code>依然适用。</p>
+<p><img src="data:image/gif;base64,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"> 图 6. Dependency inversion applied to Lamp</p>
+<p>好啦！五大原则我就讲完了，工资能不能翻倍就看你们自己了！值得一提的是，光背住上面的条款可没有用哦，只有真正理解了这样设计带来的好处，或者说只有在实践中违反了上述原则并付出了惨痛的代价，才会对上述原则有深刻的体会。Anyway，首先记住这几大原则，写代码和 review 别人的代码时多想想我们有没有违反这些原则，你一定会有收获的！</p>
+<p>[转自]<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/145efeabcd06">https://www.jianshu.com/p/145efeabcd06</a></p>
+
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2020/12/08/solid-wu-da-she-ji-yuan-ze/" target="_blank" title="SOLID五大设计原则">https://zhuangzi200323.github.io/2020/12/08/solid-wu-da-she-ji-yuan-ze/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站文章多数来源于网络，如有侵权，请联系删除，谢谢
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <div class="post-nav">
+
+
+
+  <div class="post-nav-next post-nav-item">
+    <a href="/2020/12/03/xiao-xue/wo-de-ba-ba/">
+      下一篇:    我的爸爸 
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-if="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-if="visible">
+      <div class="donate-box_close">
+        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
+          <img src="/medias/zfb.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
+          <img src="/medias/wx.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+
+
+<script src="/js/shareJs/social-share.min.js"></script>
+
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+
+    <!-- 评论 -->
+      
+        
+      
+  </div>
+
+  
+    <div class="toc-aside">
+      <div class="toc-main">
+        <div class="toc-aside-title">
+          <i class="fa fa-list-ul" aria-hidden="true"></i><span>目录</span>
+        </div>
+        <div class="toc-content">
+          <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+<div class="toc"></div>
+
+<script>
+  if ($('.toc').length > 0) {
+    var headerEl = 'h2, h3, h4',  //headers 
+      content = '.post-detail',//文章容器
+      idArr = {};  //标题数组以确定是否增加索引id
+      //add #id
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: content,
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: headerEl,
+      scrollSmooth: true,
+      scrollSmoothOffset: -80,
+      headingsOffset: 130,
+      positionFixedSelector: '.toc-main',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  }
+
+</script>
+
+<style>
+.is-position-fixed {
+  position:fixed !important;
+  top: 64px;
+}
+
+</style>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+    </main>
+    <div class="footer bg-color">
+  <div class="footer-main">
+    <div class="link">
+      <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:20075633@qq.com">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      </a>
+      <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=20075633">
+        <i class="fa fa-qq" aria-hidden="true"></i>
+      </a>
+      <a href="/atom.xml" target="_blank">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/zhuangzi200323">zhuangzi200323</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> 
+    </div>
+    
+      
+  <!-- 不蒜子统计 -->
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-book" aria-hidden="true"></i>本站总阅读量：<span id="busuanzi_value_page_pv"></span> 次
+  </span>
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv" style='display:none'>
+        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+  </span>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+  </div>
+</div>
+
+
+    
+      <div class="goTop bg-color">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</div>
+
+<script src="/js/goTop.js"></script>
+
+    
+
+    
+
+    <!-- 图片放大 -->
+    
+      
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<script src="/js/wrapImage.js"></script>
+
+    
+
+    <!-- 爱心点击 -->
+    
+      
+<script src="/js/clicklove.js"></script>
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+      
+<script src="/js/aos/aos.js"></script>
+
+      <script>
+        // https://github.com/michalsnik/aos
+        const themeOffset = parseInt('120') || 120;
+        const themeDelay = parseInt('0')|| 0;
+        const themeDuration = parseInt('400') || 400;
+        const themeEasing = 'ease' || 'ease';
+        const themeOnce = JSON.parse('true' || true);
+        const themeMirror = JSON.parse('false' || false);
+        const themeAnchorPlacement = 'top-bottom' || 'top-bottom';
+        AOS.init({
+          // Global settings:
+          disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+          startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+          initClassName: 'aos-init', // class applied after initialization
+          animatedClassName: 'aos-animate', // class applied on animation
+          useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+          disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+          debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+          throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+          // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+          offset: themeOffset, // offset (in px) from the original trigger point
+          delay: themeDelay, // values from 0 to 3000, with step 50ms
+          duration: themeDuration, // values from 0 to 3000, with step 50ms
+          easing: themeEasing, // default easing for AOS animations
+          once: themeOnce, // whether animation should happen only once - while scrolling down
+          mirror: themeMirror, // whether elements should animate out while scrolling past them
+          anchorPlacement: themeAnchorPlacement, // defines which position of the element regarding to window should trigger the animation
+
+        });
+      </script>
+    
+
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+<script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+<div id="appCopy">
+</div>
+<script>
+  var vm = new Vue({
+    el: '#appCopy',
+    data: {
+    },
+    computed: {
+    },
+    mounted() {
+      const that = this;
+      //  监听 ctrl + c事件  
+      $(document).unbind('keypress').bind('keypress', function (e) {
+        if (e.ctrlKey && e.keyCode == 67) {
+          doSomething();
+          // 返回false, 防止重复触发copy事件  
+          return false;
+        }
+      })
+
+      // 鼠标右键的复制事件  
+      $(document).unbind('copy').bind('copy', function (e) {
+        doSomething();
+        // console.log('右键复制 监听成功');
+      });
+
+      function doSomething() {
+        that.$notify({
+          title: '成功',
+          content: '复制成功了哦',
+          type: 'success'
+        })
+        // console.log('ctrl + c 监听成功');  
+      }
+    },
+    methods: {
+    },
+    created() { }
+  })
+</script>
+    
+
+    <!-- 输入框打字特效 -->
+    
+      
+<script src="/js/activate-power-mode.js"></script>
+
+      <script>
+          POWERMODE.colorful = true;  // 打开随机颜色特效
+          POWERMODE.shake = false;    // 关闭输入框抖动
+          document.body.addEventListener('input', POWERMODE);//监听打字事件
+      </script>
+    
+
+    <!-- markdown代码一键复制功能 -->
+    
+<script src="/js/clipboard/clipboard.min.js"></script>
+
+    <script>
+      !function (e, t, a) {
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function(){
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+          copyHtml += '<i class="fa fa-globe"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre code").before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+              target: function(trigger) {
+                  return trigger.nextElementSibling;
+              }
+          });
+        }
+        initCopyCode();
+      }(window, document);
+    </script>
+  
+  </body>
+</html>
