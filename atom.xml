@@ -6,7 +6,7 @@
   <link href="https://zhuangzi200323.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhuangzi200323.github.io/"/>
-  <updated>2021-01-09T11:53:23.256Z</updated>
+  <updated>2021-01-14T09:52:09.257Z</updated>
   <id>https://zhuangzi200323.github.io/</id>
   
   <author>
@@ -17,24 +17,24 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>爱吹牛的蚂蚁</title>
-    <link href="https://zhuangzi200323.github.io/2021/01/07/xiao-xue/ai-chui-niu-de-ma-yi/"/>
-    <id>https://zhuangzi200323.github.io/2021/01/07/xiao-xue/ai-chui-niu-de-ma-yi/</id>
-    <published>2021-01-07T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.256Z</updated>
+    <title>Android中的集合数据结构</title>
+    <link href="https://zhuangzi200323.github.io/2021/01/08/android-zhong-de-ji-he-shu-ju-jie-gou/"/>
+    <id>https://zhuangzi200323.github.io/2021/01/08/android-zhong-de-ji-he-shu-ju-jie-gou/</id>
+    <published>2021-01-08T15:06:15.000Z</published>
+    <updated>2021-01-14T09:52:09.257Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;爱吹牛的蚂蚁&quot;&gt;&lt;a href=&quot;#爱吹牛的蚂蚁&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;集合框架结构图&quot;&gt;&lt;a href=&quot;#集合框架结构图&quot; class=&quot;headerlink&quot; title=&quot;集合框架结构图&quot;&gt;&lt;/a&gt;集合框架结构图&lt;/h3&gt;&lt;p&gt;&lt;img</summary>
         
       
     
     
     
-    <category term="小学" scheme="https://zhuangzi200323.github.io/categories/%E5%B0%8F%E5%AD%A6/"/>
+    <category term="Android" scheme="https://zhuangzi200323.github.io/categories/Android/"/>
     
     
   </entry>
@@ -44,7 +44,7 @@
     <link href="https://zhuangzi200323.github.io/2021/01/07/xiao-xue/nan-wang-de-hua-xue-jing-li/"/>
     <id>https://zhuangzi200323.github.io/2021/01/07/xiao-xue/nan-wang-de-hua-xue-jing-li/</id>
     <published>2021-01-07T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.260Z</updated>
+    <updated>2021-01-14T09:52:09.321Z</updated>
     
     
       
@@ -63,11 +63,34 @@
   </entry>
   
   <entry>
+    <title>爱吹牛的蚂蚁</title>
+    <link href="https://zhuangzi200323.github.io/2021/01/07/xiao-xue/ai-chui-niu-de-ma-yi/"/>
+    <id>https://zhuangzi200323.github.io/2021/01/07/xiao-xue/ai-chui-niu-de-ma-yi/</id>
+    <published>2021-01-07T15:06:15.000Z</published>
+    <updated>2021-01-14T09:52:09.321Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;爱吹牛的蚂蚁&quot;&gt;&lt;a href=&quot;#爱吹牛的蚂蚁&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="小学" scheme="https://zhuangzi200323.github.io/categories/%E5%B0%8F%E5%AD%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>繁忙的星期天</title>
     <link href="https://zhuangzi200323.github.io/2021/01/07/xiao-xue/fan-mang-de-xing-qi-tian/"/>
     <id>https://zhuangzi200323.github.io/2021/01/07/xiao-xue/fan-mang-de-xing-qi-tian/</id>
     <published>2021-01-07T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.256Z</updated>
+    <updated>2021-01-14T09:52:09.321Z</updated>
     
     
       
@@ -86,11 +109,57 @@
   </entry>
   
   <entry>
+    <title>RK3399-Android7.1.1-WifiAp 开机默认打开 wifi 热点</title>
+    <link href="https://zhuangzi200323.github.io/2020/12/22/rk3399-android7.1.1-wifiap-kai-ji-mo-ren-da-kai-wifi-re-dian/"/>
+    <id>https://zhuangzi200323.github.io/2020/12/22/rk3399-android7.1.1-wifiap-kai-ji-mo-ren-da-kai-wifi-re-dian/</id>
+    <published>2020-12-22T15:06:15.000Z</published>
+    <updated>2021-01-14T09:52:09.277Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;RK3399-Android7-1-1-WifiAp-开机默认打开-wifi-热点&quot;&gt;&lt;a href=&quot;#RK3399-Android7-1-1-WifiAp-开机默认打开-wifi-热点&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Android" scheme="https://zhuangzi200323.github.io/categories/Android/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>查看 ttyUSB 设备对应的接口号</title>
+    <link href="https://zhuangzi200323.github.io/2020/12/21/cha-kan-ttyusb-she-bei-dui-ying-de-jie-kou-hao/"/>
+    <id>https://zhuangzi200323.github.io/2020/12/21/cha-kan-ttyusb-she-bei-dui-ying-de-jie-kou-hao/</id>
+    <published>2020-12-21T15:06:15.000Z</published>
+    <updated>2021-01-14T09:52:09.321Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;查看-ttyUSB-设备对应的接口号&quot;&gt;&lt;a href=&quot;#查看-ttyUSB-设备对应的接口号&quot; class=&quot;headerlink&quot; title=&quot;查看 ttyUSB 设备对应的接口号&quot;&gt;&lt;/a&gt;查看 ttyUSB 设备对应的接口号&lt;/h2&gt;&lt;p&gt; </summary>
+        
+      
+    
+    
+    
+    <category term="Android" scheme="https://zhuangzi200323.github.io/categories/Android/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>“完美”的作品</title>
     <link href="https://zhuangzi200323.github.io/2020/12/13/xiao-xue/wan-mei-de-zuo-pin/"/>
     <id>https://zhuangzi200323.github.io/2020/12/13/xiao-xue/wan-mei-de-zuo-pin/</id>
     <published>2020-12-13T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.256Z</updated>
+    <updated>2021-01-14T09:52:09.321Z</updated>
     
     
       
@@ -113,7 +182,7 @@
     <link href="https://zhuangzi200323.github.io/2020/12/08/solid-wu-da-she-ji-yuan-ze/"/>
     <id>https://zhuangzi200323.github.io/2020/12/08/solid-wu-da-she-ji-yuan-ze/</id>
     <published>2020-12-08T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.212Z</updated>
+    <updated>2021-01-14T09:52:09.269Z</updated>
     
     
       
@@ -136,7 +205,7 @@
     <link href="https://zhuangzi200323.github.io/2020/12/03/xiao-xue/wo-de-ba-ba/"/>
     <id>https://zhuangzi200323.github.io/2020/12/03/xiao-xue/wo-de-ba-ba/</id>
     <published>2020-12-03T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.256Z</updated>
+    <updated>2021-01-14T09:52:09.321Z</updated>
     
     
       
@@ -159,7 +228,7 @@
     <link href="https://zhuangzi200323.github.io/2020/11/17/xiao-xue/wo-de-xiao-gua-niu-bian-cheng-xiao-tu-zi/"/>
     <id>https://zhuangzi200323.github.io/2020/11/17/xiao-xue/wo-de-xiao-gua-niu-bian-cheng-xiao-tu-zi/</id>
     <published>2020-11-17T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.256Z</updated>
+    <updated>2021-01-14T09:52:09.321Z</updated>
     
     
       
@@ -182,7 +251,7 @@
     <link href="https://zhuangzi200323.github.io/2020/11/10/xiao-xue/da-xiong-mao-dai-lai-de-liang-xi/"/>
     <id>https://zhuangzi200323.github.io/2020/11/10/xiao-xue/da-xiong-mao-dai-lai-de-liang-xi/</id>
     <published>2020-11-10T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.256Z</updated>
+    <updated>2021-01-14T09:52:09.321Z</updated>
     
     
       
@@ -205,7 +274,7 @@
     <link href="https://zhuangzi200323.github.io/2020/11/09/xiao-xue/guan-kan-ba-he-bi-sai/"/>
     <id>https://zhuangzi200323.github.io/2020/11/09/xiao-xue/guan-kan-ba-he-bi-sai/</id>
     <published>2020-11-09T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.260Z</updated>
+    <updated>2021-01-14T09:52:09.321Z</updated>
     
     
       
@@ -228,7 +297,7 @@
     <link href="https://zhuangzi200323.github.io/2020/11/07/xiao-xue/wo-ai-gu-xiang-de-xue/"/>
     <id>https://zhuangzi200323.github.io/2020/11/07/xiao-xue/wo-ai-gu-xiang-de-xue/</id>
     <published>2020-11-07T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.256Z</updated>
+    <updated>2021-01-14T09:52:09.321Z</updated>
     
     
       
@@ -247,11 +316,34 @@
   </entry>
   
   <entry>
+    <title>爬宝石山</title>
+    <link href="https://zhuangzi200323.github.io/2020/11/07/xiao-xue/pa-bao-shi-shan/"/>
+    <id>https://zhuangzi200323.github.io/2020/11/07/xiao-xue/pa-bao-shi-shan/</id>
+    <published>2020-11-07T15:06:15.000Z</published>
+    <updated>2021-01-14T09:52:09.321Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;爬宝石山&quot;&gt;&lt;a href=&quot;#爬宝石山&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="小学" scheme="https://zhuangzi200323.github.io/categories/%E5%B0%8F%E5%AD%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>小金鱼和“白马”</title>
     <link href="https://zhuangzi200323.github.io/2020/11/07/xiao-xue/xiao-jin-yu-he-bai-ma/"/>
     <id>https://zhuangzi200323.github.io/2020/11/07/xiao-xue/xiao-jin-yu-he-bai-ma/</id>
     <published>2020-11-07T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.256Z</updated>
+    <updated>2021-01-14T09:52:09.321Z</updated>
     
     
       
@@ -274,7 +366,7 @@
     <link href="https://zhuangzi200323.github.io/2020/11/07/xiao-xue/cheng-chang-qu-shi/"/>
     <id>https://zhuangzi200323.github.io/2020/11/07/xiao-xue/cheng-chang-qu-shi/</id>
     <published>2020-11-07T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.256Z</updated>
+    <updated>2021-01-14T09:52:09.321Z</updated>
     
     
       
@@ -297,7 +389,7 @@
     <link href="https://zhuangzi200323.github.io/2020/11/07/springboot-layuiadmin-de-jian-dan-shi-yong/"/>
     <id>https://zhuangzi200323.github.io/2020/11/07/springboot-layuiadmin-de-jian-dan-shi-yong/</id>
     <published>2020-11-07T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.216Z</updated>
+    <updated>2021-01-14T09:52:09.273Z</updated>
     
     
       
@@ -316,34 +408,11 @@
   </entry>
   
   <entry>
-    <title>爬宝石山</title>
-    <link href="https://zhuangzi200323.github.io/2020/11/07/xiao-xue/pa-bao-shi-shan/"/>
-    <id>https://zhuangzi200323.github.io/2020/11/07/xiao-xue/pa-bao-shi-shan/</id>
-    <published>2020-11-07T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.256Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;爬宝石山&quot;&gt;&lt;a href=&quot;#爬宝石山&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="小学" scheme="https://zhuangzi200323.github.io/categories/%E5%B0%8F%E5%AD%A6/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>阿里云CentOS7.0上搭建FTP服务器</title>
     <link href="https://zhuangzi200323.github.io/2020/10/22/a-li-yun-centos7.0-shang-da-jian-ftp-fu-wu-qi/"/>
     <id>https://zhuangzi200323.github.io/2020/10/22/a-li-yun-centos7.0-shang-da-jian-ftp-fu-wu-qi/</id>
     <published>2020-10-22T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.260Z</updated>
+    <updated>2021-01-14T09:52:09.325Z</updated>
     
     
       
@@ -366,7 +435,7 @@
     <link href="https://zhuangzi200323.github.io/2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/"/>
     <id>https://zhuangzi200323.github.io/2020/07/22/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/wu-fa-jia-zai-wen-jian-cusers10186appdataroamingnpmhexo.ps1-yin-wei-zai-ci-xi-tong-shang-jin-zhi-yun-xing-jiao-ben/</id>
     <published>2020-07-22T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.260Z</updated>
+    <updated>2021-01-14T09:52:09.321Z</updated>
     
     
       
@@ -391,7 +460,7 @@
     <link href="https://zhuangzi200323.github.io/2020/05/22/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/"/>
     <id>https://zhuangzi200323.github.io/2020/05/22/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/turtlebot3-gazebo-fang-zhen-ji-yu-ros-melodic/</id>
     <published>2020-05-22T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.220Z</updated>
+    <updated>2021-01-14T09:52:09.281Z</updated>
     
     
       
@@ -410,79 +479,6 @@
     <category term="turtlebot3" scheme="https://zhuangzi200323.github.io/tags/turtlebot3/"/>
     
     <category term="gazebo" scheme="https://zhuangzi200323.github.io/tags/gazebo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ROS遇到的问题</title>
-    <link href="https://zhuangzi200323.github.io/2020/03/02/ros-yu-dao-de-wen-ti/ros-yu-dao-de-wen-ti/"/>
-    <id>https://zhuangzi200323.github.io/2020/03/02/ros-yu-dao-de-wen-ti/ros-yu-dao-de-wen-ti/</id>
-    <published>2020-03-02T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.208Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-sudo-rosdep-init与rosdep-update出错&quot;&gt;&lt;a href=&quot;#1-sudo-rosdep-init与rosdep-update出错&quot; class=&quot;headerlink&quot; title=&quot;1. sudo rosdep</summary>
-        
-      
-    
-    
-    
-    <category term="ROS" scheme="https://zhuangzi200323.github.io/categories/ROS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Tomcat部署Web应用时出现One or more listeners failed to start异常</title>
-    <link href="https://zhuangzi200323.github.io/2019/06/02/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/"/>
-    <id>https://zhuangzi200323.github.io/2019/06/02/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/tomcat-bu-shu-web-ying-yong-shi-chu-xian-one-or-more-listeners-failed-to-start-yi-chang/</id>
-    <published>2019-06-02T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.216Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Tomcat部署Web应用时出现One-or-more-listeners-failed-to-start异常&quot;&gt;&lt;a href=&quot;#Tomcat部署Web应用时出现One-or-more-listeners-failed-to-start异常&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="spring" scheme="https://zhuangzi200323.github.io/categories/spring/"/>
-    
-    
-    <category term="Tomcat" scheme="https://zhuangzi200323.github.io/tags/Tomcat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tomcat 8安装后配置</title>
-    <link href="https://zhuangzi200323.github.io/2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/tomcat-8-an-zhuang-hou-pei-zhi/"/>
-    <id>https://zhuangzi200323.github.io/2019/06/02/tomcat-8-an-zhuang-hou-pei-zhi/tomcat-8-an-zhuang-hou-pei-zhi/</id>
-    <published>2019-06-02T15:06:15.000Z</published>
-    <updated>2021-01-09T11:53:23.216Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Tomcat-8安装后配置&quot;&gt;&lt;a href=&quot;#Tomcat-8安装后配置&quot; class=&quot;headerlink&quot; title=&quot;Tomcat 8安装后配置&quot;&gt;&lt;/a&gt;Tomcat 8安装后配置&lt;/h2&gt;&lt;p&gt;Tomcat</summary>
-        
-      
-    
-    
-    
-    <category term="spring" scheme="https://zhuangzi200323.github.io/categories/spring/"/>
-    
-    
-    <category term="Tomcat" scheme="https://zhuangzi200323.github.io/tags/Tomcat/"/>
     
   </entry>
   
