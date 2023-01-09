@@ -32,7 +32,7 @@ categories:
 添加依赖:
 
 ```java
-dev_dependencies:
+dependencies:
 ...
   //add this
   flutter_localizations:
